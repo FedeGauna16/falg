@@ -6,7 +6,7 @@
   <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="./stylesheets/config.css">
+    <link rel="stylesheet" href="../stylesheets/config.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 
@@ -15,9 +15,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <title>Inicio</title>
 </head>
+<style>
+  body {
+    background-color: rgb(36, 36, 36);
+  }
+  </style>
   <div>
     <li id= "tnombre">
-      <img src="./images/logo_falg.jpg"> 
+      <img src="../images/logo_falg.jpg"> 
     </li>
   </div>
   
@@ -31,7 +36,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="../index.html">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./html/foro.html">Foro</a>
@@ -60,27 +65,67 @@
       </form>
     </div>
   </nav>
+  <hr>
+</div>
 
-  <div id="posts" class="list-group">
-    <a href="#" class="list-group-item list-group-item-action active">
-      Cras justo odio
-    </a>
-    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-    <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-    <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1">Vestibulum at eros</a>
+<container class="menus">
+  <div class="row">
+    <div class="col-sm" >
+      <div id="posts" class="list-group" style="color: snow;">
+        <a href="#" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;"> META BUILD re piola compra</a>
+        <a href="#" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;" > MIRAME</a>
+        <a href="#" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;"> DEFENSIVE BUILD</a>
+        <a href="#" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;"> CUIDADO CON EL MONO</a>
+        <a href="#" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;"> LA MEJOR</a> 
+      </div> xDD hacete el vivo pelotudo la concha de tu madre imbecil 
+    </div>Te voy a partir lca baeza me escuchaste
+    <div id= "recientes" class="col-sm">
+      <div class="card" style="width: 400px">
+        <div class="card-body" style="color: snow;background-color: #343a40;">
+          <h5 class="card-title style=" style="color: snow;background-color: #343a40;">SUPER-POST: La mejor combinación de defensa y daño</h5>
+          <p class="card-text style=" >- erickqj10x</p>
+          <a href="#" class="btn btn-primary" style="color: snow;background-color: #343a40;">Ver</a>
+        </div>
+      </div>
+      <div class="card" style="width: 400px">
+        <div class="card-body" style="color: snow;background-color: #343a40;"">
+          <h5 class="card-title" style="color: snow;background-color: #343a40;">SUPER-POST: La mejor combinación de defensa y daño</h5>
+          <p class="card-text" >- erickqj10x</p>
+          <a href="#" class="btn btn-primary" style="color: snow;background-color: #343a40;">Ver</a>
+        </div>
+      </div>
+      <div class="card" style="width: 400px" style="background-color: #343a40;">
+        <div class="card-body" style="color: snow;background-color: #343a40;">
+          <h5 class="card-title" style="color: snow;background-color: #343a40;">SUPER-POST: La mejor combinación de defensa y daño</h5>
+          <p class="card-text">- erickqj10x</p>
+          <a href="#" class="btn btn-primary" style="color: snow;background-color: #343a40;">Ver</a>
+        </div>
+      </div>
+    </div>
   </div>
+</container>
+
 
 </body>
 <style>
+  #posts{
+    padding-left: 30px;
+    width: 1000px;
+  }
   .footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgb(48, 48, 48);
+    background-color: #343a40;
     color: white;
     text-align: center;
+  }
+  #recientes{
+    padding-left: 1000px;
+  }
+  #post{
+    color: snow;
   }
   </style>
   
@@ -92,7 +137,7 @@
   $(document).ready(function () {
 
 $.get( "http://localhost:3000/users", function( informacion ){
-  $("#contenedor").append(
+  $("#contenedor2").append(
     '<div class="card" style="width: 18rem;"> ' +
     '<img src="..." class="card-img-top" alt="..."> ' +
     ' <div class="card-body"> ' +
