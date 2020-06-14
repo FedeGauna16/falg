@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../stylesheets/config.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
@@ -15,16 +15,23 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <title>Inicio</title>
 </head>
+<div class="header">
+  <img src="../images/falg.png" style=" margin-left: auto;
+  margin-right: auto;" >
+</div>
+<style>
+  .header {
+  text-align: center;
+  background: #0e0c0c;
+  font-size: 30px;
+}
+  </style>
 <style>
   body {
     background-color: rgb(36, 36, 36);
+    height: 500px;
   }
   </style>
-  <div>
-    <li id= "tnombre">
-      <img src="../images/logo_falg.jpg"> 
-    </li>
-  </div>
   
 
   <nav id = "menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -36,19 +43,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="../index.html">Inicio <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="../index.html" style="color: white;">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./html/foro.html">Foro</a>
+          <a class="nav-link" href="./html/foro.html" style="color: white;">Foro</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Historial de partidas</a>
+          <a class="nav-link" href="#" style="color: white;">Historial de partidas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Descarga</a>
+          <a class="nav-link" href="#" style="color: white;">Descarga</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
             Ayuda
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -58,6 +65,9 @@
             <a class="dropdown-item" href="#">FAQ</a>
           </div>
         </li>
+        <li class="nav-item" style="padding-left: 420px;">
+          <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./html/ingreso.html" role="Ingresar">Ingresar</a>
+        </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search">
@@ -65,126 +75,110 @@
       </form>
     </div>
   </nav>
-  <hr>
-</div>
-
-<container class="soporte-menu">
-    <div class="row">
-      <div class="col-sm" >
-        <a href="#" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;" > Soporte técnico</a>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: snow;background-color: #343a40;">
-                Cambio de contraseña </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Enviar cambio de contraseña al email</a>
-              <a class="dropdown-item" href="#">Enviar cambio de contraseña al telefono</a>
-          </li> 
-        <div>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: snow;background-color: #343a40;">
-                Robo de cuenta
-              </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Reestablecer mediante email externo</a>
-              <a class="dropdown-item" href="#">Reestablecer mediante código de telefono</a>
-          </li>
-          <div>
+    
+  <div>
+        <div class="row">
+        <div class="col-sm" >
+            <a href="#" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;" > Soporte técnico</a>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: snow;background-color: #343a40;">
-                    Problemas con el Juego
-                  </a>
+                    Cambio de contraseña </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">¿El juego no se abre?</a>
-                  <a class="dropdown-item" href="#">¿Problemas en un nivel del juego?</a>
-              </li>
-              <li class="nav-item dropdown">
+                <a class="dropdown-item" href="#">Enviar cambio de contraseña al email</a>
+                <a class="dropdown-item" href="#">Enviar cambio de contraseña al telefono</a>
+            </li> 
+            <div>
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: snow;background-color: #343a40;">
-                    Problemas con la página
-                  </a>
+                    Robo de cuenta
+                </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">¿No podes publicar tu build?</a>
-                  <a class="dropdown-item" href="#">¿No podes editar tu build?</a>
-              </li> 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: snow;background-color: #343a40;">
-                Robo de cuenta
-              </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Reestablecer mediante email externo</a>
-              <a class="dropdown-item" href="#">Reestablecer mediante código de telefono</a>
-          </li> 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: snow;background-color: #343a40;">
-                ¿Otro problema? 
-              </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="../html/formulario.html">Envia una solicitud a nuestro equipo de soporte</a>
-              <a class="dropdown-item" href="#">Revisa el FAQ con problemas frecuentes</a>
-          </li> 
+                <a class="dropdown-item" href="#">Reestablecer mediante email externo</a>
+                <a class="dropdown-item" href="#">Reestablecer mediante código de telefono</a>
+            </li>
+            <div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: snow;background-color: #343a40;">
+                        Problemas con el Juego
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">¿El juego no se abre?</a>
+                    <a class="dropdown-item" href="#">¿Problemas en un nivel del juego?</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: snow;background-color: #343a40;">
+                        Problemas con la página
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">¿No podes publicar tu build?</a>
+                    <a class="dropdown-item" href="#">¿No podes editar tu build?</a>
+                </li> 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: snow;background-color: #343a40;">
+                    Robo de cuenta
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Reestablecer mediante email externo</a>
+                <a class="dropdown-item" href="#">Reestablecer mediante código de telefono</a>
+            </li> 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: snow;background-color: #343a40;">
+                    ¿Otro problema? 
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../html/formulario.html">Envia una solicitud a nuestro equipo de soporte</a>
+                <a class="dropdown-item" href="#">Revisa el FAQ con problemas frecuentes</a>
+            </li> 
+            </div>
         </div>
-      </div>
-    <div id= "recientes" class="col-sm">
-      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-          <img src="..." class="rounded mr-2" alt="...">
-          <strong class="mr-auto">Bootstrap</strong>
-          <small class="text-muted">just now</small>
-          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="toast-body">
-         
-        </div>
-      </div>
-      
-      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-          <img src="..." class="rounded mr-2" alt="...">
-          <strong class="mr-auto">Bootstrap</strong>
-          <small class="text-muted">2 seconds ago</small>
-          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="toast-body">
-          
-        
-</container>
+  </div>
 
-
+  <footer style="height: 40px;">
+        <div class="footerr" style="background-color: #0e0c0c;height: 110px;padding-bottom: 50px;padding-top: 30px;">
+        <ul class="list-group list-group-horizontal" style="padding-left: 40px;background-color: #0e0c0c;">
+            <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Acerca de</li>
+            <div class="hola2" style="padding-left: 10px;">
+            <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Contacto</li>
+            </div>
+            <div class="hola2" style="padding-left: 10px;">
+            <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Politica de privacidad</li>
+            </div>
+            <div class="hola2" style="padding-left: 10px;">
+            <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Terminos y condiciones</li>
+            </div>
+            <div class="hola" style="padding-left: 180px;width: 350px;">
+            <ul class="list-group">
+                <div>
+                <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;" ><img src="../images/prueba2footer.png"></li>
+                </div>
+                <div style="padding-top: 30px;width: 200px;color: white;">
+                <a style="padding-left: 30px;">© 2020 Arne, Inc.</a>
+                <div style="padding-left: 30px;">
+                    <p style="width: 250px;">All rights reserved</p>
+                </div>
+                </div>
+            </div>
+        </ul>
+        </div>
+    </footer>
 </body>
 <style>
-  #posts{
-    padding-left: 30px;
-    width: 1000px;
-  }
   .footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #343a40;
+    background-color: rgb(48, 48, 48);
     color: white;
     text-align: center;
   }
-  #recientes{
-    padding-left: 800px;
-  }
-  #post{
-    color: snow;
-  }
   </style>
-  
-  <div class="footer">
-    <p>FALG </p>
-  </div> 
 </html>
 <script>
   $(document).ready(function () {
 
 $.get( "http://localhost:3000/users", function( informacion ){
-  $("#contenedor2").append(
+  $("#contenedor").append(
     '<div class="card" style="width: 18rem;"> ' +
     '<img src="..." class="card-img-top" alt="..."> ' +
     ' <div class="card-body"> ' +
