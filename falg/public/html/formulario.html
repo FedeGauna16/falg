@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="../stylesheets/config.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
@@ -15,23 +15,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <title>Inicio</title>
 </head>
-<div class="header">
-  <img src="../images/falg.png" style=" margin-left: auto;
-  margin-right: auto;" >
-</div>
-<style>
-  .header {
-  text-align: center;
-  background: #0e0c0c;
-  font-size: 30px;
-}
-  </style>
 <style>
   body {
     background-color: rgb(36, 36, 36);
-    height: 500px;
   }
   </style>
+  <div>
+    <li id= "tnombre">
+      <img src="../images/logo_falg.jpg"> 
+    </li>
+  </div>
   
 
   <nav id = "menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -43,19 +36,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="../index.html" style="color: white;">Inicio <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="../index.html">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./foro.html" style="color: white;">Foro</a>
+          <a class="nav-link" href="./html/foro.html">Foro</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" style="color: white;">Historial de partidas</a>
+          <a class="nav-link" href="#">Historial de partidas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" style="color: white;">Descarga</a>
+          <a class="nav-link" href="#">Descarga</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Ayuda
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -65,9 +58,6 @@
             <a class="dropdown-item" href="#">FAQ</a>
           </div>
         </li>
-        <li class="nav-item" style="padding-left: 420px;">
-          <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./html/ingreso.html" role="Ingresar">Ingresar</a>
-        </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search">
@@ -75,78 +65,68 @@
       </form>
     </div>
   </nav>
+  <hr>
+</div>
 
-    <h3 style="padding-left: 600px;width: 1300px;color: white;text-align: center;" >Rellene el formulario</h3>
-    <form style="padding-left: 600px;width: 1300px;color: white;">
-        <div class="form-group">
-        <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <small id="emailHelp" class="form-text text-muted">Email</small>
-        </div>
-        <div class="form-group">
-            <a href="#" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;"> Contraseña</a>
-        <label for="exampleInputPassword1"></label>Contraseña</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <div class="form-group">
+<a href="#" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;padding-left: 600px;width: 1000px;" > Rellene el formulario</a>
+<form>
+    <div class="form-group" style="padding-left: 400px;width: 1000px;">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted">Email</small>
+    </div>
+    <div class="form-group">
+        <a href="#" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;"> Contraseña</a>
+      <label for="exampleInputPassword1"></label>Contraseña</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <div class="form-group">
         <a href="#" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;" >Descripción del problema</a>
         <label for="exampleFormControlTextarea1">Descripción del problema</label>
         <textarea class="form-control" style="padding-left: 600px "id="exampleFormControlTextarea1" rows="3"></textarea>
       </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  <footer style="height: 40px;">
-    <div class="footerr" style="background-color: #0e0c0c;height: 110px;padding-bottom: 50px;padding-top: 30px;">
-      <ul class="list-group list-group-horizontal" style="padding-left: 40px;background-color: #0e0c0c;">
-          <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Acerca de</li>
-        <div class="hola2" style="padding-left: 10px;">
-          <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Contacto</li>
-        </div>
-        <div class="hola2" style="padding-left: 10px;">
-          <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Politica de privacidad</li>
-        </div>
-        <div class="hola2" style="padding-left: 10px;">
-          <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Terminos y condiciones</li>
-        </div>
-        <div class="hola" style="padding-left: 180px;width: 350px;">
-          <ul class="list-group">
-            <div>
-              <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;" ><img src="../images/prueba2footer.png"></li>
-            </div>
-            <div style="padding-top: 30px;width: 200px;color: white;">
-              <a style="padding-left: 30px;">© 2020 Arne, Inc.</a>
-              <div style="padding-left: 30px;">
-                <p style="width: 250px;">All rights reserved</p>
-              </div>
-            </div>
-        </div>
-      </ul>
     </div>
-  </footer>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
 </body>
 <style>
+  #posts{
+    padding-left: 30px;
+    width: 1000px;
+  }
   .footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgb(48, 48, 48);
+    background-color: #343a40;
     color: white;
     text-align: center;
   }
+  #recientes{
+    padding-left: 800px;
+  }
+  #post{
+    color: snow;
+  }
   </style>
+  
+  <div class="footer">
+    <p> </p>
+  </div> 
 </html>
 <script>
   $(document).ready(function () {
 
 $.get( "http://localhost:3000/users", function( informacion ){
-  $("#contenedor").append(
+  $("#contenedor2").append(
     '<div class="card" style="width: 18rem;"> ' +
     '<img src="..." class="card-img-top" alt="..."> ' +
     ' <div class="card-body"> ' +
