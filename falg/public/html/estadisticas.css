@@ -1,75 +1,13 @@
 .themed-grid-col {
-  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   background-color: rgba(86, 61, 124, .15);
   border: 1px solid rgba(86, 61, 124, .2);
-  color: antiquewhite;
-}
-.fila {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-}
-.item {
-  padding: 5px;
-  width: auto;
-  background-color: rgba(86, 61, 124, .15);
-  border: 1px solid rgba(86, 61, 124, .2);
-  color: antiquewhite;
-}
-.columna-1-1{
-  display: flex;
-  padding: 5px;
-  margin-right: 15px;
-  width: auto;
-  background-color: rgba(86, 61, 124, .15);
-  border: 1px solid rgba(86, 61, 124, .2);
-  color: antiquewhite;
-  text-align: center;
 }
 
-.columna-1-2{
-  padding: 5px;
-  margin-left: 15px;
-  width: auto;
-  background-color: rgba(86, 61, 124, .15);
-  border: 1px solid rgba(86, 61, 124, .2);
-  color: antiquewhite;
-  text-align: center;
-  
-}
-.columna-2{
-  padding: 5px;
-  width: auto;
-  background-color: rgba(86, 61, 124, .15);
-  border: 1px solid rgba(86, 61, 124, .2);
-  color: antiquewhite;
-}
-.vs {
-  padding: 5px;
-  width: auto;
-  background-color:  rgb(36, 36, 36);
-  color: antiquewhite;
-  text-align: center;
-}
-.nombre {
-  padding: 5px;
-  padding-left: 35px;
-  width: auto;
-  background-color:  rgb(36, 36, 36);
-  color: antiquewhite;
-  text-align: center;
-}
-.nombre-2{
-  padding: 5px;
-  padding-right: 35px;
-  width: auto;
-  background-color:  rgb(36, 36, 36);
-  color: antiquewhite;
-  text-align: center;
-}
-.buscador {
- padding: 30px;
+.themed-container {
+  padding: 15px;
+  margin-bottom: 30px;
+  background-color: rgba(0, 123, 255, .15);
+  border: 1px solid rgba(0, 123, 255, .2);
 }
