@@ -14,3 +14,228 @@
 #posts{
     padding-left: 200px;
 }
+.themed-grid-col {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+  }
+  
+  .themed-container {
+    padding: 15px;
+    margin-bottom: 30px;
+    background-color: rgba(0, 123, 255, .15);
+    border: 1px solid rgba(0, 123, 255, .2);
+  }
+  .themed-grid-col {
+    padding: 10px;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+    color: antiquewhite;
+  }
+  .cosodearriba {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 10px;
+    /* background-color: rgb(36, 36, 36); */
+  }
+  .espacioparacosodearriba {
+    padding-top: 5px;
+    width: 5%;
+    margin-left: -5px;
+    font-size: x-large;
+    text-align: center;
+    /* background-color: rgb(0, 36, 36) */
+  }
+  .cosodearribaItems {
+    padding: 5px;
+    width: 30%;
+    color: antiquewhite;
+    text-align: center;
+    /* background-color: rgb(70, 36, 36) */
+  }
+  .cosodearribaIconoPJ {
+    padding: 5px;
+    width: 5%;
+    color: antiquewhite;
+    text-align: center;
+    /* background-color: rgb(150, 36, 36) */
+  }
+  .cosodearribaNombre{
+    padding: 5px;
+    width: 10%;
+    color: antiquewhite;
+    text-align: center;
+    /* background-color: rgb(250, 36, 36) */
+  }
+  .fila {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 10px;
+  }
+  .item {
+    padding: 5px;
+    width: auto;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+    color: antiquewhite;
+  }
+  .columna-1-1{
+    display: flex;
+    padding: 5px;
+    margin-right: 18px;
+    width: auto;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+    color: antiquewhite;
+    text-align: center;
+  }
+  
+  .columna-1-2{
+    display: flex;
+    padding: 5px;
+    margin-left: 18px;
+    width: auto;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+    color: antiquewhite;
+    text-align: center;
+    
+  }
+  .columna-2{
+    padding: 5px;
+    padding-top: 10px;
+    width: auto;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+    color: antiquewhite;
+  }
+  .vs {
+    padding-top: 10px;
+    font-size: x-large;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+    background-color:  rgb(36, 36, 36);
+    color: antiquewhite;
+    text-align: center;
+  }
+  .nombre {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 35px;
+    padding-right: 15px;
+    font-size: medium;
+    width: auto;
+    background-color:  rgb(36, 36, 36);
+    color: antiquewhite;
+    text-align: center;
+  }
+  .nombre-2{
+    font-size: medium;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-right: 35px;
+    padding-left: 15px;
+    width: auto;
+    background-color:  rgb(36, 36, 36);
+    color: antiquewhite;
+    text-align: center;
+  }
+  .buscador {
+   padding: 30px;
+  }
+  .cuadro {
+    margin-left: 15px;
+    display: flex;
+    height: 100px;
+    width: 20%;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+  }
+  .cuadrochiquitouno {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    height: 80px;
+    width: 40%;
+    /* background-color: rgba(236, 24, 181, 0.15); */
+  }
+  .cuadrochiquitodos {
+    margin-left: 10px;
+    height: 100px;
+    width: 50%;
+    /* background-color: rgba(236, 24, 181, 0.15); */
+  }
+  .cuadrochiquitochiquitouno {
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 25px;
+    width: 90%;
+    color: antiquewhite;
+    text-align: center;
+    font-size: medium;
+    /* background-color: rgb(221, 15, 15); */
+  }
+  .cuadrochiquitochiquitodos {
+    margin-top: 8px;
+    margin-left: 5px;
+    height: 25px;
+    width: 90%;
+    color: antiquewhite;
+    text-align: left;
+    font-size: medium;
+    /* background-color: rgb(161, 37, 37); */
+  }
+  .cuadrochiquitochiquitotres {  
+    margin-top: 8px;
+    margin-left: 5px;
+    height: 25px;
+    width: 90%;
+    color: antiquewhite;
+    text-align: left;
+    /* background-color: rgb(70, 22, 22); */
+    font-size: medium;
+  }
+  .cuadro2{
+    margin-left: 15px;
+    height: 160px;
+    width: 15%;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+  }
+  .cuadro2chiquitouno {
+    height: 100px;
+    width: 100%;
+    /* background-color: rgba(236, 24, 181, 0.15); */
+  }
+  .cuadro2chiquitodos {
+    height: 60px;
+    width: 100%;
+    /* background-color: rgba(236, 24, 181, 0.15); */
+  }
+  .cuadro2chiquitochiquitouno {
+    height: 30px;
+    width: 100%;
+    color: antiquewhite;
+    text-align: center;
+    font-size: medium;
+    /* background-color: rgb(221, 15, 15); */
+  }
+  .cuadro2chiquitochiquitodos {
+    height: 30px;
+    width: 100%;
+    color: antiquewhite;
+    text-align: center;
+    font-size: medium;
+    /* background-color: rgb(161, 37, 37); */
+  }
+  
