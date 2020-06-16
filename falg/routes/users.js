@@ -1,27 +1,27 @@
 var express = require('express');
 var router = express.Router();
-var builds =
+var cuentas =
 [
   {
-    titulo : "Tachancka Build 2020",
-    descripcion : "Pasate a mirar esta build",
-    usuario: "erickjq10x"
-  },
-  {
     nombre : "lucas",
-    apellido : "traje"
+    apellido : "quispe"
   }
 ]
-var manu = "tachancka"
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
-   res.send(builds);
+   res.send(cuentas);
 });
 
 router.post('/', function(req, res, next) {
-  console.log(req);
+
+  cuentas.push(req.body);
+
+  res.send({
+    status : true,
+    response : cuentas
+  });
 });
+
 
 
 module.exports = router;
