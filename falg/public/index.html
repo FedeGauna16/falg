@@ -49,7 +49,7 @@
           <a class="nav-link" href="./html/foro.html" style="color: white;">Foro</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./html/estadisticas/estadisticas.html" style="color: white;">Estadisticas</a>
+          <a class="nav-link" href="#" style="color: white;">Historial de partidas</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" style="color: white;">Descarga</a>
@@ -59,7 +59,7 @@
             Ayuda
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Soporte</a>
+            <a class="dropdown-item" href="./html/soporte.html">Soporte</a>
             <a class="dropdown-item" href="#">Generar reporte</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">FAQ</a>
@@ -102,42 +102,10 @@
     </a>
   </div>
     
-  <div id="contenedor" class="container">
-    <div class="row">
-      <div id ="primeraColumna" class="col-sm">
-        <div class="card" style="width: 18rem;"> 
-          
-          <img src="./images/negroarmado.png" class="card-img-top" alt="...">
-          <div class="card-body" style="background-color: #343a40;color: white;">
-            <h5 class="card-title">Negro Armado</h5>
-            <p class="card-text">Hechale un vistazo a la novedosa build para negro <p>- erickjq10x</p></p>
-            <a href="#" class="btn btn-primary">Ver</a>
-          </div>
-        </div>
-      </div>
-      <div id ="segundaColumna" class="col-sm">
-        <div class="card" style="width: 18rem;"> 
-          <img src="./images/negroarmado.png" class="card-img-top" alt="...">
-          <div class="card-body" style="background-color: #343a40;color: white;">
-            <h5 class="card-title">Salpullido</h5>
-            <p class="card-text">build re piola mirame<p>- manuel cabral</p></p>
-            <a href="#" class="btn btn-primary">Ver</a>
-          </div>
-        </div>
-      </div>
-      <div id ="terceraColumna" class="col-sm">
-        <div class="card" style="width: 18rem;"> 
-          <img src="./images/negroarmado.png" class="card-img-top" alt="...">
-          <div class="card-body" style="background-color: #343a40;color: white;">
-            <h5 class="card-title">Negro Armado</h5>
-            <p class="card-text">especializada en defensa <p>- jose mantas</p></p>
-            <a href="#" class="btn btn-primary">Ver</a>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div id="contenido">
+    
   </div>
-  <footer style="height: 40px;">
+  <footer id="nene" style="height: 40px;">
     <div class="footerr" style="background-color: #0e0c0c;height: 110px;padding-bottom: 50px;padding-top: 30px;">
       <ul class="list-group list-group-horizontal" style="padding-left: 40px;background-color: #0e0c0c;">
           <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Acerca de</li>
@@ -178,21 +146,28 @@
   }
   </style>
 </html>
+
 <script>
   $(document).ready(function () {
-
-$.get( "http://localhost:3000/users", function( informacion ){
-  $("#contenedor").append(
-    '<div class="card" style="width: 18rem;"> ' +
-    '<img src="..." class="card-img-top" alt="..."> ' +
-    ' <div class="card-body"> ' +
-    '  <h5 class="card-title">Card title</h5> ' + 
-    '  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>' +
-    ' <a href="#" class="btn btn-primary">Go somewhere</a>' +
-    '    </div>' +
-    '  </div>'
-     );
-  });
+  $.get( "http://localhost:3000/inicio", function( informacion ){
+    informacion.forEach(function(personaje){
+      console.log(personaje)
+      $("#nene").append(
+        '             <div class="card" style="width: 18rem;"> ' +
+        '               <div class="card" style="width: 18rem;"> ' +
+        '                 <img src="..." class="card-img-top" alt="..."> ' +
+        '                   <div class="card-body" style="background-color: #343a40;color: white;"> ' +
+        '                     <h5 class="card-title"> '+ personaje.titulo +' </h5> ' +
+        '                       <p class="card-text"> '+ personaje.descripcion +' </p>' +
+        '                         <a href="#" class="btn btn-primary"> '+ personaje.usuario +' </a>' +
+        '                   </div>' + 
+        '               </div>' +
+        '             </div>'
+      );
+    });
+  }); 
 });
-
 </script>
+$('#crearCuenta').on('submit', function (event) {
+
+});
