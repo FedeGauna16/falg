@@ -4,7 +4,6 @@ var builds =
 [
   {
     titulo : "Tachancka Build 2020",
-    descripcion : "Pasate a mirar esta build",
     usuario: "erickjq10x"
   },
 ]
