@@ -1,12 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var cuentas =
-[
-  {
-    nombre : "lucas",
-    apellido : "quispe"
-  }
-]
+var cuentas = []
 
 router.get('/', function(req, res, next) {
    res.send(cuentas);

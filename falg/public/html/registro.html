@@ -187,12 +187,16 @@ $.get( "http://localhost:3000/users", function( informacion ){
 
 $('#registro').on('submit', function (event) {
           event.preventDefault();
-          console.log($("#nombre").val())
           $.ajax({
             url: 'http://localhost:3000/users',
             type: 'POST',
             data: {
-              nombre: $("#nombre").val()
+              nombre: $("#nombre").val(),
+              contraseña: $("#contraseña").val(),
+              correo: $("#correo").val(),
+              pais: $("#pais").val(),
+              sexo: $("#sexo").val(),
+              edad: $("#edad").val()
             },
             success: function(result) {
               alert("ahora si ganaste un iphone 9")
