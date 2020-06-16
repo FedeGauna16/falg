@@ -150,16 +150,15 @@
 <script>
   $(document).ready(function () {
   $.get( "http://localhost:3000/inicio", function( informacion ){
-    informacion.forEach(function(personaje){
-      console.log(personaje)
-      $("#nene").append(
+    informacion.forEach(function(carta){
+      $("#contenido").append(
         '             <div class="card" style="width: 18rem;"> ' +
         '               <div class="card" style="width: 18rem;"> ' +
         '                 <img src="..." class="card-img-top" alt="..."> ' +
         '                   <div class="card-body" style="background-color: #343a40;color: white;"> ' +
-        '                     <h5 class="card-title"> '+ personaje.titulo +' </h5> ' +
-        '                       <p class="card-text"> '+ personaje.descripcion +' </p>' +
-        '                         <a href="#" class="btn btn-primary"> '+ personaje.usuario +' </a>' +
+        '                     <h5 class="card-title"> '+ carta.titulo +' </h5> ' +
+        '                       <p class="card-text"> '+ carta.usuario +' </p>' +
+        '                         <a href="#" class="btn btn-primary"> Ver </a>' +
         '                   </div>' + 
         '               </div>' +
         '             </div>'
@@ -168,6 +167,3 @@
   }); 
 });
 </script>
-$('#crearCuenta').on('submit', function (event) {
-
-});
