@@ -6,7 +6,7 @@
   <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./stylesheets/config.css">
+    <link rel="stylesheet" href="../stylesheets/config.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 
@@ -46,7 +46,7 @@
           <a class="nav-link" href="../index.html" style="color: white;">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./html/foro.html" style="color: white;">Foro</a>
+          <a class="nav-link" href="./foro.html" style="color: white;">Foro</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./html/estadisticas.html" style="color: white;">Estadísticas</a>
@@ -60,9 +60,9 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="./html/soporte.html">Soporte</a>
-            <a class="dropdown-item" href="./html/reporte.html">Generar reporte</a>
+            <a class="dropdown-item" href="#">Generar reporte</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="./html/faq.html">FAQ</a>
+            <a class="dropdown-item" href="#">FAQ</a>
           </div>
         </li>
         <li class="nav-item" style="padding-left: 420px;">
@@ -75,53 +75,33 @@
       </form>
     </div>
   </nav>
-  
 
-  <main role="main">
-  
-    <div class="jumbotron">
-      <div class="container">        
-        <h1 class="display-3">FALG FAQ</h1>
-        <p>En esta seccion se responderan algunas posibles preguntas y se resolveran las dudas de los jugadores.</p>
-      </div>
-    </div>
-  
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h2><body>
-            <p style="color:white;">Pregunta 1</p>
-          </body></h2>
-          <p style="color:white;">Respuesta 1</p>
-          <p><a class="btn btn-secondary" href="#" role="button">Leer mas &raquo;</a></p>
+    <h3 style="padding-left: 600px;width: 1300px;color: white;text-align: center;" >Rellene el formulario</h3>
+    <form style="padding-left: 600px;width: 1300px;color: white;">
+        <div class="form-group">
+        <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">Email</small>
         </div>
-        <div class="col-md-4">
-            <h2><body>
-                <p style="color:white;">Pregunta 2</p>
-              </body></h2>
-              <p style="color:white;">Respuesta 2</p>
-              <p><a class="btn btn-secondary" href="#" role="button">Leer mas &raquo;</a></p>
-            </div>
-        <div class="col-md-4">
-            <h2><body>
-                <p style="color:white;">Pregunta 3</p>
-              </body></h2>
-              <p style="color:white;">Respuesta 3</p>
-              <p><a class="btn btn-secondary" href="#" role="button">Leer mas &raquo;</a></p>
-            </div>
+        <div class="form-group">
+            <a href="#" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;"> Contraseña</a>
+        <label for="exampleInputPassword1"></label>Contraseña</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <div class="form-group">
+        <a href="#" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;" >Descripción del problema</a>
+        <label for="exampleFormControlTextarea1">Descripción del problema</label>
+        <textarea class="form-control" style="padding-left: 600px "id="exampleFormControlTextarea1" rows="3"></textarea>
       </div>
-  
-      <hr>
-  
-    </div> 
-  
-  </main>
-
-    
-  <div id="contenido">
-    
-  </div>
-  <footer id="nene" style="height: 40px;">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  <footer style="height: 40px;">
     <div class="footerr" style="background-color: #0e0c0c;height: 110px;padding-bottom: 50px;padding-top: 30px;">
       <ul class="list-group list-group-horizontal" style="padding-left: 40px;background-color: #0e0c0c;">
           <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Acerca de</li>
@@ -162,16 +142,21 @@
   }
   </style>
 </html>
-
 <script>
+  $(document).ready(function () {
+
+$.get( "http://localhost:3000/users", function( informacion ){
+  $("#contenedor").append(
+    '<div class="card" style="width: 18rem;"> ' +
+    '<img src="..." class="card-img-top" alt="..."> ' +
+    ' <div class="card-body"> ' +
+    '  <h5 class="card-title">Card title</h5> ' + 
+    '  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>' +
+    ' <a href="#" class="btn btn-primary">Go somewhere</a>' +
+    '    </div>' +
+    '  </div>'
+     );
+  });
+});
 
 </script>
-
-
-
-
-
-
-$('#crearCuenta').on('submit', function (event) {
-
-});
