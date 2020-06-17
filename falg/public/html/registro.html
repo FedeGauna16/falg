@@ -167,9 +167,12 @@
   </style>
 </html>
 <script>
-  $(document).ready(function () {
+cuentas = [];
 
-$.get( "http://localhost:3000/users", function( informacion ){
+$(document).ready(function () {
+
+  $.get( "http://localhost:3000/users", function( informacion ){
+  cuentas = informacion
   $("#contenedor").append(
     '<div class="card" style="width: 18rem;"> ' +
     '<img src="..." class="card-img-top" alt="..."> ' +
@@ -183,8 +186,23 @@ $.get( "http://localhost:3000/users", function( informacion ){
   });
 });
 
+
+
 $('#registro').on('submit', function (event) {
-          event.preventDefault();
+              event.preventDefault();
+              if($("#nombre").val() == 0){
+                alert("esta vacio el nombre boludo");
+                return 0;
+              }
+              console.log("hola");
+              for(var i = 0; i < cuentas.length; i+=1) {
+                console.log(cuentas[i].nombre + $("#nombre").val());
+                if(cuentas[i].nombre == $("#nombre").val()){
+                  alert("ya existe el nombre");
+                  return 0;
+                  }
+              };
+          console.log("palabra");
           $.ajax({
             url: 'http://localhost:3000/users',
             type: 'POST',
@@ -202,5 +220,6 @@ $('#registro').on('submit', function (event) {
             }
           });
         });
+
 
 </script>
