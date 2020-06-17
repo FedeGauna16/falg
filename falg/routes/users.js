@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var cuentas = []
-//COMO PUEDO VER LOS DATOS QUE SE GUARDARON EN CUENTAS???????????????
 //FALTA EL INGRESO TAMBIEN COMO CHEQUEA EL COSO LOS DATOS SI EXISTEN O NO
 
 router.get('/', function(req, res, next) {
