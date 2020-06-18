@@ -72,6 +72,7 @@
         </form>
       </div>
     </nav>
+
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -102,6 +103,7 @@
     <div id="contenido">
       
     </div>
+
     <footer id="nene" style="height: 40px;">
       <div class="footerr" style="background-color: #0e0c0c;height: 110px;padding-bottom: 50px;padding-top: 20px;">
         <ul class="list-group list-group-horizontal" style="padding-left: 40px;background-color: #0e0c0c;">
@@ -149,6 +151,7 @@
   $.get( "http://localhost:3000/inicio", function( informacion ){
     informacion.forEach(function(carta){
       $("#contenido").append(
+        '            <div style="padding-left: 500px; padding-top: 50px">' +
         '             <div class="card" style="width: 18rem;"> ' +
         '               <div class="card" style="width: 18rem;"> ' +
         '                 <img src="..." class="card-img-top" alt="..."> ' +
@@ -158,11 +161,12 @@
         '                         <a href="#" class="btn btn-primary"> Ver </a>' +
         '                   </div>' + 
         '               </div>' +
-        '             </div>'
+        '             </div>' +
+        '            </div>'
       );
     });
   }); 
-});
+});///
 /*
 $('#crearCuenta').on('submit', function (event) {
 

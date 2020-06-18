@@ -191,14 +191,14 @@ $(document).ready(function () {
 $('#registro').on('submit', function (event) {
               event.preventDefault();
               if($("#nombre").val() == 0){
-                alert("esta vacio el nombre boludo");
+                alert("El campo esta vacio");
                 return 0;
               }
               console.log("hola");
               for(var i = 0; i < cuentas.length; i+=1) {
                 console.log(cuentas[i].nombre + $("#nombre").val());
                 if(cuentas[i].nombre == $("#nombre").val()){
-                  alert("ya existe el nombre");
+                  alert("El nombre ya esta ocupado");
                   return 0;
                   }
               };
@@ -215,7 +215,7 @@ $('#registro').on('submit', function (event) {
               edad: $("#edad").val()
             },
             success: function(result) {
-              alert("ganaste un iphone 11")
+              alert("Registro correcto")
               location.reload();
             }
           });
