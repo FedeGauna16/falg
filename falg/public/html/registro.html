@@ -106,7 +106,7 @@
           </label>
         </div>
       </div>
-      <button type="submit" class="btn btn-secundary" style="background-color: #666666;color: white;">Registrarse</button>
+      <button type="submit" class="btn btn-secundary" style="background-color: #666666;color: white;" role= "registro">Registrarse</button>
     </form>
     <div style="padding-top: 30px;text-align: center;color: white;">
       <h3>¿Ya tienes una cuenta? <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html" role="Ingresar">Ingresa ahora!</a> </h3>
@@ -168,52 +168,40 @@
 <script>
 cuentas = [];
 
-$(document).ready(function () {
-
   $.get( "http://localhost:3000/users", function( informacion ){
   cuentas = informacion
-  $("#contenedor").append(
-    '<div class="card" style="width: 18rem;"> ' +
-    '<img src="..." class="card-img-top" alt="..."> ' +
-    ' <div class="card-body"> ' +
-    '  <h5 class="card-title">Card title</h5> ' + 
-    '  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>' +
-    ' <a href="#" class="btn btn-primary">Go somewhere</a>' +
-    '    </div>' +
-    '  </div>'
-     );
+  });
+$(document).ready(function () {
+$('#registro').on('submit', function (event) {
+    event.preventDefault();
+    if($("#nombre").val() == 0 || $("#contraseña").val() == 0 || $("#correo").val() == 0 ||$( "#pais").val() == 0 || $("#sexo").val() == 0 || $("#edad").val() == 0){
+      alert("Uno de los campos esta vacio");
+      return 0;
+    }
+    for(var i = 0; i < cuentas.length; i+=1) {
+      console.log(cuentas[i].nombre + $("#nombre").val());
+      if(cuentas[i].nombre == $("#nombre").val()){
+        console.log(cuentas[i].nombre);
+        alert("El nombre ya esta ocupado");
+        return 0;
+        }
+    };
+    $.ajax({
+      url: 'http://localhost:3000/users',
+      type: 'POST',
+      data: {
+        nombre: $("#nombre").val(),
+        contraseña: $("#contraseña").val(),
+        correo: $("#correo").val(),
+        pais: $("#pais").val(),
+        sexo: $("#sexo").val(),
+        edad: $("#edad").val()
+      },
+      success: function(result) {
+        alert("Registro correcto")
+        location.reload();
+      }
+    });
   });
 });
-
-$('#registro').on('submit', function (event) {
-              event.preventDefault();
-              if($("#nombre").val() == 0 || ("#contraseña").val() == 0 || ("#correo").val() == 0 ||( "#pais").val() == 0 || ("#sexo").val() == 0 || ("#edad").val() == 0){
-                alert("Uno de los campos esta vacio");
-                return 0;
-              }
-              for(var i = 0; i < cuentas.length; i+=1) {
-                console.log(cuentas[i].nombre + $("#nombre").val());
-                if(cuentas[i].nombre == $("#nombre").val()){
-                  console.log(cuentas[i].nombre);
-                  alert("El nombre ya esta ocupado");
-                  return 0;
-                  }
-              };
-          $.ajax({
-            url: 'http://localhost:3000/users',
-            type: 'POST',
-            data: {
-              nombre: $("#nombre").val(),
-              contraseña: $("#contraseña").val(),
-              correo: $("#correo").val(),
-              pais: $("#pais").val(),
-              sexo: $("#sexo").val(),
-              edad: $("#edad").val()
-            },
-            success: function(result) {
-              alert("Registro correcto")
-              location.reload();
-            }
-          });
-        });
 </script>
