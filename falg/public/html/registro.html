@@ -34,7 +34,7 @@
             <a class="nav-link" href="foro.html" style="color: white;">Foro</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./html/estadisticas.html" style="color: white;">Estadísticas</a>
+            <a class="nav-link" href="./estadisticas.html" style="color: white;">Estadísticas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" style="color: white;">Descarga</a>
@@ -44,14 +44,14 @@
               Ayuda
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./html/soporte.html">Soporte</a>
-              <a class="dropdown-item" href="./html/formulario.html">Generar reporte</a>
+              <a class="dropdown-item" href="./soporte.html">Soporte</a>
+              <a class="dropdown-item" href="./formulario.html">Generar reporte</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="./html/faq.html">FAQ</a>
+              <a class="dropdown-item" href="./faq.html">FAQ</a>
             </div>
           </li>
           <li class="nav-item" style="padding-left: 485px;padding-top: 2px;">
-              <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./html/ingreso.html" role="Ingresar">Ingresar</a>
+              <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html" role="Ingresar">Ingresar</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -73,22 +73,21 @@
         </div>
         <div class="form-group col-md-6">
           <label for="inputPassword4">Contraseña</label>
-          <input type="password" class="form-control" id="inputPassword4">
+          <input type="password" class="form-control" id="contraseña">
         </div>
       </div>
       <div class="form-group">
         <label for="inputAddress">Correo electrónico</label>
-        <input type="email" class="form-control" id="inputAddress" placeholder="ejemplo@hotmail.com">
+        <input type="email" class="form-control" id="correo" placeholder="ejemplo@hotmail.com">
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputCity">Pais</label>
-          <input type="text" class="form-control" id="inputCity">
+          <input type="text" class="form-control" id="pais">
         </div>
         <div class="form-group col-md-4">
           <label for="inputState">Sexo</label>
-          <select id="inputState" class="form-control">
-            <option selected>Elegir</option>
+          <select id="sexo" class="form-control">
             <option>Hombre</option>
             <option>Mujer</option>
             <option>Otro</option>
@@ -96,7 +95,7 @@
         </div>
         <div class="form-group col-md-2">
           <label for="inputZip">Edad</label>
-          <input type="text" class="form-control" id="inputZip">
+          <input type="text" class="form-control" id="edad">
         </div>
       </div>
       <div class="form-group">
@@ -186,23 +185,20 @@ $(document).ready(function () {
   });
 });
 
-
-
 $('#registro').on('submit', function (event) {
               event.preventDefault();
-              if($("#nombre").val() == 0){
-                alert("El campo esta vacio");
+              if($("#nombre").val() == 0 || ("#contraseña").val() == 0 || ("#correo").val() == 0 ||( "#pais").val() == 0 || ("#sexo").val() == 0 || ("#edad").val() == 0){
+                alert("Uno de los campos esta vacio");
                 return 0;
               }
-              console.log("hola");
               for(var i = 0; i < cuentas.length; i+=1) {
                 console.log(cuentas[i].nombre + $("#nombre").val());
                 if(cuentas[i].nombre == $("#nombre").val()){
+                  console.log(cuentas[i].nombre);
                   alert("El nombre ya esta ocupado");
                   return 0;
                   }
               };
-          console.log("palabra");
           $.ajax({
             url: 'http://localhost:3000/users',
             type: 'POST',
@@ -220,6 +216,4 @@ $('#registro').on('submit', function (event) {
             }
           });
         });
-
-
 </script>
