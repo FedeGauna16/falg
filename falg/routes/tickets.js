@@ -3,16 +3,16 @@ var router = express.Router();
 var tickets = []
 
 router.get('/', function(req, res, next) {
-   res.send(cuentas);
+   res.send(tickets);
 });
 
 router.post('/', function(req, res, next) {
 
-  cuentas.push(req.body);
+    tickets.push(req.body);
 
   res.send({
     status : true,
-    response : cuentas
+    response : tickets
   });
 });
 
