@@ -7,6 +7,7 @@ var cors = require('cors')
 var inicioRouter = require('./routes/inicio');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var ticketsRouter = require('./routes/users');
 const { RSA_X931_PADDING } = require('constants');
 
 var app = express();
@@ -21,5 +22,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/inicio', inicioRouter);
 app.use('/users', usersRouter);
+app.use('/tickets', ticketsRouter);
  
 module.exports = app;

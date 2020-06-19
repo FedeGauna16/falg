@@ -77,22 +77,22 @@
 
   <div style="padding-top: 30px;">
     <h3 style="padding-left: 600px;width: 1300px;color: white;text-align: center;" >Rellene el formulario</h3>
-    <form style="padding-left: 600px;width: 1300px;color: white;">
+    <form id="ticket" style="padding-left: 600px;width: 1300px;color: white;">
         <div class="form-group">
         <div class="form-group">
         <label for="exampleInputEmail1">Correo electrónico</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
         <label for="exampleInputPassword1"></label>Nombre</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <input type="nombre" class="form-control" id="nombre">
         </div>
         <div class="form-group">
         <label for="exampleFormControlTextarea1"> Descripción del problema</label>
-        <textarea class="form-control" style="padding-left: 600px "id="exampleFormControlTextarea1" rows="3"></textarea>
+        <textarea class="form-control" id="problema" rows="3"></textarea>
       </div>
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-secundary" style="background-color: #666666;color: white;" role= "registro">Enviar</button>
     </form>
   </div>
     
@@ -140,20 +140,31 @@
   </style>
 </html>
 <script>
+  tickets = [];
+  
+    $.get( "http://localhost:3000/tickets", function( informacion ){
+    tickets = informacion
+    });
   $(document).ready(function () {
-
-$.get( "http://localhost:3000/users", function( informacion ){
-  $("#contenedor").append(
-    '<div class="card" style="width: 18rem;"> ' +
-    '<img src="..." class="card-img-top" alt="..."> ' +
-    ' <div class="card-body"> ' +
-    '  <h5 class="card-title">Card title</h5> ' + 
-    '  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>' +
-    ' <a href="#" class="btn btn-primary">Go somewhere</a>' +
-    '    </div>' +
-    '  </div>'
-     );
+  $('#ticket').on('submit', function (event) {
+      event.preventDefault();
+      if($("#correo").val() == 0){
+        alert("Uno de los campos esta vacio");
+        return 0;
+      }
+      $.ajax({
+        url: 'http://localhost:3000/tickets',
+        type: 'POST',
+        data: {
+          correo: $("#correo").val(),
+          nombre: $("#nombre").val(),
+          problema: $("#problema").val()
+        },
+        success: function(result) {
+          alert("Ticket enviado correctamente")
+          location.reload();
+        }
+      });
+    });
   });
-});
-
-</script>
+  </script>
