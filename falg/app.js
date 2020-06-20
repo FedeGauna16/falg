@@ -8,6 +8,7 @@ var inicioRouter = require('./routes/inicio');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var ticketsRouter = require('./routes/users');
+var estadisticasRouter = require('./routes/estadisticas');
 const { RSA_X931_PADDING } = require('constants');
 
 var app = express();
@@ -23,5 +24,6 @@ app.use('/', indexRouter);
 app.use('/inicio', inicioRouter);
 app.use('/users', usersRouter);
 app.use('/tickets', ticketsRouter);
+app.use('/estadisticas', estadisticasRouter);
  
 module.exports = app;
