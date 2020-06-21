@@ -4,15 +4,29 @@ var infoPartidas = [
   {
       jugador1: {
         nombre: "manuel",
-        iconPJ:"/estadisticas/lucas.jpeg", 
-        items: "./estadisticas/cave.jpeg"
+        iconPJ:"./estadisticas/lucas.jpeg", 
+        items: {
+         item1: "./estadisticas/cave.jpeg",
+         item2: "./estadisticas/cave.jpeg",
+         item3: "./estadisticas/cave.jpeg",
+         item4: "./estadisticas/cave.jpeg",
+         item5: "./estadisticas/cave.jpeg",
+         item6: "./estadisticas/cave.jpeg"
+        }
       },
       jugador2: {
         nombre: "manuel",
-        iconPJ:"/estadisticas/lucas.jpeg", 
-        items: "./estadisticas/cave.jpeg"
+        iconPJ:"./estadisticas/lucas.jpeg", 
+        items: {
+          item1: "./estadisticas/cave.jpeg",
+          item2: "./estadisticas/cave.jpeg",
+          item3: "./estadisticas/cave.jpeg",
+          item4: "./estadisticas/cave.jpeg",
+          item5: "./estadisticas/cave.jpeg",
+          item6: "./estadisticas/cave.jpeg"
+         }
       }
-  }
+  },
 ]
 var clases = [
   {
@@ -30,17 +44,17 @@ var jugadores = [
   },
 ]
 
-router.get('/', function(req, res, next) {
+router.get('/1', function(req, res, next) {
   res.send(infoPartidas);
 });
-router.get('/', function(req, res, next) {
+router.get('/2', function(req, res, next) {
   res.send(clases);
 });
-router.get('/', function(req, res, next) {
+router.get('/3', function(req, res, next) {
   res.send(jugadores);
 });
 
-router.post('/', function(req, res, next) {
+router.post('/1', function(req, res, next) {
 
     infoPartidas.push(req.body);
 
@@ -49,7 +63,7 @@ router.post('/', function(req, res, next) {
     response : infoPartidas
   });
 });
-router.post('/', function(req, res, next) {
+router.post('/2', function(req, res, next) {
 
   clases.push(req.body);
 
@@ -58,7 +72,7 @@ res.send({
   response : clases
 });
 });
-router.post('/', function(req, res, next) {
+router.post('/3', function(req, res, next) {
 
   jugadores.push(req.body);
 
