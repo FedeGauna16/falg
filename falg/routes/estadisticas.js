@@ -12,7 +12,7 @@ var infoPartidas = [
         iconPJ:"/estadisticas/lucas.jpeg", 
         items: "./estadisticas/cave.jpeg"
       }
-  },
+  }
 ]
 var clases = [
   {
@@ -27,11 +27,11 @@ var jugadores = [
     nombre: "nombre",
     winrate: "100% Win rate",
     iconPlayer: "./estadisticas/cave2.jpeg"
-  }
+  },
 ]
 
 router.get('/', function(req, res, next) {
-   res.send(infoPartidas);
+  res.send(infoPartidas);
 });
 router.get('/', function(req, res, next) {
   res.send(clases);
