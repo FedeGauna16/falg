@@ -78,9 +78,9 @@
     <div class="container">
       <div class="buscador">
         <h3>Buscar jugador o personaje</h3>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        <form class="col-5">
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar" id="buscador" aria-label="Search">
+          <button class="boton" type="submit">Buscar</button>
         </form>
       </div>
   <div class="cosodearriba">
@@ -138,10 +138,9 @@
 
 </body>
 <script>
-  $(document).ready(function () {
-  $.get( "http://localhost:3000/estadisticas/1", function( informacion ){
-    informacion.forEach(function(partida){
-      $("#game").append(
+
+function mostrarPartida(partida){
+    $("#game").append(
       ' <div class="fila">'+  
       '  <div class="columna-1-1"> '+
       '   <div class="item"><img src= "'+partida.jugador1.items.item1+'" width="40" height="40"></div>'+    
@@ -166,6 +165,31 @@
       '  </div> '+
       ' </div>'
       );
+      }
+
+    var partidas = []
+    var partidasBuscadas = []
+    
+   
+  $(document).ready(function () {
+
+    $("#buscador").change(function() {
+          console.log($("#buscador").val().toLowerCase());
+          partidasBuscadas = partidas.filter(function(partida){
+              return partida.nombre.indexOf($("#buscador").val().toLowerCase()) !== -1;
+          });/*
+          $("#contenedorPersonajes").html("");
+          personajesBuscados.forEach(function(personaje){
+            crearLineaPersonaje(personaje);
+          });*/
+
+        });
+
+  $.get( "http://localhost:3000/estadisticas/1", function( informacion ){
+    partidas = informacion.response;
+    console.log(partidas);
+    informacion.forEach(function(partida){
+      mostrarPartida(partida);
     });
   }); 
 
