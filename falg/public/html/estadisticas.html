@@ -185,16 +185,17 @@ function mostrarPartida(partida){
 
         });
 
-  $.get( "http://localhost:3000/estadisticas/1", function( informacion ){
-    partidas = informacion.response;
+  $.get( "http://localhost:3000/estadisticas/", function( informacion ){
+    partidas = informacion.infoPartidas;
     console.log(partidas);
-    informacion.forEach(function(partida){
+    informacion.infoPartidas.forEach(function(partida){
+      console.log(partida)
       mostrarPartida(partida);
     });
   }); 
 
-  $.get( "http://localhost:3000/estadisticas/2", function( informacion ){
-    informacion.forEach(function(clase){
+  $.get( "http://localhost:3000/estadisticas/", function( informacion ){
+    informacion.clases.forEach(function(clase){
       $("#class").append(
       '  <div class="cuadro">'+
       '   <div class="cuadrochiquitouno"><img src= "'+clase.iconClass+'" width="90" height="80"></div>'+
@@ -208,8 +209,8 @@ function mostrarPartida(partida){
     });
   }); 
 
-  $.get( "http://localhost:3000/estadisticas/3", function( informacion ){
-    informacion.forEach(function(jugador){
+  $.get( "http://localhost:3000/estadisticas/", function( informacion ){
+    informacion.jugadores.forEach(function(jugador){
       $("#player").append(
         '  <div class="cuadro2">'+
         '   <div class="cuadro2chiquitouno"><img src= "'+jugador.iconPlayer+'" width="170" height="100"></div>'+
