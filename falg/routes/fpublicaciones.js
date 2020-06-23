@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var publicaciones = require('../public/html/foro/publicaciones.json')
+var publicaciones = []
 
 router.get('/', function(req, res, next) {
    res.send(publicaciones);
@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
 
-  cuentas.push(req.body);
+  publicaciones.push(req.body);
 
   res.send({
     status : true,
@@ -17,3 +17,4 @@ router.post('/', function(req, res, next) {
 });
 
 module.exports = router;
+//require('../public/html/foro/publicaciones.json')

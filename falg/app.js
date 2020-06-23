@@ -9,7 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var ticketsRouter = require('./routes/tickets');
 var estadisticasRouter = require('./routes/estadisticas');
-var foroRouter = require('./routes/foro');
+var fpublicacionesRouter = require('./routes/fpublicaciones');
 
 var app = express();
 
@@ -25,6 +25,6 @@ app.use('/inicio', inicioRouter);
 app.use('/users', usersRouter);
 app.use('/tickets', ticketsRouter);
 app.use('/estadisticas', estadisticasRouter);
-app.use('/foro', foroRouter);
+app.use('/fpublicaciones', fpublicacionesRouter);
  
 module.exports = app;

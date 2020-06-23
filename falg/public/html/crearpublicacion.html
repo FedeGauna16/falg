@@ -156,17 +156,19 @@
 <script>
   publicaciones = [];
 
-    $.get( "http://localhost:3000/foro", function( informacion ){
-      publicaciones = informacion
-    });
+  $.get( "http://localhost:3000/fpublicaciones", function( informacion ){
+    publicaciones = informacion
+  });
   $(document).ready(function () {
-  $('#crearpublicacion').on('submit', function (event) {
+    console.log("qeqwe");
+    $('#crearpublicacion').on('submit', function (event) {
+      console.log("sosr re puto");
       $.ajax({
-        url: 'http://localhost:3000/foro',
+        url: 'http://localhost:3000/fpublicaciones',
         type: 'POST',
         data: {
           titulo: $("#titulo").val(),
-          descripcion: $("#descripcion").val(),
+          descripcion: $("#descripcion").val()
         },
         success: function(result) {
           alert("Publicacion creada correctamente!");
