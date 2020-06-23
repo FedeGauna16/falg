@@ -25,6 +25,32 @@
                     "item6": "./estadisticas/cave.jpeg"
                 }
             }
+        },
+        {
+            "jugador1": {
+                "nombre": "manuel2",
+                "iconPJ": "./estadisticas/lucas.jpeg", 
+                "items": {
+                    "item1": "./estadisticas/cave.jpeg",
+                    "item2": "./estadisticas/cave.jpeg",
+                    "item3": "./estadisticas/cave.jpeg",
+                    "item4": "./estadisticas/cave.jpeg",
+                    "item5": "./estadisticas/cave.jpeg",
+                    "item6": "./estadisticas/cave.jpeg"
+                }
+            },
+            "jugador2":{
+                "nombre": "manuel2",
+                "iconPJ": "./estadisticas/lucas.jpeg", 
+                "items": {
+                    "item1": "./estadisticas/cave.jpeg",
+                    "item2": "./estadisticas/cave.jpeg",
+                    "item3": "./estadisticas/cave.jpeg",
+                    "item4": "./estadisticas/cave.jpeg",
+                    "item5": "./estadisticas/cave.jpeg",
+                    "item6": "./estadisticas/cave.jpeg"
+                }
+            }
         }
     ],
 
