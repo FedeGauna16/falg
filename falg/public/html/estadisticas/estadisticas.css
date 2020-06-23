@@ -56,35 +56,42 @@
   /* background-color: rgb(36, 36, 36); */
 }
 .espacioparacosodearriba {
-  padding-top: 5px;
-  width: 5%;
-  margin-left: -5px;
-  font-size: x-large;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 30px;
+  color: antiquewhite;
   text-align: center;
   /* background-color: rgb(0, 36, 36) */
 }
 .cosodearribaItems {
   padding: 5px;
-  width: 30%;
+  margin-left: 20px;
+  width: 350px;
   color: antiquewhite;
   text-align: center;
   /* background-color: rgb(70, 36, 36) */
 }
 .cosodearribaIconoPJ {
+  margin-right: 10px;
+  margin-left: 10px;
   padding: 5px;
-  width: 5%;
+  width: 53px;
   color: antiquewhite;
   text-align: center;
   /* background-color: rgb(150, 36, 36) */
 }
 .cosodearribaNombre{
   padding: 5px;
-  width: 10%;
+  font-size: medium;
+  width: 100px;
   color: antiquewhite;
   text-align: center;
   /* background-color: rgb(250, 36, 36) */
 }
-.fila {
+.fila { 
+  border-top: 2px solid rgba(7, 7, 7, 0.2);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -102,9 +109,9 @@
 }
 .columna-1-1{
   display: flex;
+  margin-top: 10px;
   padding: 5px;
-  position: relative;
-  right: 10px;
+  margin-left: 20px;
   width: 350px;
   background-color: rgba(86, 61, 124, .15);
   border: 1px solid rgba(86, 61, 124, .2);
@@ -113,10 +120,10 @@
 }
 
 .columna-1-2{
+  margin-top: 10px;
   display: flex;
   padding: 5px;
-  position: relative;
-  left: 10px;
+  margin-right: 20px;
   width: 350px;
   background-color: rgba(86, 61, 124, .15);
   border: 1px solid rgba(86, 61, 124, .2);
@@ -125,40 +132,44 @@
   
 }
 .columna-2{
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
   padding: 5px;
   padding-top: 10px;
-  width: auto;
+  width: 53px;
   background-color: rgba(86, 61, 124, .15);
   border: 1px solid rgba(86, 61, 124, .2);
   color: antiquewhite;
 }
 .vs {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
   padding-top: 10px;
   font-size: x-large;
   margin-left: 10px;
   margin-right: 10px;
-  width: auto;
+  width: 30px;
   background-color:  rgb(36, 36, 36);
   color: antiquewhite;
   text-align: center;
 }
 .nombre {
-  padding-top: 15px;
-  padding-bottom: 5px;
-  padding-left: 35px;
-  padding-right: 15px;
+
+  margin-top: 10px;
+  padding: 10px;
   font-size: medium;
   width: 100px;
   background-color:  rgb(36, 36, 36);
   color: antiquewhite;
   text-align: center;
+  text-justify: auto;
 }
 .nombre-2{
+  margin-top: 10px;
   font-size: medium;
-  padding-top: 15px;
-  padding-bottom: 5px;
-  padding-right: 35px;
-  padding-left: 15px;
+  padding: 10px;
   width: 100px;
   background-color:  rgb(36, 36, 36);
   color: antiquewhite;
