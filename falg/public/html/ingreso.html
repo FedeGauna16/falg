@@ -150,18 +150,17 @@ $.get( "http://localhost:3000/users", function( informacion ){
 
 $(document).ready(function () {
   $('#ingreso').on('submit', function (event) {
-            event.preventDefault();
-            if($("#contraseña").val() == 0){
-              alert("Debe ingresar una contraseña");
-              return 0;
+        event.preventDefault();
+        for(var i = 0; i < cuentas.length; i+=1) {
+          if(cuentas[i].correo != $("#correo").val()){
+            alert("El correo ingresado no existe");
+            return 0;
             }
-            for(var i = 0; i < cuentas.length; i+=1) {
-              console.log(cuentas[i].correo + $("#correo").val());
-              if(cuentas[i].correo != $("#correo").val()){
-                alert("El correo ingresado no existe");
-                return 0;
-                }
-            };
+        };
+        if($("#contraseña").val() == 0){
+          alert("Debe ingresar una contraseña");
+          return 0;
+        }
         $.ajax({
           success: function(result) {
             alert("Ingreso correcto")
