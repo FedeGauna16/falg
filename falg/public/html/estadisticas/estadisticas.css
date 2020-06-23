@@ -11,7 +11,7 @@
 .buscador {
   display: flex;
   position: relative;
-  width: 40%;
+  width: auto;
   padding-right: 15px;
   padding-left: 0px;
 }
@@ -26,6 +26,24 @@
   border-radius: 5px;
   color: #28a745;
   border-color: #28a745;
+}
+.filtro { 
+  width: 10%;
+  position: relative;
+  left: 500px;
+}
+.boton2{
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+}
+.boton2-secundario {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.dropdown-menu {
+  min-width: 5rem;
 }
 .cosodearriba {
   display: -ms-flexbox;
@@ -77,7 +95,7 @@
 }
 .item {
   padding: 5px;
-  width: auto;
+  width: 60px;
   background-color: rgba(86, 61, 124, .15);
   border: 1px solid rgba(86, 61, 124, .2);
   color: antiquewhite;
@@ -85,8 +103,9 @@
 .columna-1-1{
   display: flex;
   padding: 5px;
-  margin-right: 18px;
-  width: auto;
+  position: relative;
+  right: 10px;
+  width: 350px;
   background-color: rgba(86, 61, 124, .15);
   border: 1px solid rgba(86, 61, 124, .2);
   color: antiquewhite;
@@ -96,8 +115,9 @@
 .columna-1-2{
   display: flex;
   padding: 5px;
-  margin-left: 18px;
-  width: auto;
+  position: relative;
+  left: 10px;
+  width: 350px;
   background-color: rgba(86, 61, 124, .15);
   border: 1px solid rgba(86, 61, 124, .2);
   color: antiquewhite;
@@ -128,7 +148,7 @@
   padding-left: 35px;
   padding-right: 15px;
   font-size: medium;
-  width: auto;
+  width: 100px;
   background-color:  rgb(36, 36, 36);
   color: antiquewhite;
   text-align: center;
@@ -139,7 +159,7 @@
   padding-bottom: 5px;
   padding-right: 35px;
   padding-left: 15px;
-  width: auto;
+  width: 100px;
   background-color:  rgb(36, 36, 36);
   color: antiquewhite;
   text-align: center;
