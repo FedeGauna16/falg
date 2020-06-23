@@ -76,54 +76,45 @@
 
 
     <div style="padding-left: 600px;padding-top: 20px;width: 1300px;color: white;">
-            <div style="text-align: center;">
-                <h1>Crear publicación</h1>
-            </div>
-
-
-        <form class="was-validated">
-            <div class="col-md-6 mb-3" style="padding-left: 0px;">
-                <label for="validationServer01">Título</label>
-                <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" placeholder="Debe contener entre 4 y 20 caracteres" required style="width: 700px;">
-                <div class="valid-feedback">
-                  Título valido
+      <div style="text-align: center;">
+        <h1>Crear publicación</h1>
+      </div>
+      <form class="was-validated" id="crearpublicacion">
+        <div class="col-md-6 mb-3" style="padding-left: 0px;">
+          <label for="validationServer01">Título</label>
+          <input type="text" class="form-control is-valid" id="titulo" value="Mark" placeholder="Debe contener entre 4 y 20 caracteres" required style="width: 700px;">
+          <div class="valid-feedback">
+            Título valido
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="validationTextarea">Descripción</label>
+          <textarea class="form-control is-invalid" id="descripcion" placeholder="Debe contener entre 10 y 1000 caracteres" style="height: 300px;"></textarea>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="mb-3">
+                    <h6>Elige el tipo de filtro</h6>
+                    <select class="custom-select" required>
+                        <option value="">Filtro...</option>
+                        <option value="1">Build</option>
+                        <option value="2">Guía</option>
+                        <option value="3">Lore</option>
+                    </select>
+                    <div class="invalid-feedback">Filtro obligatorio</div>
                 </div>
             </div>
-
-            <div class="mb-3">
-              <label for="validationTextarea">Descripción</label>
-              <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Debe contener entre 10 y 1000 caracteres" required style="height: 300px;"></textarea>
-              <div class="invalid-feedback">
-                Por favor, introduce una descripción
-              </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm">
-                    <div class="mb-3">
-                        <h6>Elige el tipo de filtro</h6>
-                        <select class="custom-select" required>
-                            <option value="">Filtro...</option>
-                            <option value="1">Build</option>
-                            <option value="2">Guía</option>
-                            <option value="3">Lore</option>
-                        </select>
-                        <div class="invalid-feedback">Filtro obligatorio</div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <h6>Escoge una imagen</h6>
-                    <div class="custom-file mb-3">
-                      <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                      <label class="custom-file-label" for="validatedCustomFile" style="width: 300px;">Elegir archivo...</label>
-                    </div>
+            <div class="col-sm">
+                <h6>Escoge una imagen</h6>
+                <div class="custom-file mb-3">
+                  <label class="custom-file-label" for="validatedCustomFile" style="width: 300px;">Elegir archivo...</label>
                 </div>
             </div>
-
-            <div style="text-align: center;">
-                <button type="submit" class="btn btn-secundary" style="background-color: #666666;color: white;width: 200px;height: 50px;" role= "registro">Subir publicación</button>
-            </div>
-        </form>
+        </div>
+        <div style="text-align: center;">
+            <button type="submit" class="btn btn-secundary" style="background-color: #666666;color: white;width: 200px;height: 50px;" role= "publicar">Subir publicación</button>
+        </div>
+      </form>
     </div>
 
     <footer style="padding-top: 20px;">
@@ -162,3 +153,26 @@
     }
     </style>
 </html>
+<script>
+  publicaciones = [];
+
+    $.get( "http://localhost:3000/foro", function( informacion ){
+      publicaciones = informacion
+    });
+  $(document).ready(function () {
+  $('#crearpublicacion').on('submit', function (event) {
+      $.ajax({
+        url: 'http://localhost:3000/foro',
+        type: 'POST',
+        data: {
+          titulo: $("#titulo").val(),
+          descripcion: $("#descripcion").val(),
+        },
+        success: function(result) {
+          alert("Publicacion creada correctamente!");
+          location.reload();
+        }
+      });
+    });
+  });
+  </script>
