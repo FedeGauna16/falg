@@ -173,15 +173,17 @@ function mostrarPartida(partida){
    
   $(document).ready(function () {
 
-    $("#buscador").change(function() {
+    $("#buscador").change(function() {           
           console.log($("#buscador").val().toLowerCase());
-          partidasBuscadas = partidas.filter(function(partida){
-              return partida.nombre.indexOf($("#buscador").val().toLowerCase()) !== -1;
-          });/*
-          $("#contenedorPersonajes").html("");
-          personajesBuscados.forEach(function(personaje){
-            crearLineaPersonaje(personaje);
-          });*/
+          partidasBuscadas = partidas.filter(partida =>
+            partida.jugador1.nombre == $("#buscador").val().toLowerCase() || partida.jugador2.nombre == $("#buscador").val().toLowerCase()
+          );
+         
+          console.log(partidasBuscadas);
+          $("#game").html(" ");
+          partidasBuscadas.forEach(function(personaje){
+            mostrarPartida(personaje);
+          });
 
         });
 
@@ -189,7 +191,7 @@ function mostrarPartida(partida){
     partidas = informacion.infoPartidas;
     console.log(partidas);
     informacion.infoPartidas.forEach(function(partida){
-      console.log(partida)
+      console.log(partida.jugador1);
       mostrarPartida(partida);
     });
   }); 
