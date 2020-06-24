@@ -4,20 +4,26 @@ var infoEstadisticas = require('../public/html/estadisticas/estadisticas.json')
 var info;
 router.get('/', function(req, res, next) {
   res.send(infoEstadisticas);
-});/*
-router.get('/:tipo', function(req, res, next) {
-  info = infoEstadisticas.filter(function(estadistica){
-    return estadistica = req.params.tipo
-  });
-  res.send(info);
-});*/
-router.post('/:tipo', function(req, res, next) {
+});
 
-    infoEstadisticas.req.params.push(req.body);
+router.get('/:tipo', function(req, res, next) {
+    res.send(req.params.tipo);
+});
+
+router.post('/:tipo', function(req, res, next) { 
+
+    switch(req.params.tipo){
+      case "infoPartidas":
+        infoEstadisticas.infoPartidas.push(req.body);  
+      break;
+    }
+
+
+    //infoEstadisticas.req.params.push(req.body);
 
   res.send({
     status : true,
-    response : infoEstadisticas
+    response : infoEstadisticas 
   });
 });
 
