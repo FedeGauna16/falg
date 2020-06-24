@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var cuentas = []
+var cuentas = require('./users.json')
 
 router.get('/', function(req, res, next) {
    res.send(cuentas);
@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
 
-  cuentas.push(req.body);
+ cuentas.cuentas.push(req.body); osea 
 
   res.send({
     status : true,

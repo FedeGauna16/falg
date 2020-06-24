@@ -389,7 +389,7 @@
   </style>
 </html>
 <script>
-  $(document).ready(function () {yo o el
+  $(document).ready(function () {
     $.get( "http://localhost:3000/fpublicaciones", function( informacion ){
     informacion.forEach(function(publicacion){
       $("#publicaciones").append(
@@ -410,7 +410,7 @@
         '             </div>' +
         '              <div class="col-sm">' +
         '                <h6 style="text-align: right;">Visitas <p>68</p></h6>' +
-        '              </div>' +
+        '              </div>' + 
         '            </div>' +
         '          </div>' +
         '        </div>' +

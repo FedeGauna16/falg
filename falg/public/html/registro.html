@@ -161,12 +161,14 @@
 <script>
 cuentas = [];
 
+$(document).ready(function () {
   $.get( "http://localhost:3000/users", function( informacion ){
   cuentas = informacion
+  console.log(cuentas);
   });
-$(document).ready(function () {
-$('#registro').on('submit', function (event) {
+  $('#registro').on('submit', function (event) {
     event.preventDefault();
+    console.log(cuentas);
     if($("#nombre").val() == 0 || $("#contraseña").val() == 0 || $("#correo").val() == 0 ||$( "#pais").val() == 0 || $("#sexo").val() == 0 || $("#edad").val() == 0){
       alert("Uno de los campos esta vacio");
       return 0;
@@ -198,5 +200,3 @@ $('#registro').on('submit', function (event) {
   });
 });
 </script>
-checkboxmientras me acorde de algo vos sabes como agarerar el parametro del request
-cual request reques en js
