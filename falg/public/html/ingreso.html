@@ -138,16 +138,22 @@
 </html>
 <script>
 cuentas = [];
-$.get( "http://localhost:3000/users", function( informacion ){
+$(document).ready(function () {
+  $.get( "http://localhost:3000/users", function( informacion ){
   cuentas = informacion
   });
-
-$(document).ready(function () {
   $('#ingreso').on('submit', function (event) {
         event.preventDefault();
-        for(var i = 0; i < cuentas.length; i+=1) {
+        for(var i = 0; i < cuentas.length; i+=1) { ESTA MIERda no anda la re puta que me pario por que no me anda nada voy a romper todo ./
           if(cuentas[i].correo != $("#correo").val()){
             alert("El correo ingresado no existe");
+            return 0;
+            }
+        };
+        for(var i = 0; i < cuentas.length; i+=1) {
+          console.log("hola?")
+          if(cuentas[i].contraseña != $("#contraseña").val()){
+            alert("La contraseña ingresada no existe");
             return 0;
             }
         };

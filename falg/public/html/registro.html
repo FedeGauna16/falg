@@ -164,7 +164,6 @@ cuentas = [];
 $(document).ready(function () {
   $.get( "http://localhost:3000/users", function( informacion ){
   cuentas = informacion
-  console.log(cuentas);
   });
   $('#registro').on('submit', function (event) {
     event.preventDefault();
