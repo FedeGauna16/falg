@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var publicaciones = []
-var usuario = 
+var publicaciones = require('../public/html/foro/publicaciones.json')
+var usuario = require('./cuentalogueada.json')
 
 router.get('/', function(req, res, next) {
-   res.send(publicaciones);
+   res.send({
+    publicaciones : publicaciones,
+    usuarios : usuario
+    }); 
 });
 
 router.post('/', function(req, res, next) {
@@ -18,4 +21,3 @@ router.post('/', function(req, res, next) {
 });
 
 module.exports = router;
-//require('../public/html/foro/publicaciones.json')

@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
 
  cuentas.push(req.body);
- cuentalogueada.cuentalogueada.push(req.body);
+ cuentalogueada.push(req.body);
 
 
   res.send({
