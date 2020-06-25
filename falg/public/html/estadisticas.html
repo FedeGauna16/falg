@@ -77,13 +77,16 @@
   
     <div class="container">
       <div class="titulobuscador">
-        <h3>Buscar jugador o personaje</h3>
+        <h3>Buscar jugador</h3>
       </div>
-      <div class="buscador">
+      <div class="buscador" id="buscador">
         <form class="col-5">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar" id="buscador" aria-label="Search">
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar" id= "buscar" aria-label="Search">
           <button class="boton" type="submit" id="botonbuscar">Buscar</button>
         </form>
+        <div class="validacion" id="valid">
+          
+        </div>
       <div class="filtro">
         <button class="boton2 boton2-secundario dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clases</button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -150,6 +153,8 @@
 
 </body>
 <script>
+    var partidas = []
+    var partidasBuscadas = []
 
 function mostrarPartida(partida){
     $("#game").append(
@@ -179,25 +184,35 @@ function mostrarPartida(partida){
       );
       }
 
-    var partidas = []
-    var partidasBuscadas = []
+  function verificarNombre(x){
+    return (x.some(_x => _x.jugador1.nombre == $("#buscar").val().toLowerCase() || _x.jugador2.nombre == $("#buscar").val().toLowerCase()))
+  }
     
-   
   $(document).ready(function () {
 
-    $("#buscador").change(function() {   
-      event.preventDefault();
-          console.log($("#buscador").val().toLowerCase());
+    $('#buscador').on('submit', function (event) {  
+          event.preventDefault();
+          console.log($("#buscar").val().toLowerCase());
           partidasBuscadas = partidas.filter(partida =>
-            partida.jugador1.nombre == $("#buscador").val().toLowerCase() || partida.jugador2.nombre == $("#buscador").val().toLowerCase()
+            partida.jugador1.nombre == $("#buscar").val().toLowerCase() || partida.jugador2.nombre == $("#buscar").val().toLowerCase()
           );
-         
           console.log(partidasBuscadas);
-          $("#game").html(" ");
-          partidasBuscadas.forEach(function(personaje){
-            mostrarPartida(personaje);
-          });
-
+          if(verificarNombre(partidas) == false){
+            $('#valid').append(
+              '<h6>Nombre no encontrado</h6>'
+            );
+          }
+          if(partidasBuscadas.length == 0){
+            $("#game").html(" ");
+            partidas.forEach(function(x){
+            mostrarPartida(x);
+            });
+          }else{
+            $("#game").html(" ");
+            partidasBuscadas.forEach(function(x){
+            mostrarPartida(x);
+            });
+          }
         });
 
   $.get( "http://localhost:3000/estadisticas/", function( informacion ){

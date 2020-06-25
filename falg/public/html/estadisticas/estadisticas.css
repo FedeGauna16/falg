@@ -6,7 +6,6 @@
 }
 .titulobuscador {
   margin-top: 50px;
-  max-width: 50%;
 }
 .buscador {
   display: flex;
@@ -30,7 +29,7 @@
 .filtro { 
   width: 10%;
   position: relative;
-  left: 500px;
+  left: 380px;
 }
 .boton2{
     border: 1px solid transparent;
@@ -41,6 +40,11 @@
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d;
+}
+.validacion {
+  width: 175px;
+  margin-top: .25rem;
+  color: red;
 }
 .dropdown-menu {
   min-width: 5rem;
