@@ -3,7 +3,10 @@
         {
             "jugador1": {
                 "nombre": "manuel",
-                "iconPJ": "./estadisticas/lucas.jpeg", 
+                "clase": {
+                    "idClase" : 1,
+                    "iconClase": "./estadisticas/lucas.jpeg"
+                },
                 "items": {
                     "item1": "./estadisticas/cave.jpeg",
                     "item2": "./estadisticas/cave.jpeg",
@@ -15,7 +18,10 @@
             },
             "jugador2":{
                 "nombre": "manuel",
-                "iconPJ": "./estadisticas/lucas.jpeg", 
+                "clase": {
+                    "idClase" : 2,
+                    "iconClase": "./estadisticas/lucas.jpeg"
+                },
                 "items": {
                     "item1": "./estadisticas/cave.jpeg",
                     "item2": "./estadisticas/cave.jpeg",
@@ -29,7 +35,10 @@
         {
             "jugador1": {
                 "nombre": "manuel2",
-                "iconPJ": "./estadisticas/lucas.jpeg", 
+                "clase": {
+                    "idClase" : 1,
+                    "iconClase": "./estadisticas/lucas.jpeg"
+                },
                 "items": {
                     "item1": "./estadisticas/cave.jpeg",
                     "item2": "./estadisticas/cave.jpeg",
@@ -41,7 +50,10 @@
             },
             "jugador2":{
                 "nombre": "manuel2",
-                "iconPJ": "./estadisticas/lucas.jpeg", 
+                "clase": {
+                    "idClase" : 2,
+                    "iconClase": "./estadisticas/lucas.jpeg"
+                },
                 "items": {
                     "item1": "./estadisticas/cave.jpeg",
                     "item2": "./estadisticas/cave.jpeg",

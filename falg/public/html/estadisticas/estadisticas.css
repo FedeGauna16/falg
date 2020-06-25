@@ -73,6 +73,14 @@
   text-align: center;
   /* background-color: rgb(70, 36, 36) */
 }
+.cosodearribaItems-2 {
+  padding: 5px;
+  margin-right: 20px;
+  width: 350px;
+  color: antiquewhite;
+  text-align: center;
+  /* background-color: rgb(70, 36, 36) */
+}
 .cosodearribaIconoPJ {
   margin-right: 10px;
   margin-left: 10px;
@@ -92,6 +100,17 @@
 }
 .fila { 
   border-top: 2px solid rgba(7, 7, 7, 0.2);
+  border-bottom: 2px solid rgba(7, 7, 7, 0.2);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.fila-2 { 
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -103,13 +122,13 @@
 .item {
   padding: 5px;
   width: 60px;
-  background-color: rgba(86, 61, 124, .15);
-  border: 1px solid rgba(86, 61, 124, .2);
+
   color: antiquewhite;
 }
 .columna-1-1{
   display: flex;
   margin-top: 10px;
+  margin-bottom: 10px;
   padding: 5px;
   margin-left: 20px;
   width: 350px;
@@ -121,6 +140,7 @@
 
 .columna-1-2{
   margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
   padding: 5px;
   margin-right: 20px;
@@ -135,6 +155,7 @@
   margin-right: 10px;
   margin-left: 10px;
   margin-top: 10px;
+  margin-bottom: 10px;
   padding: 5px;
   padding-top: 10px;
   width: 53px;
@@ -146,6 +167,7 @@
   margin-left: 5px;
   margin-right: 5px;
   margin-top: 10px;
+  margin-bottom: 10px;
   padding-top: 10px;
   font-size: x-large;
   margin-left: 10px;
@@ -158,6 +180,7 @@
 .nombre {
 
   margin-top: 10px;
+  margin-bottom: 10px;
   padding: 10px;
   font-size: medium;
   width: 100px;
@@ -168,6 +191,7 @@
 }
 .nombre-2{
   margin-top: 10px;
+  margin-bottom: 10px;
   font-size: medium;
   padding: 10px;
   width: 100px;
@@ -177,6 +201,7 @@
 }
 .cuadro {
   margin-left: 15px;
+  margin-top: 15px;
   display: flex;
   height: 100px;
   width: 20%;
@@ -229,6 +254,7 @@
 }
 .cuadro2{
   margin-left: 15px;
+  margin-top: 15px;
   height: 160px;
   width: 15%;
   background-color: rgba(86, 61, 124, .15);

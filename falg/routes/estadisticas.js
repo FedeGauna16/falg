@@ -16,10 +16,13 @@ router.post('/:tipo', function(req, res, next) {
       case "infoPartidas":
         infoEstadisticas.infoPartidas.push(req.body);  
       break;
+      case "clases":
+        infoEstadisticas.clases.push(req.body);  
+      break;
+      case "jugadores":
+        infoEstadisticas.jugadores.push(req.body);  
+      break;
     }
-
-
-    //infoEstadisticas.req.params.push(req.body);
 
   res.send({
     status : true,
