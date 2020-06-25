@@ -237,17 +237,16 @@
   cuentas = [];
   $(document).ready(function () {
     $.get( "http://localhost:3000/fpublicaciones", function( informacion ){
-    cuentas = informacion.usuarios
+      cuentas = informacion.usuarios
     informacion.publicaciones.forEach(function(publicacion){
-    console.log(cuentas);
       $("#publicaciones").append(
         '     <div class="container"> '+ 
         '      <div class="row" style="background-color: #343a40;"> '+
         '        <div class="col-sm" style="padding-left: 0cm;"> '+
-        '          <a href="#" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;">' + publicacion.titulo + '<p class="usuario" href="#" style="color: rgba(44, 128, 253, 0.815);margin-bottom: initial;">-'+ cuentas[0].nombre +'</p></a>' +
+        '          <a href="./publicacionusuario.html" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;">' + publicacion.titulo + '<p class="usuario" href="./publicacionusuario.html" style="color: rgba(44, 128, 253, 0.815);margin-bottom: initial;">-'+ cuentas[0].nombre +'</p></a>' +
         '        </div>' +
         '        <div class="col-sm" style="background-color: #343a40;">' +
-        '          <div class="container">' +
+        '          <div class="container">' + 
         '            <div class="row">' +
         '              <div class="col-sm"> '+
         '                <h6 style="text-align: right;">Likes <p>30</p></h6> '+

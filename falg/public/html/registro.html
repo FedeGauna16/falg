@@ -160,10 +160,13 @@
 </html>
 <script>
 cuentas = [];
+var usuarioid = "";
+var legajo = 0;
 
 $(document).ready(function () {
   $.get( "http://localhost:3000/users", function( informacion ){
-  cuentas = informacion
+  cuentas = informacion;
+  legajo = cuentas.length + 1;
   });
   $('#registro').on('submit', function (event) {
     event.preventDefault();
@@ -181,9 +184,11 @@ $(document).ready(function () {
         }
     };
     $.ajax({
-      url: 'http://localhost:3000/users',
+      url: 'http://localhost:3000/users/',
       type: 'POST',
-      data: {
+      data: 
+      {
+        usuarioid : legajo, 
         nombre: $("#nombre").val(),
         contraseña: $("#contraseña").val(),
         correo: $("#correo").val(),
@@ -192,7 +197,7 @@ $(document).ready(function () {
         edad: $("#edad").val()
       },
       success: function(result) {
-        alert("Registro correcto")
+        alert("Registro correcto");
         location.reload();
       }
     });

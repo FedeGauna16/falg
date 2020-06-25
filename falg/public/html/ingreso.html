@@ -140,9 +140,9 @@
 <script>
 var cuentas = [];
 var ipusuario = "";
-var nombreusuario = "";
+var usuarioid = "";
 $(document).ready(function () {
-  $.get( "http://localhost:3000/users", function( informacion){
+  $.get("http://localhost:3000/users", function( informacion){
   cuentas = informacion
   });
   $.getJSON("https://api.ipify.org/?format=json", function(e) {
@@ -164,7 +164,7 @@ $(document).ready(function () {
       });
       cuentas.forEach(function(cuenta, i){
         if(cuentas[i].correo == $("#correo").val()){
-          nombreusuario = cuentas[i].nombre;
+          usuarioid = cuentas[i].usuarioid;
           return 0;
         }
       });
@@ -173,7 +173,7 @@ $(document).ready(function () {
           type: 'POST',
           data: {
             ip: ipusuario,
-            nombre : nombreusuario
+            usuarioid : usuarioid
           },
           success: function(result) {
             alert("Ingreso correcto")
