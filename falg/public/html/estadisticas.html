@@ -89,12 +89,12 @@
         </div>
       <div class="filtro">
         <button class="boton2 boton2-secundario dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clases</button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <button class="dropdown-item" type="button">Clase 1</button>
-          <button class="dropdown-item" type="button">Clase 2</button>
-          <button class="dropdown-item" type="button">Clase 3</button>
-          <button class="dropdown-item" type="button">Clase 4</button>
-          <button class="dropdown-item" type="button">Clase 5</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="filtro">
+          <button class="dropdown-item" onclick= "filtrar('1')">Clase 1</button>
+          <button class="dropdown-item" onclick= "filtrar('2')">Clase 2</button>
+          <button class="dropdown-item" onclick= "filtrar('3')">Clase 3</button>
+          <button class="dropdown-item" onclick= "filtrar('4')">Clase 4</button>
+          <button class="dropdown-item" onclick= "filtrar('5')">Clase 5</button>
         </div>
       </div>
       </div>
@@ -155,42 +155,52 @@
 <script>
     var partidas = []
     var partidasBuscadas = []
-
-function mostrarPartida(partida){
-    $("#game").append(
-      ' <div class="fila">'+  
-      '  <div class="columna-1-1"> '+
-      '   <div class="item"><img src= "'+partida.jugador1.items.item1+'" width="40" height="40"></div>'+    
-      '   <div class="item"><img src= "'+partida.jugador1.items.item2+'" width="40" height="40"></div>'+ 
-      '   <div class="item"><img src= "'+partida.jugador1.items.item3+'" width="40" height="40"></div>'+ 
-      '   <div class="item"><img src= "'+partida.jugador1.items.item4+'" width="40" height="40"></div>'+ 
-      '   <div class="item"><img src= "'+partida.jugador1.items.item5+'" width="40" height="40"></div>'+ 
-      '   <div class="item"><img src= "'+partida.jugador1.items.item6+'" width="40" height="40"></div>'+ 
-      '  </div> '+
-      '  <div class="columna-2"><img src= "'+partida.jugador1.clase.iconClase+'" width="40" height="40"></div>'+
-      '  <div class="nombre">'+partida.jugador1.nombre+'</div>'+
-      '  <div class="vs">VS</div>'+
-      '  <div class="nombre-2">'+partida.jugador2.nombre+'</div>'+
-      '  <div class="columna-2"><img src= "'+partida.jugador2.clase.iconClase+'" width="40" height="40"></div>'+
-      '  <div class="columna-1-2"> '+
-      '   <div class="item"><img src= "'+partida.jugador2.items.item1+'" width="40" height="40"></div>'+    
-      '   <div class="item"><img src= "'+partida.jugador2.items.item2+'" width="40" height="40"></div>'+ 
-      '   <div class="item"><img src= "'+partida.jugador2.items.item3+'" width="40" height="40"></div>'+ 
-      '   <div class="item"><img src= "'+partida.jugador2.items.item4+'" width="40" height="40"></div>'+ 
-      '   <div class="item"><img src= "'+partida.jugador2.items.item5+'" width="40" height="40"></div>'+ 
-      '   <div class="item"><img src= "'+partida.jugador2.items.item6+'" width="40" height="40"></div>'+ 
-      '  </div> '+
-      ' </div>'
+    
+    function mostrarPartida(partida){
+      $("#game").append(
+        ' <div class="fila">'+  
+        '  <div class="columna-1-1"> '+
+        '   <div class="item"><img src= "'+partida.jugador1.items.item1+'" width="40" height="40"></div>'+    
+        '     <div class="item"><img src= "'+partida.jugador1.items.item2+'" width="40" height="40"></div>'+ 
+        '     <div class="item"><img src= "'+partida.jugador1.items.item3+'" width="40" height="40"></div>'+ 
+        '     <div class="item"><img src= "'+partida.jugador1.items.item4+'" width="40" height="40"></div>'+ 
+        '     <div class="item"><img src= "'+partida.jugador1.items.item5+'" width="40" height="40"></div>'+ 
+        '     <div class="item"><img src= "'+partida.jugador1.items.item6+'" width="40" height="40"></div>'+ 
+        '   </div> '+
+        '   <div class="columna-2"><img src= "'+partida.jugador1.clase.iconClase+'" width="40" height="40"></div>'+
+        '   <div class="nombre">'+partida.jugador1.nombre+'</div>'+
+        '   <div class="vs">VS</div>'+
+        '   <div class="nombre-2">'+partida.jugador2.nombre+'</div>'+
+        '   <div class="columna-2"><img src= "'+partida.jugador2.clase.iconClase+'" width="40" height="40"></div>'+
+        '   <div class="columna-1-2"> '+
+        '     <div class="item"><img src= "'+partida.jugador2.items.item1+'" width="40" height="40"></div>'+    
+        '     <div class="item"><img src= "'+partida.jugador2.items.item2+'" width="40" height="40"></div>'+ 
+        '     <div class="item"><img src= "'+partida.jugador2.items.item3+'" width="40" height="40"></div>'+ 
+        '     <div class="item"><img src= "'+partida.jugador2.items.item4+'" width="40" height="40"></div>'+ 
+        '     <div class="item"><img src= "'+partida.jugador2.items.item5+'" width="40" height="40"></div>'+ 
+        '     <div class="item"><img src= "'+partida.jugador2.items.item6+'" width="40" height="40"></div>'+ 
+        '   </div> '+
+        ' </div>'
       );
       }
+      function verificarNombre(x){
+        return (x.some(_x => _x.jugador1.nombre == $("#buscar").val().toLowerCase() || _x.jugador2.nombre == $("#buscar").val().toLowerCase()))
+      }
 
-  function verificarNombre(x){
-    return (x.some(_x => _x.jugador1.nombre == $("#buscar").val().toLowerCase() || _x.jugador2.nombre == $("#buscar").val().toLowerCase()))
-  }
+      function filtrar(x){
+        console.log(x);
+        partidasBuscadas = partidas.filter(partida =>
+          partida.jugador1.clase.idClase == x || partida.jugador2.clase.idClase == x
+          );
+        $("#game").html(" ");
+        partidasBuscadas.forEach(function(y){
+          mostrarPartida(y);
+        });
+      }
     
   $(document).ready(function () {
 
-    $('#buscador').on('submit', function (event) {  
+    $('#buscador').on('submit', function (event) { 
           event.preventDefault();
           console.log($("#buscar").val().toLowerCase());
           partidasBuscadas = partidas.filter(partida =>
@@ -198,6 +208,7 @@ function mostrarPartida(partida){
           );
           console.log(partidasBuscadas);
           if(verificarNombre(partidas) == false){
+            $("#valid").html(" ");
             $('#valid').append(
               '<h6>Nombre no encontrado</h6>'
             );
@@ -208,6 +219,7 @@ function mostrarPartida(partida){
             mostrarPartida(x);
             });
           }else{
+            $("#valid").html(" ");
             $("#game").html(" ");
             partidasBuscadas.forEach(function(x){
             mostrarPartida(x);

@@ -36,7 +36,7 @@
             "jugador1": {
                 "nombre": "manuel2",
                 "clase": {
-                    "idClase" : 1,
+                    "idClase" : 3,
                     "iconClase": "./estadisticas/lucas.jpeg"
                 },
                 "items": {
@@ -51,7 +51,7 @@
             "jugador2":{
                 "nombre": "manuel2",
                 "clase": {
-                    "idClase" : 2,
+                    "idClase" : 4,
                     "iconClase": "./estadisticas/lucas.jpeg"
                 },
                 "items": {
