@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  
+    <link href="./index/index.css" rel="stylesheet">
     <title>Inicio</title>
   </head>
   <body>
@@ -32,47 +32,56 @@
       }
     </style>
       
-    <nav id = "menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">FALG</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="./index.html" style="color: white;">Inicio <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./foro.html" style="color: white;">Foro</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./estadisticas.html" style="color: white;">Estadísticas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="descarga.html" style="color: white;">Descarga</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
-              Ayuda
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./soporte.html">Soporte</a>
-              <a class="dropdown-item" href="./formulario.html">Generar reporte</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="./faq.html">FAQ</a>
+      <nav id = "menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">FALG</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html" style="color: white;">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./foro.html" style="color: white;">Foro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./estadisticas.html" style="color: white;">Estadisticas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./descarga.html" style="color: white;">Descarga</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+                Ayuda
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="./soporte.html">Soporte</a>
+                <a class="dropdown-item" href="./formulario.html">Generar reporte</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="./faq.html">FAQ</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" id="buscador">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search" id="buscar">
+            <div class="filtro">
+              <button class="boton2 boton2-secundario dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo</button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="filtro">
+                <button class="dropdown-item" onclick= "enviador('1')">Usuario</button>
+                <button class="dropdown-item" onclick= "enviador('2')">Publicación</button>
+                <button class="dropdown-item" onclick= "enviador('3')">Clase</button>
+                <button class="dropdown-item" onclick= "enviador('4')">Item</button>
+                <button class="dropdown-item" onclick= "enviador('5')">Build</button>
+              </div>
             </div>
-          </li>
-          <li class="nav-item" style="padding-left: 485px;padding-top: 2px;">
-            <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html" role="Ingresar">Ingresar</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
-      </div>
-    </nav>
+            <div style="margin-left: .5rem;">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </div>
+          </form>
+        </div>
+      </nav>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -143,7 +152,24 @@
 </html>
 
 <script>
+
+    function enviador(x){
+      var id = x;
+      return id;
+    }
+    function buscar(enviador){
+
+    }
   $(document).ready(function () {
+    $('#buscador').on('submit', function (event) {
+      event.preventDefault();
+      console.log(enviador);
+      if(enviador == 1){
+          console.log($("#buscar").val().toLowerCase());
+      }else{
+        console.log("soy puto");
+      }
+    });
   $.get("http://localhost:3000/inicio", function( informacion ){
     informacion.forEach(function(carta){
       $("#contenido").append(
