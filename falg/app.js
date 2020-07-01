@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 var ticketsRouter = require('./routes/tickets');
 var estadisticasRouter = require('./routes/estadisticas');
 var fpublicacionesRouter = require('./routes/fpublicaciones');
-
+var buscadorRouter = require('./routes/buscador');
 var app = express();
 
 app.use(cors());
@@ -26,5 +26,6 @@ app.use('/users', usersRouter);
 app.use('/tickets', ticketsRouter);
 app.use('/estadisticas', estadisticasRouter);
 app.use('/fpublicaciones', fpublicacionesRouter);
+app.use('/buscador', buscadorRouter);
  
 module.exports = app;

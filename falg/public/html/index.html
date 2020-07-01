@@ -69,11 +69,11 @@
             <div class="filtro">
               <button class="boton2 boton2-secundario dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo</button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="filtro">
-                <button class="dropdown-item" onclick= "enviador('1')">Usuario</button>
-                <button class="dropdown-item" onclick= "enviador('2')">Publicación</button>
-                <button class="dropdown-item" onclick= "enviador('3')">Clase</button>
-                <button class="dropdown-item" onclick= "enviador('4')">Item</button>
-                <button class="dropdown-item" onclick= "enviador('5')">Build</button>
+                <button class="dropdown-item" onclick= "'1'" id="user">Usuario</button>
+                <button class="dropdown-item" onclick= "'2'">Publicación</button>
+                <button class="dropdown-item" onclick= "'3'">Clase</button>
+                <button class="dropdown-item" onclick= "'4'">Item</button>
+                <button class="dropdown-item" onclick= "'5'">Build</button>
               </div>
             </div>
             <div style="margin-left: .5rem;">
@@ -152,24 +152,39 @@
 </html>
 
 <script>
-
+  var busqueda;
+/*
     function enviador(x){
       var id = x;
       return id;
     }
     function buscar(enviador){
 
+    }*/
+    function getSearch(){
+      busqueda = $("#buscar").val().toLowerCase();
+      return busqueda;
     }
+    
   $(document).ready(function () {
+    /*
     $('#buscador').on('submit', function (event) {
       event.preventDefault();
       console.log(enviador);
+      console.log($('#user'));
       if(enviador == 1){
           console.log($("#buscar").val().toLowerCase());
       }else{
         console.log("soy puto");
       }
-    });
+    });*/
+
+    $('#buscador').on('submit', function (event) { 
+          event.preventDefault();
+          console.log($("#buscar").val().toLowerCase());
+/*           location.href = "./buscador.html";
+ */        });
+
   $.get("http://localhost:3000/inicio", function( informacion ){
     informacion.forEach(function(carta){
       $("#contenido").append(

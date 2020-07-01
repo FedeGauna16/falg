@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../stylesheets/config.css">
+    <link rel="import" href="./index.html">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link href="./buscador/buscador.css" rel="stylesheet">
+    <title>Busqueda</title>
+    <style>
+        h3 { color: white; }
+      </style>
+  </head>
+
+  <body>
+    <div class="header">
+        <img src="./index/falg.png" style=" margin-left: auto;margin-right: auto;" >
+      </div>
+      <style>
+        .header {
+        text-align: center;
+        background: #0e0c0c;
+        font-size: 30px;
+      }
+        </style>
+      <style>
+        body {
+          background-color: rgb(36, 36, 36);
+          height: 500px;
+        }
+      </style>
+        
+        <nav id = "menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">FALG</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="./index.html" style="color: white;">Inicio <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./foro.html" style="color: white;">Foro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./estadisticas.html" style="color: white;">Estadisticas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./descarga.html" style="color: white;">Descarga</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+                  Ayuda
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="./soporte.html">Soporte</a>
+                  <a class="dropdown-item" href="./formulario.html">Generar reporte</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="./faq.html">FAQ</a>
+                </div>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" id="buscador">
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search" id="buscar">
+              <div class="filtro">
+                <button class="boton2 boton2-secundario dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="filtro">
+                  <button class="dropdown-item" onclick= "'1'" id="user">Usuario</button>
+                  <button class="dropdown-item" onclick= "'2'">Publicación</button>
+                  <button class="dropdown-item" onclick= "'3'">Clase</button>
+                  <button class="dropdown-item" onclick= "'4'">Item</button>
+                  <button class="dropdown-item" onclick= "'5'">Build</button>
+                </div>
+              </div>
+              <div style="margin-left: .5rem;">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+              </div>
+            </form>
+          </div>
+        </nav>
+
+        <div class="container">
+            <div class="titulobuscador">
+                <h3>Resultados</h3>
+            </div>
+            <div class="res">
+                         
+            </div>
+        </div>
+  </body>
+  
+  <footer style="padding-top: 20px;">
+    <div id="footer" class= "footer">
+        <div class="row d-flex align-items-center" style="background-color:#0e0c0c">
+            <div class= "col-4">
+                <div class= "row d-flex align-items-center">
+                    <a class = "col-3 text-white" href="#">Acerca de</a>
+                    <a class = "col-3 text-white" href="./contacto.html">Contacto</a>
+                    <a class = "col-3 text-white" href="./privacidad.html">Politica de privacidad</a>
+                    <a class = "col-3 text-white" href="#">Terminos y condiciones</a>
+                </div>
+            </div>
+            <div class= "col-4">
+                <img src = "./index/falg_footer.png" style = "padding-top: 10px;">
+                <div style="padding-right: 10px;">©2020 Arne, Inc.</div>
+                <div style="padding-right: 10px;">All Rights Reserved</div>
+            </div>
+            <div class= "col-4">
+              <div class= row>
+              </div>
+            </div>
+        </div>
+    </div>
+</footer>
+  
+  </body>
+  <style>
+    .footer {
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgb(48, 48, 48);
+      color: white;
+      text-align: center;
+    }
+    </style>
+</html>
+
+<script>
+    
+
+    $(document).ready(function () {
+        var html = document.querySelector("link[rel='import']").import;
+    console.log(html);
+    var text = html.getElementById("buscar");
+
+    document.body.appendChild(text.cloneNode(true));
+        $.get("http://localhost:3000/buscador", function( informacion ){
+            console.log(informacion);
+        }); 
+    });
+</script>

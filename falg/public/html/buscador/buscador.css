@@ -1,0 +1,21 @@
+.filtro { 
+    width: auto;
+    position: relative;
+  }
+  .boton2{
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+}
+.boton2-secundario {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.titulobuscador {
+    margin-top: 50px;
+  }
+.res {
+    margin-top: 20px;
+    display: block;
+}

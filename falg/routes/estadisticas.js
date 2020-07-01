@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var infoEstadisticas = require('../public/html/estadisticas/estadisticas.json')
-var info;
+
 router.get('/', function(req, res, next) {
   res.send(infoEstadisticas);
 });
