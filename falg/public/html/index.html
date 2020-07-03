@@ -160,11 +160,11 @@
     }
     function buscar(enviador){
 
-    }*/
+    }
     function getSearch(){
       busqueda = $("#buscar").val().toLowerCase();
       return busqueda;
-    }
+    }*/
     
   $(document).ready(function () {
     /*
@@ -178,12 +178,22 @@
         console.log("soy puto");
       }
     });*/
-
     $('#buscador').on('submit', function (event) { 
           event.preventDefault();
           console.log($("#buscar").val().toLowerCase());
-/*           location.href = "./buscador.html";
- */        });
+/*           location.href = "./buscador.html";*/
+      $.ajax({
+        url: 'http://localhost:3000/inicio',
+        type: 'POST',
+        data:{
+           search: $("#buscar").val().toLowerCase()
+          },
+        success: function(result) {
+          console.log(result);
+          //location.reload();
+        }
+      });
+    });
 
   $.get("http://localhost:3000/inicio", function( informacion ){
     informacion.forEach(function(carta){

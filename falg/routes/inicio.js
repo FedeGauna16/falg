@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var busqueda = [];
 var builds =
 [
   {
@@ -19,9 +20,17 @@ var builds =
 router.get('/', function(req, res, next) {
    res.send(builds);
 });
+router.get('/b', function(req, res, next) {
+  res.send(busqueda);
+});
 
 router.post('/', function(req, res, next) {
-  console.log(req);
+  busqueda = req.body;
+  console.log(busqueda);
+  res.send({
+    status : true,
+    response : busqueda
+  });
 });
 
 
