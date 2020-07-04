@@ -16,6 +16,10 @@
     margin-top: 50px;
   }
 .res {
-    margin-top: 20px;
-    display: block;
+  width: auto;
+  border: 2px solid transparent;
+  border-color: slategray;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: block;
 }

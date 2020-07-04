@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var cuentas = require('./users.json')
-var cuentalogueada = require('./cuentalogueada.json')
+var cuentas = require('../public/html/user/users.json');
+var cuentalogueada = require('../public/html/cuentas/cuentalogueada.json');
 
 router.get('/', function(req, res, next) {
    res.send(cuentas);
