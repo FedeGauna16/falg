@@ -1,5 +1,6 @@
+[
 {
-    "infoPartidas":[
+  "infoPartidas":[
         {
             "jugador1": {
                 "nombre": "manuel",
@@ -81,3 +82,4 @@
         "iconPlayer": "./estadisticas/cave2.jpeg"
     }]
 }
+]

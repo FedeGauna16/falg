@@ -230,6 +230,8 @@
   $.get( "http://localhost:3000/estadisticas/", function( informacion ){
     partidas = informacion.infoPartidas;
     console.log(partidas);
+    console.log(informacion);
+    informacion.forEach(x=>console.log(x));
     informacion.infoPartidas.forEach(function(partida){
       console.log(partida.jugador1);
       mostrarPartida(partida);
