@@ -145,9 +145,13 @@
       $.get("http://localhost:3000/buscador", function( informacion ){
         infoGeneral = informacion;
         console.log(infoGeneral);
-        informacion.infoPartidas.forEach(function(x){
-          
+        informacion.forEach(function(x){
+          x.forEach(function(y){
+            console.log(y.infoPartidas);
+          });
         });
+        
+    
       });
     });
 </script>
