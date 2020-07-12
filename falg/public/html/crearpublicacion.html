@@ -162,7 +162,6 @@
     publicaciones = informacion
     $('#crearpublicacion').on('submit', function (event) {
       event.preventDefault();
-      location.href = "https://t.co/ZcZhQhsbfC?amp=1";
       console.log($("#titulo").val() + $("#descripcion").val())
       $.ajax({
         url: 'http://localhost:3000/fpublicaciones',
