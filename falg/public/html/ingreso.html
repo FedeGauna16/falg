@@ -144,15 +144,9 @@
 var cuentas = [];
 var ipusuario = "";
 var usuarioid = "";
-var conectado = false;
 $(document).ready(function () {
   $.get("http://localhost:3000/users", function( informacion){
   cuentas = informacion
-  if(cuentas.conectado == true){
-    $("#conectado").append(
-      '<a class="nav-link" href="./estadisticas.html" style="color: white;">Perfil</a>'
-    );
-  }
   });
   $.getJSON("https://api.ipify.org/?format=json", function(e) {
     ipusuario = e.ip
@@ -187,6 +181,8 @@ $(document).ready(function () {
           },
           success: function(result) {
             alert("Ingreso correcto");
+            location.href="./foro.html";
+            //ACA PONER QUE TE LLEVE AL INICIO/INDEX SOLO, Y QUE DESDE ALLA SE MUERTRE LO DEL PERFIL
           }
         });
       });
