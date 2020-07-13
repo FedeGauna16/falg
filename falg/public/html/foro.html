@@ -238,30 +238,30 @@
   $(document).ready(function () {
     $.get( "http://localhost:3000/fpublicaciones", function( informacion ){
       cuentas = informacion.usuarios
-    informacion.publicaciones.forEach(function(publicacion){
-      $("#publicaciones").append(
-        '     <div class="container"> '+ 
-        '      <div class="row" style="background-color: #343a40;"> '+
-        '        <div class="col-sm" style="padding-left: 0cm;"> '+
-        '          <a href="./publicacionusuario.html" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;">' + publicacion.titulo + '<p class="usuario" href="./publicacionusuario.html" style="color: rgba(44, 128, 253, 0.815);margin-bottom: initial;">-'+ cuentas[0].nombre +'</p></a>' +
-        '        </div>' +
-        '        <div class="col-sm" style="background-color: #343a40;">' +
-        '          <div class="container">' + 
-        '            <div class="row">' +
-        '              <div class="col-sm"> '+
-        '                <h6 style="text-align: right;">Likes <p>30</p></h6> '+
-        '              </div> '+
-        '              <div class="col-sm"> '+
-        '               <h6 style="text-align: right;">Mensajes <p>12</p></h6>' +
-        '              </div>' +
-        '              <div class="col-sm">' +
-        '                <h6 style="text-align: right;">Visitas <p>68</p></h6>' +
-        '              </div>' + 
-        '            </div>' +
-        '          </div>' +
-        '        </div>' +
-        '      </div>' +
-        '     </div>'
+      informacion.publicaciones.forEach(function(publicacion){
+        $("#publicaciones").append(
+          '     <div class="container"> '+ 
+          '      <div class="row" style="background-color: #343a40;"> '+
+          '        <div class="col-sm" style="padding-left: 0cm;"> '+
+          '          <a href="./publicacionusuario.html" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;">' + publicacion.titulo + '<p class="usuario" href="./publicacionusuario.html" style="color: rgba(44, 128, 253, 0.815);margin-bottom: initial;">-'+ cuentas[0].nombre +'</p></a>' +
+          '        </div>' +
+          '        <div class="col-sm" style="background-color: #343a40;">' +
+          '          <div class="container">' + 
+          '            <div class="row">' +
+          '              <div class="col-sm"> '+
+          '                <h6 style="text-align: right;">Likes <p>30</p></h6> '+
+          '              </div> '+
+          '              <div class="col-sm"> '+
+          '               <h6 style="text-align: right;">Mensajes <p>12</p></h6>' +
+          '              </div>' +
+          '              <div class="col-sm">' +
+          '                <h6 style="text-align: right;">Visitas <p>68</p></h6>' +
+          '              </div>' + 
+          '            </div>' +
+          '          </div>' +
+          '        </div>' +
+          '      </div>' +
+          '     </div>'
       );
     });
   }); 
