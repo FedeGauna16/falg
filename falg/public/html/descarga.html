@@ -64,6 +64,9 @@
               <a class="dropdown-item" href="./faq.html">FAQ</a>
             </div>
           </li>
+          <li class="nav-item" id="conectado">
+            
+          </li>
           <li class="nav-item" style="padding-left: 485px;padding-top: 2px;">
             <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html" role="Ingresar">Ingresar</a>
           </li>
@@ -127,22 +130,31 @@
 
 <script>
   $(document).ready(function () {
-  $.get( "http://localhost:3000/inicio", function( informacion ){
-    informacion.forEach(function(carta){
-      $("#contenido").append(
-        '            <div style="padding-left: 500px; padding-top: 50px">' +
-        '             <div class="card" style="width: 18rem;"> ' +
-        '               <div class="card" style="width: 18rem;"> ' +
-        '                 <img src="..." class="card-img-top" alt="..."> ' +
-        '                   <div class="card-body" style="background-color: #343a40;color: white;"> ' +
-        '                     <h5 class="card-title"> '+ carta.titulo +' </h5> ' +
-        '                       <p class="card-text"> '+ carta.usuario +' </p>' +
-        '                         <a href="#" class="btn btn-primary"> Ver </a>' +
-        '                   </div>' + 
-        '               </div>' +
-        '             </div>' +
-        '            </div>'
-      );
+    $.get( "http://localhost:3000/inicio", function( informacion ){
+      informacion.forEach(function(carta){
+        $("#contenido").append(
+          '            <div style="padding-left: 500px; padding-top: 50px">' +
+          '             <div class="card" style="width: 18rem;"> ' +
+          '               <div class="card" style="width: 18rem;"> ' +
+          '                 <img src="..." class="card-img-top" alt="..."> ' +
+          '                   <div class="card-body" style="background-color: #343a40;color: white;"> ' +
+          '                     <h5 class="card-title"> '+ carta.titulo +' </h5> ' +
+          '                       <p class="card-text"> '+ carta.usuario +' </p>' +
+          '                         <a href="#" class="btn btn-primary"> Ver </a>' +
+          '                   </div>' + 
+          '               </div>' +
+          '             </div>' +
+          '            </div>'
+        );
+      });
     });
-  }); 
-});
+    $.get("http://localhost:3000/users", function( informacion){
+      cuentas = informacion
+      if(informacion.usuarios[1].conectado){
+        $("#conectado").append(
+        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+        );
+      }
+    });
+  });
+</script>

@@ -158,21 +158,21 @@ $(document).ready(function () {
   });
   $('#ingreso').on('submit', function (event) {
       event.preventDefault();
-      cuentas.forEach(function(cuenta, i){
-        if(cuentas[i].correo !=  $("#correo").val()){
+      cuentas.usuarios.forEach(function(cuenta, i){
+        if(cuentas.usuarios[i].correo !=  $("#correo").val()){
           alert("El correo ingresado no existe");
           return 0;
         }
       });
-      cuentas.forEach(function(cuenta, i){
-        if(cuentas[i].contraseña !=  $("#contraseña").val()){
+      cuentas.usuarios.forEach(function(cuenta, i){
+        if(cuentas.usuarios[i].contraseña !=  $("#contraseña").val()){
           alert("La contraseña ingresada no existe");
           return 0;
         }
       });
-      cuentas.forEach(function(cuenta, i){
-        if(cuentas[i].correo == $("#correo").val()){
-          usuarioid = cuentas[i].usuarioid;
+      cuentas.usuarios.forEach(function(cuenta, i){
+        if(cuentas.usuarios[i].correo == $("#correo").val()){
+          usuarioid = cuentas.usuarios[i].usuarioid;
           return 0;
         }
       });

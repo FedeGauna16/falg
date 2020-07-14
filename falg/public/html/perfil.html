@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-    <title>Ingreso</title>
+    <title>Perfil</title>
   </head>
   <body>
     <div class="header">
@@ -111,50 +111,16 @@
       color: white;
       text-align: center;
     }
-    </style>
+  </style>
 </html>
 <script>
-var cuentas = [];
-var ipusuario = "";
-var usuarioid = "";
-$(document).ready(function () {
-  $.get("http://localhost:3000/users", function( informacion){
-  cuentas = informacion
+  $(document).ready(function () {
+    $.get("http://localhost:3000/users", function( informacion){
+      if(informacion.usuarios[1].conectado){
+        $("#conectado").append(
+        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+        );
+      }
+    });   
   });
-  $.getJSON("https://api.ipify.org/?format=json", function(e) {
-    ipusuario = e.ip
-  });
-  $('#ingreso').on('submit', function (event) {
-      event.preventDefault();
-      cuentas.forEach(function(cuenta, i){
-        if(cuentas[i].correo !=  $("#correo").val()){
-          alert("El correo ingresado no existe");
-          return 0;
-        }
-      });
-      cuentas.forEach(function(cuenta, i){
-        if(cuentas[i].contraseña !=  $("#contraseña").val()){
-          alert("La contraseña ingresada no existe");
-          return 0;
-        }
-      });
-      cuentas.forEach(function(cuenta, i){
-        if(cuentas[i].correo == $("#correo").val()){
-          usuarioid = cuentas[i].usuarioid;
-          return 0;
-        }
-      });
-        $.ajax({
-          url: 'http://localhost:3000/users',
-          type: 'POST',
-          data: {
-            ip: ipusuario,
-            usuarioid : usuarioid
-          },
-          success: function(result) {
-            alert("Ingreso correcto");
-          }
-        });
-      });
-    });
 </script>

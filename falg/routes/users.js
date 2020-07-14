@@ -4,7 +4,7 @@ var cuentas = require('../public/html/user/users.json');
 var cuentalogueada = require('../public/html/cuentas/cuentalogueada.json');
 
 router.get('/', function(req, res, next) {
-   res.send(cuentas);
+   res.send({usuarios : cuentalogueada});
 });
 
 router.post('/', function(req, res, next) {

@@ -240,7 +240,7 @@
   cuentas = [];
   $(document).ready(function () {
     $.get( "http://localhost:3000/fpublicaciones", function( informacion ){
-      cuentas = informacion.usuarios
+      cuentas = informacion.usuarios;
       informacion.publicaciones.forEach(function(publicacion){
         $("#publicaciones").append(
           '     <div class="container"> '+ 
@@ -267,6 +267,7 @@
           '     </div>'
         );
       });
+      console.log(informacion);
       if(informacion.usuarios[1].conectado){
         $("#conectado").append(
         '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'

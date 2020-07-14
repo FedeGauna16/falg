@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  <title>Formulario</title>
+  <title>ho0la</title>
   </head>
   <div class="header">
     <img src="./index/falg.png" style=" margin-left: auto;margin-right: auto;" >
@@ -60,6 +60,9 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="./faq.html">FAQ</a>
             </div>
+          </li>
+          <li class="nav-item" id="conectado">
+            
           </li>
           <li class="nav-item" style="padding-left: 485px;padding-top: 2px;">
             <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./html/ingreso.html" role="Ingresar">Ingresar</a>
@@ -149,7 +152,7 @@
               <a class = "col-3 text-white" href="#">Acerca de</a>
               <a class = "col-3 text-white" href="./contacto.html">Contacto</a>
               <a class = "col-3 text-white" href="./privacidad.html">Politica de privacidad</a>
-              <a class = "col-3 text-white" href="#">Terminos y condiciones</a>
+              <a class = "col-3 text-white" href="./terminosycondiciones.html">Terminos y condiciones</a>
             </div>
           </div>
           <div class= "col-4">
@@ -177,30 +180,14 @@
     </style>
 </html>
 <script>
-  tickets = [];
-  
-    $.get( "http://localhost:3000/tickets", function( informacion ){
-    tickets = informacion
-    });
   $(document).ready(function () {
-  $('#ticket').on('submit', function (event) {
-      event.preventDefault();
-      if($("#correo").val() == 0){
-        alert("Uno de los campos esta vacio");
-        return 0;
+    $.get("http://localhost:3000/users", function( informacion){
+      cuentas = informacion
+      if(informacion.usuarios[1].conectado){
+        $("#conectado").append(
+        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+        );
       }
-      $.ajax({
-        url: 'http://localhost:3000/tickets',
-        type: 'POST',
-        data: {
-          correo: $("#correo").val(),
-          mensaje: $("#mensaje").val()
-        },
-        success: function(result) {
-          alert("Ticket enviado correctamente")
-          location.reload();
-        }
-      });
     });
   });
-  </script>
+</script>

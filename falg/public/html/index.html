@@ -64,6 +64,9 @@
                 <a class="dropdown-item" href="./faq.html">FAQ</a>
               </div>
             </li>
+            <li class="nav-item" id="conectado">
+            
+            </li>
           </ul>
           <form class="form-inline my-2 my-lg-0" id="buscador">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search" id="buscar">
@@ -179,6 +182,14 @@
         console.log("soy puto");
       }
     });*/
+    $.get("http://localhost:3000/users", function( informacion){
+      cuentas = informacion
+      if(informacion.usuarios[1].conectado){
+        $("#conectado").append(
+        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+        );
+      }
+    });
     $('#buscador').on('submit', function (event) { 
           event.preventDefault();
           console.log($("#buscar").val().toLowerCase());
@@ -220,4 +231,5 @@ $('#crearCuenta').on('submit', function (event) {
 
 });
 */
+//BORRAR LO DEL CONTACTO EN TODAS LAS PAGINAS//
 </script>

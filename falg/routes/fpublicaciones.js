@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
    res.send({
     publicaciones : publicaciones,
     usuarios : usuario
-    }); 
+    });
 });
 
 router.post('/', function(req, res, next) {
