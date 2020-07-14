@@ -267,10 +267,9 @@
           '     </div>'
         );
       });
-      console.log(informacion[0]);
-      if(informacion.conectado == true){
+      if(informacion.usuarios[1].conectado){
         $("#conectado").append(
-        '<a class="nav-link" href="./estadisticas.html" style="color: white;">Perfil</a>'
+        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
         );
       }
     }); 

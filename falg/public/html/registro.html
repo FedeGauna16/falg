@@ -165,8 +165,14 @@ var legajo = 0;
 
 $(document).ready(function () {
   $.get( "http://localhost:3000/users", function( informacion ){
-  cuentas = informacion;
-  legajo = cuentas.length + 1;
+    cuentas = informacion;
+    legajo = cuentas.length + 1;
+    cuentas = informacion
+    if(informacion.usuarios[1].conectado){
+      $("#conectado").append(
+      '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+      );
+    }
   });
   $('#registro').on('submit', function (event) {
     event.preventDefault();

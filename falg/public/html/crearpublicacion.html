@@ -156,26 +156,32 @@
 </html>
 <script>
   publicaciones = [];
-
   $(document).ready(function () {
     $.get( "http://localhost:3000/fpublicaciones", function( informacion ){
-    publicaciones = informacion
-    $('#crearpublicacion').on('submit', function (event) {
-      event.preventDefault();
-      console.log($("#titulo").val() + $("#descripcion").val())
-      $.ajax({
-        url: 'http://localhost:3000/fpublicaciones',
-        type: 'POST',
-        data: {
-          titulo: $("#titulo").val(),
-          descripcion: $("#descripcion").val(),
-        },
-        success: function(result) {
-          alert("Publicacion creada correctamente!"); 
-          location.reload();
-        }
+      publicaciones = informacion
+      $('#crearpublicacion').on('submit', function (event) {
+        event.preventDefault();
+        console.log($("#titulo").val() + $("#descripcion").val())
+        $.ajax({
+          url: 'http://localhost:3000/fpublicaciones',
+          type: 'POST',
+          data: {
+            titulo: $("#titulo").val(),
+            descripcion: $("#descripcion").val(),
+          },
+          success: function(result) {
+            alert("Publicacion creada correctamente!"); 
+            location.reload();
+          }
+        });
       });
     });
+    $.get( "http://localhost:3000/users", function( informacion ){
+      if(informacion.usuarios[1].conectado){
+        $("#conectado").append(
+        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+        );
+      }
+    }); 
   });
-});
 </script>
