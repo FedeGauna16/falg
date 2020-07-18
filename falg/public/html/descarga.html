@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,10 +28,21 @@
     <style>
       body {
         background-color: rgb(36, 36, 36);
-        height: 500px;
+        height: 600px;
       }
     </style>
-      
+    <style>
+      .button {
+        width: 300px; 
+        height: 80px;
+        font-family: Penumbra Half Serif;
+      }
+      .button_div {
+        padding-left: 780px; 
+        padding-bottom: 10px;
+      }
+    </style>
+    
     <nav id = "menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">FALG</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,9 +74,6 @@
               <a class="dropdown-item" href="./faq.html">FAQ</a>
             </div>
           </li>
-          <li class="nav-item" id="conectado">
-            
-          </li>
           <li class="nav-item" style="padding-left: 485px;padding-top: 2px;">
             <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html" role="Ingresar">Ingresar</a>
           </li>
@@ -78,11 +85,15 @@
       </div>
     </nav>
 
-    <div style = "background-image: url(https://web2.hirez.com/smite/v3/img/community-bg.jpg); padding-top: 10%; padding-bottom: 10%; font-family: Penumbra Half Serif;">
-        <h1 style = "text-align: center; font-size: 100px; letter-spacing: 5px; color: #deba50;">DESCARGAR FALG</h1>
-        <button style = "text-align: center;">descarga dale</button>
-        <button style = "text-align: center;">descarga dale</button>
+    <div style = "background-image: url(https://web2.hirez.com/smite/v3/img/community-bg.jpg); padding-top: 10%; padding-bottom: 10%"> 
+        <h1 style = "text-align: center; font-size: 100px; letter-spacing: 5px; color: #deba50; font-family: Penumbra Half Serif;">DESCARGAR FALG</h1>
+          <div class = "button_div"><button class = "button" style = "background-color: #0e0c0c; color: white;"><img src = "descargas/epic.png"> Epic Store</button></div>
+          <div class = "button_div"><button class = "button" style = "background-color: #230edf; color: white;"><img src = "descargas/steam.png"> Steam</button></div>
+          <div class = "button_div"><button class = "button" style = "background-color: #230edf; color: white;"><img src = "descargas/playstation.png"> Playstation</button></div>
+          <div class = "button_div"><button class = "button" style = "background-color: white;"><img src = "descargas/xbox.png"> Xbox</button></div>
+          <div class = "button_div"><button class = "button" style = "background-color: white;"><img src = "descargas/nintendo.png"> Nintendo</button></div>
     </div>
+    <div>realizar esta mierda a mi mucho me costo grabacion edicion renderizado video diseño de imagenes masterizacion de audio acoplar el sueño darle subirlo todo esto para que puedas disfrutarlo hij ode re contra re cagada re puita re mierda re chijha de re contra re mil re puta </div>
 
     <footer>
       <div id="footer" class= "footer">
@@ -130,31 +141,22 @@
 
 <script>
   $(document).ready(function () {
-    $.get( "http://localhost:3000/inicio", function( informacion ){
-      informacion.forEach(function(carta){
-        $("#contenido").append(
-          '            <div style="padding-left: 500px; padding-top: 50px">' +
-          '             <div class="card" style="width: 18rem;"> ' +
-          '               <div class="card" style="width: 18rem;"> ' +
-          '                 <img src="..." class="card-img-top" alt="..."> ' +
-          '                   <div class="card-body" style="background-color: #343a40;color: white;"> ' +
-          '                     <h5 class="card-title"> '+ carta.titulo +' </h5> ' +
-          '                       <p class="card-text"> '+ carta.usuario +' </p>' +
-          '                         <a href="#" class="btn btn-primary"> Ver </a>' +
-          '                   </div>' + 
-          '               </div>' +
-          '             </div>' +
-          '            </div>'
-        );
-      });
+  $.get( "http://localhost:3000/inicio", function( informacion ){
+    informacion.forEach(function(carta){
+      $("#contenido").append(
+        '            <div style="padding-left: 500px; padding-top: 50px">' +
+        '             <div class="card" style="width: 18rem;"> ' +
+        '               <div class="card" style="width: 18rem;"> ' +
+        '                 <img src="..." class="card-img-top" alt="..."> ' +
+        '                   <div class="card-body" style="background-color: #343a40;color: white;"> ' +
+        '                     <h5 class="card-title"> '+ carta.titulo +' </h5> ' +
+        '                       <p class="card-text"> '+ carta.usuario +' </p>' +
+        '                         <a href="#" class="btn btn-primary"> Ver </a>' +
+        '                   </div>' + 
+        '               </div>' +
+        '             </div>' +
+        '            </div>'
+      );
     });
-    $.get("http://localhost:3000/users", function( informacion){
-      cuentas = informacion
-      if(informacion.usuarios[1].conectado){
-        $("#conectado").append(
-        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
-        );
-      }
-    });
-  });
-</script>
+  }); 
+});
