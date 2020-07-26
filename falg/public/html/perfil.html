@@ -91,12 +91,18 @@
             </div>
           </div>
           <div class="col">
-            <div class="col-lg-7" id="infousuario" style="text-align: left;">
-              
+            <div id="nombreusuario" class="col-lg-7"style="text-align: left;">
+
+            </div>
+            <div id="descripcionusuario">
+
+            </div>
+            <div id="descripcionnueva">
+
             </div>
           </div>
-          <div class="col col-lg-2" style="max-width: 100px;">
-            <button id="modificar" type="button" class="btn btn-primary" style="margin-top: 280px;" role="submit">Modificar</button>
+          <div id="boton" class="col col-lg-2" style="max-width: 100px;">
+            <button id="modificar" type="submit" class="btn btn-primary" style="margin-top: 280px;">Modificar</button>
           </div>
           <div class="col">
             <h3>Nivel 500 <p>algo</p></h3>
@@ -174,14 +180,15 @@
       cuentas = informacion.usuarios;
       if(informacion.usuarios[1].conectado){
         $("#conectado").append(
-        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>' // despues hacer lo mismo pero para matar al ingresar ese
         );
       }
-      $("#infousuario").append(
-        '<h3 class="font-weight-bold mb-3"><strong>'+ cuentas[0].nombre +'</strong></h3>'+
+      $("#nombreusuario").append(
+        '<h3 class="font-weight-bold mb-3"><strong>'+ cuentas[0].nombre +'</strong></h3>'
+      );
+      $("#descripcionusuario").append(
         '<p>'+ cuentas[0].descripcion +'</p>'
       );
-    });   
     });
     $.get("http://localhost:3000/fpublicaciones", function( informacion ){
       cuentas = informacion.usuarios;
@@ -215,29 +222,51 @@
           '  </div>'
         );
       });
-    $('#modificar').on('submit', function (event) {
-      $("#infousuario").append(
+    });
+    $('#modificar').click(function() {
+      event.preventDefault();
+      $("#descripcionusuario").remove();
+      $("#modificar").remove();
+      $("#descripcionnueva").append(
         '<div class="md-form">'+
-          '<textarea id="textarea-char-counter" class="form-control md-textarea" length="120" rows="3"></textarea>'+
-          '<label for="textarea-char-counter">Type your text</label>'+
+          '<textarea id="descripcion" class="form-control md-textarea" length="120" rows="3"></textarea>'+
+          '<label for="descripcion">Escribe una descripción</label>'+
         '</div>'
       );
-    });
-  }); 
-</script>
-
-/*
-event.preventDefault();
-    $.ajax({
+      $("#descripcionnueva").append(
+        '<button id="aceptar" type="submit" class="btn btn-primary" style="margin-top: 280px;">Aceptar</button>'
+      );
+      $('#aceptar').click(function() {
+      event.preventDefault();
+      $.ajax({
       url: 'http://localhost:3000/users/',
       type: 'POST',
       data: 
       {
-        descripcion: $("#descripcion").val(),
+        descripcion: $("#descripcion").val()
       },
       success: function(result) {
-        alert("Registro correcto");
+        alert("Descripcion cambiada");
         location.reload();
       }
     });
-    */
+    });
+    });
+        /*
+      event.preventDefault();
+          $.ajax({
+            url: 'http://localhost:3000/users/',
+            type: 'POST',
+            data: 
+            {
+              descripcion: $("#descripcion").val(),
+            },
+            success: function(result) {
+              alert("Registro correcto");
+              location.reload();
+            }
+          });
+          */
+  }); 
+</script>
+
