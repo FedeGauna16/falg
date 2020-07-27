@@ -94,12 +94,21 @@
             <div id="nombreusuario" class="col-lg-7"style="text-align: left;">
 
             </div>
-            <div id="descripcionusuario">
+            <div class="card bg-light mb-3" style="color: white;text-align: left;">
+              <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+                <div id="descripcionusuario">
 
+                </div>
+                <div>
+                  <form id="descripcionnueva">
+  
+                  </form>
+                </div>
+              </li>
+              
             </div>
-            <div id="descripcionnueva">
 
-            </div>
+              
           </div>
           <div id="boton" class="col col-lg-2" style="max-width: 100px;">
             <button id="modificar" type="submit" class="btn btn-primary" style="margin-top: 280px;">Modificar</button>
@@ -128,13 +137,12 @@
               </li>
               <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
                 <div class="md-v-line"></div><i class="fas fa-cogs mr-5"></i> Likes
-              </div>
-            </ul>
+              </li>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  
 
     <hr style = "height: 10vh">
 
@@ -187,7 +195,7 @@
         '<h3 class="font-weight-bold mb-3"><strong>'+ cuentas[0].nombre +'</strong></h3>'
       );
       $("#descripcionusuario").append(
-        '<p>'+ cuentas[0].descripcion +'</p>'
+        '<p>'+ informacion.usuarios[2].descripcion +'</p>'
       );
     });
     $.get("http://localhost:3000/fpublicaciones", function( informacion ){
@@ -236,21 +244,22 @@
       $("#descripcionnueva").append(
         '<button id="aceptar" type="submit" class="btn btn-primary" style="margin-top: 280px;">Aceptar</button>'
       );
-      $('#aceptar').click(function() {
-      event.preventDefault();
-      $.ajax({
-      url: 'http://localhost:3000/users/',
-      type: 'POST',
-      data: 
-      {
-        descripcion: $("#descripcion").val()
-      },
-      success: function(result) {// aca es re pelotudo, guarda la dscripcion pero despues arriba no muestra 
-        alert("Descripcion cambiada");
-        location.reload();
-      }
-    });
-    });
+      $('#aceptar').click(function(){
+        event.preventDefault();
+        console.log("hola????");
+        $.ajax({
+          url: 'http://localhost:3000/users/',
+          type: 'POST',
+          data: 
+          {
+            descripcion: $("#descripcion").val(),
+          },
+          success: function(result) {// aca es re pelotudo, guarda la dscripcion pero despues arriba no muestra 
+            alert("Descripcion cambiada");
+            location.reload();
+          }
+        });
+      });
     });
         /*
       event.preventDefault();
