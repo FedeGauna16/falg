@@ -91,12 +91,24 @@
             </div>
           </div>
           <div class="col">
-            <div class="col-lg-7" id="infousuario" style="text-align: left;">
-              
+            <div id="nombreusuario" class="col-lg-7"style="text-align: left;">
+
+            </div>
+            <div class="card bg-light mb-3" style="color: white;text-align: left;">
+              <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+                <div id="descripcionusuario">
+
+                </div>
+                <div>
+                  <form id="descripcionnueva">
+  
+                  </form>
+                </div>
+              </li>
             </div>
           </div>
-          <div class="col col-lg-2" style="max-width: 100px;">
-            <button id="modificar" type="button" class="btn btn-primary" style="margin-top: 280px;" role="submit">Modificar</button>
+          <div id="boton" class="col col-lg-2" style="max-width: 100px;">
+            <button id="modificar" type="submit" class="btn btn-primary" style="margin-top: 280px;">Modificar</button>
           </div>
           <div class="col">
             <h3>Nivel 500 <p>algo</p></h3>
@@ -122,13 +134,12 @@
               </li>
               <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
                 <div class="md-v-line"></div><i class="fas fa-cogs mr-5"></i> Likes
-              </div>
-            </ul>
+              </li>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  
 
     <hr style = "height: 10vh">
 
@@ -174,14 +185,15 @@
       cuentas = informacion.usuarios;
       if(informacion.usuarios[1].conectado){
         $("#conectado").append(
-        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>' // despues hacer lo mismo pero para matar al ingresar ese
         );
       }
-      $("#infousuario").append(
-        '<h3 class="font-weight-bold mb-3"><strong>'+ cuentas[0].nombre +'</strong></h3>'+
-        '<p>'+ cuentas[0].descripcion +'</p>'
+      $("#nombreusuario").append(
+        '<h3 class="font-weight-bold mb-3"><strong>'+ cuentas[0].nombre +'</strong></h3>'
       );
-    });   
+      $("#descripcionusuario").append(
+        '<p>'+ informacion.usuarios[2].descripcion +'</p>'
+      );
     });
     $.get("http://localhost:3000/fpublicaciones", function( informacion ){
       cuentas = informacion.usuarios;
@@ -215,29 +227,52 @@
           '  </div>'
         );
       });
-    $('#modificar').on('submit', function (event) {
-      $("#infousuario").append(
+    });
+    $('#modificar').click(function() {
+      event.preventDefault();
+      $("#descripcionusuario").remove();
+      $("#modificar").remove();
+      $("#descripcionnueva").append(
         '<div class="md-form">'+
-          '<textarea id="textarea-char-counter" class="form-control md-textarea" length="120" rows="3"></textarea>'+
-          '<label for="textarea-char-counter">Type your text</label>'+
+          '<textarea id="descripcion" class="form-control md-textarea" length="120" rows="3"></textarea>'+
+          '<label for="descripcion">Escribe una descripción</label>'+
         '</div>'
       );
+      $("#descripcionnueva").append(
+        '<button id="aceptar" type="submit" class="btn btn-primary" style="margin-top: 280px;">Aceptar</button>'
+      );
+      $('#aceptar').click(function(){
+        event.preventDefault();
+        console.log("hola????");
+        $.ajax({
+          url: 'http://localhost:3000/users/',
+          type: 'POST',
+          data: 
+          {
+            descripcion: $("#descripcion").val(),
+          },
+          success: function(result) {// aca es re pelotudo, guarda la dscripcion pero despues arriba no muestra 
+            alert("Descripcion cambiada");
+            location.reload();
+          }
+        });
+      });
     });
+        /*
+      event.preventDefault();
+          $.ajax({
+            url: 'http://localhost:3000/users/',
+            type: 'POST',
+            data: 
+            {
+              descripcion: $("#descripcion").val(),
+            },
+            success: function(result) {
+              alert("Registro correcto");
+              location.reload();
+            }
+          });
+          */
   }); 
 </script>
 
-/*
-event.preventDefault();
-    $.ajax({
-      url: 'http://localhost:3000/users/',
-      type: 'POST',
-      data: 
-      {
-        descripcion: $("#descripcion").val(),
-      },
-      success: function(result) {
-        alert("Registro correcto");
-        location.reload();
-      }
-    });
-    */
