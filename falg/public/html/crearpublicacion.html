@@ -177,17 +177,18 @@
       publicaciones = informacion
       $('#crearpublicacion').on('submit', function (event) {
         event.preventDefault();
-        console.log($("#titulo").val() + $("#descripcion").val())
         $.ajax({
           url: 'http://localhost:3000/fpublicaciones',
           type: 'POST',
           data: {
             titulo: $("#titulo").val(),
             descripcion: $("#descripcion").val(),
+            usuario: informacion.usuarios[0].nombre
           },
           success: function (result) {
             alert("Publicacion creada correctamente!");
             location.reload();
+            location.href="./foro.html";
           }
         });
       });

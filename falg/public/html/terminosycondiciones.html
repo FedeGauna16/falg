@@ -1,191 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../stylesheets/config.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../stylesheets/config.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
   <title>ho0la</title>
-  </head>
-  <div class="header">
-    <img src="./index/falg.png" style=" margin-left: auto;margin-right: auto;" >
-  </div>
-  <style>
-    .header {
+</head>
+<div class="header">
+  <img src="./index/falg.png" style=" margin-left: auto;margin-right: auto;">
+</div>
+<style>
+  .header {
     text-align: center;
     background: #0e0c0c;
     font-size: 30px;
   }
-    </style>
-  <style>
-    body {
-      background-color: rgb(36, 36, 36);
-      height: 500px;
-    }
-    </style>
-    
-    <nav id = "menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">FALG</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="./index.html" style="color: white;">Inicio <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./foro.html" style="color: white;">Foro</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./estadisticas.html" style="color: white;">Estadísticas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./descarga.html" style="color: white;">Descarga</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
-              Ayuda
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./soporte.html">Soporte</a>
-              <a class="dropdown-item" href="./formulario.html">Generar reporte</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="./faq.html">FAQ</a>
-            </div>
-          </li>
-          <li class="nav-item" id="conectado">
-            
-          </li>
-          <li class="nav-item" style="padding-left: 485px;padding-top: 2px;">
-            <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./html/ingreso.html" role="Ingresar">Ingresar</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
-      </div>
-    </nav>
-<div class="jumbotron">
-    <div class="container">
-  <h1 class="display-3">Política de Privacidad</h1>
-  <p class="lead">Esta Política de privacidad rige la forma en que Falg recopila, utiliza, mantiene y divulga la información recopilada de los usuarios (cada uno, un "Usuario") del sitio web http://www.falg.net ("Sitio"). Esta política de privacidad se aplica al Sitio y a todos los productos y servicios ofrecidos por Falg.</p>
-    </div>
-  </div>
-  <div class="jumbotron">
-    <div class="container">
-  <h1 class="display-3">Información de identificación personal</h1>
-  <p class="lead">Podemos recopilar información de identificación personal de los Usuarios de varias maneras, que incluyen, entre otras, cuando los Usuarios visitan nuestro sitio, se registran en el sitio, completan un formulario y en relación con otras actividades, servicios, características o recursos que poner a disposición en nuestro sitio. Se puede solicitar a los usuarios, según corresponda, una dirección de correo electrónico. Sin embargo, los usuarios pueden visitar nuestro sitio de forma anónima. Recopilaremos información de identificación personal de los Usuarios solo si voluntariamente nos envían dicha información. Los usuarios siempre pueden negarse a proporcionar información de identificación personal, excepto que puede evitar que participen en ciertas actividades relacionadas con el Sitio.</p>
-    </div>
-  </div>
-  <div class="jumbotron">
-    <div class="container">
-  <h1 class="display-3">Información de identificación no personal</h1>
-  <p class="lead">Podemos recopilar información de identificación no personal sobre los Usuarios cuando interactúan con nuestro Sitio. La información de identificación no personal puede incluir el nombre del navegador, el tipo de computadora y la información técnica sobre los medios de conexión de los Usuarios a nuestro Sitio, como el sistema operativo y los proveedores de servicios de Internet utilizados y otra información similar. </p>
-    </div>
-  </div>
-  <div class="jumbotron">
-    <div class="container">
-  <h1 class="display-3">Cookies del navegador web</h1>
-  <p class="lead">Nuestro sitio puede usar "cookies" para mejorar la experiencia del usuario. El navegador web del usuario coloca cookies en su disco duro con fines de mantenimiento de registros y, a veces, para rastrear información sobre ellos. El usuario puede optar por configurar su navegador web para rechazar las cookies, o para avisarle cuando se envían cookies. Si lo hacen, tenga en cuenta que algunas partes del Sitio pueden no funcionar correctamente. </p>
-    </div>
-  </div>
-  <div class="jumbotron">
-    <div class="container">
-  <h1 class="display-3">Cómo usamos la información recopilada</h1>
-  <p class="lead">
-      Falg puede recopilar y utilizar la información personal de los Usuarios para los siguientes propósitos:
-    - Para mejorar el servicio al cliente
-    La información que proporciona nos ayuda a responder a sus solicitudes de servicio al cliente y necesidades de soporte de manera más eficiente.
-    - Para personalizar la experiencia del usuario
-    Podemos usar información en conjunto para comprender cómo nuestros Usuarios como grupo usan los servicios y recursos proporcionados en nuestro Sitio.
-    - Para mejorar nuestro sitio
-    Podemos utilizar los comentarios que nos proporcione para mejorar nuestros productos y servicios. </p>
-    </div>
-  </div>
-  <div class="jumbotron">
-    <div class="container">
-  <h1 class="display-3">Cómo protegemos su información</h1>
-  <p class="lead">Adoptamos prácticas adecuadas de recopilación, almacenamiento y procesamiento de datos y medidas de seguridad para proteger contra el acceso no autorizado, la alteración, la divulgación o la destrucción de su información personal, nombre de usuario, contraseña, información de transacciones y datos almacenados en nuestro Sitio. Aunque Falg no garantiza que nunca ocurrirá un acceso no autorizado. </p>
-    </div>
-  </div>
-  <div class="jumbotron">
-    <div class="container">
-  <h1 class="display-3">Compartir su información personal</h1>
-  <p class="lead">No vendemos, intercambiamos ni alquilamos información de identificación personal de los Usuarios a terceros. Podemos compartir información demográfica agregada genérica no vinculada a ninguna información de identificación personal con respecto a visitantes y usuarios con nuestros socios comerciales, afiliados de confianza y anunciantes para los fines descritos anteriormente. </p>
-    </div>
-  </div>
-  <div class="jumbotron">
-    <div class="container">
-  <h1 class="display-3">Cambios a esta política de privacidad</h1>
-  <p class="lead">Falg tiene la discreción de actualizar esta política de privacidad en cualquier momento. Cuando lo hagamos, revisaremos la fecha actualizada al final de esta página. Alentamos a los usuarios a consultar con frecuencia esta página para ver si hay cambios y mantenerse informados sobre cómo estamos ayudando a proteger la información personal que recopilamos. Usted reconoce y acepta que es su responsabilidad revisar esta política de privacidad periódicamente y conocer las modificaciones. </p>
-    </div>
-  </div>
-  <div class="jumbotron">
-    <div class="container">
-  <h1 class="display-3">Su aceptación de estos términos.</h1>
-  <p class="lead">Al usar este Sitio, usted expresa su aceptación de esta política y los términos del servicio. Si no está de acuerdo con esta política, no utilice nuestro sitio. Su uso continuado del Sitio después de la publicación de cambios a esta política se considerará su aceptación de dichos cambios. </p>
-    </div>
-  </div>
-  <div class="jumbotron">
-    <div class="container">
-  <h1 class="display-3">Contáctenos</h1>
-  <p class="lead">Si tiene alguna pregunta sobre esta Política de privacidad, las prácticas de este sitio o sus tratos con este sitio, contáctenos en: página de contacto </p>
-    </div>
-  </div>
-  
-    <hr style = "height: 10vh">
+</style>
+<style>
+  body {
+    background-color: rgb(36, 36, 36);
+    height: 500px;
+  }
+</style>
 
-    <footer style="padding-top: 20px;">
-      <div id="footer" class= "footer">
-        <div class="row d-flex align-items-center" style="background-color:#0e0c0c">
-          <div class= "col-4">
-            <div class= "row d-flex align-items-center">
-              <a class = "col-3 text-white" href="#">Acerca de</a>
-              <a class = "col-3 text-white" href="./contacto.html">Contacto</a>
-              <a class = "col-3 text-white" href="./privacidad.html">Politica de privacidad</a>
-              <a class = "col-3 text-white" href="./terminosycondiciones.html">Terminos y condiciones</a>
-            </div>
-          </div>
-          <div class= "col-4">
-            <img src = "./index/falg_footer.png" style = "padding-top: 10px;">
-            <div style="padding-right: 10px;">©2020 Arne, Inc.</div>
-            <div style="padding-right: 10px;">All Rights Reserved</div>
-          </div>
-            <div class= "col-4">
-              <div class= row>
-              </div>
-            </div>
+<nav id="menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">FALG</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="./index.html" style="color: white;">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./foro.html" style="color: white;">Foro</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./estadisticas.html" style="color: white;">Estadísticas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./descarga.html" style="color: white;">Descarga</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" style="color: white;">
+          Ayuda
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="./soporte.html">Soporte</a>
+          <a class="dropdown-item" href="./formulario.html">Generar reporte</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="./faq.html">FAQ</a>
+        </div>
+      </li>
+      <li class="nav-item" id="conectado">
+
+      </li>
+      <li class="nav-item" style="padding-left: 485px;padding-top: 2px;">
+        <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./html/ingreso.html"
+          role="Ingresar">Ingresar</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Política de Privacidad</h1>
+    <p class="lead">Esta Política de privacidad rige la forma en que Falg recopila, utiliza, mantiene y divulga la
+      información recopilada de los usuarios (cada uno, un "Usuario") del sitio web http://www.falg.net ("Sitio"). Esta
+      política de privacidad se aplica al Sitio y a todos los productos y servicios ofrecidos por Falg.</p>
+  </div>
+</div>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Información de identificación personal</h1>
+    <p class="lead">Podemos recopilar información de identificación personal de los Usuarios de varias maneras, que
+      incluyen, entre otras, cuando los Usuarios visitan nuestro sitio, se registran en el sitio, completan un
+      formulario y en relación con otras actividades, servicios, características o recursos que poner a disposición en
+      nuestro sitio. Se puede solicitar a los usuarios, según corresponda, una dirección de correo electrónico. Sin
+      embargo, los usuarios pueden visitar nuestro sitio de forma anónima. Recopilaremos información de identificación
+      personal de los Usuarios solo si voluntariamente nos envían dicha información. Los usuarios siempre pueden negarse
+      a proporcionar información de identificación personal, excepto que puede evitar que participen en ciertas
+      actividades relacionadas con el Sitio.</p>
+  </div>
+</div>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Información de identificación no personal</h1>
+    <p class="lead">Podemos recopilar información de identificación no personal sobre los Usuarios cuando interactúan
+      con nuestro Sitio. La información de identificación no personal puede incluir el nombre del navegador, el tipo de
+      computadora y la información técnica sobre los medios de conexión de los Usuarios a nuestro Sitio, como el sistema
+      operativo y los proveedores de servicios de Internet utilizados y otra información similar. </p>
+  </div>
+</div>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Cookies del navegador web</h1>
+    <p class="lead">Nuestro sitio puede usar "cookies" para mejorar la experiencia del usuario. El navegador web del
+      usuario coloca cookies en su disco duro con fines de mantenimiento de registros y, a veces, para rastrear
+      información sobre ellos. El usuario puede optar por configurar su navegador web para rechazar las cookies, o para
+      avisarle cuando se envían cookies. Si lo hacen, tenga en cuenta que algunas partes del Sitio pueden no funcionar
+      correctamente. </p>
+  </div>
+</div>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Cómo usamos la información recopilada</h1>
+    <p class="lead">
+      Falg puede recopilar y utilizar la información personal de los Usuarios para los siguientes propósitos:
+      - Para mejorar el servicio al cliente
+      La información que proporciona nos ayuda a responder a sus solicitudes de servicio al cliente y necesidades de
+      soporte de manera más eficiente.
+      - Para personalizar la experiencia del usuario
+      Podemos usar información en conjunto para comprender cómo nuestros Usuarios como grupo usan los servicios y
+      recursos proporcionados en nuestro Sitio.
+      - Para mejorar nuestro sitio
+      Podemos utilizar los comentarios que nos proporcione para mejorar nuestros productos y servicios. </p>
+  </div>
+</div>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Cómo protegemos su información</h1>
+    <p class="lead">Adoptamos prácticas adecuadas de recopilación, almacenamiento y procesamiento de datos y medidas de
+      seguridad para proteger contra el acceso no autorizado, la alteración, la divulgación o la destrucción de su
+      información personal, nombre de usuario, contraseña, información de transacciones y datos almacenados en nuestro
+      Sitio. Aunque Falg no garantiza que nunca ocurrirá un acceso no autorizado. </p>
+  </div>
+</div>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Compartir su información personal</h1>
+    <p class="lead">No vendemos, intercambiamos ni alquilamos información de identificación personal de los Usuarios a
+      terceros. Podemos compartir información demográfica agregada genérica no vinculada a ninguna información de
+      identificación personal con respecto a visitantes y usuarios con nuestros socios comerciales, afiliados de
+      confianza y anunciantes para los fines descritos anteriormente. </p>
+  </div>
+</div>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Cambios a esta política de privacidad</h1>
+    <p class="lead">Falg tiene la discreción de actualizar esta política de privacidad en cualquier momento. Cuando lo
+      hagamos, revisaremos la fecha actualizada al final de esta página. Alentamos a los usuarios a consultar con
+      frecuencia esta página para ver si hay cambios y mantenerse informados sobre cómo estamos ayudando a proteger la
+      información personal que recopilamos. Usted reconoce y acepta que es su responsabilidad revisar esta política de
+      privacidad periódicamente y conocer las modificaciones. </p>
+  </div>
+</div>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Su aceptación de estos términos.</h1>
+    <p class="lead">Al usar este Sitio, usted expresa su aceptación de esta política y los términos del servicio. Si no
+      está de acuerdo con esta política, no utilice nuestro sitio. Su uso continuado del Sitio después de la publicación
+      de cambios a esta política se considerará su aceptación de dichos cambios. </p>
+  </div>
+</div>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Contáctenos</h1>
+    <p class="lead">Si tiene alguna pregunta sobre esta Política de privacidad, las prácticas de este sitio o sus tratos
+      con este sitio, contáctenos en: página de contacto </p>
+  </div>
+</div>
+
+<hr style="height: 10vh">
+
+<footer style="padding-top: 20px;">
+  <div id="footer" class="footer">
+    <div class="row d-flex align-items-center" style="background-color:#0e0c0c">
+      <div class="col-4">
+        <div class="row d-flex align-items-center">
+          <a class="col-3 text-white" href="#">Acerca de</a>
+          <a class="col-3 text-white" href="./contacto.html">Contacto</a>
+          <a class="col-3 text-white" href="./privacidad.html">Politica de privacidad</a>
+          <a class="col-3 text-white" href="./terminosycondiciones.html">Terminos y condiciones</a>
         </div>
       </div>
-    </footer>
-  </body>
-  <style>
-    .footer {
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: rgb(48, 48, 48);
-      color: white;
-      text-align: center;
-    }
-    </style>
+      <div class="col-4">
+        <img src="./index/falg_footer.png" style="padding-top: 10px;">
+        <div style="padding-right: 10px;">©2020 Arne, Inc.</div>
+        <div style="padding-right: 10px;">All Rights Reserved</div>
+      </div>
+      <div class="col-4">
+        <div class=row>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+<style>
+  .footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(48, 48, 48);
+    color: white;
+    text-align: center;
+  }
+</style>
+
 </html>
 <script>
   $(document).ready(function () {
-    $.get("http://localhost:3000/users", function( informacion){
+    $.get("http://localhost:3000/users", function (informacion) {
       cuentas = informacion
-      if(informacion.usuarios[1].conectado){
+      if (informacion.usuarios[1].conectado) {
         $("#conectado").append(
-        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
         );
       }
     });

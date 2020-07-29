@@ -193,7 +193,7 @@
 </html>
 <script>
   cuentas = [];
-  $(document).ready(function () {
+  $(document).ready(function () { 
     $.get("http://localhost:3000/users", function (informacion) {
       cuentas = informacion.usuarios;
       
@@ -261,7 +261,6 @@
       );
       $('#aceptar').click(function () {
         event.preventDefault();
-        console.log("hola????");
         $.ajax({
           url: 'http://localhost:3000/users',
           type: 'PUT',
@@ -277,20 +276,5 @@
         });
       });
     });
-    /*
-  event.preventDefault();
-      $.ajax({
-        url: 'http://localhost:3000/users/',
-        type: 'POST',
-        data: 
-        {
-          descripcion: $("#descripcion").val(),
-        },
-        success: function(result) {
-          alert("Registro correcto");
-          location.reload();
-        }
-      });
-      */
   }); 
 </script>
