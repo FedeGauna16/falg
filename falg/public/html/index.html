@@ -201,11 +201,17 @@
     });*/
     $.get("http://localhost:3000/users", function (informacion) {
       cuentas = informacion
-      if (informacion.usuarios[1].conectado) {
+      /*if (informacion.usuarios[1].conectado) {
         $("#conectado").append(
           '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
         );
-      }
+      }*/
+      informacion.usuarios.find(function(conectado){
+        console.log(conectado);
+        $("#conectado").append(
+          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+        );
+      });
     });
     $('#buscador').on('submit', function (event) {
       event.preventDefault();

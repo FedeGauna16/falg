@@ -12,7 +12,9 @@ router.put('/', function (req, res, next) {
   datos = req.body;
 
   cuentas[0].descripcion = datos.descripcion;
-  console.log(cuentas);
+  usuarioConectado = usuarios.find(function(usuario){
+    return usuario.id == datos.usuarioid
+  })
 
   res.send({
     status: true

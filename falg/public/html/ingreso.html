@@ -159,33 +159,41 @@ $(document).ready(function () {
   $('#ingreso').on('submit', function (event) {
       event.preventDefault();
       cuentas.usuarios.forEach(function(cuenta, i){
-        if(cuentas.usuarios[i].correo !=  $("#correo").val()){
+        if(cuentas.usuarios[i].correo ==  $("#correo").val()){
+          console.log("la id encontrada es de " + i);
+          console.log("usuario " + cuentas.usuarios[i].usuarioid);
+          console.log("usuario " + cuentas.usuarios[i].correo);
+          usuarioid = cuentas.usuarios[i].usuarioid;
+          correoencontrado = true;
+        }
+      });
+      if(correoencontrado != true){
+          console.log("la id encontrada loca es de " + i);
           alert("El correo ingresado no existe");
           return 0;
         }
-      });
       cuentas.usuarios.forEach(function(cuenta, i){
-        if(cuentas.usuarios[i].contraseña !=  $("#contraseña").val()){
+        if(cuentas.usuarios[i].contraseña ==  $("#contraseña").val()){
+          //poner aca un append que agregue como un tick verde para indicar que se ingreso la contra y el correo bien
+          contraencontrada = true;
+        }
+        //si te logueas sin poner nada te deja entrar xdd
+      });
+      if(contraencontrada != true){
           alert("La contraseña ingresada no existe");
           return 0;
         }
-      });
-      cuentas.usuarios.forEach(function(cuenta, i){
-        if(cuentas.usuarios[i].correo == $("#correo").val()){
-          usuarioid = cuentas.usuarios[i].usuarioid;
-          return 0;
-        }
-      });
         $.ajax({
           url: 'http://localhost:3000/users',
-          type: 'POST',
+          type: 'PUT',
           data: {
-            ip: ipusuario,
             usuarioid : usuarioid,
-            conectado : true
+            conectado : true,
           },
           success: function(result) {
             alert("Ingreso correcto");
+            correoencontrado = false;
+            contraencontrada = false;
             location.href="./index.html";
           }
         });
