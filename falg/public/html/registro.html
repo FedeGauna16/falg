@@ -1,216 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../stylesheets/config.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../stylesheets/config.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
   <title>Registro</title>
-  </head>
-  <body>
-    <div class="header">
-      <img src="./index/falg.png" style=" margin-left: auto;
-      margin-right: auto;" >
-    </div>
+</head>
 
-    <nav id = "menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">FALG</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="./index.html" style="color: white;">Inicio <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./foro.html" style="color: white;">Foro</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./estadisticas.html" style="color: white;">Estadísticas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./descarga.html" style="color: white;">Descarga</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
-              Ayuda
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./soporte.html">Soporte</a>
-              <a class="dropdown-item" href="./formulario.html">Generar reporte</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="./faq.html">FAQ</a>
-            </div>
-          </li>
-          <li class="nav-item" id="conectado">
-          
-          </li>
-          <li class="nav-item" style="padding-left: 485px;padding-top: 2px;">
-              <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html" role="Ingresar">Ingresar</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
-      </div>
-    </nav>
+<body>
+  <div class="header">
+    <img src="./index/falg.png" style=" margin-left: auto;
+      margin-right: auto;">
+  </div>
 
-    <div style="text-align: center;padding-top: 50px;color: white;">
-      <h3>Registro</h3>
-    </div>  
+  <nav id="menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">FALG</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <form id="registro" style="padding-left: 600px;padding-top: 50px;width: 1300px;color: white;">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputEmail4">Nombre</label>
-          <input type="text" class="form-control" id="nombre">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Contraseña</label>
-          <input type="password" class="form-control" id="contraseña">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="inputAddress">Correo electrónico</label>
-        <input type="email" class="form-control" id="correo" placeholder="ejemplo@hotmail.com">
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputCity">Pais</label>
-          <input type="text" class="form-control" id="pais">
-        </div>
-        <div class="form-group col-md-4">
-          <label for="inputState">Sexo</label>
-          <select id="sexo" class="form-control">
-            <option>Hombre</option>
-            <option>Mujer</option>
-            <option>Otro</option>
-          </select>
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputZip">Edad</label>
-          <input type="text" class="form-control" id="edad">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            No soy un robot
-          </label>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-secundary" style="background-color: #666666;color: white;" role= "registro">Registrarse</button>
-    </form>
-    <div style="padding-top: 30px;text-align: center;color: white;">
-      <h3>¿Ya tienes una cuenta? <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html" role="Ingresar">Ingresa ahora!</a> </h3>
-    </div>
-
-    <hr style = "height: 12vh">
-
-    <footer style="padding-top: 20px;">
-      <div id="footer" class= "footer">
-        <div class="row d-flex align-items-center" style="background-color:#0e0c0c">
-          <div class= "col-4">
-            <div class= "row d-flex align-items-center">
-              <a class = "col-3 text-white" href="#">Acerca de</a>
-              <a class = "col-3 text-white" href="#">Contacto</a>
-              <a class = "col-3 text-white" href="#">Politica de privacidad</a>
-              <a class = "col-3 text-white" href="#">Terminos y condiciones</a>
-            </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="./index.html" style="color: white;">Inicio <span
+              class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./foro.html" style="color: white;">Foro</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./estadisticas.html" style="color: white;">Estadísticas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./descarga.html" style="color: white;">Descarga</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" style="color: white;">
+            Ayuda
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="./soporte.html">Soporte</a>
+            <a class="dropdown-item" href="./formulario.html">Generar reporte</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="./faq.html">FAQ</a>
           </div>
-          <div class= "col-4">
-            <img src = "./index/falg_footer.png" style = "padding-top: 10px;">
-            <div style="padding-right: 10px;">©2020 Arne, Inc.</div>
-            <div style="padding-right: 10px;">All Rights Reserved</div>
+        </li>
+        <li class="nav-item" id="conectado">
+
+        </li>
+        <li class="nav-item" style="padding-left: 485px;padding-top: 2px;">
+          <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html"
+            role="Ingresar">Ingresar</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
+
+  <div style="text-align: center;padding-top: 50px;color: white;">
+    <h3>Registro</h3>
+  </div>
+
+  <form id="registro" style="padding-left: 600px;padding-top: 50px;width: 1300px;color: white;">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Nombre</label>
+        <input type="text" class="form-control" id="nombre">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Contraseña</label>
+        <input type="password" class="form-control" id="contraseña">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Correo electrónico</label>
+      <input type="email" class="form-control" id="correo" placeholder="ejemplo@hotmail.com">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">Pais</label>
+        <input type="text" class="form-control" id="pais">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">Sexo</label>
+        <select id="sexo" class="form-control">
+          <option>Hombre</option>
+          <option>Mujer</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Edad</label>
+        <input type="text" class="form-control" id="edad">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          No soy un robot
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-secundary" style="background-color: #666666;color: white;"
+      role="registro">Registrarse</button>
+  </form>
+  <div style="padding-top: 30px;text-align: center;color: white;">
+    <h3>¿Ya tienes una cuenta? <a class="btn btn-secundary" style="background-color: #666666;color: white;"
+        href="./ingreso.html" role="Ingresar">Ingresa ahora!</a> </h3>
+  </div>
+
+  <hr style="height: 12vh">
+
+  <footer style="padding-top: 20px;">
+    <div id="footer" class="footer">
+      <div class="row d-flex align-items-center" style="background-color:#0e0c0c">
+        <div class="col-4">
+          <div class="row d-flex align-items-center">
+            <a class="col-3 text-white" href="#">Acerca de</a>
+            <a class="col-3 text-white" href="#">Contacto</a>
+            <a class="col-3 text-white" href="#">Politica de privacidad</a>
+            <a class="col-3 text-white" href="#">Terminos y condiciones</a>
           </div>
-            <div class= "col-4">
-              <div class= row>
-              </div>
-            </div>
+        </div>
+        <div class="col-4">
+          <img src="./index/falg_footer.png" style="padding-top: 10px;">
+          <div style="padding-right: 10px;">©2020 Arne, Inc.</div>
+          <div style="padding-right: 10px;">All Rights Reserved</div>
+        </div>
+        <div class="col-4">
+          <div class=row>
+          </div>
         </div>
       </div>
-    </footer>
-  </body>
-  <style>
-    .footer {
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: rgb(48, 48, 48);
-      color: white;
-      text-align: center;
-    }
-    .header {
+    </div>
+  </footer>
+</body>
+<style>
+  .footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(48, 48, 48);
+    color: white;
+    text-align: center;
+  }
+
+  .header {
     text-align: center;
     background: #0e0c0c;
     font-size: 30px;
   }
-    body {
-      background-color: rgb(36, 36, 36);
-      height: 500px;
-    }
-  </style>
+
+  body {
+    background-color: rgb(36, 36, 36);
+    height: 500px;
+  }
+</style>
+
 </html>
 <script>
-var cuentas = [];
-var usuarioid = "";
-var legajo = 0;
+  var cuentas = [];
+  var usuarioid = "";
+  var legajo = 0;
 
-$(document).ready(function () {
-  $.get( "http://localhost:3000/users", function( informacion ){
-    cuentas = informacion;
-    legajo = cuentas.usuarios.length + 1;
-    console.log(informacion.usuarios[1].conectado);
-    if(informacion.usuarios[1].conectado){
+  $(document).ready(function () {
+    $.get("http://localhost:3000/users", function (informacion) {
+      cuentas = informacion;
+      legajo = cuentas.usuarios.length + 1;
+      console.log(informacion.usuarios[1].conectado);
+      if (informacion.usuarios[1].conectado) {
         $("#conectado").append(
-        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
         );
       }
-  });
-  $('#registro').on('submit', function (event) {
-    event.preventDefault();
-    console.log(cuentas);
-    if($("#nombre").val() == 0 || $("#contraseña").val() == 0 || $("#correo").val() == 0 ||$( "#pais").val() == 0 || $("#sexo").val() == 0 || $("#edad").val() == 0){
-      alert("Uno de los campos esta vacio");
-      return 0;
-    }
-    for(var i = 0; i < cuentas.length; i+=1) {
-      console.log(cuentas[i].nombre + $("#nombre").val());
-      if(cuentas[i].nombre == $("#nombre").val()){
-        console.log(cuentas[i].nombre);
-        alert("El nombre ya esta ocupado");
+    });
+    $('#registro').on('submit', function (event) {
+      event.preventDefault();
+      console.log(cuentas);
+      if ($("#nombre").val() == 0 || $("#contraseña").val() == 0 || $("#correo").val() == 0 || $("#pais").val() == 0 || $("#sexo").val() == 0 || $("#edad").val() == 0) {
+        alert("Uno de los campos esta vacio");
         return 0;
-        }
-    };
-    $.ajax({
-      url: 'http://localhost:3000/users/',
-      type: 'POST',
-      data: 
-      {
-        usuarioid : legajo, 
-        nombre: $("#nombre").val(),
-        contraseña: $("#contraseña").val(),
-        correo: $("#correo").val(),
-        pais: $("#pais").val(),
-        sexo: $("#sexo").val(),
-        edad: $("#edad").val(),
-        descripcion: false
-      },
-      success: function(result) {
-        alert("Registro correcto");
-        location.reload();
       }
+      for (var i = 0; i < cuentas.length; i += 1) {
+        console.log(cuentas[i].nombre + $("#nombre").val());
+        if (cuentas[i].nombre == $("#nombre").val()) {
+          console.log(cuentas[i].nombre);
+          alert("El nombre ya esta ocupado");
+          return 0;
+        }
+      };
+      $.ajax({
+        url: 'http://localhost:3000/users/',
+        type: 'POST',
+        data:
+        {
+          usuarioid: legajo,
+          nombre: $("#nombre").val(),
+          contraseña: $("#contraseña").val(),
+          correo: $("#correo").val(),
+          pais: $("#pais").val(),
+          sexo: $("#sexo").val(),
+          edad: $("#edad").val(),
+          descripcion: ""
+        },
+        success: function (result) {
+          alert("Registro correcto");
+          location.reload();
+          location.href="./ingreso.html";
+        }
+      });
     });
   });
-});
 </script>

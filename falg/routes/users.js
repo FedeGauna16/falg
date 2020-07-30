@@ -7,6 +7,18 @@ router.get('/', function(req, res, next) {
    res.send({usuarios : cuentalogueada});
 });
 
+router.put('/', function (req, res, next) {
+  
+  datos = req.body;
+
+  cuentas[0].descripcion = datos.descripcion;
+  console.log(cuentas);
+
+  res.send({
+    status: true
+  })
+});
+ 
 router.post('/', function(req, res, next) {
 
  cuentas.push(req.body);
