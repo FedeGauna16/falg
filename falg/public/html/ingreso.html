@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../stylesheets/config.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../stylesheets/config.css" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
 
     <title>Ingreso</title>
   </head>
+
   <body>
     <div class="header">
-      <img src="./index/falg.png" style=" margin-left: auto;
-      margin-right: auto;" >
+      <img
+        src="./index/falg.png"
+        style="margin-left: auto; margin-right: auto;"
+      />
     </div>
     <style>
       .header {
-      text-align: center;
-      background: #0e0c0c;
-      font-size: 30px;
-    }
+        text-align: center;
+        background: #0e0c0c;
+        font-size: 30px;
+      }
     </style>
     <style>
       body {
@@ -33,98 +52,232 @@
         height: 500px;
       }
     </style>
-    <nav id = "menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">FALG</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
-    
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="./index.html" style="color: white;">Inicio <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="./index.html" style="color: white;"
+              >Inicio <span class="sr-only">(current)</span></a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./foro.html" style="color: white;">Foro</a>
+            <a class="nav-link" href="./foro.html" style="color: white;"
+              >Foro</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./estadisticas.html" style="color: white;">Estadísticas</a>
+            <a class="nav-link" href="./estadisticas.html" style="color: white;"
+              >Estadísticas</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./descarga.html" style="color: white;">Descarga</a>
+            <a class="nav-link" href="./descarga.html" style="color: white;"
+              >Descarga</a
+            >
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              style="color: white;"
+            >
               Ayuda
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="./soporte.html">Soporte</a>
-              <a class="dropdown-item" href="./formulario.html">Generar reporte</a>
+              <a class="dropdown-item" href="./formulario.html"
+                >Generar reporte</a
+              >
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="./faq.html">FAQ</a>
             </div>
           </li>
-          <li class="nav-item" id="conectado">
-            
-          </li>
-          <li class="nav-item" style="padding-left: 485px;padding-top: 2px;">
-              <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html" role="Ingresar">Ingresar</a>
+          <li class="nav-item" id="conectado"></li>
+          <li class="nav-item" style="padding-left: 485px; padding-top: 2px;">
+            <a
+              class="btn btn-secundary"
+              style="background-color: #666666; color: white;"
+              href="./ingreso.html"
+              role="Ingresar"
+              >Ingresar</a
+            >
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Buscar jugador/partida"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Buscar
+          </button>
         </form>
       </div>
     </nav>
 
-    <div style="text-align: center;padding-top: 50px;color: white;">
-        <h3>Ingresar</h3>
+    <div style="text-align: center; padding-top: 50px; color: white;">
+      <h3>Ingresar</h3>
     </div>
 
-    <form id="ingreso" style="padding-left: 600px;width: 1300px;color: white;">
+    <form
+      id="ingreso"
+      style="padding-left: 600px; width: 1300px; color: white;"
+    >
       <div class="form-group">
         <label for="exampleInputEmail1">Correo electrónico</label>
-        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp">
+        <input
+          type="email"
+          class="form-control"
+          id="correo"
+          aria-describedby="emailHelp"
+        />
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Contraseña</label>
-        <input type="password" class="form-control" id="contraseña">
-        <small id="emailHelp" class="form-text text-muted">Nunca compartas tu contraseña con nadie</small>
+        <input type="password" class="form-control" id="contraseña" />
+        <small id="emailHelp" class="form-text text-muted"
+          >Nunca compartas tu contraseña con nadie</small
+        >
       </div>
       <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">No soy un robot</label>
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+        <label class="form-check-label" for="exampleCheck1"
+          >No soy un robot</label
+        >
       </div>
-      <button type="submit" class="btn btn-secundary" style="background-color: #666666;color: white;" role="Ingresar">Entrar</button>
+      <button
+        type="submit"
+        class="btn btn-secundary"
+        style="background-color: #666666; color: white;"
+        role="Ingresar"
+      >
+        Entrar
+      </button>
     </form>
-
-    <div style="padding-top: 30px;text-align: center;color: white;">
-      <h3>¿No tienes una cuenta? <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./registro.html" role="Ingresar">Registrate ahora!</a> </h3>
+    <a
+      href="#"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+      style="margin-left: 1100px;"
+      >Me olvide la contraseña bol</a
+    >
+    <div style="padding-top: 30px; text-align: center; color: white;">
+      <h3>
+        ¿No tienes una cuenta?
+        <a
+          class="btn btn-secundary"
+          style="background-color: #666666; color: white;"
+          href="./registro.html"
+          role="Ingresar"
+          >Registrate ahora!</a
+        >
+      </h3>
     </div>
 
-    <hr style = "height: 10vh">
-
-    <footer style="padding-top: 20px;">
-      <div id="footer" class= "footer">
-        <div class="row d-flex align-items-center" style="background-color:#0e0c0c">
-          <div class= "col-4">
-            <div class= "row d-flex align-items-center">
-              <a class = "col-3 text-white" href="#">Acerca de</a>
-              <a class = "col-3 text-white" href="#">Contacto</a>
-              <a class = "col-3 text-white" href="#">Politica de privacidad</a>
-              <a class = "col-3 text-white" href="#">Terminos y condiciones</a>
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div
+          class="modal-content"
+          style="background-color: #343a40; color: white;"
+        >
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Cambio de contraseña
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="exampleInputPassword1">Correo electrónico</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputMail"
+                placeholder="mete"
+              />
+              <label for="exampleInputPassword1">Nueva contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                id="inputContra"
+                placeholder="mete"
+              />
             </div>
           </div>
-          <div class= "col-4">
-            <img src = "./index/falg_footer.png" style = "padding-top: 10px;">
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button id="modalBotonSalvar" class="btn btn-primary">
+              Salvar muy bueno
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr style="height: 10vh;" />
+
+    <footer style="padding-top: 20px;">
+      <div id="footer" class="footer">
+        <div
+          class="row d-flex align-items-center"
+          style="background-color: #0e0c0c;"
+        >
+          <div class="col-4">
+            <div class="row d-flex align-items-center">
+              <a class="col-3 text-white" href="#">Acerca de</a>
+              <a class="col-3 text-white" href="#">Contacto</a>
+              <a class="col-3 text-white" href="#">Politica de privacidad</a>
+              <a class="col-3 text-white" href="#">Terminos y condiciones</a>
+            </div>
+          </div>
+          <div class="col-4">
+            <img src="./index/falg_footer.png" style="padding-top: 10px;" />
             <div style="padding-right: 10px;">©2020 Arne, Inc.</div>
             <div style="padding-right: 10px;">All Rights Reserved</div>
           </div>
-            <div class= "col-4">
-              <div class= row>
-              </div>
-            </div>
+          <div class="col-4">
+            <div class="row"></div>
+          </div>
         </div>
       </div>
     </footer>
@@ -138,28 +291,29 @@
       color: white;
       text-align: center;
     }
-    </style>
+  </style>
 </html>
 <script>
-var cuentas = [];
-var ipusuario = "";
-var usuarioid = "";
-$(document).ready(function () {
-  $.get("http://localhost:3000/users", function( informacion){
-    cuentas = informacion
-    if(informacion.usuarios[1].conectado){
-      $("#conectado").append(
-      '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
-      );
-    }
-  });
-  $.getJSON("https://api.ipify.org/?format=json", function(e) {
-    ipusuario = e.ip
-  });
-  $('#ingreso').on('submit', function (event) {
+  var cuentas = [];
+  var ipusuario = "";
+  var usuarioid = "";
+  $(document).ready(function () {
+    $.get("http://localhost:3000/users", function (informacion) {
+      cuentas = informacion;
+      if (informacion.usuarios[1].conectado) {
+        $("#conectado").append(
+          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+        );
+      }
+    });
+    $.getJSON("https://api.ipify.org/?format=json", function (e) {
+      ipusuario = e.ip;
+    });
+
+    $("#ingreso").on("submit", function (event) {
       event.preventDefault();
-      cuentas.usuarios.forEach(function(cuenta, i){
-        if(cuentas.usuarios[i].correo ==  $("#correo").val()){
+      cuentas.usuarios.forEach(function (cuenta, i) {
+        if (cuentas.usuarios[i].correo == $("#correo").val()) {
           console.log("la id encontrada es de " + i);
           console.log("usuario " + cuentas.usuarios[i].usuarioid);
           console.log("usuario " + cuentas.usuarios[i].correo);
@@ -167,36 +321,60 @@ $(document).ready(function () {
           correoencontrado = true;
         }
       });
-      if(correoencontrado != true){
-          console.log("la id encontrada loca es de " + i);
-          alert("El correo ingresado no existe");
-          return 0;
-        }
-      cuentas.usuarios.forEach(function(cuenta, i){
-        if(cuentas.usuarios[i].contraseña ==  $("#contraseña").val()){
+      if (correoencontrado != true) {
+        console.log("la id encontrada loca es de " + i);
+        alert("El correo ingresado no existe");
+        return 0;
+      }
+      cuentas.usuarios.forEach(function (cuenta, i) {
+        if (cuentas.usuarios[i].contraseña == $("#contraseña").val()) {
           //poner aca un append que agregue como un tick verde para indicar que se ingreso la contra y el correo bien
           contraencontrada = true;
         }
         //si te logueas sin poner nada te deja entrar xdd
       });
-      if(contraencontrada != true){
-          alert("La contraseña ingresada no existe");
-          return 0;
-        }
-        $.ajax({
-          url: 'http://localhost:3000/users',
-          type: 'PUT',
-          data: {
-            usuarioid : usuarioid,
-            conectado : true,
-          },
-          success: function(result) {
-            alert("Ingreso correcto");
-            correoencontrado = false;
-            contraencontrada = false;
-            location.href="./index.html";
-          }
-        });
+      if (contraencontrada != true) {
+        alert("La contraseña ingresada no existe");
+        return 0;
+      }
+      $.ajax({
+        url: "http://localhost:3000/users",
+        type: "PUT",
+        data: {
+          usuarioid: usuarioid,
+          conectado: true,
+        },
+        success: function (result) {
+          alert("Ingreso correcto");
+          correoencontrado = false;
+          contraencontrada = false;
+          location.href = "./index.html";
+        },
       });
     });
+    $("#modalBotonSalvar").on("click", function (event) {
+      event.preventDefault();
+      var inputMail = $("#inputMail").val();
+      var inputContra = $("#inputContra").val();
+      console.log(inputMail, inputContra);
+      console.log(cuentas.usuarios);
+      var users = cuentas.usuarios;
+      var usuarioIdentificado = users.find(user => {
+        return user.correo == inputMail;
+      });
+      if (usuarioIdentificado != 0) { 
+        $.ajax({
+          url: 'http://localhost:3000/users/' + usuarioIdentificado.id, 
+          type: 'PUT',
+          data: {
+          newPassword: inputContra
+          }, 
+          success: function (result) {
+            alert("Tu contraseña fue cambiada con exito");
+            
+          }
+        })
+      }
+    });
+  });
 </script>
