@@ -2,14 +2,20 @@ var express = require('express');
 var router = express.Router();
 var cuentas = require('../public/html/user/users.json');
 var datoslogin = "";
+var cosa = "";
 
 router.get('/', function(req, res, next) {
    res.send({usuarios : cuentas});
 });
 
+router.get('/logueado', function(req, res, next) {
+  res.send(cosa);
+});
+
 router.put('/login', function(req, res, next) {
   datoslogin = req.body;
   cuentas[datoslogin.usuarioid - 1].conectado = datoslogin.conectado;
+  cosa = datoslogin.usuarioid;
   res.send({
     status: true
   });

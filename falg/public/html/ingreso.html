@@ -178,8 +178,8 @@
       href="#"
       data-toggle="modal"
       data-target="#exampleModalCenter"
-      style="margin-left: 1100px;"
-      >Me olvide la contraseña bol</a
+      style="margin-left: 1150px;"
+      >Olvide mi contraseña</a
     >
     <div style="padding-top: 30px; text-align: center; color: white;">
       <h3>
@@ -227,14 +227,14 @@
                 type="text"
                 class="form-control"
                 id="inputMail"
-                placeholder="mete"
+                placeholder="ejemplo@hotmail.com"
               />
               <label for="exampleInputPassword1">Nueva contraseña</label>
               <input
                 type="password"
                 class="form-control"
                 id="inputContra"
-                placeholder="mete"
+                placeholder="Contraseña nueva"
               />
             </div>
           </div>
@@ -247,7 +247,7 @@
               Cancelar
             </button>
             <button id="modalBotonSalvar" class="btn btn-primary">
-              Salvar muy bueno
+              Guardar cambios
             </button>
           </div>
         </div>
@@ -301,9 +301,11 @@
     $.get("http://localhost:3000/users", function (informacion) {
       cuentas = informacion;
       cuentas.usuarios.find(function(conectado){
-        $("#conectado").append(
-        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
-        );
+        if(conectado){
+          $("#conectado").append(
+          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+          );
+        }
       });
     });
     $.getJSON("https://api.ipify.org/?format=json", function (e) {
@@ -339,7 +341,7 @@
         type: "PUT",
         data: {
           usuarioid: usuarioid,
-          conectado: true,
+          conectado: true
         },
         success: function (result) {
           alert("Ingreso correcto");
