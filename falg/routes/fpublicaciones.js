@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var publicaciones = require('../public/html/foro/publicaciones.json');
-var usuario = require('../public/html/cuentas/cuentalogueada.json');
+var usuario = require('../public/html/user/users.json');
 
 router.get('/', function(req, res, next) {
    res.send({

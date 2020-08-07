@@ -207,7 +207,7 @@
         );
       }*/
       informacion.usuarios.find(function(conectado){
-        console.log(conectado);
+        console.log(" que est apsando loco" + conectado);
         $("#conectado").append(
           '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
         );
@@ -215,7 +215,7 @@
     });
     $('#buscador').on('submit', function (event) {
       event.preventDefault();
-      console.log($("#buscar").val().toLowerCase());
+      //console.log($("#buscar").val().toLowerCase());
       /*           location.href = "./buscador.html";*/
       $.ajax({
         url: 'http://localhost:3000/inicio',
@@ -224,7 +224,7 @@
           search: $("#buscar").val().toLowerCase()
         },
         success: function (result) {
-          console.log(result);
+          //console.log(result);
           //location.reload();
         }
       });
