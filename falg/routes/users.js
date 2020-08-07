@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var cuentas = require('../public/html/user/users.json');
 var datoslogin = "";
-var cosa = 0;
+var idusuario = 0;
 
 router.get('/', function(req, res, next) {
    res.send({usuarios : cuentas});
@@ -12,7 +12,7 @@ router.get('/logueado', function(req, res, next) {
   res.send(
     {
       status: true,
-      idconectado: cosa
+      idconectado: idusuario
     }
     );
 });
@@ -20,18 +20,18 @@ router.get('/logueado', function(req, res, next) {
 router.put('/login', function(req, res, next) {
   datoslogin = req.body;
   cuentas[datoslogin.usuarioid - 1].conectado = datoslogin.conectado;
-  console.log(cuentas);
-  cosa = datoslogin.usuarioid;
-  console.log(datoslogin.usuarioid);
-  console.log(cosa);
+  idusuario = datoslogin.usuarioid;
   res.send({
     status: true
   });
 });
 
-router.put('/', function (req, res, next) {
+router.put('/perfil', function (req, res, next) {
   datos = req.body;
   cuentas[0].descripcion = datos.descripcion;
+  res.send({
+    status : true,
+  });
 });
  
 router.post('/', function(req, res, next) {

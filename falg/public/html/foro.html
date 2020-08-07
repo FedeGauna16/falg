@@ -76,9 +76,12 @@
         <li class="nav-item" id="conectado">
 
         </li>
-        <li class="nav-item" style="padding-left: 485px;padding-top: 2px;">
+        <li id = "ingresar" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
           <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html"
             role="Ingresar">Ingresar</a>
+        </li>
+        <li id = "cerrarsesion" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
+          
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -273,10 +276,29 @@
     });
     $.get("http://localhost:3000/users/logueado", function (informacion) {
       var cuentaconectada = informacion.idconectado;
-      if (cuentas.usuarios[cuentaconectada - 1].conectado) {
+      if (cuentas.usuarios[cuentaconectada -1].conectado) {
+        $("#ingresar").remove();
         $("#conectado").append(
           '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
         );
+        $("#cerrarsesion").append(
+          '<a class="btn btn-secundary" style="background-color: #666666;color: white;""'+
+          'role="Cerrarsesion">Cerrar Sesión</a>'
+        );
+        $('#cerrarsesion').click(function () {
+          $.ajax({
+            url: "http://localhost:3000/users/login",
+            type: "PUT",
+            data: {
+              usuarioid: cuentaconectada,
+              conectado: false
+            },
+            success: function (result) {
+              alert("Sesión cerrada con éxito!");
+              location.href = "./index.html";
+            },
+          });
+        });
       }
     });
     $.get("http://localhost:3000/fpublicaciones", function (informacion) {
@@ -310,11 +332,6 @@
           '</a>'
         );
       });
-      if (informacion.usuarios[1].conectado) {
-        $("#conectado").append(
-          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
-        );
-      }
       $('#publicacion').click(function () {
         event.preventDefault();
         $.ajax({

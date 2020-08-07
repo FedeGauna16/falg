@@ -306,10 +306,29 @@
     });
     $.get("http://localhost:3000/users/logueado", function (informacion) {
       var cuentaconectada = informacion.idconectado;
-      if(cuentas.usuarios[cuentaconectada -1].conectado){
+      if (cuentas.usuarios[cuentaconectada -1].conectado) {
+        $("#ingresar").remove();
         $("#conectado").append(
-        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
         );
+        $("#cerrarsesion").append(
+          '<a class="btn btn-secundary" style="background-color: #666666;color: white;""'+
+          'role="Cerrarsesion">Cerrar Sesión</a>'
+        );
+        $('#cerrarsesion').click(function () {
+          $.ajax({
+            url: "http://localhost:3000/users/login",
+            type: "PUT",
+            data: {
+              usuarioid: cuentaconectada,
+              conectado: false
+            },
+            success: function (result) {
+              alert("Sesión cerrada con éxito!");
+              location.href = "./index.html";
+            },
+          });
+        });
       }
     });
 
@@ -331,7 +350,8 @@
       }
       cuentas.usuarios.forEach(function (cuenta, i) {
         if (cuentas.usuarios[i].contraseña == $("#contraseña").val()) {
-          //poner aca un append que agregue como un tick verde para indicar que se ingreso la contra y el correo bien
+          //poner aca un append que agregue como un tick verde para indicar que se ingreso la contra y el correo bien HOLA SOY YO MISMO DEL FUTURO ALTERNO
+          // ESTO YA ESTA PUESTO EN CREAR LAPUBLICACION, ROBAR DE AHI EL TICK VERDE Y GANAS
           contraencontrada = true;
         }
       });
