@@ -77,8 +77,7 @@
 
         </li>
         <li id = "ingresar" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
-          <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html"
-            role="Ingresar">Ingresar</a>
+          
         </li>
         <li id = "cerrarsesion" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
           
@@ -276,7 +275,7 @@
     });
     $.get("http://localhost:3000/users/logueado", function (informacion) {
       var cuentaconectada = informacion.idconectado;
-      if (cuentas.usuarios[cuentaconectada -1].conectado) {
+      if (cuentas.usuarios[cuentaconectada -1].conectado == true) {
         $("#ingresar").remove();
         $("#conectado").append(
           '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
@@ -299,6 +298,13 @@
             },
           });
         });
+      }
+      else {
+        $("#cerrarsesion").remove();
+        $("#ingresar").append(
+          '<a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html"'+
+          'role="Ingresar">Ingresar</a>'
+        );
       }
     });
     $.get("http://localhost:3000/fpublicaciones", function (informacion) {

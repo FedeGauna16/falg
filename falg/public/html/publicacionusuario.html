@@ -73,8 +73,11 @@
             <a class="dropdown-item" href="./faq.html">FAQ</a>
           </div>
         </li>
-        <li class="nav-item" style="padding-left: 485px;padding-top: 2px;">
-          <button type="button" class="btn btn-secondary" style="background-color: #666666;">Ingresar</button>
+        <li id = "ingresar" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
+
+        </li>
+        <li id = "cerrarsesion" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
+          
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -289,6 +292,13 @@
             },
           });
         });
+      }
+      else {
+        $("#cerrarsesion").remove();
+        $("#ingresar").append(
+          '<a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html"'+
+          'role="Ingresar">Ingresar</a>'
+        );
       }
     });
     $.get("http://localhost:3000/fpublicaciones", function (informacion) {

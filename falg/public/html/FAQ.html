@@ -75,9 +75,11 @@
       <li class="nav-item" id="conectado">
 
       </li>
-      <li class="nav-item" style="padding-left: 420px;">
-        <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./html/ingreso.html"
-          role="Ingresar">Ingresar</a>
+      <li id = "ingresar" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
+        
+      </li>
+      <li id = "cerrarsesion" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
+        
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -204,6 +206,13 @@
             },
           });
         });
+      }
+      else {
+        $("#cerrarsesion").remove();
+        $("#ingresar").append(
+          '<a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html"'+
+          'role="Ingresar">Ingresar</a>'
+        );
       }
     });
   });

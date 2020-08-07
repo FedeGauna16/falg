@@ -77,9 +77,11 @@
         <li class="nav-item" id="conectado">
 
         </li>
-        <li class="nav-item" style="padding-left: 485px;padding-top: 2px;">
-          <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html"
-            role="Ingresar">Ingresar</a>
+        <li id = "ingresar" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
+          
+        </li>
+        <li id = "cerrarsesion" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
+          
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0" id="buscador">
@@ -204,7 +206,9 @@
     });
     $.get("http://localhost:3000/users/logueado", function (informacion) {
       var cuentaconectada = informacion.idconectado;
-      if (cuentas.usuarios[cuentaconectada -1].conectado) {
+      console.log(cuentas.usuarios[cuentaconectada -1].conectado);//HOLA MIRA FLACO SI YO LO DEJO ASI SIN NADA AL IF, PASAN COSAS BUENAS Y MALAS A LA VEZ
+      // PERO SI LE PONGO TRUE TAMBIEN COSAS BUENAS YMALAS AYUYDA POR FAVOR
+      if (cuentas.usuarios[cuentaconectada -1].conectado == true) {
         $("#ingresar").remove();
         $("#conectado").append(
           '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
@@ -227,6 +231,14 @@
             },
           });
         });
+      }/// AAAA ESTO TAMBIEN SE ROMPE Y A LA VEZ NO CON EL TRUE ESE
+      else {
+        $("#cerrarsesion").remove();
+        console.log("hola¡?¡");
+        $("#ingresar").append(
+          '<a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html"'+
+          'role="Ingresar">Ingresar</a>'
+        );
       }
     });
     $('#buscador').on('submit', function (event) {
