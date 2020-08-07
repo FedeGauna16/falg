@@ -298,16 +298,23 @@
   var ipusuario = "";
   var usuarioid = "";
   $(document).ready(function () {
-    $.get("http://localhost:3000/users", function (informacion) {
+    $.get("http://localhost:3000/users/", function (informacion) {
       cuentas = informacion;
-      cuentas.usuarios.find(function(conectado){
-        if(conectado){
+    });
+    $.get("http://localhost:3000/users/logueado", function (informacion) {
+      //informacion.usuarios.find(function(conectado){
+        var cuentaconectada = informacion.idconectado;
+        console.log(cuentas);
+        console.log(cuentas.usuarios);
+        if(cuentas.usuarios[cuentaconectada -1].conectado){// AAA NO SE AYUDA
+          console.log("funca");
           $("#conectado").append(
           '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
-          );
+          );// la cosa es buscar si esta conectado el id de usuario del tipo qu e se conecto recien
         }
-      });
+      //});
     });
+
     $.getJSON("https://api.ipify.org/?format=json", function (e) {
       ipusuario = e.ip;
     });
@@ -372,8 +379,8 @@
             alert("Tu contraseña fue cambiada con exito");
             
           }
-        })
-      }
+        });
+      };
     });
   });
 </script>
