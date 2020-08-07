@@ -193,26 +193,25 @@
 </html>
 <script>
   cuentas = [];
-  $(document).ready(function () { 
+  $(document).ready(function () {
     $.get("http://localhost:3000/users", function (informacion) {
       cuentas = informacion.usuarios;
-      
-      console.log(cuentas);
-      
-      if (cuentas.usuarios[1].conectado) {
-        $("#conectado").append(
-          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>' // despues hacer lo mismo pero para matar al ingresar ese
-        );
-      }//EL BOTON DEL PERFIL ANDA MEDIO MEDIO, ARREGLARLO Y DESPUES REEMPLAZAR EN TODAS LAS SECCIONES
+      // despues hacer lo mismo pero para matar al ingresar ese
       $("#nombreusuario").append(
         '<h3 class="font-weight-bold mb-3"><strong>' + cuentas.usuarios[0].nombre + '</strong></h3>'
       );
       $("#descripcionusuario").append(
         '<p>' + cuentas.usuarios[0].descripcion + '</p>'
       );
-      
     });
-    
+    $.get("http://localhost:3000/users/logueado", function (informacion) {
+      var cuentaconectada = informacion.idconectado;
+      if (cuentas.usuarios[cuentaconectada - 1].conectado) {
+        $("#conectado").append(
+          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+        );
+      }
+    });
     $.get("http://localhost:3000/fpublicaciones", function (informacion) {
       cuentas = informacion.usuarios;
       cuentas.publicaciones.forEach(function (publicacion) {

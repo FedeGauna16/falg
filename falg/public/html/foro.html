@@ -268,34 +268,45 @@
 <script>
   cuentas = [];
   $(document).ready(function () {
+    $.get("http://localhost:3000/users/", function (informacion) {
+      cuentas = informacion;
+    });
+    $.get("http://localhost:3000/users/logueado", function (informacion) {
+      var cuentaconectada = informacion.idconectado;
+      if (cuentas.usuarios[cuentaconectada - 1].conectado) {
+        $("#conectado").append(
+          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+        );
+      }
+    });
     $.get("http://localhost:3000/fpublicaciones", function (informacion) {
       cuentas = informacion.usuarios;
       informacion.publicaciones.forEach(function (publicacion) {
         $("#publicaciones").append(
-          '<a id="publicacion" class="btn btn-light" href="./publicacionusuario.html" style="width: 1000px;background-color: #343a40;color: white">'+
-          '  <div class="row">'+
-          '      <div class="col" style="text-align: left;">'+
-          '          <div class="col">'+
-                        publicacion.titulo +
-          '          </div>'+
-          '          <div class="col">'+
-                        publicacion.usuario+
-          '          </div>'+
-          '      </div>'+
-          '      <div class="col">'+
-          '          <div class="row">'+
-          '              <div class="col-sm">'+
-          '                  <h6 style="text-align: right;">Likes <p>30</p></h6>'+
-          '              </div>'+
-          '              <div class="col-sm">'+
-          '                  <h6 style="text-align: right;">Mensajes <p>12</p></h6>'+
-          '              </div>'+
-          '              <div class="col-sm">'+
-          '                  <h6 style="text-align: right;">Visitas <p>68</p></h6>'+
-          '              </div>'+
-          '          </div>'+
-          '      </div>'+
-          '  </div>'+
+          '<a id="publicacion" class="btn btn-light" href="./publicacionusuario.html" style="width: 1000px;background-color: #343a40;color: white">' +
+          '  <div class="row">' +
+          '      <div class="col" style="text-align: left;">' +
+          '          <div class="col">' +
+          publicacion.titulo +
+          '          </div>' +
+          '          <div class="col">' +
+          publicacion.usuario +
+          '          </div>' +
+          '      </div>' +
+          '      <div class="col">' +
+          '          <div class="row">' +
+          '              <div class="col-sm">' +
+          '                  <h6 style="text-align: right;">Likes <p>30</p></h6>' +
+          '              </div>' +
+          '              <div class="col-sm">' +
+          '                  <h6 style="text-align: right;">Mensajes <p>12</p></h6>' +
+          '              </div>' +
+          '              <div class="col-sm">' +
+          '                  <h6 style="text-align: right;">Visitas <p>68</p></h6>' +
+          '              </div>' +
+          '          </div>' +
+          '      </div>' +
+          '  </div>' +
           '</a>'
         );
       });
@@ -313,8 +324,8 @@
           {
             id: cuentas.usuarioid,
           },
-          success: function(result) {
-            location.href="./publicacionusuario.html";
+          success: function (result) {
+            location.href = "./publicacionusuario.html";
           }
         });
       });

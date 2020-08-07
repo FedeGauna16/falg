@@ -261,9 +261,12 @@
 <script>
   cuentas = [];
   $(document).ready(function () {
-    $.get("http://localhost:3000/users", function (informacion) {
-      cuentas = informacion
-      if (informacion.usuarios[1].conectado) {
+    $.get("http://localhost:3000/users/", function (informacion) {
+      cuentas = informacion;
+    });
+    $.get("http://localhost:3000/users/logueado", function (informacion) {
+      var cuentaconectada = informacion.idconectado;
+      if (cuentas.usuarios[cuentaconectada - 1].conectado) {
         $("#conectado").append(
           '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
         );
@@ -271,12 +274,12 @@
     });
     $.get("http://localhost:3000/fpublicaciones", function (informacion) {
       cuentas = informacion.usuarios
-        $("#ptitulo").append(
-          publicaciones.publicacion.titulo
-        );
-        $("#pdescripcion").append(
-          publicacion.descripcion
-        );
+      $("#ptitulo").append(
+        publicaciones.publicacion.titulo
+      );
+      $("#pdescripcion").append(
+        publicacion.descripcion
+      );
     });
   });
 </script>

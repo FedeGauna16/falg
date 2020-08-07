@@ -199,19 +199,16 @@
         console.log("soy puto");
       }
     });*/
-    $.get("http://localhost:3000/users", function (informacion) {
-      cuentas = informacion
-      /*if (informacion.usuarios[1].conectado) {
+    $.get("http://localhost:3000/users/", function (informacion) {
+      cuentas = informacion;
+    });
+    $.get("http://localhost:3000/users/logueado", function (informacion) {
+      var cuentaconectada = informacion.idconectado;
+      if(cuentas.usuarios[cuentaconectada -1].conectado){
         $("#conectado").append(
-          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+        '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
         );
-      }*/
-      informacion.usuarios.find(function(conectado){
-        console.log(" que est apsando loco" + conectado);
-        $("#conectado").append(
-          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
-        );
-      });
+      }
     });
     $('#buscador').on('submit', function (event) {
       event.preventDefault();
@@ -229,7 +226,6 @@
         }
       });
     });
-
     $.get("http://localhost:3000/inicio", function (informacion) {
       informacion.forEach(function (carta) {
         $("#contenido").append(

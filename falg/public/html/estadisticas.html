@@ -1,31 +1,43 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../stylesheets/config.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../stylesheets/config.css">
 
-    <link href="./estadisticas/estadisticas.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <link href="./estadisticas/estadisticas.css" rel="stylesheet">
 
   <title>Estadisticas</title>
   <div class="header">
-    <img src="./index/falg.png" style=" margin-left: auto;margin-right: auto;" >
+    <img src="./index/falg.png" style=" margin-left: auto;margin-right: auto;">
   </div>
   <style>
     .header {
-    text-align: center;
-    background: #0e0c0c;
-    font-size: 30px;
-  }
+      text-align: center;
+      background: #0e0c0c;
+      font-size: 30px;
+    }
   </style>
   <style>
-    h3,h2 { color: yellow; }
-    h1 { color: white; }
+    h3,
+    h2 {
+      color: yellow;
+    }
+
+    h1 {
+      color: white;
+    }
   </style>
 </head>
 
@@ -34,114 +46,121 @@
     background-color: rgb(36, 36, 36);
     height: 500px;
   }
-  </style>
+</style>
 
-  <nav id = "menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">FALG</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="./index.html" style="color: white;">Inicio <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./foro.html" style="color: white;">Foro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./estadisticas.html" style="color: white;">Estadisticas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./descarga.html" style="color: white;">Descarga</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
-            Ayuda
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="./soporte.html">Soporte</a>
-            <a class="dropdown-item" href="./formulario.html">Generar reporte</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="./faq.html">FAQ</a>
-          </div>
-        </li>
-        <li class="nav-item" id="conectado">
-            
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
+<nav id="menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">FALG</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="./index.html" style="color: white;">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./foro.html" style="color: white;">Foro</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./estadisticas.html" style="color: white;">Estadisticas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./descarga.html" style="color: white;">Descarga</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" style="color: white;">
+          Ayuda
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="./soporte.html">Soporte</a>
+          <a class="dropdown-item" href="./formulario.html">Generar reporte</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="./faq.html">FAQ</a>
+        </div>
+      </li>
+      <li class="nav-item" id="conectado">
+
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="titulobuscador">
+    <h3>Buscar jugador</h3>
+  </div>
+  <div class="buscador" id="buscador">
+    <form class="col-5">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" id="buscar" aria-label="Search">
+      <button class="boton" type="submit" id="botonbuscar">Buscar</button>
+    </form>
+    <div class="validacion" id="valid">
+
     </div>
-  </nav>
-  
-    <div class="container">
-      <div class="titulobuscador">
-        <h3>Buscar jugador</h3>
+    <div class="filtro">
+      <button class="boton2 boton2-secundario dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">Clases</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="filtro">
+        <button class="dropdown-item" onclick="filtrar('1')">Clase 1</button>
+        <button class="dropdown-item" onclick="filtrar('2')">Clase 2</button>
+        <button class="dropdown-item" onclick="filtrar('3')">Clase 3</button>
+        <button class="dropdown-item" onclick="filtrar('4')">Clase 4</button>
+        <button class="dropdown-item" onclick="filtrar('5')">Clase 5</button>
       </div>
-      <div class="buscador" id="buscador">
-        <form class="col-5">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar" id= "buscar" aria-label="Search">
-          <button class="boton" type="submit" id="botonbuscar">Buscar</button>
-        </form>
-        <div class="validacion" id="valid">
-          
-        </div>
-        <div class="filtro">
-          <button class="boton2 boton2-secundario dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clases</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="filtro">
-            <button class="dropdown-item" onclick= "filtrar('1')">Clase 1</button>
-            <button class="dropdown-item" onclick= "filtrar('2')">Clase 2</button>
-            <button class="dropdown-item" onclick= "filtrar('3')">Clase 3</button>
-            <button class="dropdown-item" onclick= "filtrar('4')">Clase 4</button>
-            <button class="dropdown-item" onclick= "filtrar('5')">Clase 5</button>
-          </div>
-        </div>
-      </div>
-       <div class="cosodearriba">
-          <div class="cosodearribaItems">Items</div>
-          <div class="cosodearribaIconoPJ">Clase</div>
-          <div class="cosodearribaNombre">Nombre</div>
-          <div class="espacioparacosodearriba"></div>
-          <div class="cosodearribaNombre">Nombre</div>
-          <div class="cosodearribaIconoPJ">Clase</div>
-          <div class="cosodearribaItems-2">Items</div>
-        </div>
+    </div>
+  </div>
+  <div class="cosodearriba">
+    <div class="cosodearribaItems">Items</div>
+    <div class="cosodearribaIconoPJ">Clase</div>
+    <div class="cosodearribaNombre">Nombre</div>
+    <div class="espacioparacosodearriba"></div>
+    <div class="cosodearribaNombre">Nombre</div>
+    <div class="cosodearribaIconoPJ">Clase</div>
+    <div class="cosodearribaItems-2">Items</div>
+  </div>
 
-        <div id="game">
-    
-         </div>
+  <div id="game">
 
-        <h2 class="mt-4">Clases con ratio más alto</h2>
-       <div class="fila-2" id="class">
-    
-        </div>
+  </div>
 
-        <h2 class="mt-4">Jugadores con ratio más alto</h2>
-        <div class="fila-2" id="player">
-  
-        </div>
-  
-      <footer id="nene" style="height: 40px;">
-    <div class="footerr" style="background-color: #0e0c0c;height: 110px;padding-bottom: 50px;padding-top: 30px; margin-top:60px;">
+  <h2 class="mt-4">Clases con ratio más alto</h2>
+  <div class="fila-2" id="class">
+
+  </div>
+
+  <h2 class="mt-4">Jugadores con ratio más alto</h2>
+  <div class="fila-2" id="player">
+
+  </div>
+
+  <footer id="nene" style="height: 40px;">
+    <div class="footerr"
+      style="background-color: #0e0c0c;height: 110px;padding-bottom: 50px;padding-top: 30px; margin-top:60px;">
       <ul class="list-group list-group-horizontal" style="padding-left: 40px;background-color: #0e0c0c;">
-          <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Acerca de</li>
+        <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Acerca de</li>
         <div class="hola2" style="padding-left: 10px;">
           <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Contacto</li>
         </div>
         <div class="hola2" style="padding-left: 10px;">
-          <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Politica de privacidad</li>
+          <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Politica de
+            privacidad</li>
         </div>
         <div class="hola2" style="padding-left: 10px;">
-          <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Terminos y condiciones</li>
+          <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;">Terminos y
+            condiciones</li>
         </div>
         <div class="hola" style="padding-left: 180px;width: 350px;">
           <ul class="list-group">
             <div>
-              <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;" ><img src="./index/prueba2footer.png"></li>
+              <li class="list-group-item" style="height: 40px;background-color: #0e0c0c;color: white;"><img
+                  src="./index/prueba2footer.png"></li>
             </div>
             <div style="padding-top: 30px;width: 200px;color: white;">
               <a style="padding-left: 30px;">© 2020 Arne, Inc.</a>
@@ -154,143 +173,146 @@
     </div>
   </footer>
 
-</body>
-<script>
+  </body>
+  <script>
     var partidas = []
     var partidasBuscadas = []
-    
-    function mostrarPartida(partida){
+
+    function mostrarPartida(partida) {
       $("#game").append(
-        ' <div class="fila">'+  
-        '  <div class="columna-1-1"> '+
-        '   <div class="item"><img src= "'+partida.jugador1.items.item1+'" width="40" height="40"></div>'+    
-        '     <div class="item"><img src= "'+partida.jugador1.items.item2+'" width="40" height="40"></div>'+ 
-        '     <div class="item"><img src= "'+partida.jugador1.items.item3+'" width="40" height="40"></div>'+ 
-        '     <div class="item"><img src= "'+partida.jugador1.items.item4+'" width="40" height="40"></div>'+ 
-        '     <div class="item"><img src= "'+partida.jugador1.items.item5+'" width="40" height="40"></div>'+ 
-        '     <div class="item"><img src= "'+partida.jugador1.items.item6+'" width="40" height="40"></div>'+ 
-        '   </div> '+
-        '   <div class="columna-2"><img src= "'+partida.jugador1.clase.iconClase+'" width="40" height="40"></div>'+
-        '   <div class="nombre">'+partida.jugador1.nombre+'</div>'+
-        '   <div class="vs">VS</div>'+
-        '   <div class="nombre-2">'+partida.jugador2.nombre+'</div>'+
-        '   <div class="columna-2"><img src= "'+partida.jugador2.clase.iconClase+'" width="40" height="40"></div>'+
-        '   <div class="columna-1-2"> '+
-        '     <div class="item"><img src= "'+partida.jugador2.items.item1+'" width="40" height="40"></div>'+    
-        '     <div class="item"><img src= "'+partida.jugador2.items.item2+'" width="40" height="40"></div>'+ 
-        '     <div class="item"><img src= "'+partida.jugador2.items.item3+'" width="40" height="40"></div>'+ 
-        '     <div class="item"><img src= "'+partida.jugador2.items.item4+'" width="40" height="40"></div>'+ 
-        '     <div class="item"><img src= "'+partida.jugador2.items.item5+'" width="40" height="40"></div>'+ 
-        '     <div class="item"><img src= "'+partida.jugador2.items.item6+'" width="40" height="40"></div>'+ 
-        '   </div> '+
+        ' <div class="fila">' +
+        '  <div class="columna-1-1"> ' +
+        '   <div class="item"><img src= "' + partida.jugador1.items.item1 + '" width="40" height="40"></div>' +
+        '     <div class="item"><img src= "' + partida.jugador1.items.item2 + '" width="40" height="40"></div>' +
+        '     <div class="item"><img src= "' + partida.jugador1.items.item3 + '" width="40" height="40"></div>' +
+        '     <div class="item"><img src= "' + partida.jugador1.items.item4 + '" width="40" height="40"></div>' +
+        '     <div class="item"><img src= "' + partida.jugador1.items.item5 + '" width="40" height="40"></div>' +
+        '     <div class="item"><img src= "' + partida.jugador1.items.item6 + '" width="40" height="40"></div>' +
+        '   </div> ' +
+        '   <div class="columna-2"><img src= "' + partida.jugador1.clase.iconClase + '" width="40" height="40"></div>' +
+        '   <div class="nombre">' + partida.jugador1.nombre + '</div>' +
+        '   <div class="vs">VS</div>' +
+        '   <div class="nombre-2">' + partida.jugador2.nombre + '</div>' +
+        '   <div class="columna-2"><img src= "' + partida.jugador2.clase.iconClase + '" width="40" height="40"></div>' +
+        '   <div class="columna-1-2"> ' +
+        '     <div class="item"><img src= "' + partida.jugador2.items.item1 + '" width="40" height="40"></div>' +
+        '     <div class="item"><img src= "' + partida.jugador2.items.item2 + '" width="40" height="40"></div>' +
+        '     <div class="item"><img src= "' + partida.jugador2.items.item3 + '" width="40" height="40"></div>' +
+        '     <div class="item"><img src= "' + partida.jugador2.items.item4 + '" width="40" height="40"></div>' +
+        '     <div class="item"><img src= "' + partida.jugador2.items.item5 + '" width="40" height="40"></div>' +
+        '     <div class="item"><img src= "' + partida.jugador2.items.item6 + '" width="40" height="40"></div>' +
+        '   </div> ' +
         ' </div>'
       );
-      }
-      function verificarNombre(x){
-        return (x.some(_x => _x.jugador1.nombre == $("#buscar").val().toLowerCase() || _x.jugador2.nombre == $("#buscar").val().toLowerCase()))
-      }
-
-      function filtrar(x){
-        console.log(x);
-        partidasBuscadas = partidas.filter(partida =>
-          partida.jugador1.clase.idClase == x || partida.jugador2.clase.idClase == x
-          );
-        $("#game").html(" ");
-        partidasBuscadas.forEach(function(y){
-          mostrarPartida(y);
-        });
-      }
-    
-  $(document).ready(function () {
-
-    $('#buscador').on('submit', function (event) { 
-          event.preventDefault();
-          console.log($("#buscar").val().toLowerCase());
-          partidasBuscadas = partidas.filter(partida =>
-            partida.jugador1.nombre == $("#buscar").val().toLowerCase() || partida.jugador2.nombre == $("#buscar").val().toLowerCase()
-          );
-          console.log(partidasBuscadas);
-          if(verificarNombre(partidas) == false){
-            $("#valid").html(" ");
-            $('#valid').append(
-              '<h6>Nombre no encontrado</h6>'
-            );
-          }
-          if(partidasBuscadas.length == 0){
-            $("#game").html(" ");
-            partidas.forEach(function(x){
-            mostrarPartida(x);
-            });
-          }else{
-            $("#valid").html(" ");
-            $("#game").html(" ");
-            partidasBuscadas.forEach(function(x){
-            mostrarPartida(x);
-            });
-          }
-        });
-
-  $.get( "http://localhost:3000/estadisticas/", function( informacion ){
-    partidas = informacion.infoPartidas;
-    console.log(partidas);
-    console.log(informacion);
-    informacion.forEach(x=>console.log(x));
-    informacion.infoPartidas.forEach(function(partida){
-      console.log(partida.jugador1);
-      mostrarPartida(partida);
-    });
-  }); 
-
-  $.get( "http://localhost:3000/estadisticas/", function( informacion ){
-    informacion.clases.forEach(function(clase){
-      $("#class").append(
-      '  <div class="cuadro">'+
-      '   <div class="cuadrochiquitouno"><img src= "'+clase.iconClass+'" width="90" height="80"></div>'+
-      '     <div class="cuadrochiquitodos">'+
-      '       <div class="cuadrochiquitochiquitouno">'+clase.nombre+'</div>'+
-      '       <div class="cuadrochiquitochiquitodos">W: '+clase.winrate+'</div>'+
-      '       <div class="cuadrochiquitochiquitotres">L: '+clase.loserate+'</div>'+
-      '     </div>'+
-      '  </div>'
-      );
-    });
-  }); 
-
-  $.get( "http://localhost:3000/estadisticas/", function( informacion ){
-    informacion.jugadores.forEach(function(jugador){
-      $("#player").append(
-        '  <div class="cuadro2">'+
-        '   <div class="cuadro2chiquitouno"><img src= "'+jugador.iconPlayer+'" width="170" height="100"></div>'+
-        '     <div class="cuadro2chiquitodos">'+
-        '       <div class="cuadro2chiquitochiquitouno">:'+jugador.nombre+'</div>'+
-        '       <div class="cuadro2chiquitochiquitodos">'+jugador.winrate+'</div>'+
-        '     </div>'+
-        '  </div>'
-      );
-    });
-  });
-  $.get("http://localhost:3000/users", function( informacion){
-    cuentas = informacion
-    if(informacion.usuarios[1].conectado){
-      $("#conectado").append(
-      '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
-      );
     }
-  });
-  
-});
-</script>
+    function verificarNombre(x) {
+      return (x.some(_x => _x.jugador1.nombre == $("#buscar").val().toLowerCase() || _x.jugador2.nombre == $("#buscar").val().toLowerCase()))
+    }
 
-<style>
-  .footer {
-    position: sticky;
-    margin-top: 15px;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(48, 48, 48);
-    color: white;
-    text-align: center;
-  }
+    function filtrar(x) {
+      console.log(x);
+      partidasBuscadas = partidas.filter(partida =>
+        partida.jugador1.clase.idClase == x || partida.jugador2.clase.idClase == x
+      );
+      $("#game").html(" ");
+      partidasBuscadas.forEach(function (y) {
+        mostrarPartida(y);
+      });
+    }
+
+    $(document).ready(function () {
+
+      $('#buscador').on('submit', function (event) {
+        event.preventDefault();
+        console.log($("#buscar").val().toLowerCase());
+        partidasBuscadas = partidas.filter(partida =>
+          partida.jugador1.nombre == $("#buscar").val().toLowerCase() || partida.jugador2.nombre == $("#buscar").val().toLowerCase()
+        );
+        console.log(partidasBuscadas);
+        if (verificarNombre(partidas) == false) {
+          $("#valid").html(" ");
+          $('#valid').append(
+            '<h6>Nombre no encontrado</h6>'
+          );
+        }
+        if (partidasBuscadas.length == 0) {
+          $("#game").html(" ");
+          partidas.forEach(function (x) {
+            mostrarPartida(x);
+          });
+        } else {
+          $("#valid").html(" ");
+          $("#game").html(" ");
+          partidasBuscadas.forEach(function (x) {
+            mostrarPartida(x);
+          });
+        }
+      });
+
+      $.get("http://localhost:3000/estadisticas/", function (informacion) {
+        partidas = informacion.infoPartidas;
+        console.log(partidas);
+        console.log(informacion);
+        informacion.forEach(x => console.log(x));
+        informacion.infoPartidas.forEach(function (partida) {
+          console.log(partida.jugador1);
+          mostrarPartida(partida);
+        });
+      });
+
+      $.get("http://localhost:3000/estadisticas/", function (informacion) {
+        informacion.clases.forEach(function (clase) {
+          $("#class").append(
+            '  <div class="cuadro">' +
+            '   <div class="cuadrochiquitouno"><img src= "' + clase.iconClass + '" width="90" height="80"></div>' +
+            '     <div class="cuadrochiquitodos">' +
+            '       <div class="cuadrochiquitochiquitouno">' + clase.nombre + '</div>' +
+            '       <div class="cuadrochiquitochiquitodos">W: ' + clase.winrate + '</div>' +
+            '       <div class="cuadrochiquitochiquitotres">L: ' + clase.loserate + '</div>' +
+            '     </div>' +
+            '  </div>'
+          );
+        });
+      });
+
+      $.get("http://localhost:3000/estadisticas/", function (informacion) {
+        informacion.jugadores.forEach(function (jugador) {
+          $("#player").append(
+            '  <div class="cuadro2">' +
+            '   <div class="cuadro2chiquitouno"><img src= "' + jugador.iconPlayer + '" width="170" height="100"></div>' +
+            '     <div class="cuadro2chiquitodos">' +
+            '       <div class="cuadro2chiquitochiquitouno">:' + jugador.nombre + '</div>' +
+            '       <div class="cuadro2chiquitochiquitodos">' + jugador.winrate + '</div>' +
+            '     </div>' +
+            '  </div>'
+          );
+        });
+      });
+      $.get("http://localhost:3000/users/", function (informacion) {
+        cuentas = informacion;
+      });
+      $.get("http://localhost:3000/users/logueado", function (informacion) {
+        var cuentaconectada = informacion.idconectado;
+        if (cuentas.usuarios[cuentaconectada - 1].conectado) {
+          $("#conectado").append(
+            '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+          );
+        }
+      });
+    });
+  </script>
+
+  <style>
+    .footer {
+      position: sticky;
+      margin-top: 15px;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgb(48, 48, 48);
+      color: white;
+      text-align: center;
+    }
   </style>
+
 </html>

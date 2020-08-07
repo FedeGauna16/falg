@@ -186,8 +186,10 @@
     $.get("http://localhost:3000/users", function (informacion) {
       cuentas = informacion;
       legajo = cuentas.usuarios.length + 1;
-      console.log(informacion.usuarios[1].conectado);
-      if (informacion.usuarios[1].conectado) {
+    });
+    $.get("http://localhost:3000/users/logueado", function (informacion) {
+      var cuentaconectada = informacion.idconectado;
+      if (cuentas.usuarios[cuentaconectada - 1].conectado) {
         $("#conectado").append(
           '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
         );
@@ -226,7 +228,7 @@
         success: function (result) {
           alert("Registro correcto");
           location.reload();
-          location.href="./ingreso.html";
+          location.href = "./ingreso.html";
         }
       });
     });

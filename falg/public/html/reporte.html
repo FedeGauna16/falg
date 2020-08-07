@@ -152,11 +152,6 @@
   $(document).ready(function () {
     $.get("http://localhost:3000/users", function (informacion) {
       cuentas = informacion
-      if (informacion.usuarios[1].conectado) {
-        $("#conectado").append(
-          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
-        );
-      }
       $("#contenedor").append(
         '<div class="card" style="width: 18rem;"> ' +
         '<img src="..." class="card-img-top" alt="..."> ' +
@@ -167,6 +162,14 @@
         '    </div>' +
         '  </div>'
       );
+    });
+    $.get("http://localhost:3000/users/logueado", function (informacion) {
+      var cuentaconectada = informacion.idconectado;
+      if (cuentas.usuarios[cuentaconectada - 1].conectado) {
+        $("#conectado").append(
+          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
+        );
+      }
     });
   });
 </script>
