@@ -68,7 +68,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="./soporte.html">Soporte</a>
-            <a class="dropdown-item" href="./reporte.html">Generar reporte</a>
+            <a class="dropdown-item" href="./formulario.html">Generar reporte</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="./faq.html">FAQ</a>
           </div>
@@ -211,10 +211,8 @@
       <div class="row d-flex align-items-center" style="background-color:#0e0c0c">
         <div class="col-4">
           <div class="row d-flex align-items-center">
-            <a class="col-3 text-white" href="#">Acerca de</a>
-            <a class="col-3 text-white" href="#">Contacto</a>
-            <a class="col-3 text-white" href="#">Politica de privacidad</a>
-            <a class="col-3 text-white" href="#">Terminos y condiciones</a>
+            <a class="col-3 text-white" href="./p">Politica de privacidad</a>
+            <a class="col-3 text-white" href="./terminosycondiciones.html">Terminos y condiciones</a>
           </div>
         </div>
         <div class="col-4">
@@ -275,7 +273,7 @@
     });
     $.get("http://localhost:3000/users/logueado", function (informacion) {
       var cuentaconectada = informacion.idconectado;
-      if (cuentas.usuarios[cuentaconectada -1].conectado == true) {
+      if (cuentas.usuarios[cuentaconectada -1].conectado) {
         $("#ingresar").remove();
         $("#conectado").append(
           '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
@@ -300,6 +298,7 @@
         });
       }
       else {
+        console.log("esta pasando esto no se que pasa?");
         $("#cerrarsesion").remove();
         $("#ingresar").append(
           '<a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html"'+

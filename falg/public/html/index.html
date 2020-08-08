@@ -46,8 +46,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse">
+      <ul id="navbar" class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="./index.html" style="color: white;">Inicio <span
               class="sr-only">(current)</span></a>
@@ -67,7 +67,7 @@
             Ayuda
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="./soporte.html">Soporte</a>
+            <a class="dropdown-item" href="./reporte.html">Soporte</a>
             <a class="dropdown-item" href="./formulario.html">Generar reporte</a>
             <a class="dropdown-item" href="https://t.co/ZcZhQhsbfC?amp=1">dale click hijod e puta/a>
               <div class="dropdown-divider"></div>
@@ -78,11 +78,9 @@
 
         </li>
         <li id = "ingresar" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
-          
+          <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html"role="Ingresar">Ingresar</a>
         </li>
-        <li id = "cerrarsesion" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
-          
-        </li>
+        
       </ul>
       <form class="form-inline my-2 my-lg-0" id="buscador">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search"
@@ -141,10 +139,8 @@
       <div class="row d-flex align-items-center" style="background-color:#0e0c0c">
         <div class="col-4">
           <div class="row d-flex align-items-center">
-            <a class="col-3 text-white" href="#">Acerca de</a>
             <a class="col-3 text-white" href="./contacto.html">Contacto</a>
-            <a class="col-3 text-white" href="./privacidad.html">Politica de privacidad</a>
-            <a class="col-3 text-white" href="#">Terminos y condiciones</a>
+            <a class="col-3 text-white" href="./terminosycondiciones.html">Terminos y condiciones</a>
           </div>
         </div>
         <div class="col-4">
@@ -175,6 +171,7 @@
 </html>
 
 <script>
+  cuentas = [];
   var busqueda;
   /*
       function enviador(x){
@@ -201,21 +198,25 @@
         console.log("soy puto");
       }
     });*/
-    $.get("http://localhost:3000/users/", function (informacion) {
+    $.get("http://localhost:3000/users", function (informacion) {
       cuentas = informacion;
     });
     $.get("http://localhost:3000/users/logueado", function (informacion) {
       var cuentaconectada = informacion.idconectado;
-      console.log(cuentas.usuarios[cuentaconectada -1].conectado);//HOLA MIRA FLACO SI YO LO DEJO ASI SIN NADA AL IF, PASAN COSAS BUENAS Y MALAS A LA VEZ
+      //console.log(cuentas.usuarios[cuentaconectada -1].conectado);//HOLA MIRA FLACO SI YO LO DEJO ASI SIN NADA AL IF, PASAN COSAS BUENAS Y MALAS A LA VEZ
       // PERO SI LE PONGO TRUE TAMBIEN COSAS BUENAS YMALAS AYUYDA POR FAVOR
-      if (cuentas.usuarios[cuentaconectada -1].conectado == true) {
+      console.log(cuentas.usuarios[cuentaconectada - 1].conectado);
+      if (cuentas.usuarios[cuentaconectada -1].conectado = true) {
         $("#ingresar").remove();
+        console.log("hola???????????");
         $("#conectado").append(
           '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
         );
-        $("#cerrarsesion").append(
-          '<a class="btn btn-secundary" style="background-color: #666666;color: white;""'+
-          'role="Cerrarsesion">Cerrar Sesión</a>'
+        $("#navbar").append(
+          '<li class="nav-item" style="padding-left: 420px;padding-top: 2px;">'+
+            '<a id = "cerrarsesion"class="btn btn-secundary" style="background-color: #666666;color: white;""'+
+            'role="Cerrarsesion">Cerrar Sesión</a>'+
+          '</li>'
         );
         $('#cerrarsesion').click(function () {
           $.ajax({
@@ -227,7 +228,7 @@
             },
             success: function (result) {
               alert("Sesión cerrada con éxito!");
-              location.href = "./index.html";
+              location.reload();
             },
           });
         });
@@ -235,10 +236,10 @@
       else {
         $("#cerrarsesion").remove();
         console.log("hola¡?¡");
-        $("#ingresar").append(
+        /*$("#ingresar").append(
           '<a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html"'+
           'role="Ingresar">Ingresar</a>'
-        );
+        ); para que poner este si total esta arriba xd*/
       }
     });
     $('#buscador').on('submit', function (event) {
