@@ -1,292 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="../stylesheets/config.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../stylesheets/config.css" />
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 
-    <title>Ingreso</title>
-  </head>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
 
-  <body>
-    <div class="header">
-      <img
-        src="./index/falg.png"
-        style="margin-left: auto; margin-right: auto;"
-      />
-    </div>
-    <style>
-      .header {
-        text-align: center;
-        background: #0e0c0c;
-        font-size: 30px;
-      }
-    </style>
-    <style>
-      body {
-        background-color: rgb(36, 36, 36);
-        height: 500px;
-      }
-    </style>
-    <nav id="menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">FALG</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <title>Ingreso</title>
+</head>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="./index.html" style="color: white;"
-              >Inicio <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./foro.html" style="color: white;"
-              >Foro</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./estadisticas.html" style="color: white;"
-              >Estadísticas</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./descarga.html" style="color: white;"
-              >Descarga</a
-            >
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              style="color: white;"
-            >
-              Ayuda
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./soporte.html">Soporte</a>
-              <a class="dropdown-item" href="./formulario.html"
-                >Generar reporte</a
-              >
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="./faq.html">FAQ</a>
-            </div>
-          </li>
-          <li class="nav-item" id="conectado"></li>
-          <li class="nav-item" id="conectado">
-
-          </li>
-          <li id = "ingresar" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
-            <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html"role="Ingresar">Ingresar</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Buscar jugador/partida"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Buscar
-          </button>
-        </form>
-      </div>
-    </nav>
-
-    <div style="text-align: center; padding-top: 50px; color: white;">
-      <h3>Ingresar</h3>
-    </div>
-
-    <form
-      id="ingreso"
-      style="padding-left: 600px; width: 1300px; color: white;"
-    >
-      <div class="form-group">
-        <label for="exampleInputEmail1">Correo electrónico</label>
-        <input
-          type="email"
-          class="form-control"
-          id="correo"
-          aria-describedby="emailHelp"
-        />
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Contraseña</label>
-        <input type="password" class="form-control" id="contraseña" />
-        <small id="emailHelp" class="form-text text-muted"
-          >Nunca compartas tu contraseña con nadie</small
-        >
-      </div>
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-        <label class="form-check-label" for="exampleCheck1"
-          >No soy un robot</label
-        >
-      </div>
-      <button
-        type="submit"
-        class="btn btn-secundary"
-        style="background-color: #666666; color: white;"
-        role="Ingresar"
-      >
-        Entrar
-      </button>
-    </form>
-    <a
-      href="#"
-      data-toggle="modal"
-      data-target="#exampleModalCenter"
-      style="margin-left: 1150px;"
-      >Olvide mi contraseña</a
-    >
-    <div style="padding-top: 30px; text-align: center; color: white;">
-      <h3>
-        ¿No tienes una cuenta?
-        <a
-          class="btn btn-secundary"
-          style="background-color: #666666; color: white;"
-          href="./registro.html"
-          role="Ingresar"
-          >Registrate ahora!</a
-        >
-      </h3>
-    </div>
-
-    <div
-      class="modal fade"
-      id="exampleModalCenter"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div
-          class="modal-content"
-          style="background-color: #343a40; color: white;"
-        >
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">
-              Cambio de contraseña
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <label for="exampleInputPassword1">Correo electrónico</label>
-              <input
-                type="text"
-                class="form-control"
-                id="inputMail"
-                placeholder="ejemplo@hotmail.com"
-              />
-              <label for="exampleInputPassword1">Nueva contraseña</label>
-              <input
-                type="password"
-                class="form-control"
-                id="inputContra"
-                placeholder="Contraseña nueva"
-              />
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Cancelar
-            </button>
-            <button id="modalBotonSalvar" class="btn btn-primary">
-              Guardar cambios
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <hr style="height: 10vh;" />
-
-    <footer style="padding-top: 20px;">
-      <div id="footer" class="footer">
-        <div
-          class="row d-flex align-items-center"
-          style="background-color: #0e0c0c;"
-        >
-          <div class="col-4">
-            <div class="row d-flex align-items-center">
-              <a class="col-3 text-white" href="./contacto.html">Contacto</a>
-              <a class="col-3 text-white" href="./terminosycondiciones.html">Terminos y condiciones</a>
-            </div>
-          </div>
-          <div class="col-4">
-            <img src="./index/falg_footer.png" style="padding-top: 10px;" />
-            <div style="padding-right: 10px;">©2020 Arne, Inc.</div>
-            <div style="padding-right: 10px;">All Rights Reserved</div>
-          </div>
-          <div class="col-4">
-            <div class="row"></div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
+<body>
+  <div class="header">
+    <img src="./index/falg.png" style="margin-left: auto; margin-right: auto;" />
+  </div>
   <style>
-    .footer {
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: rgb(48, 48, 48);
-      color: white;
+    .header {
       text-align: center;
+      background: #0e0c0c;
+      font-size: 30px;
     }
   </style>
+  <style>
+    body {
+      background-color: rgb(36, 36, 36);
+      height: 500px;
+    }
+  </style>
+  <nav id="menuarriba" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">FALG</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse">
+      <ul id="navbar" class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="./index.html" style="color: white;">Inicio <span
+              class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./foro.html" style="color: white;">Foro</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./estadisticas.html" style="color: white;">Estadísticas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./descarga.html" style="color: white;">Descarga</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" style="color: white;">
+            Ayuda
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="./soporte.html">Soporte</a>
+            <a class="dropdown-item" href="./formulario.html">Generar reporte</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="./faq.html">FAQ</a>
+          </div>
+        </li>
+        <li class="nav-item" id="conectado"></li>
+        <li class="nav-item" id="conectado"></li>
+        <li id="ingresar" class="nav-item" style="padding-left: 485px; padding-top: 2px;">
+          <a class="btn btn-secundary" style="background-color: #666666; color: white;" href="./ingreso.html"
+            role="Ingresar">Ingresar</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search" />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Buscar
+        </button>
+      </form>
+    </div>
+  </nav>
+
+  <div style="text-align: center; padding-top: 50px; color: white;">
+    <h3>Ingresar</h3>
+  </div>
+
+  <form id="ingreso" style="padding-left: 600px; width: 1300px; color: white;">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Correo electrónico</label>
+      <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Contraseña</label>
+      <input type="password" class="form-control" id="contraseña" />
+      <small id="emailHelp" class="form-text text-muted">Nunca compartas tu contraseña con nadie</small>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">No soy un robot</label>
+    </div>
+    <button type="submit" class="btn btn-secundary" style="background-color: #666666; color: white;" role="Ingresar">
+      Entrar
+    </button>
+  </form>
+  <a href="#" data-toggle="modal" data-target="#exampleModalCenter" style="margin-left: 1150px;">Olvide mi
+    contraseña</a>
+  <div style="padding-top: 30px; text-align: center; color: white;">
+    <h3>
+      ¿No tienes una cuenta?
+      <a class="btn btn-secundary" style="background-color: #666666; color: white;" href="./registro.html"
+        role="Ingresar">Registrate ahora!</a>
+    </h3>
+  </div>
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="background-color: #343a40; color: white;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">
+            Cambio de contraseña
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Correo electrónico</label>
+            <input type="text" class="form-control" id="inputMail" placeholder="ejemplo@hotmail.com" />
+            <label for="exampleInputPassword1">Nueva contraseña</label>
+            <input type="password" class="form-control" id="inputContra" placeholder="Contraseña nueva" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Cancelar
+          </button>
+          <button id="modalBotonSalvar" class="btn btn-primary">
+            Guardar cambios
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr style="height: 10vh;" />
+
+  <footer style="padding-top: 20px;">
+    <div id="footer" class="footer">
+      <div class="row d-flex align-items-center" style="background-color: #0e0c0c;">
+        <div class="col-4">
+          <div class="row d-flex align-items-center">
+            <a class="col-3 text-white" href="./contacto.html">Contacto</a>
+            <a class="col-3 text-white" href="./terminosycondiciones.html">Terminos y condiciones</a>
+          </div>
+        </div>
+        <div class="col-4">
+          <img src="./index/falg_footer.png" style="padding-top: 10px;" />
+          <div style="padding-right: 10px;">©2020 Arne, Inc.</div>
+          <div style="padding-right: 10px;">All Rights Reserved</div>
+        </div>
+        <div class="col-4">
+          <div class="row"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<style>
+  .footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(48, 48, 48);
+    color: white;
+    text-align: center;
+  }
+</style>
+
 </html>
 <script>
   var cuentas = [];
@@ -301,24 +201,24 @@
     });
     $.get("http://localhost:3000/users/logueado", function (informacion) {
       var cuentaconectada = informacion.idconectado;
-      if (cuentas.usuarios[cuentaconectada -1].conectado == "true") {
+      if (cuentas.usuarios[cuentaconectada - 1].conectado == "true") {
         $("#ingresar").remove();
         $("#conectado").append(
           '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
         );
         $("#navbar").append(
-          '<li class="nav-item" style="padding-left: 420px;padding-top: 2px;">'+
-            '<a id = "cerrarsesion"class="btn btn-secundary" style="background-color: #666666;color: white;""'+
-            'role="Cerrarsesion">Cerrar Sesión</a>'+
-          '</li>'
+          '<li class="nav-item" style="padding-left: 420px;padding-top: 2px;">' +
+          '<a id = "cerrarsesion"class="btn btn-secundary" style="background-color: #666666;color: white;""' +
+          'role="Cerrarsesion">Cerrar Sesión</a>' +
+          "</li>"
         );
-        $('#cerrarsesion').click(function () {
+        $("#cerrarsesion").click(function () {
           $.ajax({
             url: "http://localhost:3000/users/login",
             type: "PUT",
             data: {
               usuarioid: cuentaconectada,
-              conectado: false
+              conectado: false,
             },
             success: function (result) {
               alert("Sesión cerrada con éxito!");
@@ -326,8 +226,7 @@
             },
           });
         });
-      }
-      else {
+      } else {
         $("#cerrarsesion").remove();
       }
     });
@@ -364,7 +263,7 @@
         type: "PUT",
         data: {
           usuarioid: usuarioid,
-          conectado: true
+          conectado: true,
         },
         success: function (result) {
           alert("Ingreso correcto");
@@ -381,22 +280,21 @@
       console.log(inputMail, inputContra);
       console.log(cuentas.usuarios);
       var users = cuentas.usuarios;
-      var usuarioIdentificado = users.find(user => {
+      var usuarioIdentificado = users.find((user) => {
         return user.correo == inputMail;
       });
-      if (usuarioIdentificado != 0) { 
+      if (usuarioIdentificado != 0) {
         $.ajax({
-          url: 'http://localhost:3000/users/' + usuarioIdentificado.id, 
-          type: 'PUT',
+          url: "http://localhost:3000/users/" + usuarioIdentificado.id,
+          type: "PUT",
           data: {
-          newPassword: inputContra
-          }, 
+            newPassword: inputContra,
+          },
           success: function (result) {
             alert("Tu contraseña fue cambiada con exito");
-            
-          }
+          },
         });
-      };
+      }
     });
   });
 </script>

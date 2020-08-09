@@ -58,8 +58,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse">
+      <ul id="navbar" class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="./index.html" style="color: white;">Inicio <span
               class="sr-only">(current)</span></a>
@@ -159,8 +159,9 @@
 </html>
 
 <script>
+  cuentas = [];
   $(document).ready(function () {
-    $.get("http://localhost:3000/users/", function (informacion) {
+    $.get("http://localhost:3000/users", function (informacion) {
       cuentas = informacion;
     });
     $.get("http://localhost:3000/users/logueado", function (informacion) {
@@ -195,22 +196,5 @@
         $("#cerrarsesion").remove();
       }
     });
-    $.get("http://localhost:3000/inicio", function (informacion) {
-      informacion.forEach(function (carta) {
-        $("#contenido").append(
-          '            <div style="padding-left: 500px; padding-top: 50px">' +
-          '             <div class="card" style="width: 18rem;"> ' +
-          '               <div class="card" style="width: 18rem;"> ' +
-          '                 <img src="..." class="card-img-top" alt="..."> ' +
-          '                   <div class="card-body" style="background-color: #343a40;color: white;"> ' +
-          '                     <h5 class="card-title"> ' + carta.titulo + ' </h5> ' +
-          '                       <p class="card-text"> ' + carta.usuario + ' </p>' +
-          '                         <a href="#" class="btn btn-primary"> Ver </a>' +
-          '                   </div>' +
-          '               </div>' +
-          '             </div>' +
-          '            </div>'
-        );
-      });
-    });
   });
+</script>
