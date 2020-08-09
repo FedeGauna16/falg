@@ -19,7 +19,6 @@ router.get('/logueado', function(req, res, next) {
 
 router.put('/login', function(req, res, next) {
   datoslogin = req.body;
-  console.log(datoslogin);
   cuentas[datoslogin.usuarioid - 1].conectado = datoslogin.conectado;
   idusuario = datoslogin.usuarioid;
   res.send({
@@ -29,9 +28,9 @@ router.put('/login', function(req, res, next) {
 
 router.put('/perfil', function (req, res, next) {
   datos = req.body;
-  cuentas[0].descripcion = datos.descripcion;
+  cuentas[0].descripcion = datos.descripcion;//CORREGIR EL 0 este de mierad pelotudo
   res.send({
-    status : true,
+    status : true
   });
 });
  
@@ -44,5 +43,6 @@ router.post('/', function(req, res, next) {
     response : cuentas
   });
 });
+
 
 module.exports = router;

@@ -264,6 +264,7 @@
 </html>
 <script>
   cuentas = [];
+  publicacionesinfo = [];
   $(document).ready(function () {
     $.get("http://localhost:3000/users/", function (informacion) {
       cuentas = informacion;
@@ -301,10 +302,10 @@
       }
     });
     $.get("http://localhost:3000/fpublicaciones", function (informacion) {
-      cuentas = informacion.usuarios;
-      informacion.publicaciones.forEach(function (publicacion) {
+      var publicaciones = informacion.publicaciones;
+      publicaciones.forEach(function (publicacion, numeropublicacion) {
         $("#publicaciones").append(
-          '<a id="publicacion" class="btn btn-light" href="./publicacionusuario.html" style="width: 1000px;background-color: #343a40;color: white">' +
+          '<a id="publicacion" class="btn btn-light" style="width: 1000px;background-color: #343a40;color: white">' +
           '  <div class="row">' +
           '      <div class="col" style="text-align: left;">' +
           '          <div class="col">' +
@@ -330,20 +331,23 @@
           '  </div>' +
           '</a>'
         );
+        publicacionesinfo[numeropublicacion] = publicaciones[numeropublicacion].idusuario;
+        console.log(publicacionesinfo);
       });
-      $('#publicacion').click(function () {
+      $('#publicacion').click(function () {//cuando yo hago click en alguna publicacion el tipo sabe a cual boton le diste xd
+        console.log(publicacionesinfo[numeropublicacion]);
         event.preventDefault();
-        $.ajax({
-          url: 'http://localhost:3000/users',
+       /* $.ajax({
+          url: 'http://localhost:3000/fpublicaciones/irpublicacion',
           type: 'PUT',
           data:
           {
-            id: cuentas.usuarioid,
+            idusuario: publicaciones.idusuario,
           },
           success: function (result) {
             location.href = "./publicacionusuario.html";
           }
-        });
+        });*/
       });
     });
   });

@@ -297,13 +297,16 @@
         $("#cerrarsesion").remove();
       }
     });
+    $.get("http://localhost:3000/fpublicaciones/publicacionusuario", function (informacion) {
+      var idusuario = informacion.idusuario;
+    });
     $.get("http://localhost:3000/fpublicaciones", function (informacion) {
-      cuentas = informacion.usuarios
-      $("#ptitulo").append(
-        publicaciones.publicacion.titulo
+      var publicaciones = informacion.publicaciones;
+      $("#ptitulo").append( 
+        publicaciones[idusuario].titulo
       );
       $("#pdescripcion").append(
-        publicacion.descripcion
+        publicacion[idusuario].descripcion
       );
     });
   });

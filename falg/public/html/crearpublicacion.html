@@ -219,7 +219,8 @@
           data: {
             titulo: $("#titulo").val(),
             descripcion: $("#descripcion").val(),
-            usuario: cuentas.usuarios[cuentaconectada -1].nombre
+            usuario: cuentas.usuarios[cuentaconectada -1].nombre,
+            idusuario : cuentas.usuarios[cuentaconectada -1].usuarioid
           },
           success: function (result) {
             alert("Publicacion creada correctamente!");
