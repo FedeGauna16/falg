@@ -10,11 +10,17 @@ var builds =
 ]
 
 router.get('/', function(req, res, next) {
-   res.send(builds);
+   res.render("hola");
 });
 
-router.post('/', function(req, res, next) {
-  
+router.get('/asd', function(req, res, next) {
+  var datos = {
+    nombre: "silvio",
+    apellido: "erick"
+  }
+  res.render('publicacionusuario',{
+     datos
+  });
 });
 
 

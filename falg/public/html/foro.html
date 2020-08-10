@@ -265,6 +265,24 @@
 <script>
   cuentas = [];
   publicacionesinfo = [];
+  function enviaridusuario(numeropublicacion){
+        var idusuario = $("#idoculto" + numeropublicacion).text()
+        //$('#publicaciones').remove();
+        //location.href = "./publicacionusuario.html";
+        $.ajax({
+          url: 'http://localhost:3000/fpublicaciones/irpublicacion/'+ idusuario,
+          type: 'GET',
+          /*
+          data:
+          {
+            idusuario: id 
+          },*/
+          success: function (result) {
+            //location.href = "./publicacionusuario.html";
+            //$('#publicaciones').remove();
+          }
+        });
+    } 
   $(document).ready(function () {
     $.get("http://localhost:3000/users/", function (informacion) {
       cuentas = informacion;
@@ -304,51 +322,44 @@
     $.get("http://localhost:3000/fpublicaciones", function (informacion) {
       var publicaciones = informacion.publicaciones;
       publicaciones.forEach(function (publicacion, numeropublicacion) {
-        $("#publicaciones").append(
-          '<a id="publicacion" class="btn btn-light" style="width: 1000px;background-color: #343a40;color: white">' +
-          '  <div class="row">' +
-          '      <div class="col" style="text-align: left;">' +
-          '          <div class="col">' +
-          publicacion.titulo +
-          '          </div>' +
-          '          <div class="col">' +
-          publicacion.usuario +
-          '          </div>' +
-          '      </div>' +
-          '      <div class="col">' +
-          '          <div class="row">' +
-          '              <div class="col-sm">' +
-          '                  <h6 style="text-align: right;">Likes <p>30</p></h6>' +
-          '              </div>' +
-          '              <div class="col-sm">' +
-          '                  <h6 style="text-align: right;">Mensajes <p>12</p></h6>' +
-          '              </div>' +
-          '              <div class="col-sm">' +
-          '                  <h6 style="text-align: right;">Visitas <p>68</p></h6>' +
-          '              </div>' +
-          '          </div>' +
-          '      </div>' +
-          '  </div>' +
-          '</a>'
+        $("#publicaciones").append( //343a40
+          '<a id="publicacion'+ numeropublicacion + '" class="btn btn-light" onclick = "enviaridusuario('+ numeropublicacion+')" style="width: 1000px;background-color: #343a40;color: white">' +
+            '<p id = "idoculto'+ numeropublicacion+'" hidden>' + publicacion.idusuario + '</p>'+
+            '  <div class="row">' +
+            '      <div class="col" style="text-align: left;">' +
+            '          <div class="col">' +
+            publicacion.titulo +
+            '          </div>' +
+            '          <div class="col">' +
+            publicacion.usuario +
+            '          </div>' +
+            '      </div>' +
+            '      <div class="col">' +
+            '          <div class="row">' +
+            '              <div class="col-sm">' +
+            '                  <h6 style="text-align: right;">Likes <p>30</p></h6>' +
+            '              </div>' +
+            '              <div class="col-sm">' +
+            '                  <h6 style="text-align: right;">Mensajes <p>12</p></h6>' +
+            '              </div>' +
+            '              <div class="col-sm">' +
+            '                  <h6 style="text-align: right;">Visitas <p>68</p></h6>' +
+            '              </div>' +
+            '          </div>' +
+            '      </div>' +
+            '  </div>' +
+            '</a>'
         );
         publicacionesinfo[numeropublicacion] = publicaciones[numeropublicacion].idusuario;
-        console.log(publicacionesinfo);
       });
-      $('#publicacion').click(function () {//cuando yo hago click en alguna publicacion el tipo sabe a cual boton le diste xd
-        console.log(publicacionesinfo[numeropublicacion]);
+      /*$('#publicacion').click(function () {
+        
+        var id = $('#publicacion').get($('#idoculto'));
+        console.log(id);
+        //console.log(publicacionesinfo[numeropublicacion]);
         event.preventDefault();
-       /* $.ajax({
-          url: 'http://localhost:3000/fpublicaciones/irpublicacion',
-          type: 'PUT',
-          data:
-          {
-            idusuario: publicaciones.idusuario,
-          },
-          success: function (result) {
-            location.href = "./publicacionusuario.html";
-          }
-        });*/
-      });
+      
+      });*/
     });
   });
 </script>
