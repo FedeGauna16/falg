@@ -42,19 +42,18 @@
   <section class="my-5" style="background-color: #343a40; margin-left: 100px;width: 1700px;">
     <div class="card-header border-0 font-weight-bold">4 comments</div>
     <div class="row">
-      <div class="media d-block d-md-flex mt-4">
-        <img class="card" alt="Generic placeholder image">
-        <div class="media-body text-center text-md-left ml-md-3 ml-0">
-          <h5 class="font-weight-bold mt-0">
-            <a href="">Miley Steward</a>
-            <a href="" class="pull-right">
-              <i class="fas fa-reply"></i>
-            </a>
-          </h5>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat
-          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <div class="form-group mt-4" style="margin-left: 20px;">
+        <label for="quickReplyFormComment">Tu comentario</label>
+        <textarea class="form-control" id="cuadrocomentario" rows="2" style="width: 1690px;background-color: rgb(36, 36, 36);color:white"></textarea>
+
+        <div class="text-center my-4">
+          <button class="btn btn-primary btn-sm" onclick = "subircomentario('cuadrocomentario')" style="margin-left: 1550px;">Publicar comentario</button>
         </div>
+          <div class="row" style="margin-left: 1px;background-color: white;height: 1px;width: 1690px">
+        </div>
+      </div>
+      <div id= "comentariosusuarios" class="media d-block d-md-flex mt-4">
+        
       </div>
       <div class="row">
         <div class="media d-block d-md-flex mt-3">
@@ -66,10 +65,7 @@
                 <i class="fas fa-reply"></i>
               </a>
             </h5>
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-            atque corrupti
-            quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa
-            officia deserunt mollitia animi, id est laborum et dolorum fuga.
+            <div class="text-white">{{comentario}}</div>
           </div>
         </div>
       </div>
@@ -113,3 +109,43 @@
       </nav>
   </section>
 </container>
+<script>
+  
+  function subircomentario(cuadrocomentario){
+    var comentario = $("#cuadrocomentario").val()
+    console.log(comentario); 
+    $.ajax({
+      url: 'http://localhost:3000/foro/subircomentario',
+      type: 'POST',
+      data: {
+        datos: comentario
+      },
+      success: function (result) {
+        location.reload();
+      }
+    });
+  }
+  /*$(document).ready(function () {
+    $.get("http://localhost:3000/users/", function (informacion) {
+      cuentas = informacion;
+    });
+    $.get("http://localhost:3000/fpublicaciones/subircomentario", function (informacion) {
+      var publicaciones = informacion.publicaciones;
+      publicaciones.forEach(function (publicacion, numeropublicacion) {
+        $("#comentariosusuarios").append(
+          '<img class="card" alt="Generic placeholder image">'+
+          '<div class="media-body text-center text-md-left ml-md-3 ml-0">'+
+            '<h5 class="font-weight-bold mt-0">'+
+              '<a href="">Miley Steward</a>'+
+              '<a href="" class="pull-right">'+
+                '<i class="fas fa-reply"></i>'+
+              '</a>'+
+            '</h5>'+
+            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'+
+            'cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'+
+         '</div>'
+        );
+      });
+    });
+  });*/
+</script>

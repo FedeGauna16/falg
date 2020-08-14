@@ -3,7 +3,7 @@ var router = express.Router();
 const { render, response } = require('../app');
 var info = [
   require('../public/html/estadisticas/estadisticas.json'),
-  require('../public/html/foro/publicaciones.json'),
+  require('../public/html/foro/foro.json'),
   require('../public/html/user/users.json')
 ];
 

@@ -56,7 +56,7 @@
       $('#crearpublicacion').on('submit', function (event) {
         event.preventDefault();
         $.ajax({
-          url: 'http://localhost:3000/fpublicaciones',
+          url: 'http://localhost:3000/foro/publicaciones',
           type: 'POST',
           data: {
             titulo: $("#titulo").val(),
@@ -67,7 +67,7 @@
           success: function (result) {
             alert("Publicacion creada correctamente!");
             location.reload();
-            location.href = "http://localhost:3000/fpublicaciones/foro";
+            location.href = "http://localhost:3000/foro/foro";
           }
         });
       });

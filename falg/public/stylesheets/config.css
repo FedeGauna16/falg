@@ -1,3 +1,8 @@
+.header {
+  text-align: center;
+  background: #0e0c0c;
+  font-size: 30px;
+}
 body {
   background-color: rgb(36, 36, 36);
   height: 500px;

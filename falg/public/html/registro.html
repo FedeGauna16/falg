@@ -186,15 +186,12 @@
     });
     $('#registro').on('submit', function (event) {
       event.preventDefault();
-      console.log(cuentas);
       if ($("#nombre").val() == 0 || $("#contraseña").val() == 0 || $("#correo").val() == 0 || $("#pais").val() == 0 || $("#sexo").val() == 0 || $("#edad").val() == 0) {
         alert("Uno de los campos esta vacio");
         return 0;
       }
       for (var i = 0; i < cuentas.length; i += 1) {
-        console.log(cuentas[i].nombre + $("#nombre").val());
         if (cuentas[i].nombre == $("#nombre").val()) {
-          console.log(cuentas[i].nombre);
           alert("El nombre ya esta ocupado");
           return 0;
         }

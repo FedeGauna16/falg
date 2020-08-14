@@ -77,7 +77,7 @@
         '<p>' + cuentas.usuarios[cuentaconectada - 1].descripcion + '</p>'
       );
     });
-    $.get("http://localhost:3000/fpublicaciones", function (informacion) {
+    $.get("http://localhost:3000/foro", function (informacion) {
       var usuariospublicaciones = informacion;
       usuariospublicaciones.publicaciones.forEach(function (publicacion) {
         $("#publicaciones").append(
