@@ -1,0 +1,29 @@
+<title>Buscador</title>
+<div class="container">
+    <div class="titulobuscador">
+        <h3>Resultados</h3>
+    </div>
+    <div class="res" id="res">
+                    
+    </div>
+</div>
+
+<script>
+  var busqueda;
+  var infoGeneral;
+    $(document).ready(function () {
+      $.get("http://localhost:3000/inicio/b", function( informacion ){
+        busqueda = informacion;
+        console.log(busqueda);
+      });
+      $.get("http://localhost:3000/buscador", function( informacion ){
+        infoGeneral = informacion;
+        console.log(infoGeneral);
+        informacion.forEach(function(x){
+          x.forEach(function(y){
+            console.log(y.infoPartidas);
+          });
+        });
+      });
+    });
+</script>

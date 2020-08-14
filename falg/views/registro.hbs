@@ -1,0 +1,102 @@
+<title>Registro</title>
+<div style="text-align: center;padding-top: 50px;color: white;">
+    <h3>Registro</h3>
+  </div>
+
+  <form id="registro" style="padding-left: 600px;padding-top: 50px;width: 1300px;color: white;">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Nombre</label>
+        <input type="text" class="form-control" id="nombre">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Contraseña</label>
+        <input type="password" class="form-control" id="contraseña">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Correo electrónico</label>
+      <input type="email" class="form-control" id="correo" placeholder="ejemplo@hotmail.com">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">Pais</label>
+        <input type="text" class="form-control" id="pais">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">Sexo</label>
+        <select id="sexo" class="form-control">
+          <option>Hombre</option>
+          <option>Mujer</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Edad</label>
+        <input type="text" class="form-control" id="edad">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          No soy un robot
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-secundary" style="background-color: #666666;color: white;"
+      role="registro">Registrarse</button>
+  </form>
+  <div style="padding-top: 30px;text-align: center;color: white;">
+    <h3>¿Ya tienes una cuenta? <a class="btn btn-secundary" style="background-color: #666666;color: white;"
+        href="http://localhost:3000/users/ingreso" role="Ingresar">Ingresa ahora!</a> </h3>
+  </div>
+<script>
+  var cuentas = [];
+  var usuarioid = "";
+  var legajo = 0;
+
+  $(document).ready(function () {
+    $.get("http://localhost:3000/users", function (informacion) {
+      cuentas = informacion;
+      legajo = cuentas.usuarios.length + 1;
+    });
+    $('#registro').on('submit', function (event) {
+      event.preventDefault();
+      console.log(cuentas);
+      if ($("#nombre").val() == 0 || $("#contraseña").val() == 0 || $("#correo").val() == 0 || $("#pais").val() == 0 || $("#sexo").val() == 0 || $("#edad").val() == 0) {
+        alert("Uno de los campos esta vacio");
+        return 0;
+      }
+      for (var i = 0; i < cuentas.length; i += 1) {
+        console.log(cuentas[i].nombre + $("#nombre").val());
+        if (cuentas[i].nombre == $("#nombre").val()) {
+          console.log(cuentas[i].nombre);
+          alert("El nombre ya esta ocupado");
+          return 0;
+        }
+      };
+      $.ajax({
+        url: 'http://localhost:3000/users/',
+        type: 'POST',
+        data:
+        {
+          usuarioid: legajo,
+          nombre: $("#nombre").val(),
+          contraseña: $("#contraseña").val(),
+          correo: $("#correo").val(),
+          pais: $("#pais").val(),
+          sexo: $("#sexo").val(),
+          edad: $("#edad").val(),
+          descripcion: "",
+          conectado: false,
+        },
+        success: function (result) {
+          alert("Registro correcto");
+          location.reload();
+          location.href = "http://localhost:3000/users/ingreso/";
+        }
+      });
+    });
+  });
+</script>

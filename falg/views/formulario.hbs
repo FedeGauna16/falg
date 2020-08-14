@@ -1,0 +1,36 @@
+<title>Formulario</title>
+<div style="padding-top: 30px;">
+  <h3 style="padding-left: 600px;width: 1300px;color: white;text-align: center;">Rellene el formulario</h3>
+  <form id="ticket" style="padding-left: 600px;width: 1300px;color: white;">
+    <div class="form-group">
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1"> Descripción del problema</label>
+        <textarea class="form-control" id="problema" rows="3"></textarea>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-secundary" style="background-color: #666666;color: white;"
+      role="registro">Enviar</button>
+  </form>
+</div>
+<script>
+    $('#ticket').on('submit', function (event) {
+      event.preventDefault();
+      if ($("#correo").val() == 0) {
+        alert("Uno de los campos esta vacio");
+        return 0;
+      }
+      $.ajax({
+        url: 'http://localhost:3000/tickets',
+        type: 'POST',
+        data: {
+          correo: $("#correo").val(),
+          nombre: $("#nombre").val(),
+          problema: $("#problema").val()
+        },
+        success: function (result) {
+          alert("Ticket enviado correctamente")
+          location.reload();
+        }
+      });
+    });
+</script>

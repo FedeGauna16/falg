@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var publicaciones = require('../public/html/foro/publicaciones.json');
-const { render } = require('../app');
-var datosirpublicacion = 0;
+const { render, response } = require('../app');
 
 router.get('/', function(req, res, next) {
    res.send({
@@ -11,34 +10,27 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-
   publicaciones.push(req.body);
-
   res.send({
     status : true,
     response : publicaciones
   });
 });
 
-/*
-router.get('/:idpublicacion', function(req, res, next) {
-    res.send({
-      status: true,
-      idusuario: datosirpublicacion
-    }
-    );
-});
-*/
 router.get('/irpublicacion/:id', function(req, res, next) {
   var idusuario = req.params.id; 
   var publicacion = publicaciones.find(publicacion => {
-    if(publicacion.idusuario == idusuario){
-      return true;
-    }
+    return(publicacion.idusuario == idusuario);
   });
+  res.render('publicacionusuario', { publicacion })
+});
 
-  console.log(publicacion);
-  res.render('publicacionusuario', { layout: false, publicacion })
+router.get('/foro', function(req, res, next) {
+  res.render('foro')
+});
+
+router.get('/crearpublicacion', function(req, res, next) {
+  res.render('crearpublicacion')
 });
 
 module.exports = router;

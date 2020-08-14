@@ -1,0 +1,76 @@
+
+<div style="padding-left: 600px;padding-top: 20px;width: 1300px;color: white;">
+    <div style="text-align: center;">
+      <h1>Crear publicación</h1>
+    </div>
+    <form class="was-validated" id="crearpublicacion">
+      <div class="col-md-6 mb-3" style="padding-left: 0px;">
+        <label for="validationServer01">Título</label>
+        <input type="text" class="form-control is-valid" id="titulo" placeholder="Debe contener entre 4 y 20 caracteres"
+          required style="width: 700px;">
+        <div class="valid-feedback">
+          Título valido
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="validationTextarea">Descripción</label>
+        <textarea class="form-control is-invalid" id="descripcion"
+          placeholder="Debe contener entre 10 y 1000 caracteres" style="height: 300px;"></textarea>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="mb-3">
+            <h6>Elige el tipo de filtro</h6>
+            <select class="custom-select">
+              <option value="">Filtro...</option>
+              <option value="1">Build</option>
+              <option value="2">Guía</option>
+              <option value="3">Lore</option>
+            </select>
+            <div class="invalid-feedback">Filtro obligatorio</div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <h6>Escoge una imagen</h6>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+            <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <button type="submit" class="btn btn-secundary"
+          style="background-color: #666666;color: white;width: 200px;height: 50px;" role="publicar">Subir
+          publicación</button>
+      </div>
+    </form>
+</div>
+<script>
+  cuentas = [];
+  $(document).ready(function () {
+    $.get("http://localhost:3000/users", function (informacion) {
+      cuentas = informacion;
+    });
+    $.get("http://localhost:3000/users/logueado", function (informacion) {
+      var cuentaconectada = informacion.idconectado;
+      $('#crearpublicacion').on('submit', function (event) {
+        event.preventDefault();
+        $.ajax({
+          url: 'http://localhost:3000/fpublicaciones',
+          type: 'POST',
+          data: {
+            titulo: $("#titulo").val(),
+            descripcion: $("#descripcion").val(),
+            usuario: cuentas.usuarios[cuentaconectada -1].nombre,
+            idusuario : cuentas.usuarios[cuentaconectada -1].usuarioid
+          },
+          success: function (result) {
+            alert("Publicacion creada correctamente!");
+            location.reload();
+            location.href = "http://localhost:3000/fpublicaciones/foro";
+          }
+        });
+      });
+    });
+  });
+</script>

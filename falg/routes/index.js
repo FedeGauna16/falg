@@ -1,13 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var builds =
-[
-  {
-    titulo : "Tachancka Build 2020",
-    descripcion : "Pasate a mirar esta build",
-    usuario: "erickjq10x"
-  },
-]
+const { render, response } = require('../app');
 
 router.get('/', function(req, res, next) {
    res.render("hola");
@@ -23,5 +16,32 @@ router.get('/asd', function(req, res, next) {
   });
 });
 
+router.get('/index', function(req, res, next) {
+  res.render('index')
+});
+
+router.get('/crearpublicacion', function(req, res, next) {
+  res.render('crearpublicacion')
+});
+
+router.get('/descarga', function(req, res, next) {
+  res.render('descarga')
+});
+
+router.get('/faq', function(req, res, next) {
+  res.render('faq')
+});
+
+router.get('/formulario', function(req, res, next) {
+  res.render('formulario')
+});
+
+router.get('/soporte', function(req, res, next) {
+  res.render('soporte')
+});
+
+router.get('/terminosycondiciones', function(req, res, next) {
+  res.render('terminosycondiciones')
+});
 
 module.exports = router;

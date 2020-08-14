@@ -5,9 +5,9 @@ var logger = require('morgan');
 var cors = require('cors')
 var exphbs  = require('express-handlebars');
 
-
 var inicioRouter = require('./routes/inicio');
 var indexRouter = require('./routes/index');
+var buscadorRouter = require('./routes/buscador');
 var usersRouter = require('./routes/users');
 var ticketsRouter = require('./routes/tickets');
 var estadisticasRouter = require('./routes/estadisticas');
@@ -24,6 +24,7 @@ app.use(cookieParser());
 
 // motor de vista
 app.engine('hbs', exphbs({
+    defaultLayout: 'main',
     extname: '.hbs'
 }));
 app.set('view engine', 'hbs');
@@ -31,6 +32,7 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/index', indexRouter);
 app.use('/inicio', inicioRouter);
 app.use('/users', usersRouter);
 app.use('/tickets', ticketsRouter);

@@ -3,6 +3,7 @@ var router = express.Router();
 var cuentas = require('../public/html/user/users.json');
 var datoslogin = "";
 var idusuario = 0;
+const { render, response } = require('../app');
 
 router.get('/', function(req, res, next) {
    res.send({usuarios : cuentas});
@@ -44,5 +45,16 @@ router.post('/', function(req, res, next) {
   });
 });
 
+router.get('/registro', function(req, res, next) {
+  res.render('registro')
+});
+
+router.get('/ingreso', function(req, res, next) {
+  res.render('ingreso')
+});
+
+router.get('/perfil', function(req, res, next) {
+  res.render('perfil')
+});
 
 module.exports = router;

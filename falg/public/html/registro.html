@@ -184,38 +184,6 @@
       cuentas = informacion;
       legajo = cuentas.usuarios.length + 1;
     });
-    $.get("http://localhost:3000/users/logueado", function (informacion) {
-      var cuentaconectada = informacion.idconectado;
-      if (cuentas.usuarios[cuentaconectada -1].conectado == "true") {
-        $("#ingresar").remove();
-        $("#conectado").append(
-          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
-        );
-        $("#navbar").append(
-          '<li class="nav-item" style="padding-left: 420px;padding-top: 2px;">'+
-            '<a id = "cerrarsesion"class="btn btn-secundary" style="background-color: #666666;color: white;""'+
-            'role="Cerrarsesion">Cerrar Sesión</a>'+
-          '</li>'
-        );
-        $('#cerrarsesion').click(function () {
-          $.ajax({
-            url: "http://localhost:3000/users/login",
-            type: "PUT",
-            data: {
-              usuarioid: cuentaconectada,
-              conectado: false
-            },
-            success: function (result) {
-              alert("Sesión cerrada con éxito!");
-              location.reload();
-            },
-          });
-        });
-      }
-      else {
-        $("#cerrarsesion").remove();
-      }
-    });
     $('#registro').on('submit', function (event) {
       event.preventDefault();
       console.log(cuentas);

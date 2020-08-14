@@ -87,8 +87,6 @@
     </div>
   </nav>
 
-  </div>
-
   <container class="menus">
     <div class="row">
       <div class="col-sm">
@@ -264,65 +262,18 @@
 </html>
 <script>
   cuentas = [];
-  publicacionesinfo = [];
   function enviaridusuario(numeropublicacion){
         var idusuario = $("#idoculto" + numeropublicacion).text()
-        //$('#publicaciones').remove();
-        //location.href = "./publicacionusuario.html";
-        $.ajax({
-          url: 'http://localhost:3000/fpublicaciones/irpublicacion/'+ idusuario,
-          type: 'GET',
-          /*
-          data:
-          {
-            idusuario: id 
-          },*/
-          success: function (result) {
-            //location.href = "./publicacionusuario.html";
-            //$('#publicaciones').remove();
-          }
-        });
+        location.href = "http://localhost:3000/fpublicaciones/irpublicacion/"+ idusuario;
     } 
   $(document).ready(function () {
     $.get("http://localhost:3000/users/", function (informacion) {
       cuentas = informacion;
     });
-    $.get("http://localhost:3000/users/logueado", function (informacion) {
-      var cuentaconectada = informacion.idconectado;
-      if (cuentas.usuarios[cuentaconectada -1].conectado == "true") {
-        $("#ingresar").remove();
-        $("#conectado").append(
-          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
-        );
-        $("#navbar").append(
-          '<li class="nav-item" style="padding-left: 420px;padding-top: 2px;">'+
-            '<a id = "cerrarsesion"class="btn btn-secundary" style="background-color: #666666;color: white;""'+
-            'role="Cerrarsesion">Cerrar Sesión</a>'+
-          '</li>'
-        );
-        $('#cerrarsesion').click(function () {
-          $.ajax({
-            url: "http://localhost:3000/users/login",
-            type: "PUT",
-            data: {
-              usuarioid: cuentaconectada,
-              conectado: false
-            },
-            success: function (result) {
-              alert("Sesión cerrada con éxito!");
-              location.reload();
-            },
-          });
-        });
-      }
-      else {
-        $("#cerrarsesion").remove();
-      }
-    });
     $.get("http://localhost:3000/fpublicaciones", function (informacion) {
       var publicaciones = informacion.publicaciones;
       publicaciones.forEach(function (publicacion, numeropublicacion) {
-        $("#publicaciones").append( //343a40
+        $("#publicaciones").append(
           '<a id="publicacion'+ numeropublicacion + '" class="btn btn-light" onclick = "enviaridusuario('+ numeropublicacion+')" style="width: 1000px;background-color: #343a40;color: white">' +
             '<p id = "idoculto'+ numeropublicacion+'" hidden>' + publicacion.idusuario + '</p>'+
             '  <div class="row">' +
@@ -350,16 +301,7 @@
             '  </div>' +
             '</a>'
         );
-        publicacionesinfo[numeropublicacion] = publicaciones[numeropublicacion].idusuario;
       });
-      /*$('#publicacion').click(function () {
-        
-        var id = $('#publicacion').get($('#idoculto'));
-        console.log(id);
-        //console.log(publicacionesinfo[numeropublicacion]);
-        event.preventDefault();
-      
-      });*/
     });
   });
 </script>

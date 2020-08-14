@@ -81,6 +81,7 @@
           <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="./ingreso.html"role="Ingresar">Ingresar</a>
         </li>
       </ul>
+
       <form class="form-inline my-2 my-lg-0" id="buscador">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search"
           id="buscar">
@@ -129,10 +130,6 @@
     </a>
   </div>
 
-  <div id="contenido">
-
-  </div>
-
   <footer style="padding-top: 20px;">
     <div id="footer" class="footer">
       <div class="row d-flex align-items-center" style="background-color:#0e0c0c">
@@ -160,17 +157,6 @@
   </footer>
 
 </body>
-<style>
-  .footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(48, 48, 48);
-    color: white;
-    text-align: center;
-  }
-</style>
-
 </html>
 
 <script>
@@ -204,38 +190,6 @@
     $.get("http://localhost:3000/users", function (informacion) {
       cuentas = informacion;
     });
-    $.get("http://localhost:3000/users/logueado", function (informacion) {
-      var cuentaconectada = informacion.idconectado;
-      if (cuentas.usuarios[cuentaconectada -1].conectado == "true") {
-        $("#ingresar").remove();
-        $("#conectado").append(
-          '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
-        );
-        $("#navbar").append(
-          '<li class="nav-item" style="padding-left: 420px;padding-top: 2px;">'+
-            '<a id = "cerrarsesion"class="btn btn-secundary" style="background-color: #666666;color: white;""'+
-            'role="Cerrarsesion">Cerrar Sesión</a>'+
-          '</li>'
-        );
-        $('#cerrarsesion').click(function () {
-          $.ajax({
-            url: "http://localhost:3000/users/login",
-            type: "PUT",
-            data: {
-              usuarioid: cuentaconectada,
-              conectado: false
-            },
-            success: function (result) {
-              alert("Sesión cerrada con éxito!");
-              location.reload();
-            },
-          });
-        });
-      }
-      else {
-        $("#cerrarsesion").remove();
-      }
-    });
     $('#buscador').on('submit', function (event) {
       event.preventDefault();
       //console.log($("#buscar").val().toLowerCase());
@@ -252,29 +206,5 @@
         }
       });
     });
-    $.get("http://localhost:3000/inicio", function (informacion) {
-      informacion.forEach(function (carta) {
-        $("#contenido").append(
-          '            <div style="padding-left: 500px; padding-top: 50px">' +
-          '             <div class="card" style="width: 18rem;"> ' +
-          '               <div class="card" style="width: 18rem;"> ' +
-          '                 <img src="..." class="card-img-top" alt="..."> ' +
-          '                   <div class="card-body" style="background-color: #343a40;color: white;"> ' +
-          '                     <h5 class="card-title"> ' + carta.titulo + ' </h5> ' +
-          '                       <p class="card-text"> ' + carta.usuario + ' </p>' +
-          '                         <a href="#" class="btn btn-primary"> Ver </a>' +
-          '                   </div>' +
-          '               </div>' +
-          '             </div>' +
-          '            </div>'
-        );
-      });
-    });
-  });///
-/*
-  $('#crearCuenta').on('submit', function (event) {
-  
   });
-  */
-//BORRAR LO DEL CONTACTO EN TODAS LAS PAGINAS//
 </script>
