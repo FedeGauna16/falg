@@ -1,3 +1,4 @@
+<tittle>Publicación</tittle>
 <container class="container" style="color: white;padding-top: 30px;">
   <div class="row" style="margin-left: 300px;">
     <div class="col" style="max-width: 1000px;background-color: #343a40">
@@ -52,12 +53,13 @@
           <div class="row" style="margin-left: 1px;background-color: white;height: 1px;width: 1690px">
         </div>
       </div>
-      <div id= "comentariosusuarios" class="media d-block d-md-flex mt-4">
+      <p id = "publicacionid" hidden>{{publicacion.idpublicacion}}</p>
+      <div id= "comentariosusuarios" class="media d-block d-md-flex mt-4" style="margin-left: 30px;">
         
       </div>
       <div class="row">
-        <div class="media d-block d-md-flex mt-3">
-          <img class="card-img-64 d-flex mx-auto mb-3" alt="Generic placeholder image">
+        <div class="media d-block d-md-flex mt-3" style="margin-left: 50px;">
+          <img class="card-img-64 d-flex mx-auto mb-3" alt="Generic placeholder image" src="/imagenes/foro/Captura.PNGyiyuiuy.PNG" style="width: 150px;">
           <div class="media-body text-center text-md-left ml-md-3 ml-0">
             <h5 class="font-weight-bold mt-0">
               <a href="">Caroline Horwitz</a>
@@ -65,87 +67,99 @@
                 <i class="fas fa-reply"></i>
               </a>
             </h5>
-            <div class="text-white">{{comentario}}</div>
+            <div class="text-white">{{comentario.comentario}}</div>
           </div>
         </div>
       </div>
-      <nav class="d-flex justify-content-center mt-5" style="margin-left: 700px;">
-        <ul class="pagination pg-blue mb-0">
-          <li class="page-item disabled">
-            <a class="page-link">First</a>
-          </li>
-          <li class="page-item disabled">
-            <a class="page-link" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">Previous</span>
-            </a>
-          </li>
-          <li class="page-item active">
-            <a class="page-link">1</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link">2</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link">3</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link">4</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link">5</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Next</span>
-            </a>
-          </li>
-          <li class="page-item">
-            <a class="page-link">Last</a>
-          </li>
-
-        </ul>
-      </nav>
+      <div class="row">
+        <nav class="d-flex justify-content-center mt-5" style="margin-left: 300px;">
+          <ul class="pagination pg-blue mb-0">
+            <li class="page-item disabled">
+              <a class="page-link">First</a>
+            </li>
+            <li class="page-item disabled">
+              <a class="page-link" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <li class="page-item active">
+              <a class="page-link">1</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link">4</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link">5</a>
+            </li>
+            <li class="page-item" style="color:rgb(0, 110, 255)">
+              <a class="page-link" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link">Last</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
   </section>
 </container>
 <script>
-  
+  forolista = []
+  //comentarios = []
+  var cuentaconectada = 0
+  $.get("http://localhost:3000/users/", function (informacion) {
+      cuentas = informacion;
+    });
+  $.get("http://localhost:3000/users/logueado", function (informacion) {
+    cuentaconectada = informacion.idconectado;
+  });
   function subircomentario(cuadrocomentario){
-    var comentario = $("#cuadrocomentario").val()
-    console.log(comentario); 
+    var idpublicacionactual = $("#publicacionid").text();
+    var idcomentarioactual = forolista.comentarios.length;
+    var idusuario = cuentaconectada;
     $.ajax({
       url: 'http://localhost:3000/foro/subircomentario',
       type: 'POST',
       data: {
-        datos: comentario
+        idcomentario: idcomentarioactual,
+        idpublicacion: idpublicacionactual,
+        idusuario: idusuario,
+        comentario: $("#cuadrocomentario").val()
       },
       success: function (result) {
         location.reload();
       }
     });
   }
-  /*$(document).ready(function () {
-    $.get("http://localhost:3000/users/", function (informacion) {
-      cuentas = informacion;
-    });
-    $.get("http://localhost:3000/fpublicaciones/subircomentario", function (informacion) {
-      var publicaciones = informacion.publicaciones;
-      publicaciones.forEach(function (publicacion, numeropublicacion) {
+  $(document).ready(function () {
+    $.get("http://localhost:3000/foro/", function (informacion) {
+      forolista = informacion[0];
+      var comentarios = informacion[0].comentarios;
+      comentarios.forEach(function (comentario, numerocomentario) {
         $("#comentariosusuarios").append(
-          '<img class="card" alt="Generic placeholder image">'+
+          '<img class="card" alt="Generic placeholder image" src="/imagenes/foro/Captura.PNGyiyuiuy.PNG" style="width: 150px;">'+
           '<div class="media-body text-center text-md-left ml-md-3 ml-0">'+
             '<h5 class="font-weight-bold mt-0">'+
-              '<a href="">Miley Steward</a>'+
+              '<a id="publicacion'+ numerocomentario +'href="">'+//aca el numerocomentario no hace falta, si queres sacalo pelotudo de mierda
+                '<h4 style= "color: rgb(0, 110, 255);">'+ cuentas.usuarios[comentario.idusuario].nombre +'</h4>'+
+              '</a>'+
               '<a href="" class="pull-right">'+
-                '<i class="fas fa-reply"></i>'+
+                '<i class="fas fa-reply"></i>'+ 
+                '<div class="text-white"> ' + comentario.comentario + '</div>'+
               '</a>'+
             '</h5>'+
-            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'+
-            'cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'+
          '</div>'
         );
       });
     });
-  });*/
+  });
 </script>

@@ -20,7 +20,7 @@ router.get('/logueado', function(req, res, next) {
 
 router.put('/login', function(req, res, next) {
   datoslogin = req.body;
-  cuentas[datoslogin.usuarioid - 1].conectado = datoslogin.conectado;
+  cuentas[datoslogin.usuarioid].conectado = datoslogin.conectado;
   idusuario = datoslogin.usuarioid;
   res.send({
     status: true

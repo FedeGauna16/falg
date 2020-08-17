@@ -71,10 +71,10 @@
     $.get("http://localhost:3000/users/logueado", function (informacion) {
       var cuentaconectada = informacion.idconectado;
       $("#nombreusuario").append(
-        '<h3 class="font-weight-bold mb-3"><strong>' + cuentas.usuarios[cuentaconectada - 1].nombre + '</strong></h3>'
+        '<h3 class="font-weight-bold mb-3"><strong>' + cuentas.usuarios[cuentaconectada].nombre + '</strong></h3>'
       );
       $("#descripcionusuario").append(
-        '<p>' + cuentas.usuarios[cuentaconectada - 1].descripcion + '</p>'
+        '<p>' + cuentas.usuarios[cuentaconectada].descripcion + '</p>'
       );
     });
     $.get("http://localhost:3000/foro", function (informacion) {

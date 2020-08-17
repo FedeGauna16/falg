@@ -121,9 +121,10 @@
 </nav>
 <script>
   cuentas = [];
-  function enviaridusuario(numeropublicacion){
-      var idusuario = $("#idoculto" + numeropublicacion).text()
-      location.href = "http://localhost:3000/foro/irpublicacion/"+ idusuario;
+  function enviaridpublicacion(numeropublicacion){
+      var idpublicacion = $("#idoculto" + numeropublicacion).text()
+      var cosa = $("#publicacion" + numeropublicacion).text()
+      location.href = "http://localhost:3000/foro/irpublicacion/"+ idpublicacion;
     } 
   $(document).ready(function () {
     $('.toast').toast('show');
@@ -134,8 +135,8 @@
       var publicaciones = informacion[0].publicaciones;
       publicaciones.forEach(function (publicacion, numeropublicacion) {
         $("#publicaciones").append(
-          '<a id="publicacion'+ numeropublicacion + '" class="btn btn-light" onclick = "enviaridusuario('+numeropublicacion+')" style="width: 1000px;background-color: #343a40;color: white">' +
-            '<p id = "idoculto'+ numeropublicacion+'" hidden>' + publicacion.idusuario + '</p>'+
+          '<a id="publicacion'+ numeropublicacion + '" class="btn btn-light" onclick = "enviaridpublicacion('+numeropublicacion+')" style="width: 1000px;background-color: #343a40;color: white">' +
+            '<p id = "idoculto'+ numeropublicacion+'" hidden>' + publicacion.idpublicacion + '</p>'+
             '  <div class="row">' +
             '      <div class="col" style="text-align: left;">' +
             '          <div class="col">' +

@@ -63,7 +63,7 @@
     });
     $.get("http://localhost:3000/users", function (informacion) {
       cuentas = informacion;
-      legajo = cuentas.usuarios.length + 1;
+      legajo = cuentas.usuarios.length;
     });
     $('#registro').on('submit', function (event) {
       event.preventDefault();

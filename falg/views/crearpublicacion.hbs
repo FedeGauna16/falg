@@ -46,27 +46,32 @@
     </form>
 </div>
 <script>
+  publicaciones = [];
   cuentas = [];
   $(document).ready(function () {
+    $.get("http://localhost:3000/foro/", function (informacion) {
+      publicaciones = informacion[0];
+    });
     $.get("http://localhost:3000/users", function (informacion) {
       cuentas = informacion;
     });
     $.get("http://localhost:3000/users/logueado", function (informacion) {
       var cuentaconectada = informacion.idconectado;
+      var id = publicaciones.publicaciones.length
       $('#crearpublicacion').on('submit', function (event) {
         event.preventDefault();
         $.ajax({
           url: 'http://localhost:3000/foro/publicaciones',
           type: 'POST',
           data: {
+            idpublicacion: id,
             titulo: $("#titulo").val(),
             descripcion: $("#descripcion").val(),
-            usuario: cuentas.usuarios[cuentaconectada -1].nombre,
-            idusuario : cuentas.usuarios[cuentaconectada -1].usuarioid
+            usuario: cuentas.usuarios[cuentaconectada].nombre,
+            idusuario : cuentas.usuarios[cuentaconectada].usuarioid
           },
           success: function (result) {
             alert("Publicacion creada correctamente!");
-            location.reload();
             location.href = "http://localhost:3000/foro/foro";
           }
         });
