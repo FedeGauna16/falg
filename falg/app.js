@@ -4,6 +4,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors')
 var exphbs  = require('express-handlebars');
+const db = require("./models"); 
 
 var inicioRouter = require('./routes/inicio');
 var indexRouter = require('./routes/index');
@@ -21,6 +22,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+db.sequelize.sync();
 
 // motor de vista
 app.engine('hbs', exphbs({
