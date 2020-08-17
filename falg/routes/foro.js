@@ -22,6 +22,7 @@ router.get('/irpublicacion/:idpublicacion', function(req, res, next) {
   var comentario = forolista[0].comentarios.find(comentario => {
     return(comentario.idpublicacion == idpublicacion);
   });
+  console.log(comentario)
   res.render('publicacionusuario', { publicacion: publicacion, comentario: comentario})
 });
 

@@ -54,24 +54,10 @@
         </div>
       </div>
       <p id = "publicacionid" hidden>{{publicacion.idpublicacion}}</p>
-      <div id= "comentariosusuarios" class="media d-block d-md-flex mt-4" style="margin-left: 30px;">
+      <div id= "comentariosusuarios" class="row" style="margin-left: 30px;">
         
       </div>
-      <div class="row">
-        <div class="media d-block d-md-flex mt-3" style="margin-left: 50px;">
-          <img class="card-img-64 d-flex mx-auto mb-3" alt="Generic placeholder image" src="/imagenes/foro/Captura.PNGyiyuiuy.PNG" style="width: 150px;">
-          <div class="media-body text-center text-md-left ml-md-3 ml-0">
-            <h5 class="font-weight-bold mt-0">
-              <a href="">Caroline Horwitz</a>
-              <a href="" class="pull-right">
-                <i class="fas fa-reply"></i>
-              </a>
-            </h5>
-            <div class="text-white">{{comentario.comentario}}</div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
+      <!--<div class="row">
         <nav class="d-flex justify-content-center mt-5" style="margin-left: 300px;">
           <ul class="pagination pg-blue mb-0">
             <li class="page-item disabled">
@@ -109,13 +95,14 @@
             </li>
           </ul>
         </nav>
-      </div>
+      </div>-->
   </section>
 </container>
 <script>
   forolista = []
   //comentarios = []
   var cuentaconectada = 0
+  var idpublicacionactual = $("#publicacionid").text();
   $.get("http://localhost:3000/users/", function (informacion) {
       cuentas = informacion;
     });
@@ -123,7 +110,6 @@
     cuentaconectada = informacion.idconectado;
   });
   function subircomentario(cuadrocomentario){
-    var idpublicacionactual = $("#publicacionid").text();
     var idcomentarioactual = forolista.comentarios.length;
     var idusuario = cuentaconectada;
     $.ajax({
@@ -143,22 +129,41 @@
   $(document).ready(function () {
     $.get("http://localhost:3000/foro/", function (informacion) {
       forolista = informacion[0];
-      var comentarios = informacion[0].comentarios;
+      var comentarios = informacion[0].comentarios;     
       comentarios.forEach(function (comentario, numerocomentario) {
+        console.log("id del comentario: " + comentario.idpublicacion);
+        console.log("id de la publicacion: " + idpublicacionactual);
         $("#comentariosusuarios").append(
-          '<img class="card" alt="Generic placeholder image" src="/imagenes/foro/Captura.PNGyiyuiuy.PNG" style="width: 150px;">'+
-          '<div class="media-body text-center text-md-left ml-md-3 ml-0">'+
-            '<h5 class="font-weight-bold mt-0">'+
-              '<a id="publicacion'+ numerocomentario +'href="">'+//aca el numerocomentario no hace falta, si queres sacalo pelotudo de mierda
-                '<h4 style= "color: rgb(0, 110, 255);">'+ cuentas.usuarios[comentario.idusuario].nombre +'</h4>'+
-              '</a>'+
-              '<a href="" class="pull-right">'+
-                '<i class="fas fa-reply"></i>'+ 
-                '<div class="text-white"> ' + comentario.comentario + '</div>'+
-              '</a>'+
-            '</h5>'+
-         '</div>'
+          '<div id= "comentario"'+ numerocomentario +' class="col-6" style="width: 500px">'+
+            '<div class="col">'+
+              '<img class="card" alt="Generic placeholder image" src="/imagenes/foro/Captura.PNGyiyuiuy.PNG" style="width: 150px;">'+
+            '</div>'+
+            '<div class="col">'+
+              '<div class="media-body text-center text-md-left ml-md-3 ml-0">'+
+                '<h5 class="font-weight-bold mt-0">'+
+                  '<a id="publicacion" onclick = "sosa('+numerocomentario+')">'+//aca el numerocomentario no hace falta, si queres sacalo pelotudo de mierda
+                    '<h4 style= "color: rgb(0, 110, 255);">'+ cuentas.usuarios[comentario.idusuario].nombre +'</h4>'+
+                  '</a>'+
+                  '<a href="" class="pull-right">'+
+                    '<i class="fas fa-reply"></i>'+ 
+                    '<div class="text-white"> ' + comentario.comentario + '</div>'+
+                  '</a>'+
+                '</h5>'+
+              '</div>'+
+            '</div>'+
+          '</div>'
         );
+        
+          var hola = $("#comentario" + comentario.idpublicacion).text()
+          console.log(hola);
+          if(comentario.idpublicacion != idpublicacionactual){
+          console.log("id del comentario: " + comentario.idpublicacion);
+          $("#comentario" + comentario.idpublicacion).remove();
+          }
+        //mira flaco aca quiero que se fije si la id del comentario coincide con la de la publicacion
+        //si no lo hacen entones quiero que se borre el comentario de la id que es puto
+        //osea remover la id"comentario" + la id del comentario puto
+        
       });
     });
   });
