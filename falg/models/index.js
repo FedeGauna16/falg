@@ -16,4 +16,4 @@ db.sequelize = sequelize;
 db.Publicaciones = require("./publicaciones")(sequelize, Sequelize);
 db.Comentarios = require("./comentarios")(sequelize, Sequelize);
 
-module.exports = db; addEventListener;
+module.exports = db;

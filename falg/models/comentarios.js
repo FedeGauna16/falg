@@ -2,12 +2,12 @@ module.exports = (sequelize, Sequelize) => {
     const Comentarios = sequelize.define("comentarios",
     {
         id: {
-            type: Sequelize.INTERGER,
+            type: Sequelize.INTEGER,
             primaryKey: true,
             autoincrement: true
         },
-        idpublicacion: Sequelize.INTERGER,
-        idusuario: Sequelize.INTERGER,
+        idpublicacion: Sequelize.INTEGER,
+        idusuario: Sequelize.INTEGER,
         comentario: Sequelize.STRING
     }
     );
