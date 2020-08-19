@@ -71,8 +71,11 @@ router.get('/registro', function(req, res, next) {
   res.render('registro')
 });
 
-router.get('/ingreso', function(req, res, next) {
-  res.render('ingreso')
+router.get('/ingreso', async function(req, res, next) {
+  var query = await getcuentas();
+  var cuentas = query.dataValues;
+  console.log(cuentas);
+  res.render('ingreso', {cuentas})
 });
 
 router.get('/perfil', function(req, res, next) {
