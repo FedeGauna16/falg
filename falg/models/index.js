@@ -13,7 +13,8 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.Publicaciones = require("./publicaciones")(sequelize, Sequelize);
-db.Comentarios = require("./comentarios")(sequelize, Sequelize);
+db.Posts = require("./posts")(sequelize, Sequelize);
+db.Comments = require("./comments")(sequelize, Sequelize);
+db.Users = require("./users")(sequelize, Sequelize);
 
 module.exports = db;

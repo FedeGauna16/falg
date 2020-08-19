@@ -71,7 +71,8 @@
   var i = 0;
   $(document).ready(function () {
     $.get("http://localhost:3000/users/", function (informacion) {
-      cuentas = informacion;
+      cuentas = informacion.cosa;
+      console.log(cuentas);
     });
 
     $.getJSON("https://api.ipify.org/?format=json", function (e) {
@@ -79,21 +80,25 @@
     });
 
     $("#ingreso").on("submit", function (event) {
+      console.log(usuarioid);
       event.preventDefault();
-      cuentas.usuarios.forEach(function (cuenta, i) {
-        if (cuentas.usuarios[i].correo == $("#correo").val()) {
-          usuarioid = cuentas.usuarios[i].usuarioid;
+      cuentas.forEach(function(cuenta){
+        console.log(cuenta[0].email);
+        if(cuenta.email == $("#correo").val()){
+          console.log("sosputo");
+          usuarioid = cuenta.id;
           correoencontrado = true;
         }
       });
-      if (correoencontrado != true) {
+      if(correoencontrado != true) {
         alert("El correo ingresado no existe");
         return 0;
       }
-      cuentas.usuarios.forEach(function (cuenta, i) {
-        if (cuentas.usuarios[i].contraseña == $("#contraseña").val()) {
+      cuentas.forEach(function(cuenta){
+        if(cuenta.password == $("#contraseña").val()){
           //poner aca un append que agregue como un tick verde para indicar que se ingreso la contra y el correo bien HOLA SOY YO MISMO DEL FUTURO ALTERNO
           // ESTO YA ESTA PUESTO EN CREAR LAPUBLICACION, ROBAR DE AHI EL TICK VERDE Y GANAS
+          usuarioid = cuenta.id;
           contraencontrada = true;
         }
       });
@@ -106,7 +111,7 @@
         type: "PUT",
         data: {
           usuarioid: usuarioid,
-          conectado: true,
+          conectado: 1
         },
         success: function (result) {
           alert("Ingreso correcto");

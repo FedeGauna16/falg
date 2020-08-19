@@ -83,15 +83,14 @@
         type: 'POST',
         data:
         {
-          usuarioid: legajo,
-          nombre: $("#nombre").val(),
-          contraseña: $("#contraseña").val(),
-          correo: $("#correo").val(),
-          pais: $("#pais").val(),
-          sexo: $("#sexo").val(),
-          edad: $("#edad").val(),
-          descripcion: "",
-          conectado: false,
+          name: $("#nombre").val(),
+          password: $("#contraseña").val(),
+          email: $("#correo").val(),
+          country: $("#pais").val(),
+          sex: $("#sexo").val(),
+          age: $("#edad").val(),
+          description: "",
+          connect: 0,
         },
         success: function (result) {
           alert("Registro correcto");
