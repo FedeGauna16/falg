@@ -1,6 +1,3 @@
-{{#each cuentas}}
-  <h1>sos vos</h1>
-{{/each}}
 <title>Ingreso</title>
 <div style="text-align: center; padding-top: 50px; color: white;">
     <h3>Ingresar</h3>
@@ -74,8 +71,7 @@
   var i = 0;
   $(document).ready(function () {
     $.get("http://localhost:3000/users/", function (informacion) {
-      cuentas = informacion.cosa;
-      console.log(cuentas);
+      cuentas = informacion.cuentas;
     });
 
     $.getJSON("https://api.ipify.org/?format=json", function (e) {
@@ -83,10 +79,8 @@
     });
 
     $("#ingreso").on("submit", function (event) {
-      console.log(usuarioid);
       event.preventDefault();
-      cuentas.forEach(function(cuenta){
-        console.log(cuenta[0].email);
+      cuentas.cuentas.forEach(function(cuenta){
         if(cuenta.email == $("#correo").val()){
           console.log("sosputo");
           usuarioid = cuenta.id;
@@ -97,7 +91,7 @@
         alert("El correo ingresado no existe");
         return 0;
       }
-      cuentas.forEach(function(cuenta){
+      cuentas.cuentas.forEach(function(cuenta){
         if(cuenta.password == $("#contraseña").val()){
           //poner aca un append que agregue como un tick verde para indicar que se ingreso la contra y el correo bien HOLA SOY YO MISMO DEL FUTURO ALTERNO
           // ESTO YA ESTA PUESTO EN CREAR LAPUBLICACION, ROBAR DE AHI EL TICK VERDE Y GANAS
@@ -109,6 +103,7 @@
         alert("La contraseña ingresada no existe");
         return 0;
       }
+      console.log(usuarioid);
       $.ajax({
         url: "http://localhost:3000/users/login",
         type: "PUT",

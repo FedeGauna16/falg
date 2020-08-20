@@ -106,11 +106,13 @@
   cuentas = [];
   $(document).ready(function () {
     $.get("http://localhost:3000/users/", function (informacion) {
-      cuentas = informacion;
+      cuentas = informacion.cuentas;
+      console.log(cuentas[0]);//la id de la bd empieza desde 0 y no puedo conecta la id del usuario ya que empieza desde 1
     });
     $.get("http://localhost:3000/users/logueado", function (informacion) {
       var cuentaconectada = informacion.idconectado;
-      if (cuentas.usuarios[cuentaconectada].conectado == "true") {
+      console.log(cuentas[0]);
+      if (cuentas[cuentaconectada].connect == 1) {
         $("#ingresar").remove();
         $("#conectado").append(
           '<a class="nav-link" href="http://localhost:3000/users/perfil" style="color: white;">Perfil</a>'

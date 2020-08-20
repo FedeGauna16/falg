@@ -7,15 +7,16 @@ var datoslogin = "";
 var idusuario = 0;
 
 async function getcuentas(){
-  var cuentas = await Usuarios.findAll();
+  var cuentas = await Usuarios.findAll({
+    raw: true
+  });
   return cuentas;
 }
 
 router.get('/', async function(req, res, next) {
   var cuentas = await getcuentas();
-  var cosa = cuentas.dataValues;
   console.log(cuentas);
-  res.send({cosa});
+  res.send({cuentas});
 });
 
 router.get('/logueado', function(req, res, next) {
@@ -29,7 +30,8 @@ router.get('/logueado', function(req, res, next) {
 
 router.put('/login', async function(req, res, next) {
   datoslogin = req.body;
-  await User.update({ connect: 1 }, {
+  console.log(datoslogin);
+  await Usuarios.update({ connect: 1 }, {
     where: {
       id: datoslogin.usuarioid
     }
