@@ -107,11 +107,10 @@
   $(document).ready(function () {
     $.get("http://localhost:3000/users/", function (informacion) {
       cuentas = informacion.cuentas;
-      console.log(cuentas[0]);//la id de la bd empieza desde 0 y no puedo conecta la id del usuario ya que empieza desde 1
+      //console.log(cuentas[0]);//la id de la bd empieza desde 0 y no puedo conecta la id del usuario ya que empieza desde 1
     });
     $.get("http://localhost:3000/users/logueado", function (informacion) {
       var cuentaconectada = informacion.idconectado;
-      console.log(cuentas[0]);
       if (cuentas[cuentaconectada].connect == 1) {
         $("#ingresar").remove();
         $("#conectado").append(

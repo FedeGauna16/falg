@@ -3,7 +3,7 @@
     <div style="text-align: center;">
       <h1>Crear publicación</h1>
     </div>
-    <form class="was-validated" id="crearpublicacion">
+    <form class="was-validated">
       <div class="col-md-6 mb-3" style="padding-left: 0px;">
         <label for="validationServer01">Título</label>
         <input type="text" class="form-control is-valid" id="titulo" placeholder="Debe contener entre 4 y 20 caracteres"
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div style="text-align: center;">
-        <button type="submit" class="btn btn-secundary"
+        <button id= "crearpublicacion" type="submit" class="btn btn-secundary"
           style="background-color: #666666;color: white;width: 200px;height: 50px;" role="publicar">Subir
           publicación</button>
       </div>
@@ -47,34 +47,38 @@
 </div>
 <script>
   publicaciones = [];
-  cuentas = [];
+  cuenta = [];
+  var cuentaconectada = 0;
+  var id = 0;
   $(document).ready(function () {
     $.get("http://localhost:3000/foro/", function (informacion) {
       publicaciones = informacion[0];
     });
     $.get("http://localhost:3000/users", function (informacion) {
-      cuentas = informacion;
+      cuenta = informacion;
     });
     $.get("http://localhost:3000/users/logueado", function (informacion) {
-      var cuentaconectada = informacion.idconectado;
-      var id = publicaciones.publicaciones.length
-      $('#crearpublicacion').on('submit', function (event) {
-        event.preventDefault();
-        $.ajax({
-          url: 'http://localhost:3000/foro/publicaciones',
-          type: 'POST',
-          data: {
-            idpublicacion: id,
-            titulo: $("#titulo").val(),
-            descripcion: $("#descripcion").val(),
-            usuario: cuentas.usuarios[cuentaconectada].nombre,
-            idusuario : cuentas.usuarios[cuentaconectada].usuarioid
-          },
-          success: function (result) {
-            alert("Publicacion creada correctamente!");
-            location.href = "http://localhost:3000/foro/foro";
-          }
-        });
+      cuentaconectada = informacion.idconectado;
+      id = publicaciones.publicaciones.length;
+    });
+    $('#crearpublicacion').on('click', function (event) {
+      console.log("HOLA????????????????????????????????????????????????????");
+      console.log(cuenta.cuentas[cuentaconectada].id);
+      event.preventDefault();
+      $.ajax({
+        url: 'http://localhost:3000/foro/publicaciones',
+        type: 'POST',
+        data: {
+          id: id,
+          tittle: $("#titulo").val(),
+          description: $("#descripcion").val(),
+          //user: cuentas.usuarios[cuentaconectada].nombre, para que quiero pasarle el nombre?? si sirve ponelo de neuvo pelotudo
+          iduser : cuenta.cuentas[cuentaconectada].id
+        },
+        success: function (result) {
+          alert("Publicacion creada correctamente!");
+          location.href = "http://localhost:3000/foro/foro";
+        }
       });
     });
   });

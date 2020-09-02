@@ -1,18 +1,64 @@
 var express = require('express');
 var router = express.Router();
 var forolista = require('../public/html/foro/foro.json');
+var tablas = require("../models");
+var Posts = tablas.Posts;
 const { render, response } = require('../app');
 
-router.get('/', function(req, res, next) {
+/*router.get('/', function(req, res, next) {
    res.send(forolista);
 });
 
-router.post('/publicaciones', function(req, res, next) {
+/*router.post('/publicaciones', function(req, res, next) {
+  console.log(req.body);
   forolista[0].publicaciones.push(req.body);
   res.send({
     status : true,
   });
+});*/
+
+
+
+
+async function getposts(){
+  var posts = await Posts.findAll({
+    raw: true
+  });
+  return posts;
+}
+
+router.get('/', async function(req, res, next) {
+  var posts = await getposts();
+  //console.log(posts);
+  res.send({posts});
 });
+
+router.post('/', async function (req, res){
+    //console.log(req.body);
+    res.send("biencapo");
+});
+
+router.post('/publicaciones', async function(req, res, next) {
+  console.log("sos vos hermoso?");
+  var newpost = req.body;
+  console.log(newpost)
+  var posts = await getposts();
+  await Posts.create({
+    id: newpost.id,
+    tittle: newpost.tittle,
+    description: newpost.description,
+    //user: newpost.user,
+    iduser: newpost.iduser
+  });
+  res.send({
+    status : true,
+    response : posts
+  });
+});
+
+
+
+
 
 router.get('/irpublicacion/:idpublicacion', function(req, res, next) {
   var idpublicacion = req.params.idpublicacion;

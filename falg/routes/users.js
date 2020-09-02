@@ -8,6 +8,7 @@ var idusuario = 0;
 
 async function getcuentas(){
   var cuentas = await Usuarios.findAll({
+    nest: true,
     raw: true
   });
   return cuentas;
@@ -83,7 +84,5 @@ router.get('/ingreso', async function(req, res, next) {
 router.get('/perfil', function(req, res, next) {
   res.render('perfil')
 });
-
-
 
 module.exports = router;

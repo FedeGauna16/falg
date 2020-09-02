@@ -42,5 +42,6 @@ app.use('/estadisticas', estadisticasRouter);
 app.use('/foro', foroRouter);
 app.use('/buscador', buscadorRouter);
 
+
  
 module.exports = app;
