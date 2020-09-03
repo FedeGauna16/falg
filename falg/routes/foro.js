@@ -33,19 +33,15 @@ router.get('/', async function(req, res, next) {
   res.send({posts});
 });
 
-router.post('/', async function (req, res){
-    //console.log(req.body);
-    res.send("biencapo");
-});
-
 router.post('/publicaciones', async function(req, res, next) {
   console.log("sos vos hermoso?");
   var newpost = req.body;
   console.log(newpost)
   var posts = await getposts();
   await Posts.create({
-    id: newpost.id,
-    tittle: newpost.tittle,
+    id: newpost.id,//no sera que la id es la misma y la verga se confunde que se duplica?
+    //en el postman la verga aparece como null y eso
+    title: newpost.title,
     description: newpost.description,
     //user: newpost.user,
     iduser: newpost.iduser

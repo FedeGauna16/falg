@@ -62,15 +62,13 @@
       id = publicaciones.publicaciones.length;
     });
     $('#crearpublicacion').on('click', function (event) {
-      console.log("HOLA????????????????????????????????????????????????????");
-      console.log(cuenta.cuentas[cuentaconectada].id);
       event.preventDefault();
       $.ajax({
         url: 'http://localhost:3000/foro/publicaciones',
         type: 'POST',
         data: {
           id: id,
-          tittle: $("#titulo").val(),
+          title: $("#titulo").val(),
           description: $("#descripcion").val(),
           //user: cuentas.usuarios[cuentaconectada].nombre, para que quiero pasarle el nombre?? si sirve ponelo de neuvo pelotudo
           iduser : cuenta.cuentas[cuentaconectada].id
