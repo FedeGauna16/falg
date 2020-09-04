@@ -4,7 +4,19 @@ var cuentas = require('../public/html/user/users.json');
 var tablas = require("../models");
 var Usuarios = tablas.Users;
 var datoslogin = "";
-var idusuario = 0;
+var idusuario = 1;
+
+async function usuarioConectado(){
+  return await Usuarios.findOne(
+    {
+      raw: true,
+      nest: true,
+      where: {
+        id: idusuario
+      }
+    }
+  )
+}
 
 async function getcuentas(){
   var cuentas = await Usuarios.findAll({
@@ -29,6 +41,12 @@ router.get('/logueado', function(req, res, next) {
     );
 });
 
+router.get('/logout', async function(req, res){
+  req.app.locals.userlogged = 0;
+  console.log("elpibecerrosesion")
+  res.redirect("http://localhost:3000/index/index")
+})
+
 router.put('/login', async function(req, res, next) {
   datoslogin = req.body;
   console.log(datoslogin);
@@ -37,7 +55,18 @@ router.put('/login', async function(req, res, next) {
       id: datoslogin.usuarioid
     }
   });
+  req.app.locals.userlogged = await Usuarios.findOne(
+    {
+      raw: true,
+      nest: true,
+      where: {
+        id: datoslogin.usuarioid
+      }
+    }
+  )
+  console.log(req.app.locals.logged) 
   idusuario = datoslogin.usuarioid;
+  res.locals.idusuario = idusuario;
   res.send({
     status: true
   });

@@ -4,7 +4,7 @@ module.exports = (sequelize, Sequelize) => {
         id: {
             type: Sequelize.INTEGER,
             primaryKey: true,
-            autoincrement: true
+            autoIncrement: true
         },
         idposts: Sequelize.INTEGER,
         idusers: Sequelize.INTEGER,

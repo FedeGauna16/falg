@@ -61,10 +61,15 @@
         <li class="nav-item" id="conectado">
 
         </li>
-        <li id="ingresar" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
-          <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="http://localhost:3000/users/ingreso"
-            role="Ingresar">Ingresar</a>
-        </li>
+        {{#if userlogged}}
+          <a href="/users/logout" class="btn btn-primary">cerrar sesion</a>
+          <h1 class="text-white">{{userlogged.name}}</h1>
+        {{else}}
+          <li id="ingresar" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
+            <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="http://localhost:3000/users/ingreso"
+              role="Ingresar">Ingresar</a>
+          </li>
+        {{/if}}
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search">
@@ -103,15 +108,21 @@
 
 </html>
 <script>
-  cuentas = [];
+  accounts = [];
+
   $(document).ready(function () {
-    $.get("http://localhost:3000/users/", function (informacion) {
-      cuentas = informacion.cuentas;
+    /*$.get("http://localhost:3000/users/", function (informacion) {
+      accounts = informacion.cuentas;
       //console.log(cuentas[0]);//la id de la bd empieza desde 0 y no puedo conecta la id del usuario ya que empieza desde 1
-    });
+    });*/
     $.get("http://localhost:3000/users/logueado", function (informacion) {
       var cuentaconectada = informacion.idconectado;
-      if (cuentas[cuentaconectada].connect == 1) {
+      //console.log(accounts);//este viene del get en users ahi arriba
+      //console.log(cuentas);//este creo que viene directo de la bd
+      //console.log(cuentaconectada);
+      //console.log(accounts);
+      console.log(cuentas)
+      if (cuentas[cuentaconectada -1].connect == 1) {
         $("#ingresar").remove();
         $("#conectado").append(
           '<a class="nav-link" href="http://localhost:3000/users/perfil" style="color: white;">Perfil</a>'
@@ -122,6 +133,10 @@
           'role="Cerrarsesion">Cerrar Sesión</a>' +
           '</li>'
         );
+        $("#papa").on('click', function(){
+          console.log("holas");
+        });
+      
         $('#cerrarsesion').click(function () {
           $.ajax({
             url: "http://localhost:3000/users/login",

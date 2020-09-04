@@ -132,18 +132,18 @@
       cuentas = informacion;
     });
     $.get("http://localhost:3000/foro", function (informacion) {
-      var publicaciones = informacion[0].publicaciones;
+      var publicaciones = informacion.posts
       publicaciones.forEach(function (publicacion, numeropublicacion) {
         $("#publicaciones").append(
           '<a id="publicacion'+ numeropublicacion + '" class="btn btn-light" onclick = "enviaridpublicacion('+numeropublicacion+')" style="width: 1000px;background-color: #343a40;color: white">' +
-            '<p id = "idoculto'+ numeropublicacion+'" hidden>' + publicacion.idpublicacion + '</p>'+
+            '<p id = "idoculto'+ numeropublicacion+'" hidden>' + publicacion.id + '</p>'+
             '  <div class="row">' +
             '      <div class="col" style="text-align: left;">' +
             '          <div class="col">' +
-            publicacion.titulo +
+            publicacion.title +
             '          </div>' +
             '          <div class="col">' +
-            publicacion.usuario +
+            publicacion.user +
             '          </div>' +
             '      </div>' +
             '      <div class="col">' +

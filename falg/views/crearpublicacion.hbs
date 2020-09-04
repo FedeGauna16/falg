@@ -49,7 +49,6 @@
   publicaciones = [];
   cuenta = [];
   var cuentaconectada = 0;
-  var id = 0;
   $(document).ready(function () {
     $.get("http://localhost:3000/foro/", function (informacion) {
       publicaciones = informacion[0];
@@ -58,19 +57,19 @@
       cuenta = informacion;
     });
     $.get("http://localhost:3000/users/logueado", function (informacion) {
-      cuentaconectada = informacion.idconectado;
-      id = publicaciones.publicaciones.length;
+      console.log(informacion.idconectado);
+      //cuentaconectada = informacion.idconectado;
     });
     $('#crearpublicacion').on('click', function (event) {
+      console.log(cuenta.cuentas[cuentaconectada]);
       event.preventDefault();
       $.ajax({
         url: 'http://localhost:3000/foro/publicaciones',
         type: 'POST',
         data: {
-          id: id,
           title: $("#titulo").val(),
           description: $("#descripcion").val(),
-          //user: cuentas.usuarios[cuentaconectada].nombre, para que quiero pasarle el nombre?? si sirve ponelo de neuvo pelotudo
+          user: cuenta.cuentas[cuentaconectada].name,
           iduser : cuenta.cuentas[cuentaconectada].id
         },
         success: function (result) {

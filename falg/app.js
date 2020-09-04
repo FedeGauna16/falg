@@ -14,7 +14,6 @@ var ticketsRouter = require('./routes/tickets');
 var estadisticasRouter = require('./routes/estadisticas');
 var foroRouter = require('./routes/foro');
 var buscadorRouter = require('./routes/buscador');
-
 var app = express();
 
 app.use(cors());
@@ -30,7 +29,6 @@ app.engine('hbs', exphbs({
     extname: '.hbs'
 }));
 app.set('view engine', 'hbs');
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);

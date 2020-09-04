@@ -3,7 +3,6 @@ var router = express.Router();
 var forolista = require('../public/html/foro/foro.json');
 var tablas = require("../models");
 var Posts = tablas.Posts;
-const { render, response } = require('../app');
 
 /*router.get('/', function(req, res, next) {
    res.send(forolista);
@@ -39,11 +38,9 @@ router.post('/publicaciones', async function(req, res, next) {
   console.log(newpost)
   var posts = await getposts();
   await Posts.create({
-    id: newpost.id,//no sera que la id es la misma y la verga se confunde que se duplica?
-    //en el postman la verga aparece como null y eso
     title: newpost.title,
     description: newpost.description,
-    //user: newpost.user,
+    user: newpost.user,
     iduser: newpost.iduser
   });
   res.send({
