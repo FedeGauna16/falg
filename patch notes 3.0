@@ -1,0 +1,80 @@
+---patch notes v3.0---
+
+IMPORTANTE : todo lo que contenga **-, significa que esta casi listo, pero no del todo
+
+IMPORTANTE 2: todos los html los movi a un nuevo motor de vida .hbs, esto significa que cualquier referencia a alguna seccion html ahora se tiene que hacer a partir de por ejemplo: href="http://localhost:3000/index/index". La referencia referencia xd al servidor js en este caso index, y luego a la seccion get de /index, en donde se renderiza el .hbs que contiene la parte html y script de la pagina. se cambio esto para que todas las secciones chupeteen el formato standard del header y footer desde un main.hbs, asi no se tiene que repetir el mismo codigo de la estrctura principal en cada una de las secciones, por lo que ahora cada seccion .hbs solo va a contener un html y script de si mismo. (por si no entendieron) ahora cada seccion esta compuesta tanto del "main.hbs" como de cada seccion aparte, ejemplo la seccion del foro, esta compuesta de "main.hbs" + "foro.hbs".
+
+IMPORTANTE 3: VERIFIQUEN SIEMPRE SI HAY ALGUN PULL PENDIENTE TANTO EN GITHUB PROGRAMA COMO EN LA PAGINA, LA OTRA VEZ SE CAGO UN PULL Y FUE RE JODIDO SINCRONIZAR TODO.
+
+IMPORTANTE 4: VERIFIQUEN SIEMPRE SI SE SUBIO DEFINITIVAMENTE SU PUSH DESDE EL GITHUB PROGRAMA HACIA EL REPO, LA OTRA VEZ PASO ALGO SIMILAR Y AMAGARON CON SUBIRLO.
+
+IMPORTANTE 5: ahora hay un boton de "live" en el visual para arrancar la moto, usen ese que les permite reinicar automaticamente el sv a partir de que se guarden cambios en algún js.
+
+IMPORTANTE 6: se esta agregando la conexion con la bd, por lo que es posible que casi todas las secciones esten rotas en cuanto a los datos que aparecen o se envian. Ademas, no tienen que chupetear la bd desde ningun archivo mysql, siemplemente arrancan la moto desde el visual y se crea automaticamente la bd en su pc. Para esto necesitan primero necesitan tener abierto el laragon + el mysql, conectan los dos y listo.
+
+--general--
+**-arreglar todos los links desde todas las secciones. (antes estaban arregladas, ahora por el cambio de formato no se si estan todas)
+-corregir la posicion del boton de ingresar en todas las secciones(esta dejarla para despues)
+-agregar el boton ese de fede que esta en el buscador de "tipo" - tambien para despues
+**-agregar los iconos de redes sociales en la parte derecha del footer ( si bien ya esta puesto, a mi no me terminan de gustar, buscar otro estilo generico de esos que vienen en un circulo negro y adentro el logo de cada red social. https://mdbootstrap.com/docs/jquery/navigation/footer/, (si bajan al final de todo van a ver los dos ultimos con iconos como los que estarian mejor, robarlos de ahi o de otra pagina)
+-- si encuentran algun error entre conexiones con las secciones avisen
+--la conexion con la seccion de estadisticas esta rota, arreglenla si pueden
+
+registro
+**-terminado(meter html en la parte de la edad, reemplazar el campo de meter una edad por un bootstrap de elegir la fecha en que naciste a partir de un calendario)
+-(linea 70-79) buscar forma para reducir y unificar el codigo de busqueda, verificacion y aviso de la comparativa entre los campos de registro y la tabla cuentas de la bd.
+-crear script del boton de "no soy un robot", que verifique de alguna manera si sos un puto o no.
+
+login
+**-reemplazar el sistema de correo y contraseña encontrados, en donde si se encuentran se pasan a true y luego a false, hacer simplemente una verificacion entre el campo ingresado y la tabla cuentas en la bd
+
+perfil
+-diseñar algo para meter en la parte de "nivel 500", cualquier cosa de relleno
+-meter iconos que representen cada seccion del cuadro de abajo a la derecha(un icono por cada coso) por ejemplo para el de "Usuario" meter una personita, para el de "email" meter una carta y asi
+
+inicio
+-diseñar algo para poner en el inicio
+-poner algo en el incio esta re vacio
+-crear alguna api para el inicio
+
+foro
+-crear api + html que permita dar like, y que pueda enviarle al sv los datos de los likes totales, la cantidad de mensajes, y las visitas. Todos esos datos mostrarlos tanto en el foro (ya tienen su html hecho, solo reemplazar los datos con la api) como en el perfil.
+-crear api que permita filtrar y mostrar el tipo de publicacion elegido (el tipo de publicacion se establece al crear la publicacion)
+-corregir el icono del "+", colocarlo a la dercha de la palabra "Crear Publicación"
+-Crear api que muestre en tiempo real cuales son las publicaciones mas valoradas o las mas recientes(el html es el de "publicaciones recientes", a la derecha del foro y abajo de "crear publicacion".
+-Crear api o html (no se cual será) para la cambiar de página en el foro (el html ya está creado abajo de todo) (me refiero a la seccion en donde tocas en un numero de pagina y te lleva a esa pagina)
+
+foro - crear publicacion
+-Agregar a la api ya hecha la posibilidad de meter imagenes
+-agregar a la api ya hecha el meter un tipo de filtro para la publicacion, para que despues en el foro se pueda filtrar por tipo.
+
+foro - publicacion usuario
+(no me lo toquen qe lo estoy haciendo yo)
+-corregir error que todos los comentarios aparecen en todas las publicaciones.
+-creación de api + html de comentarios y su aparicion terminado.
+-esta rota momentaneamente por la conexion con bd.
+
+buscador
+-esta roto o no esta hecho, no se
+-es de fede pero le dije a masuco que tambien podia ayudar pero lo va a hacer en su pagina de armas pero no lo continua mas asi que no hay  buscador, si alguien lo quiere hacer bueno.
+
+estadisticas
+-esta roto en alguna parte, es de fede
+
+descarga
+**-sacar lo de pegi12 y eso del footer, ponerlo en el body(lo puse en el body asi nomas, ponelo bien)
+
+ayuda - soporte
+-hacer algo con la seccion de problemas con el juego, un diseño, una api o algo. sino lo sacamos.(hace unos dias habiamos pensado algunas ideas, no me acuerdo cuales)
+-lo mismo con la seccion de problemas con la pagina.
+-en la seccion de otro problema no anda el link, arreglar la conexion con el ticket
+
+ayuda - generar reporte
+-api terminada
+-sacar la id del usuario que generó el reporte a partir de un get a la cuenta logueada, enviar esa misma id junto con la descripcion del reporte.
+-hacer una verificacion que impida mandar un ticket si el usuario no se logueo con su cuenta
+-si se saca esos dos campos de nombre y correo va a quedar muy simple y cortito, crear algun diseño para rellenar, ya sea con pedir algun dato extra, subir imagenes, etc.
+
+ayuda-faq
+-sacar los botones de leer mas, y agregar el texto completo de cada respuesta en la misma pagina.
+-crear algun boton o algo que referencie a generar un ticket para una pregunta especifica
