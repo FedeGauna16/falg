@@ -62,13 +62,15 @@
 
         </li>
         {{#if userlogged}}
-          <a href="/users/logout" class="btn btn-primary">cerrar sesion</a>
-          <h1 class="text-white">{{userlogged.name}}</h1>
+        <li class="nav-item" style="padding-left: 450px;padding-top: 2px;">
+          <a id="cerrarsesion" href="/users/logout" class="btn btn-secundary"
+            style="background-color: #666666;color: white;" role="Cerrarsesion">Cerrar Sesión</a>
+        </li>
         {{else}}
-          <li id="ingresar" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
-            <a class="btn btn-secundary" style="background-color: #666666;color: white;" href="http://localhost:3000/users/ingreso"
-              role="Ingresar">Ingresar</a>
-          </li>
+        <li id="ingresar" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
+          <a class="btn btn-secundary" style="background-color: #666666;color: white;"
+            href="http://localhost:3000/users/ingreso" role="Ingresar">Ingresar</a>
+        </li>
         {{/if}}
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -85,9 +87,11 @@
         <div class="col-4">
           <div class="row d-flex align-items-center">
             <a class="col-3 text-white" href="http://localhost:3000/index/terminosycondiciones">Contacto</a>
-            <a class="col-3 text-white" href="http://localhost:3000/index/terminosycondiciones">Terminos y condiciones</a>
+            <a class="col-3 text-white" href="http://localhost:3000/index/terminosycondiciones">Terminos y
+              condiciones</a>
           </div>
-        </div><!--FUA MIRA ESTE TRUCO SAQUE COMO COMENTAR EN HTML CALATE ESTA PELOTUDO-->
+        </div>
+        <!--FUA MIRA ESTE TRUCO SAQUE COMO COMENTAR EN HTML CALATE ESTA PELOTUDO-->
         <div class="col-4">
           <img src="/imagenes/index/falg_footer.png" style="padding-top: 10px;">
           <div style="padding-right: 10px;">©2020 Arne, Inc.</div>
@@ -107,55 +111,3 @@
 </body>
 
 </html>
-<script>
-  accounts = [];
-
-  $(document).ready(function () {
-    /*$.get("http://localhost:3000/users/", function (informacion) {
-      accounts = informacion.cuentas;
-      //console.log(cuentas[0]);//la id de la bd empieza desde 0 y no puedo conecta la id del usuario ya que empieza desde 1
-    });*/
-    $.get("http://localhost:3000/users/logueado", function (informacion) {
-      var cuentaconectada = informacion.idconectado;
-      //console.log(accounts);//este viene del get en users ahi arriba
-      //console.log(cuentas);//este creo que viene directo de la bd
-      //console.log(cuentaconectada);
-      //console.log(accounts);
-      console.log(cuentas)
-      if (cuentas[cuentaconectada -1].connect == 1) {
-        $("#ingresar").remove();
-        $("#conectado").append(
-          '<a class="nav-link" href="http://localhost:3000/users/perfil" style="color: white;">Perfil</a>'
-        );
-        $("#navbar").append(
-          '<li class="nav-item" style="padding-left: 420px;padding-top: 2px;">' +
-          '<a id = "cerrarsesion"class="btn btn-secundary" style="background-color: #666666;color: white;""' +
-          'role="Cerrarsesion">Cerrar Sesión</a>' +
-          '</li>'
-        );
-        $("#papa").on('click', function(){
-          console.log("holas");
-        });
-      
-        $('#cerrarsesion').click(function () {
-          $.ajax({
-            url: "http://localhost:3000/users/login",
-            type: "PUT",
-            data: {
-              usuarioid: cuentaconectada,
-              conectado: false
-            },
-            success: function (result) {
-              alert("Sesión cerrada con éxito!");
-              location.reload();
-              location.href = "http://localhost:3000/index/index"
-            },
-          });
-        });
-      }
-      else {
-        $("#cerrarsesion").remove();
-      }
-    });
-  });
-</script>

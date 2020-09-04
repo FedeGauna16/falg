@@ -7,25 +7,25 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Nombre</label>
-        <input type="text" class="form-control" id="nombre">
+        <input type="text" class="form-control" id="name">
       </div>
       <div class="form-group col-md-6">
         <label for="inputPassword4">Contraseña</label>
-        <input type="password" class="form-control" id="contraseña">
+        <input type="password" class="form-control" id="password">
       </div>
     </div>
     <div class="form-group">
       <label for="inputAddress">Correo electrónico</label>
-      <input type="email" class="form-control" id="correo" placeholder="ejemplo@hotmail.com">
+      <input type="email" class="form-control" id="email" placeholder="ejemplo@hotmail.com">
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputCity">Pais</label>
-        <input type="text" class="form-control" id="pais">
+        <input type="text" class="form-control" id="country">
       </div>
       <div class="form-group col-md-4">
         <label for="inputState">Sexo</label>
-        <select id="sexo" class="form-control">
+        <select id="gender" class="form-control">
           <option>Hombre</option>
           <option>Mujer</option>
           <option>Otro</option>
@@ -33,7 +33,7 @@
       </div>
       <div class="form-group col-md-2">
         <label for="inputZip">Edad</label>
-        <input type="text" class="form-control" id="edad">
+        <input type="text" class="form-control" id="age">
       </div>
     </div>
     <div class="form-group">
@@ -53,42 +53,37 @@
   </div>
 <script>
   var cuentas = [];
-  var usuarioid = "";
-  var legajo = 0;
-
   $(document).ready(function () {
     $.get("http://localhost:3000/foro", function (informacion) {
       var sosa = informacion;
-      console.log(sosa[0].publicaciones);
+      console.log(sosa[0].publicaciones);// PARA MATAR
     });
     $.get("http://localhost:3000/users", function (informacion) {
-      cuentas = informacion;
-      legajo = cuentas.usuarios.length;
+      cuentas = informacion.cuentas;
     });
     $('#registro').on('submit', function (event) {
       event.preventDefault();
-      if ($("#nombre").val() == 0 || $("#contraseña").val() == 0 || $("#correo").val() == 0 || $("#pais").val() == 0 || $("#sexo").val() == 0 || $("#edad").val() == 0) {
+      if ($("#name").val() == 0 || $("#password").val() == 0 || $("#email").val() == 0 || $("#country").val() == 0 || $("#gender").val() == 0 || $("#age").val() == 0) {
         alert("Uno de los campos esta vacio");
         return 0;
       }
-      for (var i = 0; i < cuentas.length; i += 1) {
-        console.log(cuentas[i].nombre + $("#nombre").val());
-        if (cuentas[i].nombre == $("#nombre").val()) {
+      cuentas.forEach(function(cuenta){
+        if(cuenta.name == $("#name").val()){
           alert("El nombre ya esta ocupado");
           return 0;
         }
-      };
+      });
       $.ajax({
-        url: 'http://localhost:3000/users/',
+        url: 'http://localhost:3000/users/',//si no interfiere en nada ponerle un /registry y en el users.js
         type: 'POST',
         data:
         {
-          name: $("#nombre").val(),
-          password: $("#contraseña").val(),
-          email: $("#correo").val(),
-          country: $("#pais").val(),
-          sex: $("#sexo").val(),
-          age: $("#edad").val(),
+          name: $("#name").val(),
+          password: $("#password").val(),
+          email: $("#email").val(),
+          country: $("#country").val(),
+          sex: $("#gender").val(),
+          age: $("#age").val(),
           description: "",
           connect: 0,
         },

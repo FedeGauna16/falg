@@ -6,7 +6,7 @@ var Usuarios = tablas.Users;
 var datoslogin = "";
 var idusuario = 1;
 
-async function usuarioConectado(){
+/*async function usuarioConectado(){
   return await Usuarios.findOne(
     {
       raw: true,
@@ -16,7 +16,7 @@ async function usuarioConectado(){
       }
     }
   )
-}
+}*/ //creo que ya no lo uso
 
 async function getcuentas(){
   var cuentas = await Usuarios.findAll({
@@ -32,7 +32,7 @@ router.get('/', async function(req, res, next) {
   res.send({cuentas});
 });
 
-router.get('/logueado', function(req, res, next) {
+router.get('/logueado', function(req, res, next) {// este se sigue usando??
   res.send(
     {
       status: true,
@@ -43,18 +43,21 @@ router.get('/logueado', function(req, res, next) {
 
 router.get('/logout', async function(req, res){
   req.app.locals.userlogged = 0;
-  console.log("elpibecerrosesion")
+  await Usuarios.update({ connect: 0 }, {
+    where: {
+      id: datoslogin.usuarioid
+    }
+  });
   res.redirect("http://localhost:3000/index/index")
 })
 
 router.put('/login', async function(req, res, next) {
   datoslogin = req.body;
-  console.log(datoslogin);
   await Usuarios.update({ connect: 1 }, {
     where: {
       id: datoslogin.usuarioid
     }
-  });
+  });// acan o seria mejor unificar estos dos para que cuando encuentre al usuario se modifique su estado de conectado y se guarde la id?
   req.app.locals.userlogged = await Usuarios.findOne(
     {
       raw: true,
@@ -64,9 +67,6 @@ router.put('/login', async function(req, res, next) {
       }
     }
   )
-  console.log(req.app.locals.logged) 
-  idusuario = datoslogin.usuarioid;
-  res.locals.idusuario = idusuario;
   res.send({
     status: true
   });
