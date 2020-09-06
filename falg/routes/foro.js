@@ -33,14 +33,11 @@ router.get('/', async function(req, res, next) {
 });
 
 router.post('/publicaciones', async function(req, res, next) {
-  console.log("sos vos hermoso?");
   var newpost = req.body;
-  console.log(newpost)
   var posts = await getposts();
   await Posts.create({
     title: newpost.title,
     description: newpost.description,
-    user: newpost.user,
     iduser: newpost.iduser
   });
   res.send({

@@ -13,6 +13,7 @@
         </div>
       </div>
       <div class="mb-3">
+        <p id= "iduser" hidden>{{userlogged.id}}</p>
         <label for="validationTextarea">Descripción</label>
         <textarea class="form-control is-invalid" id="descripcion"
           placeholder="Debe contener entre 10 y 1000 caracteres" style="height: 300px;"></textarea>
@@ -40,44 +41,29 @@
       </div>
       <div style="text-align: center;">
         <button id= "crearpublicacion" type="submit" class="btn btn-secundary"
-          style="background-color: #666666;color: white;width: 200px;height: 50px;" role="publicar" onclick="sosa({{userlogged.name}})">Subir
+          style="background-color: #666666;color: white;width: 200px;height: 50px;" role="publicar">Subir
           publicación</button>
       </div>
     </form>
 </div>
 <script>
-  var cuenta = [];
-  var cuentaconectada = 0;
-  logedid = [];
-  function sosa(idloged){ //como llamar la variable global directamente desde el js
-  //sino se puede, como agarro el objeto entero del userlogged par hacer lo que uiera con el
-    logedid = idloged;//asi reemplazo al get ese de logueado
-  }
   $(document).ready(function () {
-    $.get("http://localhost:3000/users", function (informacion) {
-      cuenta = informacion;
-    });
-    $.get("http://localhost:3000/users/logueado", function (informacion) {
-      //cuentaconectada = informacion.idconectado;
-    });
     $('#crearpublicacion').on('click', function (event) {
-      console.log(logedid);
-      //console.log(cuenta.cuentas[cuentaconectada]);
-      /*event.preventDefault();
+      event.preventDefault();
+      console.log($("#iduser").text());
       $.ajax({
         url: 'http://localhost:3000/foro/publicaciones',
         type: 'POST',
         data: {
           title: $("#titulo").val(),
           description: $("#descripcion").val(),
-          user: cuenta.cuentas[cuentaconectada].name,
-          iduser : cuenta.cuentas[cuentaconectada].id
+          iduser : $("#iduser").text()
         },
         success: function (result) {
           alert("Publicacion creada correctamente!");
           location.href = "http://localhost:3000/foro/foro";
         }
-      });*/
+      });
     });
   });
 </script>
