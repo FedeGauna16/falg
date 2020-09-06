@@ -20,9 +20,12 @@ var Posts = tablas.Posts;
 
 
 async function getposts(){
+  //req.app.locals.posts = 0; como mierda hago la variable global intente aca pero no arranca bien
   var posts = await Posts.findAll({
+    nest: true,
     raw: true
   });
+  //req.app.locals.posts = posts
   return posts;
 }
 
@@ -50,21 +53,29 @@ router.post('/publicaciones', async function(req, res, next) {
 
 
 
-router.get('/irpublicacion/:idpublicacion', function(req, res, next) {
+router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
+  var posts = await getposts();
   var idpublicacion = req.params.idpublicacion;
-  var publicacion = forolista[0].publicaciones.find(publicacion => {
-    return(publicacion.idpublicacion == idpublicacion);
+  var publicacion = posts.find(publicacion => {
+    return(publicacion.id == idpublicacion);
   });
-  var comentario = forolista[0].comentarios.find(comentario => {
-    return(comentario.idpublicacion == idpublicacion);
+  var comentario = posts.find(comentario => {
+    return(comentario.id == idpublicacion);
   });
-  console.log(comentario)
+  console.log(publicacion)
   res.render('publicacionusuario', { publicacion: publicacion, comentario: comentario})
 });
 
 router.post('/subircomentario', function(req, res, next) {
-  forolista[0].comentarios.push(req.body);
-  res.sendStatus(200);
+  var newcomment = req.body;
+  await Usuarios.create({ 
+    idpost: newcomment.idpost,
+    iduser: newcomment.iduser,
+    comment: nuevacuenta.comment
+  });
+  res.send({
+    status : true
+  });
 });
 
 router.get('/foro', function(req, res, next) {

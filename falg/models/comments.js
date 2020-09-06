@@ -6,9 +6,9 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true,
             autoIncrement: true
         },
-        idposts: Sequelize.INTEGER,
-        idusers: Sequelize.INTEGER,
-        comments: Sequelize.STRING
+        idpost: Sequelize.INTEGER,
+        iduser: Sequelize.INTEGER,
+        comment: Sequelize.STRING
     }
     );
     return Comments;

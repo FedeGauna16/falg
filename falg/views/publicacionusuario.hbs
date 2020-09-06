@@ -1,14 +1,15 @@
 <tittle>Publicación</tittle>
 <container class="container" style="color: white;padding-top: 30px;">
+  <p id= "iduser" hidden>{{userlogged.id}}</p>
   <div class="row" style="margin-left: 300px;">
     <div class="col" style="max-width: 1000px;background-color: #343a40">
       <h1 id="ptitulo">
-        {{publicacion.titulo}}
+        {{publicacion.title}}
       </h1>
       <div class="row">
         <div class="col">
           <h4 id="pdescripcion">
-            {{publicacion.descripcion}}
+            {{publicacion.description}}
           </h4>
         </div>
       </div>
@@ -102,7 +103,6 @@
   forolista = []
   //comentarios = []
   var cuentaconectada = 0
-  var idpublicacionactual = $("#publicacionid").text();
   $.get("http://localhost:3000/users/", function (informacion) {
       cuentas = informacion;
     });
@@ -110,16 +110,14 @@
     cuentaconectada = informacion.idconectado;
   });
   function subircomentario(cuadrocomentario){
-    var idcomentarioactual = forolista.comentarios.length;
     var idusuario = cuentaconectada;
     $.ajax({
       url: 'http://localhost:3000/foro/subircomentario',
       type: 'POST',
       data: {
-        idcomentario: idcomentarioactual,
-        idpublicacion: idpublicacionactual,
-        idusuario: idusuario,
-        comentario: $("#cuadrocomentario").val()
+        idpost: $("#publicacionid").text();
+        iduser: $("#iduser").text(),
+        comment: $("#cuadrocomentario").val()
       },
       success: function (result) {
         location.reload();

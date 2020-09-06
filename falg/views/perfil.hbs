@@ -13,12 +13,12 @@
         </div>
         <div class="col">
           <div id="nombreusuario" class="col-lg-7" style="text-align: left;">
-
+            <h3 id = username class="font-weight-bold mb-3"><strong> {{userlogged.name}} </strong></h3>
           </div>
           <div class="card bg-light mb-3" style="color: white;text-align: left;">
             <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
               <div id="descripcionusuario">
-
+                <p>{{userlogged.description}}</p>
               </div>
               <div>
                 <form id="descripcionnueva">
@@ -63,30 +63,17 @@
     </div>
   </div>
 <script>
-  cuentas = [];
   $(document).ready(function () {
-    $.get("http://localhost:3000/users", function (informacion) {
-      cuentas = informacion;
-    });
-    $.get("http://localhost:3000/users/logueado", function (informacion) {
-      var cuentaconectada = informacion.idconectado;
-      $("#nombreusuario").append(
-        '<h3 class="font-weight-bold mb-3"><strong>' + cuentas.usuarios[cuentaconectada].nombre + '</strong></h3>'
-      );
-      $("#descripcionusuario").append(
-        '<p>' + cuentas.usuarios[cuentaconectada].descripcion + '</p>'
-      );
-    });
     $.get("http://localhost:3000/foro", function (informacion) {
-      var usuariospublicaciones = informacion[0].publicaciones;
-      usuariospublicaciones.forEach(function (publicacion) {
+      console.log(informacion.posts);
+      informacion.posts.forEach(function (publicacion, numeropublicacion) { // HACER ESTO MISMO PERO EN EL HTML CON FOREACH DE PUBLICACIONES GLOBALES 
         $("#publicaciones").append(
           '<div class="card bg-light mb-3" style="max-width: 1200px;"> ' +
           '    <div class="card-body" style="background-color: rgb(36, 36, 36);">' +
           '      <div class="container">' +
           '        <div class="row" style="background-color: #343a40;">' +
-          '          <div class="col-sm">' +
-          '            <a href="./publicacionusuario.html" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;">' + publicacion.titulo + '<p class="usuario" href="./publicacionusuario.html" style="color: rgba(44, 128, 253, 0.815);margin-bottom: initial;">-' + publicacion.usuario + '</p></a>' +
+          '          <div class="col-sm">' +//aca abajo no consigo concatenar la direccion de la publicacion con la iteracion de numeropublicacion
+          '            <a id="publicacion'+ numeropublicacion +'" href="/foro/irpublicacion/ + numeropublicacion" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;">' + publicacion.title + '<p class="usuario" style="color: rgba(44, 128, 253, 0.815);margin-bottom: initial;">-' + $("#username").text() + '</p></a>' +
           '          </div>' +
           '          <div class="col-sm" style="background-color: #343a40;">' +
           '            <div class="container">' +
@@ -116,7 +103,7 @@
       $("#modificar").remove();
       $("#descripcionnueva").append(
         '<div class="md-form">' +
-        '<textarea id="descripcion" class="form-control md-textarea" length="120" rows="3"></textarea>' +
+        '<textarea id="description" class="form-control md-textarea" length="120" rows="3"></textarea>' +
         '<label for="descripcion">Escribe una descripción</label>' +
         '</div>'
       );
@@ -125,13 +112,13 @@
       );
       $('#aceptar').click(function () {
         event.preventDefault();
+        console.log($("#description").val())
         $.ajax({
           url: 'http://localhost:3000/users/perfil',
           type: 'PUT',
           data:
           {
-            id: cuentas.usuarioid,
-            descripcion: $("#descripcion").val()
+            description: $("#description").val()
           },
           success: function (result) {
             alert("Descripcion cambiada");

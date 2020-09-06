@@ -9,7 +9,6 @@ module.exports = (sequelize, Sequelize) => {
         title: Sequelize.STRING,
         description: Sequelize.STRING,
         iduser: Sequelize.INTEGER,
-        user: Sequelize.STRING,
         idcomment: Sequelize.INTEGER
     }
     );

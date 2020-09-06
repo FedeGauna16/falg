@@ -5,7 +5,7 @@
   integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
   integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+<p id= "username" hidden>{{userlogged.name}}</p>
 <container class="menus">
   <div class="row">
       <div class="col-sm">
@@ -137,30 +137,30 @@
         $("#publicaciones").append(
           '<a id="publicacion'+ numeropublicacion + '" class="btn btn-light" onclick = "enviaridpublicacion('+numeropublicacion+')" style="width: 1000px;background-color: #343a40;color: white">' +
             '<p id = "idoculto'+ numeropublicacion+'" hidden>' + publicacion.id + '</p>'+
-            '  <div class="row">' +
-            '      <div class="col" style="text-align: left;">' +
-            '          <div class="col">' +
+            ' <div class="row">' +
+            '   <div class="col" style="text-align: left;">' +
+            '     <div class="col">' +
             publicacion.title +
-            '          </div>' +
-            '          <div class="col">' +
-            publicacion.user +
-            '          </div>' +
+            '     </div>' +
+            '     <div class="col">' +
+            cuentas.cuentas[publicacion.iduser -1].name + // aca el uno se debe a que en el array de cuentas del get, comienza desde 0, entonces 1-1 = 0
+            '     </div>' +
+            '    </div>' +
+            '    <div class="col">' +
+            '     <div class="row">' +
+            '       <div class="col-sm">' +
+            '         <h6 style="text-align: right;">Likes <p>30</p></h6>' +
+            '       </div>' +
+            '       <div class="col-sm">' +
+            '         <h6 style="text-align: right;">Mensajes <p>12</p></h6>' +
+            '       </div>' +
+            '       <div class="col-sm">' +
+            '         <h6 style="text-align: right;">Visitas <p>68</p></h6>' +
+            '       </div>' +
             '      </div>' +
-            '      <div class="col">' +
-            '          <div class="row">' +
-            '              <div class="col-sm">' +
-            '                  <h6 style="text-align: right;">Likes <p>30</p></h6>' +
-            '              </div>' +
-            '              <div class="col-sm">' +
-            '                  <h6 style="text-align: right;">Mensajes <p>12</p></h6>' +
-            '              </div>' +
-            '              <div class="col-sm">' +
-            '                  <h6 style="text-align: right;">Visitas <p>68</p></h6>' +
-            '              </div>' +
-            '          </div>' +
-            '      </div>' +
-            '  </div>' +
-            '</a>'
+            '     </div>' +
+            '   </div>' +
+          '</a>'
         );
       });
     });

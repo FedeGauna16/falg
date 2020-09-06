@@ -26,9 +26,20 @@ async function getcuentas(){
   return cuentas;
 }
 
+/*async function getuserlogged(){ //aca
+  await Usuarios.findOne(
+    {
+      raw: true,
+      nest: true,
+      where: {
+        id: datoslogin.usuarioid
+      }
+    }
+  )
+}*/
+
 router.get('/', async function(req, res, next) {
   var cuentas = await getcuentas();
-  console.log(cuentas);
   res.send({cuentas});
 });
 
@@ -72,9 +83,22 @@ router.put('/login', async function(req, res, next) {
   });
 });
 
-router.put('/perfil', function (req, res, next) {
-  datos = req.body;
-  cuentas[0].descripcion = datos.descripcion;//CORREGIR EL 0 este de mierad pelotudo
+router.put('/perfil', async function (req, res, next) {
+  userdescription = req.body;
+  await Usuarios.update({description: userdescription.description}, {
+    where: {
+      connect: 1
+    }
+  }); // arriba tengo creada una funcion para el usuarios.findone pero no me anduvo cuando lo iguale al coso este
+  req.app.locals.userlogged = await Usuarios.findOne(
+    {
+      raw: true,
+      nest: true,
+      where: {
+        id: datoslogin.usuarioid
+      }
+    }
+  )
   res.send({
     status : true
   });
@@ -106,7 +130,6 @@ router.get('/registro', function(req, res, next) {
 router.get('/ingreso', async function(req, res, next) {
   var query = await getcuentas();
   var cuentas = query.dataValues;
-  console.log(cuentas);
   res.render('ingreso', {cuentas})
 });
 
