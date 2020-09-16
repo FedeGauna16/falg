@@ -3,6 +3,7 @@ var router = express.Router();
 var forolista = require('../public/html/foro/foro.json');
 var tablas = require("../models");
 var Posts = tablas.Posts;
+var Comments = tablas.Comments;
 
 /*router.get('/', function(req, res, next) {
    res.send(forolista);
@@ -29,10 +30,23 @@ async function getposts(){
   return posts;
 }
 
+async function getcomments(){
+  var comments = await Comments.findAll({
+    nest: true,
+    raw: true
+  });
+  return comments;
+}
+
 router.get('/', async function(req, res, next) {
   var posts = await getposts();
   //console.log(posts);
   res.send({posts});
+});
+
+router.get('/comments', async function(req, res, next) {
+  var comments = await getcomments();
+  res.send({comments});
 });
 
 router.post('/publicaciones', async function(req, res, next) {
@@ -66,12 +80,14 @@ router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   res.render('publicacionusuario', { publicacion: publicacion, comentario: comentario})
 });
 
-router.post('/subircomentario', function(req, res, next) {
+router.post('/subircomentario', async function(req, res, next) {
   var newcomment = req.body;
-  await Usuarios.create({ 
+  console.log("TACHANCKEADORAMENTELINDOONO??");
+  console.log(newcomment.comment);
+  await Comments.create({ 
     idpost: newcomment.idpost,
     iduser: newcomment.iduser,
-    comment: nuevacuenta.comment
+    comment: newcomment.comment
   });
   res.send({
     status : true
