@@ -53,12 +53,32 @@
         </div>
           <div class="row" style="margin-left: 1px;background-color: white;height: 1px;width: 1690px">
         </div>
-      </div>//onclick =  "subircomentario('cuadrocomentario')"
-      <p id = "publicacionid" hidden>{{publicacion.id}}</p>
-      <p id= "iduser" hidden>{{userlogged.id}}</p>
-      <div id= "comentariosusuarios" class="row" style="margin-left: 30px;">
-       
       </div>
+      <p id = "publicacionid" hidden>{{publicacion.id}}</p>
+      <!--<p id= "iduser" hidden>{{userlogged.id}}</p>-->
+      <div id= "comentariosusuarios" class="row" style="margin-left: 30px;">
+        {{#each comentario}}
+        <div class="col-6" style="width: 500px">
+            <div class="col">
+              <img class="card" alt="Generic placeholder image" src="/imagenes/foro/Captura.PNGyiyuiuy.PNG" style="width: 150px;">
+            </div>
+           <div class="col">
+              <div class="media-body text-center text-md-left ml-md-3 ml-0">'+
+                <h5 class="font-weight-bold mt-0">
+                  <a id="publicacion" onclick = "sosa('+numerocomentario+')">
+                    <h4 style= "color: rgb(0, 110, 255);"> {{user.id}}</h4>
+                    <!--<button href="/user/profile/{{users.id}}"!-- >{{user.name}}</button>
+                  </a>
+                  <a href="" class="pull-right">
+                    <i class="fas fa-reply"></i>
+                    <div class="text-white">{{this.comment}}</div>
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+      </div>
+      {{/each}}
       <!--<div class="row">
         <nav class="d-flex justify-content-center mt-5" style="margin-left: 300px;">
           <ul class="pagination pg-blue mb-0">
@@ -103,11 +123,9 @@
 <script>
   accounts = []
   forolista = []
+  posts = []
   //comentarios = []
   var cuentaconectada = 0
-  $.get("http://localhost:3000/users/", function (informacion) {
-      accounts = informacion.cuentas;
-    });
   $(document).ready(function () {
     $('#publicarcomentario').on('click', function (event) {
       $.ajax({
@@ -130,7 +148,7 @@
         //console.log("id del comentario: " + comentario.idpublicacion);
         //console.log("id de la publicacion: " + idpublicacionactual);
         $("#comentariosusuarios").append(
-          '<div id= "comentario"'+ numerocomentario +' class="col-6" style="width: 500px">'+
+          '<div id= "comentario"'+ numerocomentario +' class="col-6" style="width: 500px">'+// 
             '<div class="col">'+
               '<img class="card" alt="Generic placeholder image" src="/imagenes/foro/Captura.PNGyiyuiuy.PNG" style="width: 150px;">'+
             '</div>'+
@@ -149,14 +167,6 @@
             '</div>'+
           '</div>'
         );
-        console.log("hola???????????????????");
-        console.log(comentario.idpost)
-        console.log($("#publicacionid").text())
-        if(comentario.idpost != $("#publicacionid").text()){
-          console.log("id del comentario: " + comentario.id);
-          $("#comentario" + comentario.idpost).remove();
-        }
-        //quiero remover la id"comentario" + la id del comentario puto
       });
     });
   });

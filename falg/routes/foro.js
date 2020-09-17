@@ -2,8 +2,10 @@ var express = require('express');
 var router = express.Router();
 var forolista = require('../public/html/foro/foro.json');
 var tablas = require("../models");
+var Users = tablas.Users;
 var Posts = tablas.Posts;
 var Comments = tablas.Comments;
+var Userscomments = tablas.Userscomments
 
 /*router.get('/', function(req, res, next) {
    res.send(forolista);
@@ -33,7 +35,13 @@ async function getposts(){
 async function getcomments(){
   var comments = await Comments.findAll({
     nest: true,
-    raw: true
+    raw: true,
+    include: [
+      {
+          model: Users,
+          as: "user",
+      }
+  ]
   });
   return comments;
 }
@@ -69,25 +77,31 @@ router.post('/publicaciones', async function(req, res, next) {
 
 router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   var posts = await getposts();
+  var comments = await getcomments();
+  console.log(comments);
   var idpublicacion = req.params.idpublicacion;
   var publicacion = posts.find(publicacion => {
     return(publicacion.id == idpublicacion);
+  }); 
+  var comentario = comments.filter(comentario => {
+    return(comentario.idpost == idpublicacion);
   });
-  var comentario = posts.find(comentario => {
-    return(comentario.id == idpublicacion);
-  });
-  console.log(publicacion)
-  res.render('publicacionusuario', { publicacion: publicacion, comentario: comentario})
+  res.render('publicacionusuario', { publicacion: publicacion, comentario})
 });
 
 router.post('/subircomentario', async function(req, res, next) {
   var newcomment = req.body;
-  console.log("TACHANCKEADORAMENTELINDOONO??");
-  console.log(newcomment.comment);
-  await Comments.create({ 
+  console.log(newcomment)
+  var comment = await Comments.create({ 
+    nest: true,
+    raw: true,
     idpost: newcomment.idpost,
-    iduser: newcomment.iduser,
     comment: newcomment.comment
+  });
+  console.log(comment);
+  await Userscomments.create({
+    commentid: comment.id, 
+    userid: newcomment.iduser
   });
   res.send({
     status : true

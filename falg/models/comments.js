@@ -7,7 +7,6 @@ module.exports = (sequelize, Sequelize) => {
             autoIncrement: true
         },
         idpost: Sequelize.INTEGER,
-        iduser: Sequelize.INTEGER,
         comment: Sequelize.STRING
     }
     );
