@@ -105,11 +105,10 @@
       <li class="page-item disabled">
         <span class="page-link" style="color: snow;background-color: #343a40;">Anterior</span>
       </li>
-      <li class="page-item active"><a class="page-link" href="#" style="color: snow;background-color: #343a40;">1</a>
+      <li class="page-item active"><a class="page-link" href="http://localhost:3000/foro/goToPage/2" style="color: snow;background-color: #343a40;">1</a>
       </li>
       <li class="page-item" aria-current="page">
-        <span class="page-link" style="color: snow;background-color: #343a40;">
-          2
+        <span class="page-link" style="color: snow;background-color: #343a40;">2
           <span class="sr-only">(current)</span>
         </span>
       </li>
@@ -120,6 +119,11 @@
     </ul>
 </nav>
 <script>
+  function sendIdPage (idPage){
+    var idPage_ = $("#button1" + idPage).text()
+    location.href='http://localhost:3000/foro/irpagina/' + idPage_
+  };
+
   cuentas = [];
   function enviaridpublicacion(numeropublicacion){
       var idpublicacion = $("#idoculto" + numeropublicacion).text()

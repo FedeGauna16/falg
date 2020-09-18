@@ -71,9 +71,10 @@ router.post('/publicaciones', async function(req, res, next) {
   });
 });
 
-
-
-
+router.get('/goToPage/:idPage', async function(req, res, next) {
+  var id = req.params.idPage
+  res.render('foro', { id })
+});
 
 router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   var posts = await getposts();
