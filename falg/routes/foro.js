@@ -71,10 +71,6 @@ router.post('/publicaciones', async function(req, res, next) {
   });
 });
 
-
-
-
-
 router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   var posts = await getposts();
   var comments = await getcomments();
@@ -98,6 +94,7 @@ router.post('/subircomentario', async function(req, res, next) {
     idpost: newcomment.idpost,
     comment: newcomment.comment
   });
+
   console.log(comment);
   await Userscomments.create({
     commentid: comment.id, 
