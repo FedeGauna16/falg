@@ -29,7 +29,7 @@ login
 **-reemplazar el sistema de correo y contraseña encontrados, en donde si se encuentran se pasan a true y luego a false, hacer simplemente una verificacion entre el campo ingresado y la tabla cuentas en la bd
 
 perfil
--diseñar algo para meter en la parte de "nivel 500", cualquier cosa de relleno
+-abajo de nivel 500 meter las stats de la cuenta como las partidas o los personajes
 -meter iconos que representen cada seccion del cuadro de abajo a la derecha(un icono por cada coso) por ejemplo para el de "Usuario" meter una personita, para el de "email" meter una carta y asi
 
 inicio
@@ -60,9 +60,6 @@ buscador
 
 estadisticas
 -esta roto en alguna parte, es de fede
-
-descarga
-**-sacar lo de pegi12 y eso del footer, ponerlo en el body(lo puse en el body asi nomas, ponelo bien)
 
 ayuda - soporte
 -hacer algo con la seccion de problemas con el juego, un diseño, una api o algo. sino lo sacamos.(hace unos dias habiamos pensado algunas ideas, no me acuerdo cuales)

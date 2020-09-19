@@ -8,7 +8,7 @@
                     "iconClase": "./estadisticas/lucas.jpeg"
                 },
                 "items": {
-                    "item1": "./estadisticas/cave.jpeg",
+                    "item1": "../imagenes/estadisticas/cave.jpeg",
                     "item2": "./estadisticas/cave.jpeg",
                     "item3": "./estadisticas/cave.jpeg",
                     "item4": "./estadisticas/cave.jpeg",

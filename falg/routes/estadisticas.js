@@ -61,7 +61,11 @@ router.get('/:tipo',async function(req, res, next) {
       });  
     break;
   }
-
+  });/*
+  router.get('/',async function(req, res, next) {
+    let resultados = await InfoPartidas.findAll();
+  
+    res.send(resultados);
 });
-
+*/
 module.exports = router;
