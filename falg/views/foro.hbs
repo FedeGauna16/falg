@@ -105,10 +105,11 @@
       <li class="page-item disabled">
         <span class="page-link" style="color: snow;background-color: #343a40;">Anterior</span>
       </li>
-      <li class="page-item active"><a class="page-link" href="http://localhost:3000/foro/goToPage/2" style="color: snow;background-color: #343a40;">1</a>
+      <li class="page-item active"><a class="page-link" href="#" style="color: snow;background-color: #343a40;">1</a>
       </li>
       <li class="page-item" aria-current="page">
-        <span class="page-link" style="color: snow;background-color: #343a40;">2
+        <span class="page-link" style="color: snow;background-color: #343a40;">
+          2
           <span class="sr-only">(current)</span>
         </span>
       </li>
@@ -119,13 +120,11 @@
     </ul>
 </nav>
 <script>
-
   cuentas = [];
   function enviaridpublicacion(numeropublicacion){
       var idpublicacion = $("#idoculto" + numeropublicacion).text()
-      var cosa = $("#publicacion" + numeropublicacion).text()
-      location.href = "http://localhost:3000/foro/irpublicacion/"+ idpublicacion; // no puedo agarrar este idpublicacion y usarlo directamente en publicacion usuario????
-    } 
+      location.href = "http://localhost:3000/foro/irpagina/"+ idpublicacion; // no puedo agarrar este idpublicacion y usarlo directamente en publicacion usuario????
+    }
   $(document).ready(function () {
     $('.toast').toast('show');
     $.get("http://localhost:3000/users/", function (informacion) {

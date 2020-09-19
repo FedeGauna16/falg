@@ -133,8 +133,15 @@ router.get('/ingreso', async function(req, res, next) {
   res.render('ingreso', {cuentas})
 });
 
-router.get('/perfil', function(req, res, next) {
-  res.render('perfil')
+router.get('/perfil/:idprofile', async function(req, res, next) {
+  var users = await getcuentas();
+  var idprofile = req.params.idprofile;
+  console.log("hola???????????????")
+  console.log(idprofile)
+  var profile = users.find(profile => {
+    return(profile.id == idprofile);
+  }); 
+  res.render('perfil', {profile})
 });
 
 module.exports = router;

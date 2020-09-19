@@ -66,11 +66,11 @@
               <div class="media-body text-center text-md-left ml-md-3 ml-0">
                 <h5 class="font-weight-bold mt-0">
                   <a id="publicacion" onclick = "sosa('+numerocomentario+')">
-                    <h4 style= "color: rgb(0, 110, 255);"> {{user.id}}</h4>
-                    <button href="/user/profile/{{users.id}}">{{user.name}}</button>
-                    <button id="like">dalelike</button>
+                    <h4 style= "color: rgb(0, 110, 255);" href="/users/perfil"> {{user.name}}</h4>
+                    <button href="/users/perfil/{{user.id}}">{{user.name}}</button>
+                    <button id="like" style="margin-bottom: ;">dalelike</button>
                   </a>
-                  <a href="" class="pull-right">
+                  <a href="" class="pull-right" style="mar">
                     <i class="fas fa-reply"></i>
                     <div class="text-white">{{this.comment}}</div>
                   </a>
@@ -142,33 +142,5 @@
       }
     });
   });
-    $.get("http://localhost:3000/foro/comments", function (informacion) {
-      var comments = informacion.comments;
-      console.log(accounts);
-      comments.forEach(function (comentario, numerocomentario) {
-        //console.log("id del comentario: " + comentario.idpublicacion);
-        //console.log("id de la publicacion: " + idpublicacionactual);
-        $("#comentariosusuarios").append(
-          '<div id= "comentario"'+ numerocomentario +' class="col-6" style="width: 500px">'+// 
-            '<div class="col">'+
-              '<img class="card" alt="Generic placeholder image" src="/imagenes/foro/Captura.PNGyiyuiuy.PNG" style="width: 150px;">'+
-            '</div>'+
-            '<div class="col">'+
-              '<div class="media-body text-center text-md-left ml-md-3 ml-0">'+
-                '<h5 class="font-weight-bold mt-0">'+
-                  '<a id="publicacion" onclick = "sosa('+numerocomentario+')">'+//aca el numerocomentario no hace falta, si queres sacalo pelotudo de mierda
-                    '<h4 style= "color: rgb(0, 110, 255);">'+ accounts[comentario.iduser -1].name +'</h4>'+
-                  '</a>'+
-                  '<a href="" class="pull-right">'+
-                    '<i class="fas fa-reply"></i>'+ 
-                    '<div class="text-white"> ' + comentario.comment + '</div>'+
-                  '</a>'+
-                '</h5>'+
-              '</div>'+
-            '</div>'+
-          '</div>'
-        );
-      });
-    });
   });
 </script>
