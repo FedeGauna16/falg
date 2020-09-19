@@ -27,6 +27,9 @@ db.Comments.belongsToMany(db.Users, {
     as: "user",
     foreignKey: "commentid", 
 });
-db.Estadisticas = require("./estadisticas")(sequelize, Sequelize);
+db.infoPartidas = require("./infoPartidas")(sequelize, Sequelize);
+db.clases = require("./clases")(sequelize, Sequelize);
+db.jugadores = require("./jugadores")(sequelize, Sequelize);
+
 
 module.exports = db;
