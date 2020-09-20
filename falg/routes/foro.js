@@ -79,7 +79,6 @@ router.get('/goToPage/:idPage', async function(req, res, next) {
 router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   var posts = await getposts();
   var comments = await getcomments();
-  console.log(comments);
   var idpublicacion = req.params.idpublicacion;
   var publicacion = posts.find(publicacion => {
     return(publicacion.id == idpublicacion);
