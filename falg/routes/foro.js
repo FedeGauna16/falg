@@ -9,21 +9,6 @@ var Userscomments = tablas.Userscomments
 var Usersposts = tablas.Usersposts
 let views = 0;
 
-/*router.get('/', function(req, res, next) {
-   res.send(forolista);
-});
-
-/*router.post('/publicaciones', function(req, res, next) {
-  console.log(req.body);
-  forolista[0].publicaciones.push(req.body);
-  res.send({
-    status : true,
-  });
-});*/
-
-
-
-
 async function getposts(){
   //req.app.locals.posts = 0; como mierda hago la variable global intente aca pero no arranca bien
   var posts = await Posts.findAll({
@@ -125,8 +110,11 @@ router.post('/subircomentario', async function(req, res, next) {
   });
 });
 
-router.get('/foro', function(req, res, next) {
-  res.render('foro')
+router.get('/foro/:idPage', async function(req, res, next) {
+  const publications = await getposts();
+  console.log(publications);
+  console.log(req.params.idPage);
+  res.render('foro', {publications})
 });
 
 router.get('/crearpublicacion', function(req, res, next) {

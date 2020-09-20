@@ -21,7 +21,11 @@
           style="color: white;text-align: left; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
           <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
             <div id="descripcionusuario">
-              <p>{{profile.description}}</p>
+              <p>Descripción: {{profile.description}}</p>
+              <p>Edad: {{profile.age}}</p>
+              <p>País: {{profile.country}}</p>
+              <p>Email: {{profile.email}}</p>
+              <p>Sexo: {{profile.sex}}</p>
             </div>
             <div>
               <form id="descripcionnueva">
@@ -129,7 +133,6 @@
         '<textarea id="sex" class="form-control md-textarea" length="120" rows="1">{{profile.sex}}</textarea>' +
         '<label for="name">Modificar edad del usuario</label>' +
         '<textarea id="age" class="form-control md-textarea" length="120" rows="1">{{profile.age}}</textarea>' +
-
         '</div>'
       );
       $("#descripcionnueva").append(
