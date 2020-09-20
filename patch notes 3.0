@@ -29,8 +29,7 @@ login
 **-reemplazar el sistema de correo y contraseña encontrados, en donde si se encuentran se pasan a true y luego a false, hacer simplemente una verificacion entre el campo ingresado y la tabla cuentas en la bd
 
 perfil
--abajo de nivel 500 meter las stats de la cuenta como las partidas o los personajes
--meter iconos que representen cada seccion del cuadro de abajo a la derecha(un icono por cada coso) por ejemplo para el de "Usuario" meter una personita, para el de "email" meter una carta y asi
+-hay que meter todos los datos del perfil en la bd para usarlos al momento de mostrar el perfil como el nivel, las hs y eso
 
 inicio
 -diseñar algo para poner en el inicio
