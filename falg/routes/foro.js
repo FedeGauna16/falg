@@ -92,9 +92,11 @@ router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   var comments = await getcomments();
   var lengthcomments = comments.length
   var idpublicacion = req.params.idpublicacion;
-  var publicacion = posts.filter(publicacion => {
+  var publicacion = posts.find(publicacion => {
     return(publicacion.id == idpublicacion);
-  }); 
+  });
+  console.log("sofialeguiza");
+  console.log(publicacion)
   var comentario = comments.filter(comentario => {
     return(comentario.idpost == idpublicacion);
   });
@@ -110,7 +112,6 @@ router.post('/subircomentario', async function(req, res, next) {
     idpost: newcomment.idpost,
     comment: newcomment.comment
   });
-  console.log(comment);
   await Userscomments.create({
     commentid: comment.id, 
     userid: newcomment.iduser

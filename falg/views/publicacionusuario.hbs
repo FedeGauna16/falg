@@ -29,13 +29,11 @@
             </div>
             <div class="col">
               <a href="#!" class="green-text">
-                {{#each publicacion}}
-                <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>{{user.name}}</h6>
+                <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>{{publicacion.user.name}}</h6>
               </a>
               <p class="font-weight-normal">Seguidores: </p>
               <p class="font-weight-normal">Likes: </p>
-              <a class="btn btn-success" href="/users/perfil/{{this.id}}">Ver perfil</a>
-              {{/each}}
+              <a class="btn btn-success" href="/users/perfil/{{publicacion.user.id}}">Ver perfil</a>
             </div>
           </div>
         </div>
@@ -56,7 +54,7 @@
           <div class="row" style="margin-left: 1px;background-color: white;height: 1px;width: 1690px">
         </div>
       </div>
-      <p id = "publicacionid" hidden>{{publicacion.id}}</p>
+      <p id = "publicacionid">{{publicacion.id}}</p>
       <!--<p id= "iduser" hidden>{{userlogged.id}}</p>-->
       <div id= "comentariosusuarios" class="row" style="margin-left: 30px;">
         {{#each comentario}}
@@ -130,6 +128,7 @@
   var cuentaconectada = 0
   $(document).ready(function () {
     $('#publicarcomentario').on('click', function (event) {
+      console.log($("#publicacionid").text())
       $.ajax({
       url: 'http://localhost:3000/foro/subircomentario',
       type: 'POST',
