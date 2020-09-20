@@ -67,9 +67,8 @@ ayuda - soporte
 
 ayuda - generar reporte
 -api terminada
--sacar la id del usuario que generó el reporte a partir de un get a la cuenta logueada, enviar esa misma id junto con la descripcion del reporte.
 -hacer una verificacion que impida mandar un ticket si el usuario no se logueo con su cuenta
--si se saca esos dos campos de nombre y correo va a quedar muy simple y cortito, crear algun diseño para rellenar, ya sea con pedir algun dato extra, subir imagenes, etc.
+-arreglamos todo menos lo del envio de la imagen y el tema
 
 ayuda-faq
 *En proceso y casi terminado* -sacar los botones de leer mas, y agregar el texto completo de cada respuesta en la misma pagina.
