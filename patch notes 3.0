@@ -27,7 +27,7 @@ registro
 
 login
 **-reemplazar el sistema de correo y contraseña encontrados, en donde si se encuentran se pasan a true y luego a false, hacer simplemente una verificacion entre el campo ingresado y la tabla cuentas en la bd-
--no anda cambiar contraseña
+-Arreglar sistema de cambio de contraseña, ponerle verificacion de contraseña y envio de nueva contraseña a la bd
 
 perfil
 -hay que meter todos los datos del perfil en la bd para usarlos al momento de mostrar el perfil como el nivel, las hs y eso
