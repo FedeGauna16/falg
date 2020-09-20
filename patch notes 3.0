@@ -26,11 +26,12 @@ registro
 -crear script del boton de "no soy un robot", que verifique de alguna manera si sos un puto o no.
 
 login
-**-reemplazar el sistema de correo y contraseña encontrados, en donde si se encuentran se pasan a true y luego a false, hacer simplemente una verificacion entre el campo ingresado y la tabla cuentas en la bd
+**-reemplazar el sistema de correo y contraseña encontrados, en donde si se encuentran se pasan a true y luego a false, hacer simplemente una verificacion entre el campo ingresado y la tabla cuentas en la bd-
+-Arreglar sistema de cambio de contraseña, ponerle verificacion de contraseña y envio de nueva contraseña a la bd
 
 perfil
--abajo de nivel 500 meter las stats de la cuenta como las partidas o los personajes
--meter iconos que representen cada seccion del cuadro de abajo a la derecha(un icono por cada coso) por ejemplo para el de "Usuario" meter una personita, para el de "email" meter una carta y asi
+-hay que meter todos los datos del perfil en la bd para usarlos al momento de mostrar el perfil como el nivel, las hs y eso
+-Hay que poder editar la informacion y los datos de inicio de sesion del usuario
 
 inicio
 -diseñar algo para poner en el inicio
@@ -62,15 +63,13 @@ estadisticas
 -esta roto en alguna parte, es de fede
 
 ayuda - soporte
--hacer algo con la seccion de problemas con el juego, un diseño, una api o algo. sino lo sacamos.(hace unos dias habiamos pensado algunas ideas, no me acuerdo cuales)
--lo mismo con la seccion de problemas con la pagina.
--en la seccion de otro problema no anda el link, arreglar la conexion con el ticket
+-Terminado
 
 ayuda - generar reporte
+GENERAR REPORTE AHORA ES PARTE DE SOPORTE
 -api terminada
--sacar la id del usuario que generó el reporte a partir de un get a la cuenta logueada, enviar esa misma id junto con la descripcion del reporte.
 -hacer una verificacion que impida mandar un ticket si el usuario no se logueo con su cuenta
--si se saca esos dos campos de nombre y correo va a quedar muy simple y cortito, crear algun diseño para rellenar, ya sea con pedir algun dato extra, subir imagenes, etc.
+-arreglamos todo menos lo del envio de la imagen y el tema
 
 ayuda-faq
 *En proceso y casi terminado* -sacar los botones de leer mas, y agregar el texto completo de cada respuesta en la misma pagina.

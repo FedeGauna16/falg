@@ -1,31 +1,46 @@
 <title>Formulario</title>
-<div style="padding-top: 30px;">
-  <h3 style="padding-left: 600px;width: 1300px;color: white;text-align: center;">Rellene el formulario</h3>
-  <form id="ticket" style="padding-left: 600px;width: 1300px;color: white;">
-    <div class="form-group">
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1"> Descripción del problema</label>
-        <textarea class="form-control" id="problema" rows="3"></textarea>
+  <p id= "iduser" hidden>{{userlogged.id}}</p>
+<div style="padding-top: 20px;">
+  <h1 style="padding-left: 600px;width: 1300px;color: white;text-align: center;">Rellene el formulario</h1>
+  <form id="description" style="padding-left: 600px;width: 1300px;color: white;">
+  <div class="form-group">
+    <label for="description">Descripcion</label>
+    <textarea class="form-control is-invalid" id="description_"
+      placeholder="Debe contener entre 10 y 1000 caracteres" style="height: 300px;"></textarea>
+  </div>
+  <div class="row">
+        <div class="col-sm">
+          <div class="mb-3">
+            <h6>Elige el tema</h6>
+            <select class="custom-select">
+              <option value="">Tema...</option>
+              <option value="1">Juego</option>
+              <option value="2">Pagina</option>
+              <option value="3">Cuenta</option>
+            </select>
+            <div class="invalid-feedback">Debe elegir un tema</div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <h6>Escoge una imagen</h6>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+            <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+          </div>
+        </div>
       </div>
-    </div>
-    <button type="submit" class="btn btn-secundary" style="background-color: #666666;color: white;"
-      role="registro">Enviar</button>
+  <button type="submit" class="btn btn-primary">Enviar Reporte</button>
   </form>
 </div>
 <script>
-    $('#ticket').on('submit', function (event) {
+    $('#description').on('submit', function (event) {
       event.preventDefault();
-      if ($("#correo").val() == 0) {
-        alert("Uno de los campos esta vacio");
-        return 0;
-      }
       $.ajax({
-        url: 'http://localhost:3000/tickets',
+        url: 'http://localhost:3000/tickets/createreport',
         type: 'POST',
         data: {
-          correo: $("#correo").val(),
-          nombre: $("#nombre").val(),
-          problema: $("#problema").val()
+          description: $("#description_").val(),
+          iduser: $("#iduser").text()
         },
         success: function (result) {
           alert("Ticket enviado correctamente")

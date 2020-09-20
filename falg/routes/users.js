@@ -3,6 +3,7 @@ var router = express.Router();
 var cuentas = require('../public/html/user/users.json');
 var tablas = require("../models");
 var Usuarios = tablas.Users;
+var Reportes = tablas.Reports;
 var datoslogin = "";
 /*async function usuarioConectado(){
   return await Usuarios.findOne(
@@ -134,8 +135,6 @@ router.get('/ingreso', async function(req, res, next) {
 router.get('/perfil/:idprofile', async function(req, res, next) {
   var users = await getcuentas();
   var idprofile = req.params.idprofile;
-  console.log("hola???????????????")
-  console.log(idprofile)
   var profile = users.find(profile => {
     return(profile.id == idprofile);
   }); 

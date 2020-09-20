@@ -16,6 +16,7 @@ db.sequelize = sequelize;
 db.Posts = require("./posts")(sequelize, Sequelize);
 db.Comments = require("./comments")(sequelize, Sequelize);
 db.Users = require("./users")(sequelize, Sequelize);
+db.Reports = require("./reports")(sequelize, Sequelize);
 db.Userscomments = require("./userscomments")(sequelize, Sequelize);
 db.Usersposts = require("./usersposts")(sequelize, Sequelize);
 db.Users.belongsToMany(db.Comments, {
