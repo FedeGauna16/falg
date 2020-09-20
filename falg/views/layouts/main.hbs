@@ -18,8 +18,8 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
   <div class="header">
-    <img src="/imagenes/index/falg.png" style=" margin-left: auto;
-    margin-right: auto;">
+   <a href="http://localhost:3000/index/index"> <img src="/imagenes/index/falg.png" style=" margin-left: auto; 
+    margin-right: auto;"</a>
   </div>
 </head>
 
@@ -53,13 +53,14 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="http://localhost:3000/index/soporte">Soporte</a>
+            <a class="dropdown-item" href="http://localhost:3000/index/formulario">Generar reporte</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="http://localhost:3000/index/faq">FAQ</a>
           </div>
         </li>
         {{#if userlogged}}
         <li class="nav-item" id="conectado">
-          <a class="nav-link" href="http://localhost:3000/users/perfil/{{userlogged.id}}" style="color: white;">Perfil</a>
+          <a class="nav-link" href="http://localhost:3000/users/perfil" style="color: white;">Perfil</a>
         </li>
         <li class="nav-item" style="padding-left: 450px;padding-top: 2px;">
           <a id="cerrarsesion" href="/users/logout" class="btn btn-secundary"
@@ -82,11 +83,12 @@
   <hr style="height: 10vh">
   <footer style="padding-top: 20px;">
     <div id="footer" class="footer">
-      <div class="row d-flex align-items-center" style="background-color:#0e0c0c;">
+      <div class="row d-flex align-items-center" style="background-color:#0e0c0c">
         <div class="col-4">
           <div class="row d-flex align-items-center">
             <a class="col-3 text-white" href="http://localhost:3000/index/terminosycondiciones">Contacto</a>
-            <a class="col-3 text-white" href="http://localhost:3000/index/terminosycondiciones">Terminos y condiciones</a>
+            <a class="col-3 text-white" href="http://localhost:3000/index/terminosycondiciones">Terminos y
+              condiciones</a>
           </div>
         </div>
         <!--FUA MIRA ESTE TRUCO SAQUE COMO COMENTAR EN HTML CALATE ESTA PELOTUDO-->
@@ -96,9 +98,10 @@
           <div style="padding-right: 10px;">All Rights Reserved</div>
         </div>
         <div class="col-4">
-          <img src="/imagenes/index/facebook.png" style=" width: 100px;">
-          <img src="/imagenes/index/twitter.png" style=" width: 70px;">
-          <img src="/imagenes/index/gmail.png" style=" width: 75px;">
+          <a href="https://facebook.com/"><img src="https://www.flaticon.es/svg/static/icons/svg/179/179319.svg" style=" width: 70px;"> </a>
+          <a href="https://twitter.com/"><img src="https://www.flaticon.es/svg/static/icons/svg/145/145812.svg" style=" width: 70px;"> </a>
+          <a href="https://gmail.com/"><img src="https://www.flaticon.es/svg/static/icons/svg/732/732200.svg" style=" width: 70px;"></a>
+          <a href="http://localhost:3000/index/descarga"><img src=https://i.postimg.cc/YCb1PwwK/sa.pngstyle=" width: 70px;"> </a>
           <div class=row>
             <div class=row>
             </div>
