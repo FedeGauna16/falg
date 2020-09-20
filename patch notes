@@ -12,6 +12,8 @@ IMPORTANTE 5: ahora hay un boton de "live" en el visual para arrancar la moto, u
 
 IMPORTANTE 6: se esta agregando la conexion con la bd, por lo que es posible que casi todas las secciones esten rotas en cuanto a los datos que aparecen o se envian. Ademas, no tienen que chupetear la bd desde ningun archivo mysql, siemplemente arrancan la moto desde el visual y se crea automaticamente la bd en su pc. Para esto necesitan primero necesitan tener abierto el laragon + el mysql, conectan los dos y listo.
 
+https://mdbootstrap.com/docs/jquery/navigation/footer/,
+
 --general--
 **-arreglar todos los links desde todas las secciones. (antes estaban arregladas, ahora por el cambio de formato no se si estan todas)
 -corregir la posicion del boton de ingresar en todas las secciones(esta dejarla para despues)
