@@ -1,21 +1,21 @@
 <title>Perfil</title>
-<h2 class="h1-responsive font-weight-bold text-center my-5" style="color: white;">Perfil</h2>
+<h1 class="h1-responsive font-weight-bold text-center my-5" style="color: white;">Perfil</h1>
   <div class="card bg-light mb-3" style="max-width: 1702px;margin-left: 100px;color: white;">
     <div class="card-body" style="width: 1700px;background-color: #343a40;">
       <div class="row" style="margin-right: 0px;">
         <div class="col">
           <div>
-            <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/img(27).jpg" alt="Sample image">
+            <img class="img-fluid" src="https://i.ytimg.com/vi/l81SfOKkbj4/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBFfzXbATABAjJmF-IdYGQMWZQS5g" alt="Sample image">
             <a>
               <div class="mask rgba-white-slight"></div>
             </a>
           </div>
         </div>
         <div class="col">
-          <div id="nombreusuario" class="col-lg-7" style="text-align: left;">
-            <h3 id = username class="font-weight-bold mb-3"><strong> {{userlogged.name}} </strong></h3>
+          <div id="nombreusuario" class="col-lg-9" style="text-align: left;">
+            <h1 id = username class="font-weight-bold mb-9"><strong> {{userlogged.name}} </strong></h1>
           </div>
-          <div class="card bg-light mb-3" style="color: white;text-align: left;">
+          <div class="card bg-light mb-3" style="color: white;text-align: left; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
             <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
               <div id="descripcionusuario">
                 <p>{{userlogged.description}}</p>
@@ -28,34 +28,45 @@
             </li>
           </div>
         </div>
-        <div id="boton" class="col col-lg-2" style="max-width: 100px;">
-          <button id="modificar" type="submit" class="btn btn-primary" style="margin-top: 280px;">Modificar</button>
+        <div id="boton" class="col col-lg-2" style="max-width: 150px, text-aling: left;">
+          <button id="modificar" type="submit" class="btn btn-outline-danger" style="margin-top: 230px;">Modificar Perfil</button>
         </div>
         <div class="col">
-          <h3>Nivel 500 <p>algo</p>
-          </h3>
+        <div class="card bg-light mb-2" style="color: white;text-align: left;">
+          <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> 
+            <li class="list-group-item" style="background-color: rgb(145, 4, 4)">
+           <p>Level 500 </p>
+           </li>
+           <li class="list-group-item" style="background-color: rgb(145, 4, 4)">
+           <p>XP 9999999999 </p>
+           </li>
+           <li class="list-group-item" style="background-color: rgb(145, 4, 4)">
+           <p>Última Conexion: Ayer</p>
+           </li>
+           </h1>
+         </div>
         </div>
       </div>
-      <div class="row" style="margin-top: 10px;">
+      <div class="row" style="margin-top: 40px;">
         <div class="col" id="publicaciones">
 
         </div>
-        <div class="col-sm-4">
-          <div class="card bg-light mb-3" style="color: white;text-align: left;">
+        <div class="col-sm-4" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+          <div class="card bg-light mb-1" style="color: white;text-align: left;">
             <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
-              <div class="md-v-line"></div><i class="fas fa-laptop mr-4 pr-3"></i> Usuario
+              <div class="md-v-line"></div><i class="fas fa-laptop mr-4 pr-3"></i> Tiempo total pasado en el juego: 1500hs
             </li>
             <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
-              <div class="md-v-line"></div><i class="fas fa-bomb mr-5"></i> Email
+              <div class="md-v-line"></div><i class="fas fa-bomb mr-5"></i> Fecha de creacion de la cuenta: 10/11/2019
             </li>
             <li class="list-group-item" style="background-color: rgb(36, 36, 36);">
-              <div class="md-v-line"></div><i class="fas fa-code mr-5"></i> Publicaciones
+              <div class="md-v-line"></div><i class="fas fa-code mr-5"></i> Promedio XP por sesion: 1500xp
             </li>
             <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
-              <div class="md-v-line"></div><i class="far fa-gem mr-5"></i> Comentarios
+              <div class="md-v-line"></div><i class="far fa-gem mr-5"></i> Sesion mas larga: 0,80 hs
             </li>
             <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
-              <div class="md-v-line"></div><i class="fas fa-cogs mr-5"></i> Likes
+              <div class="md-v-line"></div><i class="fas fa-cogs mr-5"></i> K/D: 1,53
             </li>
           </div>
         </div>
