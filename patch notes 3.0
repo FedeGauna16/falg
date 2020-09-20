@@ -66,6 +66,7 @@ ayuda - soporte
 -Terminado
 
 ayuda - generar reporte
+GENERAR REPORTE AHORA ES PARTE DE SOPORTE
 -api terminada
 -hacer una verificacion que impida mandar un ticket si el usuario no se logueo con su cuenta
 -arreglamos todo menos lo del envio de la imagen y el tema
