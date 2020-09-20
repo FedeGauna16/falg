@@ -1,78 +1,81 @@
 <title>Perfil</title>
 <h1 class="h1-responsive font-weight-bold text-center my-5" style="color: white;">Perfil</h1>
-  <div class="card bg-light mb-3" style="max-width: 1702px;margin-left: 100px;color: white;">
-    <div class="card-body" style="width: 1700px;background-color: #343a40;">
-      <div class="row" style="margin-right: 0px;">
-        <div class="col">
-          <div>
-            <img class="img-fluid" src="https://i.ytimg.com/vi/l81SfOKkbj4/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBFfzXbATABAjJmF-IdYGQMWZQS5g" alt="Sample image">
-            <a>
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>
-        </div>
-        <div class="col">
-          <div id="nombreusuario" class="col-lg-9" style="text-align: left;">
-            <h1 id = username class="font-weight-bold mb-9"><strong> {{profile.name}} </strong></h1>
-          </div>
-          <div class="card bg-light mb-3" style="color: white;text-align: left; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-            <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
-              <div id="descripcionusuario">
-                <p>{{profile.description}}</p>
-              </div>
-              <div>
-                <form id="descripcionnueva">
-
-                </form>
-              </div>
-            </li>
-          </div>
-        </div>
-        <div id="boton" class="col col-lg-2" style="max-width: 150px, text-aling: left;">
-          <button id="modificar" type="submit" class="btn btn-outline-danger" style="margin-top: 230px;">Modificar Perfil</button>
-        </div>
-        <div class="col">
-        <div class="card bg-light mb-2" style="color: white;text-align: left;">
-          <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> 
-            <li class="list-group-item" style="background-color: rgb(145, 4, 4)">
-           <p>Level 500 </p>
-           </li>
-           <li class="list-group-item" style="background-color: rgb(145, 4, 4)">
-           <p>XP 9999999999 </p>
-           </li>
-           <li class="list-group-item" style="background-color: rgb(145, 4, 4)">
-           <p>Última Conexion: Ayer</p>
-           </li>
-           </h1>
-         </div>
+<div class="card bg-light mb-3" style="max-width: 1702px;margin-left: 100px;color: white;">
+  <div class="card-body" style="width: 1700px;background-color: #343a40;">
+    <div class="row" style="margin-right: 0px;">
+      <div class="col">
+        <div>
+          <img class="img-fluid"
+            src="https://i.ytimg.com/vi/l81SfOKkbj4/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBFfzXbATABAjJmF-IdYGQMWZQS5g"
+            alt="Sample image">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
         </div>
       </div>
-      <div class="row" style="margin-top: 40px;">
-        <div class="col" id="publicaciones">
-
+      <div class="col">
+        <div id="nombreusuario" class="col-lg-9" style="text-align: left;">
+          <h1 id=username class="font-weight-bold mb-9"><strong> {{profile.name}} </strong></h1>
         </div>
-        <div class="col-sm-4" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-          <div class="card bg-light mb-1" style="color: white;text-align: left;">
-            <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
-              <div class="md-v-line"></div><i class="fas fa-laptop mr-4 pr-3"></i> Tiempo total pasado en el juego: 1500hs
+        <div class="card bg-light mb-3"
+          style="color: white;text-align: left; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+          <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+            <div id="descripcionusuario">
+              <p>{{profile.description}}</p>
+            </div>
+            <div>
+              <form id="descripcionnueva">
+              </form>
+            </div>
+          </li>
+        </div>
+      </div>
+      <div id="boton" class="col col-lg-2" style="max-width: 150px, text-aling: left;">
+        <button id="modificar" type="submit" class="btn btn-outline-danger" style="margin-top: 230px;">Modificar
+          Perfil</button>
+      </div>
+      <div class="col">
+        <div class="card bg-light mb-2" style="color: white;text-align: left;">
+          <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            <li class="list-group-item" style="background-color: rgb(145, 4, 4)">
+              <p>Level 500 </p>
             </li>
-            <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
-              <div class="md-v-line"></div><i class="fas fa-bomb mr-5"></i> Fecha de creacion de la cuenta: 10/11/2019
+            <li class="list-group-item" style="background-color: rgb(145, 4, 4)">
+              <p>XP 9999999999 </p>
             </li>
-            <li class="list-group-item" style="background-color: rgb(36, 36, 36);">
-              <div class="md-v-line"></div><i class="fas fa-code mr-5"></i> Promedio XP por sesion: 1500xp
+            <li class="list-group-item" style="background-color: rgb(145, 4, 4)">
+              <p>Última Conexion: Ayer</p>
             </li>
-            <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
-              <div class="md-v-line"></div><i class="far fa-gem mr-5"></i> Sesion mas larga: 0,80 hs
-            </li>
-            <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
-              <div class="md-v-line"></div><i class="fas fa-cogs mr-5"></i> K/D: 1,53
-            </li>
-          </div>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 40px;">
+      <div class="col" id="publicaciones">
+
+      </div>
+      <div class="col-sm-4" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+        <div class="card bg-light mb-1" style="color: white;text-align: left;">
+          <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+            <div class="md-v-line"></div><i class="fas fa-laptop mr-4 pr-3"></i> Tiempo total pasado en el juego: 1500hs
+          </li>
+          <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+            <div class="md-v-line"></div><i class="fas fa-bomb mr-5"></i> Fecha de creacion de la cuenta: 10/11/2019
+          </li>
+          <li class="list-group-item" style="background-color: rgb(36, 36, 36);">
+            <div class="md-v-line"></div><i class="fas fa-code mr-5"></i> Promedio XP por sesion: 1500xp
+          </li>
+          <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+            <div class="md-v-line"></div><i class="far fa-gem mr-5"></i> Sesion mas larga: 0,80 hs
+          </li>
+          <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+            <div class="md-v-line"></div><i class="fas fa-cogs mr-5"></i> K/D: 1,53
+          </li>
         </div>
       </div>
     </div>
   </div>
+</div>
 <script>
   $(document).ready(function () {
     $.get("http://localhost:3000/foro", function (informacion) {
@@ -84,7 +87,7 @@
           '      <div class="container">' +
           '        <div class="row" style="background-color: #343a40;">' +
           '          <div class="col-sm">' +//aca abajo no consigo concatenar la direccion de la publicacion con la iteracion de numeropublicacion
-          '            <a id="publicacion'+ numeropublicacion +'" href="/foro/irpublicacion/ + numeropublicacion" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;">' + publicacion.title + '<p class="usuario" style="color: rgba(44, 128, 253, 0.815);margin-bottom: initial;">-' + $("#username").text() + '</p></a>' +
+          '            <a id="publicacion' + numeropublicacion + '" href="/foro/irpublicacion/ + numeropublicacion" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;">' + publicacion.title + '<p class="usuario" style="color: rgba(44, 128, 253, 0.815);margin-bottom: initial;">-' + $("#username").text() + '</p></a>' +
           '          </div>' +
           '          <div class="col-sm" style="background-color: #343a40;">' +
           '            <div class="container">' +
@@ -114,8 +117,19 @@
       $("#modificar").remove();
       $("#descripcionnueva").append(
         '<div class="md-form">' +
-        '<textarea id="description" class="form-control md-textarea" length="120" rows="3"></textarea>' +
+        '<label for="name">Modificar nombre de usuario</label>' +
+        '<textarea id="name" class="form-control md-textarea" length="20" rows="1">{{profile.name}}</textarea>' +
         '<label for="descripcion">Escribe una descripción</label>' +
+        '<textarea id="description" class="form-control md-textarea" length="120" rows="3">{{profile.description}}</textarea>' +
+        '<label for="email">Escribe tu direccion de correo electro</label>' +
+        '<textarea id="email" class="form-control md-textarea" length="120" rows="1">{{profile.email}}</textarea>' +
+        '<label for="country">Modificar tu country</label>' +
+        '<textarea id="country" class="form-control md-textarea" length="120" rows="1">{{profile.country}}</textarea>' +
+        '<label for="name">Modifica tu sexo</label>' +
+        '<textarea id="sex" class="form-control md-textarea" length="120" rows="1">{{profile.sex}}</textarea>' +
+        '<label for="name">Modificar edad del usuario</label>' +
+        '<textarea id="age" class="form-control md-textarea" length="120" rows="1">{{profile.age}}</textarea>' +
+
         '</div>'
       );
       $("#descripcionnueva").append(
@@ -123,13 +137,18 @@
       );
       $('#aceptar').click(function () {
         event.preventDefault();
-        console.log($("#description").val())
+        console.log($("#description" + "#name").val())
         $.ajax({
           url: 'http://localhost:3000/users/perfil',
           type: 'PUT',
           data:
           {
-            description: $("#description").val()
+            name: $("#name").val(),
+            description: $("#description").val(),
+            email: $("#email").val(),
+            country: $("#country").val(),
+            sex: $("#sex").val(),
+            age: $("#age").val()
           },
           success: function (result) {
             alert("Descripcion cambiada");

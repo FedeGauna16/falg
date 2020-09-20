@@ -83,8 +83,15 @@ router.put('/login', async function(req, res, next) {
 });
 
 router.put('/perfil', async function (req, res, next) {
-  userdescription = req.body;
-  await Usuarios.update({description: userdescription.description}, {
+  userData = req.body;
+  await Usuarios.update({
+    name: userData.name,
+    description: userData.description,
+    email: userData.email,
+    country: userData.country,
+    sex: userData.sex,
+    age: userData.age,
+  }, {
     where: {
       connect: 1
     }
