@@ -7,6 +7,7 @@ var Posts = tablas.Posts;
 var Comments = tablas.Comments;
 var Userscomments = tablas.Userscomments
 var Usersposts = tablas.Usersposts
+let views = 0;
 
 /*router.get('/', function(req, res, next) {
    res.send(forolista);
@@ -95,12 +96,15 @@ router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   var publicacion = posts.find(publicacion => {
     return(publicacion.id == idpublicacion);
   });
-  console.log("sofialeguiza");
-  console.log(publicacion)
   var comentario = comments.filter(comentario => {
     return(comentario.idpost == idpublicacion);
   });
   res.render('publicacionusuario', {publicacion, comentario, lengthcomments})
+  views++;// Si se entra a una misma publicacion se sigue sumando los views, no quiero hacer que cuando publicacion que se bloquee o algo asi
+  //no hay una mejor forma mas linda sin tener qe hacerlo con el ++ y el bloqueo ese?
+  //alta paja hacerlo ahora chapotear despues
+  console.log("visitas")
+  console.log(views)
 });
 
 router.post('/subircomentario', async function(req, res, next) {
