@@ -6,6 +6,7 @@ var Users = tablas.Users;
 var Posts = tablas.Posts;
 var Comments = tablas.Comments;
 var Userscomments = tablas.Userscomments
+var Usersposts = tablas.Usersposts
 
 /*router.get('/', function(req, res, next) {
    res.send(forolista);
@@ -26,7 +27,13 @@ async function getposts(){
   //req.app.locals.posts = 0; como mierda hago la variable global intente aca pero no arranca bien
   var posts = await Posts.findAll({
     nest: true,
-    raw: true
+    raw: true,
+    include: [
+      {
+          model: Users,
+          as: "user",
+      }
+  ]
   });
   //req.app.locals.posts = posts
   return posts;
@@ -60,10 +67,14 @@ router.get('/comments', async function(req, res, next) {
 router.post('/publicaciones', async function(req, res, next) {
   var newpost = req.body;
   var posts = await getposts();
-  await Posts.create({
+  var post = await Posts.create({
     title: newpost.title,
     description: newpost.description,
     iduser: newpost.iduser
+  });
+  await Usersposts.create({
+    postid: post.id, 
+    userid: newpost.iduser
   });
   res.send({
     status : true,
@@ -79,14 +90,15 @@ router.get('/goToPage/:idPage', async function(req, res, next) {
 router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   var posts = await getposts();
   var comments = await getcomments();
+  var lengthcomments = comments.length
   var idpublicacion = req.params.idpublicacion;
-  var publicacion = posts.find(publicacion => {
+  var publicacion = posts.filter(publicacion => {
     return(publicacion.id == idpublicacion);
   }); 
   var comentario = comments.filter(comentario => {
     return(comentario.idpost == idpublicacion);
   });
-  res.render('publicacionusuario', { publicacion: publicacion, comentario})
+  res.render('publicacionusuario', {publicacion, comentario, lengthcomments})
 });
 
 router.post('/subircomentario', async function(req, res, next) {
@@ -98,7 +110,6 @@ router.post('/subircomentario', async function(req, res, next) {
     idpost: newcomment.idpost,
     comment: newcomment.comment
   });
-
   console.log(comment);
   await Userscomments.create({
     commentid: comment.id, 

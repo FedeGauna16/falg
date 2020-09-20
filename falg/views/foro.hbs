@@ -109,7 +109,6 @@
       </li>
       <li class="page-item" aria-current="page">
         <span class="page-link" style="color: snow;background-color: #343a40;">
-          2
           <span class="sr-only">(current)</span>
         </span>
       </li>
@@ -123,7 +122,7 @@
   cuentas = [];
   function enviaridpublicacion(numeropublicacion){
       var idpublicacion = $("#idoculto" + numeropublicacion).text()
-      location.href = "http://localhost:3000/foro/irpagina/"+ idpublicacion; // no puedo agarrar este idpublicacion y usarlo directamente en publicacion usuario????
+      location.href = "http://localhost:3000/foro/irpublicacion/"+ idpublicacion; // no puedo agarrar este idpublicacion y usarlo directamente en publicacion usuario????
     }
   $(document).ready(function () {
     $('.toast').toast('show');

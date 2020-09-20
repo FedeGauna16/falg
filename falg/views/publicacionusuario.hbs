@@ -1,4 +1,4 @@
-<tittle>Publicación</tittle>
+<title>Publicación</title>
 <container class="container" style="color: white;padding-top: 30px;">
   <p id= "iduser" hidden>{{userlogged.id}}</p>
   <div class="row" style="margin-left: 300px;">
@@ -29,11 +29,13 @@
             </div>
             <div class="col">
               <a href="#!" class="green-text">
-                <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i> erickjq10x</h6>
+                {{#each publicacion}}
+                <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>{{user.name}}</h6>
               </a>
               <p class="font-weight-normal">Seguidores: </p>
               <p class="font-weight-normal">Likes: </p>
-              <a class="btn btn-success">Ver perfil</a>
+              <a class="btn btn-success" href="/users/perfil/{{user.id}}">Ver perfil</a>
+              {{/each}}
             </div>
           </div>
         </div>
@@ -42,7 +44,7 @@
   </div>
 
   <section class="my-5" style="background-color: #343a40; margin-left: 100px;width: 1700px;">
-    <div class="card-header border-0 font-weight-bold">4 comments</div>
+    <div class="card-header border-0 font-weight-bold">{{lengthcomments}} Comentarios</div>
     <div class="row">
       <div class="form-group mt-4" style="margin-left: 20px;">
         <label for="quickReplyFormComment">Tu comentario</label>
@@ -58,7 +60,7 @@
       <!--<p id= "iduser" hidden>{{userlogged.id}}</p>-->
       <div id= "comentariosusuarios" class="row" style="margin-left: 30px;">
         {{#each comentario}}
-        <div class="col-6" style="width: 500px">
+        <div class="col-6" style="width: 500px;background-color: rgb(36, 36, 36)">
             <div class="col">
               <img class="card" alt="Generic placeholder image" src="/imagenes/foro/Captura.PNGyiyuiuy.PNG" style="width: 150px;">
             </div>
@@ -66,9 +68,8 @@
               <div class="media-body text-center text-md-left ml-md-3 ml-0">
                 <h5 class="font-weight-bold mt-0">
                   <a id="publicacion" onclick = "sosa('+numerocomentario+')">
-                    <h4 style= "color: rgb(0, 110, 255);" href="/users/perfil"> {{user.name}}</h4>
-                    <button href="/users/perfil/{{user.id}}">{{user.name}}</button>
-                    <button id="like" style="margin-bottom: ;">dalelike</button>
+                    <a style= "color: rgb(0, 110, 255);" href="/users/perfil/{{user.id}}"> {{user.name}}</a>
+                    <button id="like" style="margin-bottom: ;">dalelike</button><!--el boton este de link matalo o arreglalo-->
                   </a>
                   <a href="" class="pull-right" style="mar">
                     <i class="fas fa-reply"></i>

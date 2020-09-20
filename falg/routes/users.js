@@ -4,8 +4,6 @@ var cuentas = require('../public/html/user/users.json');
 var tablas = require("../models");
 var Usuarios = tablas.Users;
 var datoslogin = "";
-var idusuario = 1;
-
 /*async function usuarioConectado(){
   return await Usuarios.findOne(
     {

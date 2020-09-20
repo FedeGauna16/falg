@@ -17,6 +17,7 @@ db.Posts = require("./posts")(sequelize, Sequelize);
 db.Comments = require("./comments")(sequelize, Sequelize);
 db.Users = require("./users")(sequelize, Sequelize);
 db.Userscomments = require("./userscomments")(sequelize, Sequelize);
+db.Usersposts = require("./usersposts")(sequelize, Sequelize);
 db.Users.belongsToMany(db.Comments, {
     through: db.Userscomments,
     as: "comment",
@@ -26,6 +27,16 @@ db.Comments.belongsToMany(db.Users, {
     through: db.Userscomments,
     as: "user",
     foreignKey: "commentid", 
+});
+db.Users.belongsToMany(db.Posts, {
+    through: db.Usersposts,
+    as: "post",
+    foreignKey: "userid",
+});
+db.Posts.belongsToMany(db.Users, {
+    through: db.Usersposts,
+    as: "user",
+    foreignKey: "postid", 
 });
 db.infoPartidas = require("./infoPartidas")(sequelize, Sequelize);
 db.clases = require("./clases")(sequelize, Sequelize);
