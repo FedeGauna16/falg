@@ -33,7 +33,6 @@ login
 
 perfil
 -hay que meter todos los datos del perfil en la bd para usarlos al momento de mostrar el perfil como el nivel, las hs y eso
--Hay que poder editar la informacion y los datos de inicio de sesion del usuario
 
 inicio
 -diseñar algo para poner en el inicio
