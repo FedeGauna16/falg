@@ -6,39 +6,7 @@ const db = require("../models");
 const InfoPartidas= db.infoPartidas;
 const Clases = db.clases;
 const Jugadores = db.jugadores;
-/*
-router.get('/', function(req, res, next) {
-  res.send(infoEstadisticas);
-});
 
-router.get('/:tipo', function(req, res, next) {
-    res.send(req.params.tipo);
-});
-
-router.post('/:tipo', function(req, res, next) { 
-
-    switch(req.params.tipo){
-      case "infoPartidas":
-        infoEstadisticas.infoPartidas.push(req.body);  
-      break;
-      case "clases":
-        infoEstadisticas.clases.push(req.body);  
-      break;
-      case "jugadores":
-        infoEstadisticas.jugadores.push(req.body);  
-      break;
-    }
-
-  res.send({
-    status : true,
-    response : infoEstadisticas 
-  });
-});
-
-router.get('/cosa', function(req, res, next) {
-  res.render('estadisticas')
-});
-*/
 router.get('/:tipo',async function(req, res, next) {
   let resultados1 = await InfoPartidas.findAll();
   let resultados2 = await Clases.findAll();

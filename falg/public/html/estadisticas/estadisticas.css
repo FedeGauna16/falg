@@ -105,7 +105,6 @@
 .fila { 
   border-top: 2px solid rgba(7, 7, 7, 0.2);
   border-bottom: 2px solid rgba(7, 7, 7, 0.2);
-  display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -115,7 +114,6 @@
   margin-bottom: 10px;
 }
 .fila-2 { 
-  display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;

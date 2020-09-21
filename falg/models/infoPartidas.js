@@ -7,37 +7,60 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true,
             autoIncrement: true
         },
-        jugador: {
-            type: Sequelize.INTEGER
-        },
-        nombre: {
+        nombreUno: {
             type: Sequelize.STRING
         },
-        idClase: {
+        nombreDos: {
+            type: Sequelize.STRING
+        },
+        idClaseUno: {
             type : Sequelize.INTEGER
         },
-        iconClase: {
+        idClaseDos: {
+            type : Sequelize.INTEGER
+        },
+        iconClaseUno: {
             type : Sequelize.TEXT
         },
-        item1: {
+        iconClaseDos: {
             type : Sequelize.TEXT
         },
-        item2: {
+        item1Uno: {
             type : Sequelize.TEXT
         },
-        item3: {
+        item1Dos: {
             type : Sequelize.TEXT
         },
-        item4: {
+        item2Uno: {
             type : Sequelize.TEXT
         },
-        item5: {
+        item2Dos: {
             type : Sequelize.TEXT
         },
-        item6: {
+        item3Uno: {
+            type : Sequelize.TEXT
+        },
+        item3Dos: {
+            type : Sequelize.TEXT
+        },
+        item4Uno: {
+            type : Sequelize.TEXT
+        },
+        item4Dos: {
+            type : Sequelize.TEXT
+        },
+        item5Uno: {
+            type : Sequelize.TEXT
+        },
+        item5Dos: {
+            type : Sequelize.TEXT
+        },
+        item6Uno: {
+            type : Sequelize.TEXT
+        },
+        item6Dos: {
             type : Sequelize.TEXT
         }
-
     });
 
     return infoPartidas;
