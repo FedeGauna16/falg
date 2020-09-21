@@ -41,9 +41,10 @@
     </div>
   </div>
 
-  <section class="my-5" style="background-color: #343a40; margin-left: 100px;width: 1700px;">
+  <section class="my-5" style="background-color: #343a40; margin-left: 100px;width: 1700px">
     <div class="card-header border-0 font-weight-bold">{{lengthcomments}} Comentarios</div>
-    <div class="row">
+     <!-- CHE FLACO ACA QUIERO HACER QUE SI LENGTHCOMMENTS==0 que te mueestre un "CHE NO HAY PUBLICACIONES PUBLICA ALGO CAPO C:"-->
+      <div class="row">
       <div class="form-group mt-4" style="margin-left: 20px;">
         <label for="quickReplyFormComment">Tu comentario</label>
         <textarea class="form-control" id="cuadrocomentario" rows="2" style="width: 1690px;background-color: rgb(36, 36, 36);color:white"></textarea>
@@ -54,29 +55,31 @@
           <div class="row" style="margin-left: 1px;background-color: white;height: 1px;width: 1690px">
         </div>
       </div>
-      <p id = "publicacionid">{{publicacion.id}}</p>
+      <p id = "publicacionid" hidden>{{publicacion.id}}</p>
       <!--<p id= "iduser" hidden>{{userlogged.id}}</p>-->
-      {{#each comentario}}
-        <div id= "comentariosusuarios" class="row" style="margin-left: 30px;width: 500px;background-color: rgb(36, 36, 36)">
+      <div class="row" style="margin-left: 1px;margin-right: 1px;width: 1801px;">
+        {{#each comentario}}
+        <div id= "comentariosusuarios" class="row" style="margin-top: 10px;margin-bottom: 10px;margin-left: 30px;width: 825px;background-color: rgb(36, 36, 36)">
           <div class="col">
             <img class="card" alt="Generic placeholder image" src="/imagenes/foro/Captura.PNGyiyuiuy.PNG" style="width: 150px;">
           </div>
-          <div class="col" style="margin-right: 180px;">
+          <div class="col" style="margin-right: 500px;">
             <div class="media-body text-center text-md-left ml-md-3 ml-0">
               <h5 class="font-weight-bold mt-0">
                 <a id="publicacion">
                   <a style= "color: rgb(0, 110, 255);" href="/users/perfil/{{user.id}}"> {{user.name}}</a>
                   <button id="like" style="margin-bottom: ;">dalelike</button><!--el boton este de link matalo o arreglalo-->
                 </a>
-                <a href="" class="pull-right" style="mar">
+                <a class="pull-right" style="mar">
                   <i class="fas fa-reply"></i>
-                  <div class="text-white">{{this.comment}}</div>
+                  <div class="text-white">{{this.comment}} {{createdAt}}</div>
                 </a>
               </h5>
             </div>
           </div>
         </div>
       {{/each}}
+      </div>
       <!--<div class="row">
         <nav class="d-flex justify-content-center mt-5" style="margin-left: 300px;">
           <ul class="pagination pg-blue mb-0">
