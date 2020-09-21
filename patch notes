@@ -54,9 +54,8 @@ foro - crear publicacion
 
 foro - publicacion usuario
 (no me lo toquen qe lo estoy haciendo yo)
--corregir error que todos los comentarios aparecen en todas las publicaciones.
--creación de api + html de comentarios y su aparicion terminado.
--esta rota momentaneamente por la conexion con bd.
+-meter la fecha de creacion de la publicacion
+-meter la fecha de creacion del comentario
 
 buscador
 -esta roto o no esta hecho, no se
