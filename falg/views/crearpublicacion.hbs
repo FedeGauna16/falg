@@ -24,9 +24,9 @@
             <h6>Elige el tipo de filtro</h6>
             <select class="custom-select">
               <option value="">Filtro...</option>
-              <option value="1">Build</option>
-              <option value="2">Guía</option>
-              <option value="3">Lore</option>
+              <option id="build" href="/foro/publicaciones/$("#build").val()" value="1">Build</option>
+              <option id="guide" value="2">Guía</option>
+              <option id="lore" value="3">Lore</option>
             </select>
             <div class="invalid-feedback">Filtro obligatorio</div>
           </div>
@@ -50,7 +50,7 @@
   $(document).ready(function () {
     $('#crearpublicacion').on('click', function (event) {
       event.preventDefault();
-      console.log($("#iduser").text());
+      console.log()
       $.ajax({
         url: 'http://localhost:3000/foro/publicaciones',
         type: 'POST',

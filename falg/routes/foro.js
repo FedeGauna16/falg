@@ -50,7 +50,7 @@ router.get('/comments', async function(req, res, next) {
   res.send({comments});
 });
 
-router.post('/publicaciones', async function(req, res, next) {
+router.post('/publicaciones/', async function(req, res, next) {
   var newpost = req.body;
   var posts = await getposts();
   var post = await Posts.create({
