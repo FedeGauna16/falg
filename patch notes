@@ -17,11 +17,8 @@ IMPORTANTE 7: VERIFACION DE TODOS LOS DATOS PUESTOS O INGRESADOS
 https://mdbootstrap.com/docs/jquery/navigation/footer/,
 
 --general--
-**-arreglar todos los links desde todas las secciones. (antes estaban arregladas, ahora por el cambio de formato no se si estan todas)
 -corregir la posicion del boton de ingresar en todas las secciones(esta dejarla para despues)
 -agregar el boton ese de fede que esta en el buscador de "tipo" - tambien para despues
-**-agregar los iconos de redes sociales en la parte derecha del footer ( si bien ya esta puesto, a mi no me terminan de gustar, buscar otro estilo generico de esos que vienen en un circulo negro y adentro el logo de cada red social. https://mdbootstrap.com/docs/jquery/navigation/footer/, (si bajan al final de todo van a ver los dos ultimos con iconos como los que estarian mejor, robarlos de ahi o de otra pagina)
--- si encuentran algun error entre conexiones con las secciones avisen
 --la conexion con la seccion de estadisticas esta rota, arreglenla si pueden
 
 registro
@@ -65,13 +62,12 @@ estadisticas
 -esta roto en alguna parte, es de fede
 
 ayuda - soporte
--Terminado
+**-Terminado, pero si alguien quiere agregar o hacer algo mas bueno
 
 ayuda - generar reporte
 GENERAR REPORTE AHORA ES PARTE DE SOPORTE
--api terminada
 -hacer una verificacion que impida mandar un ticket si el usuario no se logueo con su cuenta
--arreglamos todo menos lo del envio de la imagen y el tema
+-Agregar a la api la posibilidad de adjuntar una imagen y guardarla en la tabla de tickets, junto a su tema
 
 ayuda-faq
 *En proceso y casi terminado* -sacar los botones de leer mas, y agregar el texto completo de cada respuesta en la misma pagina.
