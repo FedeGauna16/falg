@@ -14,13 +14,14 @@
     <link href="./buscador/buscador.css" rel="stylesheet">
     <title>Busqueda</title>
     <style>
-        h3 { color: white; }
+        h3 { color: yellow; }
+        h2 { color: yellow  }
       </style>
   </head>
 
   <body>
     <div class="header">
-        <img src="./index/falg.png" style=" margin-left: auto;margin-right: auto;" >
+        <img src="../imagenes/index/falg.png" style=" margin-left: auto;margin-right: auto;" >
       </div>
       <style>
         .header {
@@ -73,11 +74,11 @@
               <div class="filtro">
                 <button class="boton2 boton2-secundario dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="filtro">
-                  <button class="dropdown-item" onclick= "'1'" id="user">Usuario</button>
-                  <button class="dropdown-item" onclick= "'2'">Publicación</button>
-                  <button class="dropdown-item" onclick= "'3'">Clase</button>
-                  <button class="dropdown-item" onclick= "'4'">Item</button>
-                  <button class="dropdown-item" onclick= "'5'">Build</button>
+                  <button class="dropdown-item" onclick= "'1'" id="user">Partidas</button>
+                  <button class="dropdown-item" onclick= "'2'">Clases</button>
+                  <button class="dropdown-item" onclick= "'3'">Perfiles</button>
+                  <button class="dropdown-item" onclick= "'4'">Publicaciones</button>
+                  <button class="dropdown-item" onclick= "'5'">Items</button>
                 </div>
               </div>
               <div style="margin-left: .5rem;">
@@ -89,10 +90,32 @@
 
         <div class="container">
             <div class="titulobuscador">
-                <h3>Resultados</h3>
+                <h2>Resultados</h3>
             </div>
-            <div class="res" id="res">
-                         
+            <div class="titulopartidas">
+              <h3>Partidas</h2>                    
+            </div>
+            <div class="partidas">
+            </div>
+            <div class="tituloclases">
+              <h3>Clases</h2>                    
+            </div>
+            <div class="clases">
+            </div>
+            <div class="tituloperfiles">
+              <h3>Perfiles</h2>                    
+            </div>
+            <div class="perfiles">
+            </div>
+            <div class="titulopubli">
+              <h3>Publicaciones</h2>                    
+            </div>
+            <div class="publicaciones">
+            </div>
+            <div class="tituloitems">
+              <h3>Items</h2>                    
+            </div>
+            <div class="items">
             </div>
         </div>
   </body>
@@ -106,7 +129,7 @@
                 </div>
             </div>
             <div class= "col-4">
-                <img src = "./index/falg_footer.png" style = "padding-top: 10px;">
+                <img src = "../imagenes/index/falg_footer.png" style = "padding-top: 10px;">
                 <div style="padding-right: 10px;">©2020 Arne, Inc.</div>
                 <div style="padding-right: 10px;">All Rights Reserved</div>
             </div>
@@ -131,7 +154,7 @@
     </style>
 </html>
 
-<script>
+<script>/*
   var busqueda;
   var infoGeneral;
     $(document).ready(function () {
@@ -150,5 +173,5 @@
         
     
       });
-    });
+    });*/
 </script>
