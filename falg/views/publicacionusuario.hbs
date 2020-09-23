@@ -43,12 +43,15 @@
 
   <section class="my-5" style="background-color: #343a40; margin-left: 100px;width: 1700px">
     <div class="card-header border-0 font-weight-bold">{{lengthcomments}} Comentarios</div>
-     <!-- CHE FLACO ACA QUIERO HACER QUE SI LENGTHCOMMENTS==0 que te mueestre un "CHE NO HAY PUBLICACIONES PUBLICA ALGO CAPO C:"-->
+      {{#unless comentario}}
+      <h4 style="text-align: center;">
+        Aún no hay comentarios. Se el primero en publicar uno!
+      </h4>
+      {{/unless}}
       <div class="row">
       <div class="form-group mt-4" style="margin-left: 20px;">
         <label for="quickReplyFormComment">Tu comentario</label>
         <textarea class="form-control" id="cuadrocomentario" rows="2" style="width: 1690px;background-color: rgb(36, 36, 36);color:white"></textarea>
-
         <div class="text-center my-4">
           <button id="publicarcomentario" class="btn btn-primary btn-sm" style="margin-left: 1550px;">Publicar comentario</button>
         </div>
