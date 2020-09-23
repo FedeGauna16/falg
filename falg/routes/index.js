@@ -44,4 +44,8 @@ router.get('/terminosycondiciones', function(req, res, next) {
   res.render('terminosycondiciones')
 });
 
+router.get('/estadisticas', function(req, res, next) {
+  res.render('estadisticas')
+});
+
 module.exports = router;

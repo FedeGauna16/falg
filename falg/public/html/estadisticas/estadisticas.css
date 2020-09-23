@@ -124,7 +124,6 @@
 .item {
   padding: 5px;
   width: 60px;
-
   color: antiquewhite;
 }
 .columna-1-1{
@@ -251,8 +250,8 @@
   width: 90%;
   color: antiquewhite;
   text-align: left;
-  /* background-color: rgb(70, 22, 22); */
   font-size: medium;
+  /* background-color: rgb(70, 22, 22); */
 }
 .cuadro2{
   margin-left: 15px;
