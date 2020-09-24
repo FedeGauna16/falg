@@ -1,5 +1,9 @@
 <title>Formulario</title>
-  <p id= "iduser" hidden>{{userlogged.id}}</p>
+{{#unless userlogged}}
+  <h1 style="color: white;">INicia sesion flaco o no podes mandar ticket</h1>
+{{/unless}}
+{{#if userlogged}}
+<p id= "iduser" hidden>{{userlogged.id}}</p>
 <div style="padding-top: 20px;">
   <h1 style="padding-left: 600px;width: 1300px;color: white;text-align: center;">Rellene el formulario</h1>
   <form id="description" style="padding-left: 600px;width: 1300px;color: white;">
@@ -32,6 +36,8 @@
   <button type="submit" class="btn btn-primary">Enviar Reporte</button>
   </form>
 </div>
+{{/if}}
+  
 <script>
     $('#description').on('submit', function (event) {
       event.preventDefault();
