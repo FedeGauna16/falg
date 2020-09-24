@@ -8,6 +8,7 @@ var Comments = tablas.Comments;
 var Userscomments = tablas.Userscomments
 var Usersposts = tablas.Usersposts
 let views = 0;
+let likes = 0;
 
 async function getposts(){
   //req.app.locals.posts = 0; como mierda hago la variable global intente aca pero no arranca bien
@@ -107,6 +108,17 @@ router.post('/subircomentario', async function(req, res, next) {
   });
   res.send({
     status : true
+  });
+});
+
+router.post('/addlike', function(req, res, next) {
+  var like = req.body
+  // la concha de tu madre no se que mierda pasa que no muestra el jorge ni hace nada
+  console.log("este soy yo el jorge")
+  //newlike++
+  console.log(like)
+  res.send({
+    status : true // aca se tiene que renderizar el hbs de la publicacion en donde esta ahora, sacar el status este
   });
 });
 

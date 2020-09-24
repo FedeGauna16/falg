@@ -41,6 +41,10 @@
     </div>
   </div>
 
+  <div>
+    <button id="like" style="margin-left: 40%">like publicacion ghijo de puta</button>
+  </div>
+
   <section class="my-5" style="background-color: #343a40; margin-left: 100px;width: 1700px">
     <div class="card-header border-0 font-weight-bold">{{lengthcomments}} Comentarios</div>
       {{#unless comentario}}
@@ -71,7 +75,7 @@
               <h5 class="font-weight-bold mt-0">
                 <a id="publicacion">
                   <a style= "color: rgb(0, 110, 255);" href="/users/perfil/{{user.id}}"> {{user.name}}</a>
-                  <button id="like" style="margin-bottom: ;">dalelike</button><!--el boton este de link matalo o arreglalo-->
+                  <!--<button id="like" href="http://localhost:3000/foro/addlike">dalelikepelotudo</button> el boton este de link matalo o arreglalo-->
                 </a>
                 <a class="pull-right" style="mar">
                   <i class="fas fa-reply"></i>
@@ -126,6 +130,17 @@
 </container>
 <script>
   $(document).ready(function () {
+    $('#like').on('click', function (event) {
+      $.ajax({
+      url: 'http://localhost:3000/foro/addlike',
+      type: 'POST',
+      data: {
+        like: $("#publicacionid").text()
+      },
+      success: function (result) {
+        location.reload();
+      }
+    });
     $('#publicarcomentario').on('click', function (event) {
       console.log($("#publicacionid").text())
       $.ajax({
