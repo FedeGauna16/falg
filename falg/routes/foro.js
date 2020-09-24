@@ -108,13 +108,31 @@ router.post('/subircomentario', async function(req, res, next) {
   });
 });
 
-router.post('/addlike', async function(req, res, next) {
+router.post('/addlikepost', async function(req, res, next) {
   var idpost = req.body.idpost;
   var posts = await getposts();
   var like = posts[idpost - 1].likes;
   await Posts.update({ likes: like + 1 }, {
     where: {
       id: idpost
+    }
+  });
+  res.send({
+    status : true
+  });
+});
+
+router.post('/addlikecomment', async function(req, res, next) {
+  var idcomment = req.body.idcomment;
+  var comments = await getcomments();
+  console.log(idcomment)
+  console.log("sapo pepe y la re concha de tu madre pelotudo de mierda")
+  console.log(comments[idcomment -1].likes)
+  console.log(comments)
+  var likecomment = comments[idcomment - 1].likes;
+  await Comments.update({ likes: likecomment + 1 }, {
+    where: {
+      id: idcomment
     }
   });
   res.send({
