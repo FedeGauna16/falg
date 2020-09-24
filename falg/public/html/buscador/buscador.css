@@ -15,7 +15,7 @@
 .titulobuscador {
     margin-top: 50px;
   }
-.titulopartidas {
+.titulo {
   margin-top: 20px;
 }
 .partidas {
@@ -25,18 +25,12 @@
   display: block;
   margin-top: 15px;
 }
-.tituloclases {
-  margin-top: 20px;
-}
 .clases {
   border: 2px solid transparent;
   border-color: slategray;
   border-radius: 10px;
   display: block;
   margin-top: 15px;
-}
-.tituloperfiles {
-  margin-top: 20px;
 }
 .perfiles {
   border: 2px solid transparent;
@@ -45,18 +39,12 @@
   display: block;
   margin-top: 15px;
 }
-.titulopubli {
-  margin-top: 20px;
-}
 .publicaciones {
   border: 2px solid transparent;
   border-color: slategray;
   border-radius: 10px;
   display: block;
   margin-top: 15px;
-}
-.tituloitems {
-  margin-top: 20px;
 }
 .items {
   border: 2px solid transparent;
