@@ -1,6 +1,12 @@
 <title>Formulario</title>
 {{#unless userlogged}}
-  <h1 style="color: white;">INicia sesion flaco o no podes mandar ticket</h1>
+<hr style="height: 12vh">
+  <h1 style="padding-left: 600px;width: 1300px;color: white;text-align: center;">Para enviar un formulario debes haber iniciado sesion en tu cuenta</h1>
+  <li id="ingresar" class="nav-item" style="text-align: center;padding-top: 20px;">
+          <a class="btn btn-danger btn-lg" style="color: white; size: 200%" 
+            href="http://localhost:3000/users/ingreso" role="Ingresar">Iniciar Sesion</a>
+        </li>
+  <hr style="height: 8vh">
 {{/unless}}
 {{#if userlogged}}
 <p id= "iduser" hidden>{{userlogged.id}}</p>
