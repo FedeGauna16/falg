@@ -122,8 +122,9 @@ router.post('/addlikepost', async function(req, res, next) {
   });
 });
 
-router.post('/addlikecomment', async function(req, res, next) {
-  var idcomment = req.body.idcomment;
+router.get('/addlikecomment/:likecomment', async function(req, res, next) {
+  var idcomment = req.params.likecomment
+  //var idcomment = req.body.idcomment;
   var comments = await getcomments();
   console.log(idcomment)
   console.log("sapo pepe y la re concha de tu madre pelotudo de mierda")
@@ -135,9 +136,7 @@ router.post('/addlikecomment', async function(req, res, next) {
       id: idcomment
     }
   });
-  res.send({
-    status : true
-  });
+  res.redirect(req.get('referer'));
 });
 
 router.get('/foro/:idPage', async function(req, res, next) {

@@ -27,7 +27,6 @@
                 </a>
               </div>
             </div>
-            <h1 style="text-align: center;">aaaaaaaahola</h1>
             <div class="col">
               <a href="#!" class="green-text">
                 <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>{{publicacion.user.name}}</h6>
@@ -69,7 +68,7 @@
       <!--<p id= "iduser" hidden>{{userlogged.id}}</p>-->
       <div class="row" style="margin-left: 1px;margin-right: 1px;width: 1801px;">
         {{#each comentario}}
-        <p id="commentid" hidden>{{this.id}}</p>
+        <p id="comment{{id}}" hidden>{{this.id}}</p>
         <div id="comentariosusuarios" class="row"
           style="margin-top: 10px;margin-bottom: 10px;margin-left: 30px;width: 825px;background-color: rgb(36, 36, 36)">
           <div class="col">
@@ -81,7 +80,7 @@
               <h5 class="font-weight-bold mt-0">
                 <a id="publicacion">
                   <a style="color: rgb(0, 110, 255);" href="/users/perfil/{{user.id}}"> {{user.name}}</a>
-                  <button id="likecomment">dalelikepelotudo</button>
+                  <a id="likecomment" href="http://localhost:3000/foro/addlikecomment/{{id}}">dalelikepelotudo</a>
                 </a>
                 <a class="pull-right" style="mar">
                   <i class="fas fa-reply"></i>
@@ -149,7 +148,7 @@
         }
       })
     });
-    $('#likecomment').on('click', function (event) {
+    /*$('#likecomment').on('click', function (event) {
       $.ajax({
         url: 'http://localhost:3000/foro/addlikecomment',
         type: 'POST',
@@ -160,7 +159,7 @@
           location.reload();
         }
       })
-    });
+    });*/
     $('#publicarcomentario').on('click', function (event) {
       console.log($("#publicacionid").text())
       $.ajax({
