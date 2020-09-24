@@ -29,6 +29,7 @@ registro
 login
 **-reemplazar el sistema de correo y contraseña encontrados, en donde si se encuentran se pasan a true y luego a false, hacer simplemente una verificacion entre el campo ingresado y la tabla cuentas en la bd-
 -Arreglar sistema de cambio de contraseña, ponerle verificacion de contraseña y envio de nueva contraseña a la bd
+-esta medio roto con los elses que meti, el logueo igual anda pero saltan cosas feas
 
 perfil
 -hay que meter todos los datos del perfil en la bd para usarlos al momento de mostrar el perfil como el nivel, las hs y eso
@@ -62,13 +63,13 @@ estadisticas
 -esta roto en alguna parte, es de fede
 
 ayuda - soporte
-**-Terminado, pero si alguien quiere agregar o hacer algo mas bueno
+**-Ponerlo lindo y ordenado x2
 
 ayuda - generar reporte
 GENERAR REPORTE AHORA ES PARTE DE SOPORTE
--hacer una verificacion que impida mandar un ticket si el usuario no se logueo con su cuenta
 -Agregar a la api la posibilidad de adjuntar una imagen y guardarla en la tabla de tickets, junto a su tema
 
 ayuda-faq
 *En proceso y casi terminado* -sacar los botones de leer mas, y agregar el texto completo de cada respuesta en la misma pagina.
 ¨Tiene que hacerse* -crear algun boton o algo que referencie a generar un ticket para una pregunta especifica
+-Ponerlo lindo y ordenado x2
