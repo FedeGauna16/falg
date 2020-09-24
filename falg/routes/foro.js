@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var forolista = require('../public/html/foro/foro.json');
 var tablas = require("../models");
 var Users = tablas.Users;
 var Posts = tablas.Posts;
@@ -8,7 +7,6 @@ var Comments = tablas.Comments;
 var Userscomments = tablas.Userscomments
 var Usersposts = tablas.Usersposts
 let views = 0;
-let likes = 0;
 
 async function getposts(){
   //req.app.locals.posts = 0; como mierda hago la variable global intente aca pero no arranca bien
@@ -95,7 +93,6 @@ router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
 
 router.post('/subircomentario', async function(req, res, next) {
   var newcomment = req.body;
-  console.log(newcomment)
   var comment = await Comments.create({ 
     nest: true,
     raw: true,
@@ -111,21 +108,22 @@ router.post('/subircomentario', async function(req, res, next) {
   });
 });
 
-router.post('/addlike', function(req, res, next) {
-  var like = req.body
-  // la concha de tu madre no se que mierda pasa que no muestra el jorge ni hace nada
-  console.log("este soy yo el jorge")
-  //newlike++
-  console.log(like)
+router.post('/addlike', async function(req, res, next) {
+  var idpost = req.body.idpost;
+  var posts = await getposts();
+  var like = posts[idpost - 1].likes;
+  await Posts.update({ likes: like + 1 }, {
+    where: {
+      id: idpost
+    }
+  });
   res.send({
-    status : true // aca se tiene que renderizar el hbs de la publicacion en donde esta ahora, sacar el status este
+    status : true
   });
 });
 
 router.get('/foro/:idPage', async function(req, res, next) {
   const publications = await getposts();
-  console.log(publications);
-  console.log(req.params.idPage);
   res.render('foro', {publications})
 });
 

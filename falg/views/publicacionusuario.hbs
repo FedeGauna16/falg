@@ -1,6 +1,6 @@
 <title>Publicación</title>
 <container class="container" style="color: white;padding-top: 30px;">
-  <p id= "iduser" hidden>{{userlogged.id}}</p>
+  <p id="iduser" hidden>{{userlogged.id}}</p>
   <div class="row" style="margin-left: 300px;">
     <div class="col" style="max-width: 1000px;background-color: #343a40">
       <h1 id="ptitulo">
@@ -42,39 +42,43 @@
   </div>
 
   <div>
-    <button id="like" style="margin-left: 40%">like publicacion ghijo de puta</button>
+    <button id="like" style="margin-left: 40%" href="http://localhost:3000/foro/addlike">like publicacion ghijo de puta</button>
   </div>
 
   <section class="my-5" style="background-color: #343a40; margin-left: 100px;width: 1700px">
-    <div class="card-header border-0 font-weight-bold">{{lengthcomments}} Comentarios</div>
-      {{#unless comentario}}
-      <h4 style="text-align: center;">
-        Aún no hay comentarios. Se el primero en publicar uno!
-      </h4>
-      {{/unless}}
-      <div class="row">
+    <div class="card-header border-0 font-weight-bold">{{lengthcomments}} Comentarios | {{publicacion.likes}} Likes</div>
+    {{#unless comentario}}
+    <h4 style="text-align: center;">
+      Aún no hay comentarios. Se el primero en publicar uno!
+    </h4>
+    {{/unless}}
+    <div class="row">
       <div class="form-group mt-4" style="margin-left: 20px;">
         <label for="quickReplyFormComment">Tu comentario</label>
-        <textarea class="form-control" id="cuadrocomentario" rows="2" style="width: 1690px;background-color: rgb(36, 36, 36);color:white"></textarea>
+        <textarea class="form-control" id="cuadrocomentario" rows="2"
+          style="width: 1690px;background-color: rgb(36, 36, 36);color:white"></textarea>
         <div class="text-center my-4">
-          <button id="publicarcomentario" class="btn btn-primary btn-sm" style="margin-left: 1550px;">Publicar comentario</button>
+          <button id="publicarcomentario" class="btn btn-primary btn-sm" style="margin-left: 1550px;">Publicar
+            comentario</button>
         </div>
-          <div class="row" style="margin-left: 1px;background-color: white;height: 1px;width: 1690px">
+        <div class="row" style="margin-left: 1px;background-color: white;height: 1px;width: 1690px">
         </div>
       </div>
-      <p id = "publicacionid" hidden>{{publicacion.id}}</p>
+      <p id="publicacionid" hidden>{{publicacion.id}}</p>
       <!--<p id= "iduser" hidden>{{userlogged.id}}</p>-->
       <div class="row" style="margin-left: 1px;margin-right: 1px;width: 1801px;">
         {{#each comentario}}
-        <div id= "comentariosusuarios" class="row" style="margin-top: 10px;margin-bottom: 10px;margin-left: 30px;width: 825px;background-color: rgb(36, 36, 36)">
+        <div id="comentariosusuarios" class="row"
+          style="margin-top: 10px;margin-bottom: 10px;margin-left: 30px;width: 825px;background-color: rgb(36, 36, 36)">
           <div class="col">
-            <img class="card" alt="Generic placeholder image" src="/imagenes/foro/Captura.PNGyiyuiuy.PNG" style="width: 150px;">
+            <img class="card" alt="Generic placeholder image" src="/imagenes/foro/Captura.PNGyiyuiuy.PNG"
+              style="width: 150px;">
           </div>
           <div class="col" style="margin-right: 500px;">
             <div class="media-body text-center text-md-left ml-md-3 ml-0">
               <h5 class="font-weight-bold mt-0">
                 <a id="publicacion">
-                  <a style= "color: rgb(0, 110, 255);" href="/users/perfil/{{user.id}}"> {{user.name}}</a>
+                  <a style="color: rgb(0, 110, 255);" href="/users/perfil/{{user.id}}"> {{user.name}}</a>
                   <!--<button id="like" href="http://localhost:3000/foro/addlike">dalelikepelotudo</button> el boton este de link matalo o arreglalo-->
                 </a>
                 <a class="pull-right" style="mar">
@@ -85,7 +89,7 @@
             </div>
           </div>
         </div>
-      {{/each}}
+        {{/each}}
       </div>
       <!--<div class="row">
         <nav class="d-flex justify-content-center mt-5" style="margin-left: 300px;">
@@ -132,29 +136,30 @@
   $(document).ready(function () {
     $('#like').on('click', function (event) {
       $.ajax({
-      url: 'http://localhost:3000/foro/addlike',
-      type: 'POST',
-      data: {
-        like: $("#publicacionid").text()
-      },
-      success: function (result) {
-        location.reload();
-      }
+        url: 'http://localhost:3000/foro/addlike',
+        type: 'POST',
+        data: {
+          idpost: $("#publicacionid").text()
+        },
+        success: function (result) {
+          location.reload();
+        }
+      })
     });
     $('#publicarcomentario').on('click', function (event) {
       console.log($("#publicacionid").text())
       $.ajax({
-      url: 'http://localhost:3000/foro/subircomentario',
-      type: 'POST',
-      data: {
-        idpost: $("#publicacionid").text(),
-        iduser: $("#iduser").text(),
-        comment: $("#cuadrocomentario").val()
-      },
-      success: function (result) {
-        location.reload();
-      }
+        url: 'http://localhost:3000/foro/subircomentario',
+        type: 'POST',
+        data: {
+          idpost: $("#publicacionid").text(),
+          iduser: $("#iduser").text(),
+          comment: $("#cuadrocomentario").val()
+        },
+        success: function (result) {
+          location.reload();
+        }
+      });
     });
-  });
   });
 </script>
