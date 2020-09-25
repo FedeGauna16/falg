@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var tablas = require("../models");
+const posts = require('../models/posts');
 var Users = tablas.Users;
 var Posts = tablas.Posts;
 var Comments = tablas.Comments;
@@ -144,8 +145,14 @@ router.get('/foro/:idPage', async function(req, res, next) {
   res.render('foro', {publications})
 });
 
-router.get('/crearpublicacion', function(req, res, next) {
+router.get('/crearpublicacion', async function(req, res, next) {
+  await countPosts()
   res.render('crearpublicacion')
 });
 
 module.exports = router;
+
+async function countPosts(){
+  const count = await Posts.count();
+console.log(count)
+}
