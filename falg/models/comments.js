@@ -7,6 +7,7 @@ module.exports = (sequelize, Sequelize) => {
             autoIncrement: true
         },
         likes: Sequelize.INTEGER,
+        dislikes: Sequelize.INTEGER,
         comment: Sequelize.STRING,
         idpost: Sequelize.INTEGER
     }

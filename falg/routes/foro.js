@@ -76,7 +76,6 @@ router.get('/goToPage/:idPage', async function(req, res, next) {
 router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   var posts = await getposts();
   var comments = await getcomments();
-  var lengthcomments = comments.length
   var idpublicacion = req.params.idpublicacion;
   var publicacion = posts.find(publicacion => {
     return(publicacion.id == idpublicacion);
@@ -84,6 +83,9 @@ router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   var comentario = comments.filter(comentario => {
     return(comentario.idpost == idpublicacion);
   });
+  var lengthcomments = comentario.length
+  console.log("SOS REPUTO AMIGO")
+  console.log(comentario)
   res.render('publicacionusuario', {publicacion, comentario, lengthcomments})
   views++;// Si se entra a una misma publicacion se sigue sumando los views, no quiero hacer que cuando publicacion que se bloquee o algo asi
   //no hay una mejor forma mas linda sin tener qe hacerlo con el ++ y el bloqueo ese?
@@ -109,8 +111,8 @@ router.post('/subircomentario', async function(req, res, next) {
   });
 });
 
-router.post('/addlikepost', async function(req, res, next) {
-  var idpost = req.body.idpost;
+router.get('/addlikepost/:like', async function(req, res, next) {
+  var idpost = req.params.like
   var posts = await getposts();
   var like = posts[idpost - 1].likes;
   await Posts.update({ likes: like + 1 }, {
@@ -118,21 +120,38 @@ router.post('/addlikepost', async function(req, res, next) {
       id: idpost
     }
   });
-  res.send({
-    status : true
+  res.redirect(req.get('referer'));
+});
+
+router.get('/adddislikepost/:dislike', async function(req, res, next) {
+  var idpost = req.params.dislike
+  var posts = await getposts();
+  var dislike = posts[idpost - 1].dislikes;
+  await Posts.update({ dislikes: dislike + 1 }, {
+    where: {
+      id: idpost
+    }
   });
+  res.redirect(req.get('referer'));
 });
 
 router.get('/addlikecomment/:likecomment', async function(req, res, next) {
   var idcomment = req.params.likecomment
-  //var idcomment = req.body.idcomment;
   var comments = await getcomments();
-  console.log(idcomment)
-  console.log("sapo pepe y la re concha de tu madre pelotudo de mierda")
-  console.log(comments[idcomment -1].likes)
-  console.log(comments)
   var likecomment = comments[idcomment - 1].likes;
   await Comments.update({ likes: likecomment + 1 }, {
+    where: {
+      id: idcomment
+    }
+  });
+  res.redirect(req.get('referer'));
+});
+
+router.get('/adddislikecomment/:dislikecomment', async function(req, res, next) {
+  var idcomment = req.params.dislikecomment
+  var comments = await getcomments();
+  var dislikecomment = comments[idcomment - 1].dislikes;
+  await Comments.update({ dislikes: dislikecomment + 1 }, {
     where: {
       id: idcomment
     }
@@ -145,8 +164,8 @@ router.get('/foro/:idPage', async function(req, res, next) {
   res.render('foro', {publications})
 });
 
-router.get('/crearpublicacion', async function(req, res, next) {
-  await countPosts()
+  router.get('/crearpublicacion', async function(req, res, next) {
+    await countPosts()
   res.render('crearpublicacion')
 });
 
@@ -155,4 +174,4 @@ module.exports = router;
 async function countPosts(){
   const count = await Posts.count();
 console.log(count)
-}
+} 
