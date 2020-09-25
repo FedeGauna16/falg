@@ -1,18 +1,13 @@
 var express = require('express');
 var router = express.Router();
 const { render, response } = require('../app');
-var info = [
-  require('../public/html/estadisticas/estadisticas.json'),
-  require('../public/html/foro/foro.json'),
-  require('../public/html/user/users.json')
-];
+const db = require("../models");
+const InfoPartidas= db.infoPartidas;
 
-router.get('/', function(req, res, next) {
-  res.send(info);
-});
+router.get('/',async function(req, res, next) {
+  let resultados = await InfoPartidas.findAll();
 
-router.get('/buscador', function(req, res, next) {
-  res.render('buscador')
+  res.send(resultados);
 });
 
 module.exports = router;

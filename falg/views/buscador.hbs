@@ -25,13 +25,10 @@
     <div class="perfiles" style="border: 2px solid transparent; border-color: slategray; border-radius: 10px; display: block; margin-top: 15px;">
 
     </div>
-
+    
     <div class="titulopubli" style="margin-top: 20px;">
       <h3>Publicaciones</h2>                    
     </div>
-<<<<<<< Updated upstream
-
-=======
     <div class="publicaciones" style="border: 2px solid transparent; border-color: slategray; border-radius: 10px; display: block; margin-top: 15px;">
 
     </div>
@@ -41,23 +38,17 @@
     </div>
     <div class="items" style="border: 2px solid transparent; border-color: slategray; border-radius: 10px; display: block; margin-top: 15px;">
 
-    </div>         
-  </div>
-  <style>
+    </div>
+    <style>
         h3 { color: yellow; }
         h2 { color: yellow  }
-  </style>
->>>>>>> Stashed changes
+    </style>
 </div>
 
 <script>
   var busqueda;
   var infoGeneral;
     $(document).ready(function () {
-      $.get("http://localhost:3000/inicio/b", function( informacion ){
-        busqueda = informacion;
-        console.log(busqueda);
-      });
       $.get("http://localhost:3000/buscador", function( informacion ){
         infoGeneral = informacion;
         console.log(infoGeneral);
