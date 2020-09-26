@@ -50,21 +50,29 @@ router.get('/comments', async function(req, res, next) {
   res.send({comments});
 });
 
-router.post('/publicaciones/', async function(req, res, next) {
+router.post('/publicaciones', async function(req, res, next) {
   var newpost = req.body;
   var posts = await getposts();
+  var comments = await getcomments();
   var post = await Posts.create({
     title: newpost.title,
     description: newpost.description,
-    iduser: newpost.iduser
+    iduser: newpost.iduser,
+    filter: newpost.filter
   });
+  var comentario = comments.filter(comentario => {
+    return(comentario.idpost == newpost.id);
+  });
+  var lengthcomments = comentario.length
+  console.log("SOS VOS MAMITA LIND?")
+  console.log(lengthcomments)
   await Usersposts.create({
     postid: post.id, 
     userid: newpost.iduser
   });
   res.send({
     status : true,
-    response : posts
+    response : lengthcomments
   });
 });
 
@@ -84,14 +92,10 @@ router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
     return(comentario.idpost == idpublicacion);
   });
   var lengthcomments = comentario.length
-  console.log("SOS REPUTO AMIGO")
-  console.log(comentario)
   res.render('publicacionusuario', {publicacion, comentario, lengthcomments})
   views++;// Si se entra a una misma publicacion se sigue sumando los views, no quiero hacer que cuando publicacion que se bloquee o algo asi
   //no hay una mejor forma mas linda sin tener qe hacerlo con el ++ y el bloqueo ese?
   //alta paja hacerlo ahora chapotear despues
-  console.log("visitas")
-  console.log(views)
 });
 
 router.post('/subircomentario', async function(req, res, next) {
@@ -173,5 +177,4 @@ module.exports = router;
 
 async function countPosts(){
   const count = await Posts.count();
-console.log(count)
 } 
