@@ -19,18 +19,22 @@
                   Filtrar por tipo
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="/foro/filter/1">Lore</a>
-                  <a class="dropdown-item" href="#">Build</a>
-                  <a class="dropdown-item" href="#">Guia</a>
+                  <a class="dropdown-item" href="/foro/foro/1/Todos">Todos</a>
+                  <a class="dropdown-item" href="/foro/filter/Lore">Lore</a>
+                  <a class="dropdown-item" href="/foro/filter/Build">Build</a>
+                  <a class="dropdown-item" href="/foro/filter/Guia">Guia</a>
                 </div>
               </div>
             </div>
             <div class="col-sm">
-              <h5 class="card-title" style="padding-left: 100px;color: white;">Build - Publicaciones</h5>
+              <h5 class="card-title" style="padding-left: 100px;color: white;">{{filter}} - Publicaciones</h5>
             </div>
           </div>
         </div>
         <div id="publicaciones">
+          {{#unless publications}}
+            <h1 style="text-align: center; margin-top: 20px">No hay publicaciones disponibles</h1>
+          {{/unless}}
           {{#each publications}}
           <a class="btn btn-light" href="/foro/irpublicacion/{{id}}"
             style="width: 1000px;background-color: #343a40;color: white">

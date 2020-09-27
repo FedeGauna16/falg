@@ -98,6 +98,15 @@ router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   //alta paja hacerlo ahora chapotear despues
 });
 
+router.get('/filter/:filter', async function(req, res, next) {
+  var posts = await getposts();
+  var filter = req.params.filter;
+  var publications = posts.filter(publication => {
+    return(publication.filter == filter);
+  });
+  res.render('foro', {publications, filter})
+});
+
 router.post('/subircomentario', async function(req, res, next) {
   var newcomment = req.body;
   var comment = await Comments.create({ 
@@ -163,9 +172,12 @@ router.get('/adddislikecomment/:dislikecomment', async function(req, res, next) 
   res.redirect(req.get('referer'));
 });
 
-router.get('/foro/:idPage', async function(req, res, next) {
+router.get('/foro/:idPage/:all', async function(req, res, next) {
+  var filter = req.params.all
+  console.log("OSO YOHGUI?")
+  console.log(filter)
   const publications = await getposts();
-  res.render('foro', {publications})
+  res.render('foro', {publications, filter})
 });
 
   router.get('/crearpublicacion', async function(req, res, next) {
