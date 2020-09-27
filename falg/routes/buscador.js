@@ -4,9 +4,10 @@ var busqueda = [];
 const { render, response } = require('../app');
 const db = require("../models");
 const InfoPartidas= db.infoPartidas;
+const Clases = db.clases;
 
 router.get('/a',async function(req, res, next) {
-  let resultados = await InfoPartidas.findAll();
+  let resultados = [await InfoPartidas.findAll(), await Clases.findAll()];
   res.send(resultados);
 });
 

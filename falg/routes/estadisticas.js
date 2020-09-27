@@ -3,7 +3,7 @@ var router = express.Router();
 //var infoEstadisticas = require('../public/html/estadisticas/estadisticas.json')
 const { render, response } = require('../app');
 const db = require("../models");
-const InfoPartidas= db.infoPartidas;
+const InfoPartidas = db.infoPartidas;
 const Clases = db.clases;
 const Jugadores = db.jugadores;
 
