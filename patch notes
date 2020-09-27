@@ -14,6 +14,8 @@ IMPORTANTE 6: se esta agregando la conexion con la bd, por lo que es posible que
 
 IMPORTANTE 7: VERIFACION DE TODOS LOS DATOS PUESTOS O INGRESADOS
 
+IMPORTANTE 8: FAQ Y SOPORTE SE FUSIONARON EN UNO SOLO
+
 https://mdbootstrap.com/docs/jquery/navigation/footer/,
 
 --general--
@@ -40,15 +42,12 @@ inicio
 -crear alguna api para el inicio
 
 foro
--crear api + html que permita dar like, y que pueda enviarle al sv los datos de los likes totales, la cantidad de mensajes, y las visitas. Todos esos datos mostrarlos tanto en el foro (ya tienen su html hecho, solo reemplazar los datos con la api) como en el perfil.
--crear api que permita filtrar y mostrar el tipo de publicacion elegido (el tipo de publicacion se establece al crear la publicacion)
 -corregir el icono del "+", colocarlo a la dercha de la palabra "Crear Publicación"
--Crear api que muestre en tiempo real cuales son las publicaciones mas valoradas o las mas recientes(el html es el de "publicaciones recientes", a la derecha del foro y abajo de "crear publicacion".
--Crear api o html (no se cual será) para la cambiar de página en el foro (el html ya está creado abajo de todo) (me refiero a la seccion en donde tocas en un numero de pagina y te lleva a esa pagina)
+-Crear api que muestre en tiempo real cuales son las publicaciones mas valoradas o las mas recientes(filtrar por fecha de creacion de la cuenta, de mas reciente)
+-Crear api para la cambiar de página en el foro (el html ya está creado abajo de todo) (me refiero a la seccion en donde tocas en un numero de pagina y te lleva a esa pagina)
 
 foro - crear publicacion
 -Agregar a la api ya hecha la posibilidad de meter imagenes
--agregar a la api ya hecha el meter un tipo de filtro para la publicacion, para que despues en el foro se pueda filtrar por tipo.
 
 foro - publicacion usuario
 (no me lo toquen qe lo estoy haciendo yo)
@@ -62,14 +61,10 @@ buscador
 estadisticas
 -esta roto en alguna parte, es de fede
 
-ayuda - soporte
+ayuda - soporte - faq
 **-Ponerlo lindo y ordenado x2
+¨Tiene que hacerse* -crear algun boton o algo que referencie a generar un ticket para una pregunta especifica
 
 ayuda - generar reporte
 GENERAR REPORTE AHORA ES PARTE DE SOPORTE
 -Agregar a la api la posibilidad de adjuntar una imagen y guardarla en la tabla de tickets, junto a su tema
-
-ayuda-faq
-*En proceso y casi terminado* -sacar los botones de leer mas, y agregar el texto completo de cada respuesta en la misma pagina.
-¨Tiene que hacerse* -crear algun boton o algo que referencie a generar un ticket para una pregunta especifica
--Ponerlo lindo y ordenado x2
