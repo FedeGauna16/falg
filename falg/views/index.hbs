@@ -62,14 +62,14 @@
       }else{
         console.log("soy puto");
       }
-    });*/
+    });
     $.get("http://localhost:3000/users", function (informacion) {
       cuentas = informacion;
     });
     $('#buscador').on('submit', function (event) {
       event.preventDefault();
       //console.log($("#buscar").val().toLowerCase());
-      /*           location.href = "./buscador.html";*/
+                location.href = "./buscador.html";
       $.ajax({
         url: 'http://localhost:3000/inicio',
         type: 'POST',
@@ -81,7 +81,7 @@
           //location.reload();
         }
       });
-    });
+    });*/
   });
 
 /*HOLA MIRA ESTO IBA EN EL NAVBAR, HASTA QUE NO ESTE TERMINADO NO SE PONE

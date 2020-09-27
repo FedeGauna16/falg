@@ -3,15 +3,15 @@
   <div class="titulobuscador" style="margin-top: 50px;">
     <h3>Buscar jugador</h3>
   </div>
-  <div class="buscador" id="buscador" style="
+  <div class="buscador" id="buscadorjugador" style="
   display: flex; 
   position: relative; 
   width: auto; 
   padding-right: 15px; 
   padding-left: 0px;">
     <form class="col-5">
-      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" id="buscar" aria-label="Search">
-      <button class="boton" type="submit" href="http://localhost:3000/index/buscador" id="botonbuscar" style="
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" id="buscarjugador" aria-label="Search">
+      <button class="boton" type="submit" id="botonbuscar" style="
       margin-top: 10px;
       display: inline-block;
       font-weight: 500;
@@ -147,9 +147,7 @@
 <script>
     var partidas = []
     var partidasBuscadas = []
-    /*var jugadorUno = []
-    var jugadorDos = []
-    var y = [];*/
+
     function mostrarPartida(partida) {
       $("#game").append(
           ' <div class="fila" style="' +
@@ -309,81 +307,11 @@
           '   </div> ' +
           ' </div>'
         );
-        
-    /*
-      $("#game").append(
-        ' <div class="fila">' +
-          if(partida.jugador == 1){
- 
-          } +
-        ' </div>'
-      );
-
-      if(partida.jugador == 1){
-        $("#game").append(
-        ' <div class="fila">' +
-        '  <div class="columna-1-1"> ' +
-        '     <div class="item"><img src= "' + partida.item1 + '" width="40" height="40"></div>' +
-        '     <div class="item"><img src= "' + partida.item2 + '" width="40" height="40"></div>' +
-        '     <div class="item"><img src= "' + partida.item3 + '" width="40" height="40"></div>' +
-        '     <div class="item"><img src= "' + partida.item4 + '" width="40" height="40"></div>' +
-        '     <div class="item"><img src= "' + partida.item5 + '" width="40" height="40"></div>' +
-        '     <div class="item"><img src= "' + partida.item6 + '" width="40" height="40"></div>' +
-        '   </div> ' +
-        '   <div class="columna-2"><img src= "' + partida.iconClase + '" width="40" height="40"></div>' +
-        '   <div class="nombre">' + partida.nombre + '</div>' +
-        '   <div class="vs">VS</div>' +
-        ' </div>'
-        );
-      }
-      if(partida.jugador == 2){
-        $("#game").append(
-        ' <div class="fila">' +
-        '   <div class="nombre-2">' + partida.nombre + '</div>' +
-        '   <div class="columna-2"><img src= "' + partida.iconClase + '" width="40" height="40"></div>' +
-        '   <div class="columna-1-2"> ' +
-        '     <div class="item"><img src= "' + partida.item1 + '" width="40" height="40"></div>' +
-        '     <div class="item"><img src= "' + partida.item2 + '" width="40" height="40"></div>' +
-        '     <div class="item"><img src= "' + partida.item3 + '" width="40" height="40"></div>' +
-        '     <div class="item"><img src= "' + partida.item4 + '" width="40" height="40"></div>' +
-        '     <div class="item"><img src= "' + partida.item5 + '" width="40" height="40"></div>' +
-        '     <div class="item"><img src= "' + partida.item6 + '" width="40" height="40"></div>' +
-        '   </div> ' +
-        ' </div>' 
-        );
-      }
-      if(uno.idPartida == contador && dos.idPartida == contador){
-        $("#game").append(
-          ' <div class="fila">' +
-          '  <div class="columna-1-1"> ' +
-          '     <div class="item"><img src= "' + uno.item1 + '" width="40" height="40"></div>' +
-          '     <div class="item"><img src= "' + uno.item2 + '" width="40" height="40"></div>' +
-          '     <div class="item"><img src= "' + uno.item3 + '" width="40" height="40"></div>' +
-          '     <div class="item"><img src= "' + uno.item4 + '" width="40" height="40"></div>' +
-          '     <div class="item"><img src= "' + uno.item5 + '" width="40" height="40"></div>' +
-          '     <div class="item"><img src= "' + uno.item6 + '" width="40" height="40"></div>' +
-          '   </div> ' +
-          '   <div class="columna-2"><img src= "' + uno.iconClase + '" width="40" height="40"></div>' +
-          '   <div class="nombre">' + uno.nombre + '</div>' +
-          '   <div class="vs">VS</div>' +
-          '   <div class="nombre-2">' + dos.nombre + '</div>' +
-          '    <div class="columna-2"><img src= "' + dos.iconClase + '" width="40" height="40"></div>' +
-          '   <div class="columna-1-2"> ' +
-          '     <div class="item"><img src= "' + dos.item1 + '" width="40" height="40"></div>' +
-          '     <div class="item"><img src= "' + dos.item2 + '" width="40" height="40"></div>' +
-          '     <div class="item"><img src= "' + dos.item3 + '" width="40" height="40"></div>' +
-          '     <div class="item"><img src= "' + dos.item4 + '" width="40" height="40"></div>' +
-          '     <div class="item"><img src= "' + dos.item5 + '" width="40" height="40"></div>' +
-          '     <div class="item"><img src= "' + dos.item6 + '" width="40" height="40"></div>' +
-          '   </div> ' +
-          ' </div>'
-        );
-      }*/
     }
 
     function verificarNombre(x) {
     //  console.log(x.response);
-      return (x.response.some(_x => _x.nombreUno == $("#buscar").val().toLowerCase() || _x.nombreDos == $("#buscar").val().toLowerCase()));
+      return (x.response.some(_x => _x.nombreUno == $("#buscarjugador").val().toLowerCase() || _x.nombreDos == $("#buscarjugador").val().toLowerCase()));
     }
 
     function filtrar(x) {
@@ -400,11 +328,11 @@
 
     $(document).ready(function () {
 
-      $('#buscador').on('submit', function (event) {
+      $('#buscadorjugador').on('submit', function (event) {
         event.preventDefault();
        // console.log($("#buscar").val().toLowerCase());
         partidasBuscadas = partidas.response.filter(partida =>
-          partida.nombreUno == $("#buscar").val().toLowerCase() || partida.nombreDos == $("#buscar").val().toLowerCase()
+          partida.nombreUno == $("#buscarjugador").val().toLowerCase() || partida.nombreDos == $("#buscarjugador").val().toLowerCase()
         );
         //console.log(partidasBuscadas);
         if (verificarNombre(partidas) == false) {
