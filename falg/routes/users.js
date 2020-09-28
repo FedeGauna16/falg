@@ -129,6 +129,21 @@ router.post('/', async function(req, res, next) {
   });
 });
 
+router.put('/changePass/:userid', async function (req, res, next) {
+  var userid = req.params.userid;
+  var newpass = req.body.newPassword
+  await Usuarios.update({
+    password: newpass,
+  }, {
+    where: {
+      id: userid
+    }
+  });
+  res.send({
+    status : true
+  });
+});
+
 router.get('/registro', function(req, res, next) {
   res.render('registro')
 });

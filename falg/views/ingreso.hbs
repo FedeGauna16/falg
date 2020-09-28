@@ -47,9 +47,9 @@
           <label for="exampleInputPassword1">Correo electrónico</label>
           <input type="text" class="form-control" id="inputMail" placeholder="ejemplo@hotmail.com" />
           <label for="exampleInputPassword1">Nueva contraseña</label>
-          <input type="password" class="form-control" id="inputContra" placeholder="Contraseña nueva" />
+          <input type="password" class="form-control" id="inputPass" placeholder="Contraseña nueva" />
           <label for="exampleInputPassword1">Confirmar contraseña</label>
-          <input type="password" class="form-control" id="inputContra" placeholder="Confirmar contraseña" />
+          <input type="password" class="form-control" id="inputNewPass" placeholder="Confirmar contraseña" />
         </div>
       </div>
       <div class="modal-footer">
@@ -72,31 +72,18 @@
     });
     $("#ingreso").on("submit", function (event) {
       event.preventDefault();
-      cuentas.forEach(function (cuenta) {
-        if (cuenta.email == $("#correo").val()) {
-          usuarioid = cuenta.id;
-        }
-        else {
-          alert("El correo ingresado no existe");
-          return 0;
-        }
-      });
-      cuentas.forEach(function (cuenta) {
-        if (cuenta.password == $("#contraseña").val()) {
-          //poner aca un append que agregue como un tick verde para indicar que se ingreso la contra y el correo bien HOLA SOY YO MISMO DEL FUTURO ALTERNO
-          // ESTO YA ESTA PUESTO EN CREAR LAPUBLICACION, ROBAR DE AHI EL TICK VERDE Y GANAS
-          usuarioid = cuenta.id;
-        }
-        else {
-          alert("La contraseña ingresada no existe");
-          return 0;
-        }
-      });
+      var iduser = cuentas.find((cuenta) => {
+        return cuenta.email == $("#correo").val(), cuenta.password == $("#contraseña").val();
+      })
+      if(!iduser) {
+        alert("EL usuario no existe");
+        return 0;
+      }
       $.ajax({
         url: "http://localhost:3000/users/login",
         type: "PUT",
         data: {
-          usuarioid: usuarioid,
+          usuarioid: iduser.id,
         },
         success: function (result) {
           alert("Ingreso correcto");
@@ -106,22 +93,23 @@
     });
     $("#modalBotonSalvar").on("click", function (event) {//cambio de contraseña
       event.preventDefault();
-      var users = cuentas.usuarios;
+      var users = cuentas;
       var usuarioIdentificado = users.find((user) => {
-        return user.correo == $("#inputMail").val();;
+        return user.email == $("#inputMail").val();
       });
       if (!usuarioIdentificado) {
         alert("El correo ingresado no existe");
         return 0;
       }
       $.ajax({
-        url: "http://localhost:3000/users/" + usuarioIdentificado.id,
+        url: "http://localhost:3000/users/changePass/" + usuarioIdentificado.id,
         type: "PUT",
         data: {
-          newPassword: $("#inputContra").val(),
+          newPassword: $("#inputPass").val()
         },
         success: function (result) {
           alert("Tu contraseña fue cambiada con exito");
+          location.reload()
         },
       });
     });
