@@ -53,20 +53,20 @@
   </div>
 <script>
   $(document).ready(function () {
-    $.get("http://localhost:3000/users", function (informacion) {
-      cuenta = informacion;
-    });
-    var emailuser = cuentas.find((cuenta) => {
-      return cuenta.email == $("#email").val()
-    })
-    var nameuser = cuentas.find((cuenta) => {
-      return cuenta.name == $("#name").val()
-    })
-    if(emailuser || nameuser) {
-      alert("El email o nombre de usuario introducido ya se encuentra registrado");
-      return 0;
-    }
+    $.get("http://localhost:3000/users/", function (informacion) {
+      cuentas = informacion.cuentas
+      });
     $('#registro').on('submit', function (event) {
+      var emailuser = cuentas.find((cuenta) => {
+        return cuenta.email == $("#email").val()
+      })
+      var nameuser = cuentas.find((cuenta) => {
+        return cuenta.name == $("#name").val()
+      })
+      if(emailuser || nameuser) {
+        alert("El email o nombre de usuario introducido ya se encuentra registrado");
+        return 0;
+      }
       event.preventDefault();
       if ($("#name").val() == 0 || $("#password").val() == 0 || $("#email").val() == 0 || $("#country").val() == 0 || $("#gender").val() == 0 || $("#age").val() == 0) {
         alert("Uno de los campos esta vacio");
