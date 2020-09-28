@@ -296,17 +296,17 @@
       function mostrarUsers(user) {
         console.log(user);
         $("#perfiles").append(
-            <div class = "cuadro" style="display: flex; margin: 20px; height: 300px; width: 600px; border: 3px solid transparent; border-color: rgba(82, 80, 80, 0.658); background-color: rgba(82, 80, 80, 0.658); border-radius: 10px; margin-top: 50px;">
-              <div class = "imagen" style="background-color:  red; color: yellow; text-align: center; width: 200px; height: 200px; margin-left: 15px; margin-top: 15px;"></div> 
-              <div class = "info" style = "background-color: green; display: block; width: 400px;">
-                <div class = "nombre" style="background-color: yellow; color: yellow; text-align: center; width: auto; height: 40px;"></div>
-                <div class = "email" style="background-color: rgb(0, 183, 255); color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;"></div>
-                <div class = "country" style="background-color: rgb(255, 0, 191); color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;"></div>
-                <div class = "sex" style="background-color: rgb(0, 38, 255); color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;"></div>
-                <div class = "age" style="background-color: rgb(0, 8, 200); color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;"></div>
-                <div class = "description" style=" background-color: rgb(255, 153, 0); color: yellow; text-align: left; width: auto; height: auto; margin-top: 5px;"></div>
-              </div>
-            </div>
+            '<div class = "cuadro" style="display: flex; margin: 20px; height: 300px; width: 500px; border: 3px solid transparent; border-color: rgba(82, 80, 80, 0.658); background-color: rgba(82, 80, 80, 0.658); border-radius: 10px; margin-top: 50px;">'+
+            '  <div class = "imagen" style="color: yellow; text-align: center; width: 200px; height: 200px; margin-left: 15px; margin-top: 40px;"><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTyUboQb1AGwobdaLbmXP6eBjZBNMmGWZETDA&usqp=CAU" width="200px" height="200px"></div> '+
+            '  <div class = "info" style = "display: block; width: 400px; margin-left: 15px;">'+
+            '    <div class = "nombre" style="color: yellow; text-align: center; width: auto; height: 40px; font-size: 30px;">'+ user.name +'</div>'+
+            '    <div class = "email" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 8px;">Email:  '+ user.email +'</div>'+
+            '    <div class = "country" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;">País:  '+ user.country +'</div>'+
+            '    <div class = "sex" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;">Sexo:  '+ user.sex +'</div>'+
+            '   <div class = "age" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;">Edad:  '+ user.age +'</div>'+
+            '    <div class = "description" style="color: yellow; text-align: left; width: auto; height: auto; margin-top: 5px;">Descripción:  '+ user.description +'</div>'+
+            '  </div>'+
+            '</div>'
         );
       }
       $.get("http://localhost:3000/buscador/b", function( informacion ){
