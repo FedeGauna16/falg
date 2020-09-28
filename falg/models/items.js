@@ -27,7 +27,7 @@ module.exports = (sequelize, Sequelize) => {
         cdr: {
             type : Sequelize.INTEGER
         },
-        descripcion: {
+        pasiva: {
             type : Sequelize.TEXT
         }
     });
