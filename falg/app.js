@@ -14,6 +14,7 @@ var ticketsRouter = require('./routes/tickets');
 var estadisticasRouter = require('./routes/estadisticas');
 var foroRouter = require('./routes/foro');
 var buscadorRouter = require('./routes/buscador');
+var itemsRouter = require('./routes/items');
 var app = express();
 
 app.use(cors());
@@ -39,6 +40,7 @@ app.use('/tickets', ticketsRouter);
 app.use('/estadisticas', estadisticasRouter);
 app.use('/foro', foroRouter);
 app.use('/buscador', buscadorRouter);
+app.use('/items', itemsRouter);
 
 
  

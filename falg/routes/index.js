@@ -51,4 +51,8 @@ router.get('/estadisticas', function(req, res, next) {
 router.get('/buscador', function(req, res, next) {
   res.render('buscador')
 });
+
+router.get('/items', function(req, res, next) {
+  res.render('items')
+});
 module.exports = router;
