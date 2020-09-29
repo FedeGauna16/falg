@@ -17,10 +17,12 @@ exports.lengthcommentspost = async (idpost) => {
         idpost: idpost
         }
     });
-    console.log("SOS UN REH IJO DE RE MIL PUTA PELTODUO DE MRIDS")
+    /*
+    console.log("pusiste letras de mas demás. perdonate osea disculpame osea disculpate conmigo.")
     console.log(commentpost)
     var lengthcommentpost = commentpost.length
     console.log("MOSOSA :CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC")
     console.log(lengthcommentpost)
     return lengthcommentpost;
+    */
 };

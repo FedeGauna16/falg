@@ -150,6 +150,7 @@ router.get('/addlikepost/:like/:iduser', async function(req, res, next) {
   }
   else{
     userlike.increment("likes")
+    userlike.increment("xp", {by: 10})
     userbannedlike.push(iduser)
     res.redirect(req.get('referer'));
   }
@@ -163,6 +164,7 @@ router.get('/adddislikepost/:dislike/:iduser', async function(req, res, next) {
   var userIndex = userbanneddislike.indexOf("iduser")
   if(userbanneddislike[0] == iduser){
     userdislike.decrement("dislikes")
+    userdislike.decrement("xp", {by: 10})
     userbanneddislike.splice(userIndex,1)
     res.redirect(req.get('referer'));
   }
@@ -186,6 +188,10 @@ router.get('/addlikecomment/:likecomment', async function(req, res, next) {
   else{
     userbannedlikecomment.push(userid.id)
     likecomment.increment("likes")
+    console.log("MOMOSAAAAAAAAAAAAAAAAA MAMA CHANGOI")
+   // userid.increment("level")
+    console.log(userid)
+    console.log(userid.level)
     res.redirect(req.get('referer'))
   }
 });
@@ -203,6 +209,7 @@ router.get('/adddislikecomment/:dislikecomment', async function(req, res, next) 
   else{
     userbanneddislikecomment.push(userid.id)
     dislikecomment.increment("dislikes")
+    dislikecomment.decrement("xp", {by: 10})
     res.redirect(req.get('referer'))
   }
 });
@@ -213,7 +220,6 @@ router.get('/foro/:idPage/:all', async function(req, res, next) {
   var recentpublications = await getrecentposts();
   res.render('foro', {publications, recentpublications, filter})
 });
-
   router.get('/crearpublicacion', async function(req, res, next) {
     await countPosts()
   res.render('crearpublicacion')

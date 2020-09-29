@@ -13,7 +13,8 @@ module.exports = (sequelize, Sequelize) => {
         sex: Sequelize.STRING,
         age: Sequelize.INTEGER,
         description: Sequelize.STRING,
-        connect: Sequelize.BOOLEAN
+        connect: Sequelize.BOOLEAN,
+        level: Sequelize.INTEGER
     }
     );
     return Users;

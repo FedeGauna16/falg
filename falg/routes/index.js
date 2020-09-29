@@ -2,18 +2,14 @@ var express = require('express');
 var router = express.Router();
 const { render, response } = require('../app');
 
-router.get('/', function(req, res, next) {
-   res.render("hola");
-});
-
-router.get('/asd', function(req, res, next) {
-  var datos = {
-    nombre: "silvio",
-    apellido: "erick"
-  }
-  res.render('publicacionusuario',{
-     datos
-  });
+router.get('/changa', async function(req, res, next) {
+  var tablas = require("../models");
+  await tablas.Usersposts.drop()
+  await tablas.Posts.drop()
+  await tablas.Userscomments.drop()
+  await tablas.Users.drop()
+  await tablas.Comments.drop()
+  res.send("se elimino todo carajo");
 });
 
 router.get('/index', function(req, res, next) {
