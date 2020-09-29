@@ -19,11 +19,6 @@ registro
 perfil
 -hay que meter todos los datos del perfil en la bd para usarlos al momento de mostrar el perfil como el nivel, las hs y eso
 
-inicio
--diseñar algo para poner en el inicio
--poner algo en el incio esta re vacio
--crear alguna api para el inicio
-
 foro
 -Crear api para la cambiar de página en el foro (el html ya está creado abajo de todo) (me refiero a la seccion en donde tocas en un numero de pagina y te lleva a esa pagina)
 -arreglar el lengthcomments (estoy esperando a manu), el visitas tmaiben
@@ -33,20 +28,11 @@ foro - crear publicacion
 -Agregar a la api ya hecha la posibilidad de meter imagenes
 -las imagenes se tienen que agregar por link que sino es re jodido
 
-foro - publicacion usuario
-(no me lo toquen qe lo estoy haciendo yo)
--meter la fecha de creacion de la publicacion
--meter la fecha de creacion del comentario
-
 buscador
 -ni idea
 
 estadisticas
 -ni idea x2
 
-ayuda - soporte - faq
-**-Ponerlo lindo y ordenado
-
 ayuda - generar reporte
-GENERAR REPORTE AHORA ES PARTE DE SOPORTE
 -Agregar a la api la posibilidad de adjuntar una imagen y guardarla en la tabla de tickets, junto a su tema
