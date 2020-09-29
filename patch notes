@@ -31,6 +31,7 @@ foro
 -metes un comentario largo y se rompe
 -el like no empieza desde 0 empieza en NULL
 -en el foro en los datos de la publicacion no se indica cuantos comentarios tiene. las visitas andan para el culo mentira.
+-cuando getteas los comentarios no tiene id de quien lo creo
 
 foro - crear publicacion
 -Agregar a la api ya hecha la posibilidad de meter imagenes
