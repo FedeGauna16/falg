@@ -73,11 +73,13 @@
           title: $("#titulo").val(),
           description: $("#descripcion").val(),
           iduser : $("#iduser").text(),
-          filter: $("#filter").val()
+          filter: $("#filter").val(),
+          likes: 0,
+          dislikes: 0
         },
         success: function (result) {
           alert("Publicacion creada correctamente!");
-          location.href = "http://localhost:3000/foro/foro/1/Todos" + lengthcomments;
+          location.href = "http://localhost:3000/foro/foro/1/Todos"
         }
       });
     });

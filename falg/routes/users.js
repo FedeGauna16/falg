@@ -5,17 +5,6 @@ var tablas = require("../models");
 var Usuarios = tablas.Users;
 var Reportes = tablas.Reports;
 var datoslogin = "";
-/*async function usuarioConectado(){
-  return await Usuarios.findOne(
-    {
-      raw: true,
-      nest: true,
-      where: {
-        id: idusuario
-      }
-    }
-  )
-}*/ //creo que ya no lo uso
 
 async function getcuentas(){
   var cuentas = await Usuarios.findAll({
@@ -25,24 +14,12 @@ async function getcuentas(){
   return cuentas;
 }
 
-/*async function getuserlogged(){ //aca
-  await Usuarios.findOne(
-    {
-      raw: true,
-      nest: true,
-      where: {
-        id: datoslogin.usuarioid
-      }
-    }
-  )
-}*/
-
 router.get('/', async function(req, res, next) {
   var cuentas = await getcuentas();
   res.send({cuentas});
 });
 
-router.get('/logueado', function(req, res, next) {// este se sigue usando??
+router.get('/logueado', function(req, res, next) {
   res.send(
     {
       status: true,
@@ -67,7 +44,7 @@ router.put('/login', async function(req, res, next) {
     where: {
       id: datoslogin.usuarioid
     }
-  });// acan o seria mejor unificar estos dos para que cuando encuentre al usuario se modifique su estado de conectado y se guarde la id?
+  });
   req.app.locals.userlogged = await Usuarios.findOne(
     {
       raw: true,
@@ -95,7 +72,7 @@ router.put('/perfil', async function (req, res, next) {
     where: {
       connect: 1
     }
-  }); // arriba tengo creada una funcion para el usuarios.findone pero no me anduvo cuando lo iguale al coso este
+  });
   req.app.locals.userlogged = await Usuarios.findOne(
     {
       raw: true,

@@ -8,7 +8,7 @@
       </h1>
       <div class="row">
         <div class="col">
-          <h4 id="pdescripcion">
+          <h4 id="pdescripcion" style="word-break:break-all">
             {{publicacion.description}}
           </h4>
         </div>
@@ -31,8 +31,8 @@
               <a href="#!" class="green-text">
                 <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>{{publicacion.user.name}}</h6>
               </a>
-              <p class="font-weight-normal">Seguidores: </p>
-              <p class="font-weight-normal">Likes: </p>
+              <p class="font-weight-normal">Nivel: </p>
+              <p class="font-weight-normal">Publicaciones totales: </p>
               <a class="btn btn-success" href="/users/perfil/{{publicacion.user.id}}">Ver perfil</a>
             </div>
           </div>
@@ -43,12 +43,16 @@
 
   <section class="my-5" style="background-color: #343a40; margin-left: 100px;width: 1700px">
     <div class="row">
-      <div class="card-header border-0 font-weight-bold" style="margin-left: 5px;">
-        {{lengthcomments}} Comentarios
+      <div class="card-header border-0 font-weight-bold" style="padding-left: 25px;">
+        {{lengthcomments}} Comentarios | Fecha de creacion de la publicación: {{converter publicacion.createdAt}} 
       </div>
-      <div class="col">
+      {{#unless userlogged}}
+          <h2 style="margin-left: 270px">Debes iniciar sesión para ver los comentarios y publicar uno.</h2>
+        {{/unless}}
+      {{#if userlogged}}
+      <div class="col" style="padding-left: 260px;">
         <div class="row">
-          <div class="col" style="margin-left: 1360px">
+          <div class="col" style="padding-left: 750px">
             <a class="btn btn-primary" type="button" href="http://localhost:3000/foro/addlikepost/{{publicacion.id}}/{{userlogged.id}}" style="width: 70px">
               <div class="row">
                 <div class="col">
@@ -64,7 +68,7 @@
               </div>
             </a>
           </div>
-          <div class="col" style="margin-right: 40px;">
+          <div class="col" style="margin-right: 50px;">
             <a class="btn btn-danger" type="button" href="http://localhost:3000/foro/adddislikepost/{{publicacion.id}}/{{userlogged.id}}" style="margin-bottom: 5px;width: 70px">
               <div class="row">
                 <div class="col">
@@ -89,7 +93,7 @@
     </h4>
     {{/unless}}
     <div class="row">
-      <div class="form-group mt-4" style="margin-left: 20px;">
+      <div class="form-group mt-4" style="margin-left: 20px;">  
         <label for="quickReplyFormComment">Tu comentario</label>
         <textarea class="form-control" id="cuadrocomentario" rows="2"
           style="width: 1690px;background-color: rgb(36, 36, 36);color:white"></textarea>
@@ -106,7 +110,7 @@
         {{#each comentario}}
         <p id="comment{{id}}" hidden>{{this.id}}</p>
         <div id="comentariosusuarios" class="row"
-          style="margin-top: 10px;margin-bottom: 10px;margin-left: 30px;width: 825px;background-color: rgb(36, 36, 36)">
+          style="margin-top: 10px;margin-bottom: 10px;margin-left: 30px;width: 825px;background-color: rgb(36, 36, 36);max-width: 825px;">
           <div class="col">
             <img class="card" alt="Generic placeholder image" src="/imagenes/foro/Captura.PNGyiyuiuy.PNG"
               style="width: 150px;">
@@ -114,9 +118,11 @@
           <div class="col" style="margin-right: 500px;">
             <div class="media-body text-center text-md-left ml-md-3 ml-0">
               <h5 class="font-weight-bold mt-0">
-                <a id="publicacion">
+                <a id="publicacion" >
                   <a style="color: rgb(0, 110, 255);" href="/users/perfil/{{user.id}}"> {{user.name}}</a>
-                  <h4>{{this.comment}}</h4>
+                  <div style="width: 500px;">
+                    <h4 style="word-break:break-all">{{this.comment}}</h4>
+                  </div>
                 </a>
                 <a class="pull-right" style="mar">
                   <i class="fas fa-reply"></i>
@@ -165,6 +171,7 @@
         </div>
         {{/each}}
       </div>
+      {{/if}}
       <!--<div class="row">
         <nav class="d-flex justify-content-center mt-5" style="margin-left: 300px;">
           <ul class="pagination pg-blue mb-0">

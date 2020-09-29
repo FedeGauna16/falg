@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cors = require('cors')
 var exphbs  = require('express-handlebars');
 const db = require("./models"); 
-
 var inicioRouter = require('./routes/inicio');
 var indexRouter = require('./routes/index');
 var buscadorRouter = require('./routes/buscador');
