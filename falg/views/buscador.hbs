@@ -309,6 +309,19 @@
             '</div>'
         );
       }
+      function filtrarPosts(post) {
+        console.log(post.title);
+        return (post.title.toLowerCase() == busqueda);
+      }
+      function mostrarPosts(post) {
+        console.log(post);
+        $("#publicaciones").append(
+            '<div class = "cuadro" style="display: block; margin: 20px; height: 200px; width: 600px; border: 3px solid transparent; border-color: rgba(82, 80, 80, 0.658); background-color: rgba(82, 80, 80, 0.658); border-radius: 10px; margin-top: 50px;">'+
+            '  <div class = "titulo" style="color: yellow; text-align: left; width: 590px; height: 40px; margin-top: 10px; margin-left: 10px; font-size: 30px;">'+ post.title +'</div> '+
+            '  <div class = "descripcion" style="color: yellow; text-align: left; width: 590px; height: 130px; margin-top: 10px; margin-left: 10px; font-size: 20px;">'+ post.description +'</div>'+ 
+            '</div>'
+        );
+      }
       $.get("http://localhost:3000/buscador/b", function( informacion ){
         console.log(informacion);
         busqueda = informacion.search;
@@ -317,7 +330,7 @@
       $.get("http://localhost:3000/buscador/a", function( informacion ){
         console.log(informacion);
         var iterator = informacion.keys();
-        console.log(informacion[1]);
+        console.log(informacion[4]);
         informacion[0].map(partida =>{ 
           if(filtrarPartidas(partida)){
             mostrarPartidas(partida);
@@ -336,6 +349,11 @@
         informacion[3].map(user => { 
           if(filtrarUsers(user)){
             mostrarUsers(user);
+          }
+        });
+        informacion[4].map(post => { 
+          if(filtrarPosts(post)){
+            mostrarPosts(post);
           }
         });
       });

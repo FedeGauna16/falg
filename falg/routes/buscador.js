@@ -7,9 +7,10 @@ const InfoPartidas= db.infoPartidas;
 const Clases = db.clases;
 const Items = db.items;
 const Users = db.Users;
+const Publicacion = db.Posts;
 
 router.get('/a',async function(req, res, next) {
-  let resultados = [await InfoPartidas.findAll(), await Clases.findAll(), await Items.findAll(), await Users.findAll()];
+  let resultados = [await InfoPartidas.findAll(), await Clases.findAll(), await Items.findAll(), await Users.findAll(), await Publicacion.findAll()];
   res.send(resultados);
 });
 
