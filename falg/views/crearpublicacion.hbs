@@ -23,9 +23,9 @@
             <h6>Elige el tipo de filtro</h6>
             <select id="filter" class="custom-select">
               <option value="">Filtro...</option>
-              <option value="build">Build</option>
-              <option value="guide">Guía</option>
-              <option value="lore">Lore</option>
+              <option value="Build">Build</option>
+              <option value="Guia">Guía</option>
+              <option value="Lores">Lore</option>
             </select>
             <div class="invalid-feedback">Filtro obligatorio</div>
           </div>
@@ -67,7 +67,7 @@
         },
         success: function (result) {
           alert("Publicacion creada correctamente!");
-          location.href = "http://localhost:3000/foro/foro/1/" + lengthcomments;
+          location.href = "http://localhost:3000/foro/foro/1/Todos" + lengthcomments;
         }
       });
     });

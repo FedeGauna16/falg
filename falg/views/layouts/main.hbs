@@ -38,7 +38,7 @@
               class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:3000/foro/foro/1" style="color: white;">Foro</a>
+          <a class="nav-link" href="http://localhost:3000/foro/foro/1/Todos" style="color: white;">Foro</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://localhost:3000/index/estadisticas"  style="color: white;">Estadísticas</a>
@@ -62,18 +62,20 @@
         <li class="nav-item" id="conectado">
           <a class="nav-link" href="http://localhost:3000/users/perfil/{{userlogged.id}}" style="color: white;">Perfil</a>
         </li>
-        <li class="nav-item" style="padding-left: 450px;padding-top: 2px;">
+        <li class="nav-item" style="padding-left: 413px;padding-top: 2px;">
           <a id="cerrarsesion" href="/users/logout" class="btn btn-danger"
             style="color: white;" role="Cerrarsesion">Cerrar Sesión</a>
         </li>
         {{else}}
-        <li id="ingresar" class="nav-item" style="padding-left: 485px;padding-top: 2px;">
+
+        <li id="ingresar" class="nav-item" style="padding-left: 500px;padding-top: 2px;">
+
           <a class="btn btn-danger" style="color: white;" 
             href="http://localhost:3000/users/ingreso" role="Ingresar">Ingresar</a>
         </li>
         {{/if}}
       </ul>
-      <div class="buscador" id="buscador" style="padding-left: 50px; display: flex">
+      <div class="buscador" id="buscador" style="display: flex">
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search" id="buscar">
           <div class="filtro" style="width: auto; position: relative">
