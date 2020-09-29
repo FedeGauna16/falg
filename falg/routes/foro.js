@@ -86,7 +86,6 @@ router.post('/publicaciones', async function(req, res, next) {
     return(comentario.idpost == newpost.id);
   });
   var lengthcomments = comentario.length
-  console.log("SOS VOS MAMITA LIND?")
   console.log(lengthcomments)
   await Usersposts.create({
     postid: post.id, 
@@ -135,7 +134,9 @@ router.post('/subircomentario', async function(req, res, next) {
     nest: true,
     raw: true,
     idpost: newcomment.idpost,
-    comment: newcomment.comment
+    comment: newcomment.comment,
+    likes: 0,
+    dislikes: 0
   });
   await Userscomments.create({
     commentid: comment.id, 
@@ -146,49 +147,19 @@ router.post('/subircomentario', async function(req, res, next) {
   });
 });
 
-/*async function typediscount(idtype, typelike, table, coso){
-  likeDislike("dislike")
-
-}
-
-async function typeaddcount(idpost, typelike, table){
-  await table.update({ likes: typelike + 1 }, {
-    where: {
-      id: idpost
-    }
-  });
-}*/
-
 router.get('/addlikepost/:like/:iduser', async function(req, res, next) {
   var idpost = req.params.like
   var iduser = req.params.iduser
   var userlike = await Posts.findByPk(idpost)
   var userIndex = userbannedlike.indexOf("iduser")
-  console.log("WOWLOWLO")
-  console.log(userbannedlike)
-  console.log(userIndex)
   if(userbannedlike[0] == iduser){
-    console.log("SOS UN RE HIJO DE REMIL PUTA CHAVON")
-    //dislike(idpost, Posts)
     userlike.decrement("likes")
-    /*await Posts.update({ likes: like - 1 }, {
-      where: {
-        id: idpost
-      }
-    });*/
     userbannedlike.splice(userIndex,1)
     res.redirect(req.get('referer'));
   }
   else{
     userlike.increment("likes")
     userbannedlike.push(iduser)
-    console.log(userbannedlike)
-    //like(idpost, Posts)
-    /*await Posts.update({ likes: like + 1 }, {
-      where: {
-        id: idpost
-      }
-    });*/
     res.redirect(req.get('referer'));
   }
 });
@@ -215,29 +186,34 @@ router.get('/addlikecomment/:likecomment', async function(req, res, next) {
   var userid = req.app.locals.userlogged
   var idcomment = req.params.likecomment
   var likecomment = await Comments.findByPk(idcomment)
-  var userIndex = userbanneddislikecomment.indexOf("iduser")
-  if(userbanneddislikecomment[0] == userid.id){
+  var userIndex = userbannedlikecomment.indexOf("iduser")
+  if(userbannedlikecomment[0] == userid.id){
     likecomment.decrement("likes")
-    userbanneddislikecomment.splice(userIndex,1)
+    userbannedlikecomment.splice(userIndex,1)
     res.redirect(req.get('referer'));
   }
   else{
-    userbanneddislikecomment.push(userid.id)
+    userbannedlikecomment.push(userid.id)
     likecomment.increment("likes")
     res.redirect(req.get('referer'))
   }
 });
 
 router.get('/adddislikecomment/:dislikecomment', async function(req, res, next) {
+  var userid = req.app.locals.userlogged
   var idcomment = req.params.dislikecomment
-  var comments = await getcomments();
-  var dislikecomment = comments[idcomment - 1].dislikes;
-  await Comments.update({ dislikes: dislikecomment + 1 }, {
-    where: {
-      id: idcomment
-    }
-  });
-  res.redirect(req.get('referer'));
+  var dislikecomment = await Comments.findByPk(idcomment)
+  var userIndex = userbanneddislikecomment.indexOf("iduser")
+  if(userbanneddislikecomment[0] == userid.id){
+    dislikecomment.decrement("dislikes")
+    userbanneddislikecomment.splice(userIndex,1)
+    res.redirect(req.get('referer'));
+  }
+  else{
+    userbanneddislikecomment.push(userid.id)
+    dislikecomment.increment("dislikes")
+    res.redirect(req.get('referer'))
+  }
 });
 
 router.get('/foro/:idPage/:all', async function(req, res, next) {
