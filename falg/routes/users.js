@@ -144,6 +144,11 @@ router.put('/changePass/:userid', async function (req, res, next) {
   });
 });
 
+router.get('/perfilraronoseayuda/:coso', async function (req, res, next) {
+  var coso = req.params.coso
+  console.log(coso)
+});
+
 router.get('/registro', function(req, res, next) {
   res.render('registro')
 });

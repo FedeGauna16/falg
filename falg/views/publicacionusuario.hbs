@@ -65,7 +65,7 @@
             </a>
           </div>
           <div class="col" style="margin-right: 40px;">
-            <a class="btn btn-danger" type="button" href="http://localhost:3000/foro/adddislikepost/{{publicacion.id}}" style="margin-bottom: 5px;width: 70px">
+            <a class="btn btn-danger" type="button" href="http://localhost:3000/foro/adddislikepost/{{publicacion.id}}/{{userlogged.id}}" style="margin-bottom: 5px;width: 70px">
               <div class="row">
                 <div class="col">
                   <h5>{{publicacion.dislikes}}</h5>
@@ -124,7 +124,7 @@
                   <!--<div class="text-white">{{this.comment}} {{createdAt}}</div>-->
                   <div class="row">
                     <div class="col">
-                      <a class="btn btn-primary" type="button" href="http://localhost:3000/foro/addlikecomment/{{id}}"
+                      <a class="btn btn-primary" type="button" href="http://localhost:3000/foro/addlikecomment/{{id}}/{{userlogged.id}}"
                         style="margin-left: 450px;margin-bottom: 5px; width: 70px">
                         <div class="row">
                           <div class="col">

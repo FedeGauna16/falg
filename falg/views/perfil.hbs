@@ -64,7 +64,7 @@
             <div class="md-v-line"></div><i class="fas fa-laptop mr-4 pr-3"></i> Tiempo total pasado en el juego: 1500hs
           </li>
           <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
-            <div class="md-v-line"></div><i class="fas fa-bomb mr-5"></i> Fecha de creacion de la cuenta: 10/11/2019
+            <div class="md-v-line"></div><i class="fas fa-bomb mr-5"></i> Fecha de creacion de la cuenta: {{converter profile.createdAt}}
           </li>
           <li class="list-group-item" style="background-color: rgb(36, 36, 36);">
             <div class="md-v-line"></div><i class="fas fa-code mr-5"></i> Promedio XP por sesion: 1500xp
@@ -75,6 +75,7 @@
           <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
             <div class="md-v-line"></div><i class="fas fa-cogs mr-5"></i> K/D: 1,53
           </li>
+          <a type="button" class="btn btn-primary" href="http://localhost:3000/users/perfilraronoseayuda/{{converter profile.createdAt}}"></a>
         </div>
       </div>
     </div>

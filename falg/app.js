@@ -27,7 +27,8 @@ db.sequelize.sync();
 // motor de vista
 app.engine('hbs', exphbs({
     defaultLayout: 'main',
-    extname: '.hbs'
+    extname: '.hbs',
+    helpers: require('./config/functions')
 }));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
