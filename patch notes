@@ -32,7 +32,7 @@ foro
 -el like no empieza desde 0 empieza en NULL
 -en el foro en los datos de la publicacion no se indica cuantos comentarios tiene. las visitas andan para el culo mentira.
 -cuando getteas los comentarios no tiene id de quien lo creo
--si te metes sin estar logueado te deja igual
+-si comentas algo sin estar logueado te deja igual
 
 foro - crear publicacion
 -Agregar a la api ya hecha la posibilidad de meter imagenes
