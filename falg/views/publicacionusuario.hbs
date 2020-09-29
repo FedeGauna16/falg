@@ -64,6 +64,7 @@
               </div>
             </a>
           </div>
+          <h1>SO PTUEN DO{{userlogged.id}}</h1>
           <div class="col" style="margin-right: 40px;">
             <a class="btn btn-danger" type="button" href="http://localhost:3000/foro/adddislikepost/{{publicacion.id}}/{{userlogged.id}}" style="margin-bottom: 5px;width: 70px">
               <div class="row">
@@ -117,14 +118,13 @@
                 <a id="publicacion">
                   <a style="color: rgb(0, 110, 255);" href="/users/perfil/{{user.id}}"> {{user.name}}</a>
                   <h4>{{this.comment}}</h4>
-
                 </a>
                 <a class="pull-right" style="mar">
                   <i class="fas fa-reply"></i>
                   <!--<div class="text-white">{{this.comment}} {{createdAt}}</div>-->
                   <div class="row">
                     <div class="col">
-                      <a class="btn btn-primary" type="button" href="http://localhost:3000/foro/addlikecomment/{{id}}/{{userlogged.id}}"
+                      <a class="btn btn-primary" type="button" href="http://localhost:3000/foro/addlikecomment/{{id}}"
                         style="margin-left: 450px;margin-bottom: 5px; width: 70px">
                         <div class="row">
                           <div class="col">

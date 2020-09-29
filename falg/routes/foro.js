@@ -199,55 +199,33 @@ router.get('/adddislikepost/:dislike/:iduser', async function(req, res, next) {
   var iduser = req.params.iduser
   var userdislike = await Posts.findByPk(idpost)
   var userIndex = userbanneddislike.indexOf("iduser")
-  if(userbannedlike[0] == iduser){
-    console.log("SAPO PEPE Y LA RE OCNCHA DETU MADRE PELOTUDO TE VOY A ENCONTARAR VAS A VER CAGON")
+  if(userbanneddislike[0] == iduser){
     userdislike.decrement("dislikes")
-    //typediscount(idpost, dislike, Posts)
-    /*await Posts.update({ dislikes: dislike - 1 }, {
-      where: {
-        id: idpost
-      }
-    });*/
     userbanneddislike.splice(userIndex,1)
     res.redirect(req.get('referer'));
   }
   else{
     userdislike.increment("dislikes")
     userbanneddislike.push(iduser)
-    //typeaddcount(idpost, dislike, Posts)
-    /*await Posts.update({ dislikes: dislike + 1 }, {
-      where: {
-        id: idpostf
-      }
-    });*/
     res.redirect(req.get('referer'))
   }
 });
 
-router.get('/addlikecomment/:likecomment/:iduser', async function(req, res, next) {
+router.get('/addlikecomment/:likecomment', async function(req, res, next) {
+  var userid = req.app.locals.userlogged
   var idcomment = req.params.likecomment
-  var iduser = req.params.iduser
-  var comments = await getcomments();
-  var likecomment = comments[idcomment - 1].likes;
-  var userIndex = userbanneddislikecomment.indexOf("1")
-  if(userIndex+1 == iduser){
-    //typediscount(idcomment, likecomment, Comments)
+  var likecomment = await Comments.findByPk(idcomment)
+  var userIndex = userbanneddislikecomment.indexOf("iduser")
+  if(userbanneddislikecomment[0] == userid.id){
+    likecomment.decrement("likes")
     userbanneddislikecomment.splice(userIndex,1)
     res.redirect(req.get('referer'));
   }
   else{
-    userbanneddislikecomment.push(iduser)
-    //typeaddcount(idcomment, likecomment, Comments)
+    userbanneddislikecomment.push(userid.id)
+    likecomment.increment("likes")
     res.redirect(req.get('referer'))
   }
-
-
-  /*await Comments.update({ likes: likecomment + 1 }, {
-    where: {
-      id: idcomment
-    }
-  });
-  res.redirect(req.get('referer'));*/
 });
 
 router.get('/adddislikecomment/:dislikecomment', async function(req, res, next) {
