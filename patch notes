@@ -23,6 +23,7 @@ foro
 -Crear api para la cambiar de página en el foro (el html ya está creado abajo de todo) (me refiero a la seccion en donde tocas en un numero de pagina y te lleva a esa pagina)
 -arreglar el lengthcomments (estoy esperando a manu), el visitas tmaiben
 -crear un lengthposts igual al lenghtcomments, cuando funcione el anterior copiar y pegar.
+-podes ocmentar sin texto osea uy hijo ep uta
 
 foro - crear publicacion
 -Agregar a la api ya hecha la posibilidad de meter imagenes
