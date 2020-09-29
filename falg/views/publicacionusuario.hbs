@@ -47,8 +47,8 @@
         {{lengthcomments}} Comentarios | Fecha de creacion de la publicación: {{converter publicacion.createdAt}} 
       </div>
       {{#unless userlogged}}
-          <h2 style="margin-left: 270px">Debes iniciar sesión para ver los comentarios y publicar uno.</h2>
-        {{/unless}}
+        <h2 style="margin-left: 270px">Debes iniciar sesión para ver los comentarios y publicar uno.</h2>
+      {{/unless}}
       {{#if userlogged}}
       <div class="col" style="padding-left: 260px;">
         <div class="row">
@@ -124,13 +124,11 @@
                     <h4 style="word-break:break-all">{{this.comment}}</h4>
                   </div>
                 </a>
-                <a class="pull-right" style="mar">
-                  <i class="fas fa-reply"></i>
                   <!--<div class="text-white">{{this.comment}} {{createdAt}}</div>-->
-                  <div class="row">
-                    <div class="col">
+                  <div class="row" style="padding-left: 0;">
+                    <div class="col" >
                       <a class="btn btn-primary" type="button" href="http://localhost:3000/foro/addlikecomment/{{id}}"
-                        style="margin-left: 450px;margin-bottom: 5px; width: 70px">
+                        style="margin-bottom: 5px; width: 70px">
                         <div class="row">
                           <div class="col">
                             <h5>{{this.likes}}</h5>
@@ -145,9 +143,9 @@
                         </div>
                       </a>
                     </div>
-                    <div class="col">
+                    <div class="col" style="margin-left: 50px;">
                       <a class="btn btn-danger" type="button" href="http://localhost:3000/foro/adddislikecomment/{{id}}"
-                        style="margin-left: 470px;margin-bottom: 5px;width: 70px">
+                        style="margin-bottom: 5px;width: 70px">
                         <div class="row">
                           <div class="col">
                             <h5>{{this.dislikes}}</h5>
@@ -162,9 +160,12 @@
                         </div>
                       </a>
                     </div>
+                    <div class="col">
+                      <div class="row" style="margin-left: 210px;width: 300px;margin-top:40px">
+                        <h6>Fecha de creación del comentario: {{converter createdAt}}</h6>
+                      </div>
+                    </div>
                   </div>
-                  <!--<a id="likecomment" class="btn btn-primary btn-sm active" href="http://localhost:3000/foro/addlikecomment/{{id}}">dalelikepelotudo</a>-->
-                </a>
               </h5>
             </div>
           </div>
