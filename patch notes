@@ -26,13 +26,8 @@ inicio
 
 foro
 -Crear api para la cambiar de página en el foro (el html ya está creado abajo de todo) (me refiero a la seccion en donde tocas en un numero de pagina y te lleva a esa pagina)
--fijarse que onda con el legthcomments me dio alta pjaa mañana sigo
--fijarse bien el foro.js en busca de algo mas no se fijate mañan x2
--metes un comentario largo y se rompe
--el like no empieza desde 0 empieza en NULL
--en el foro en los datos de la publicacion no se indica cuantos comentarios tiene. las visitas andan para el culo mentira.
--cuando getteas los comentarios no tiene id de quien lo creo
--si comentas algo sin estar logueado te deja igual
+-arreglar el lengthcomments (estoy esperando a manu), el visitas tmaiben
+-crear un lengthposts igual al lenghtcomments, cuando funcione el anterior copiar y pegar.
 
 foro - crear publicacion
 -Agregar a la api ya hecha la posibilidad de meter imagenes
