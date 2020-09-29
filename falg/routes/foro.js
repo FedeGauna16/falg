@@ -29,6 +29,24 @@ async function getposts(){
   return posts;
 }
 
+async function getrecentposts(){
+  var posts = await Posts.findAll({
+    nest: true,
+    raw: true,
+    limit: 4,
+    order: [
+      ['createdAt', 'DESC']
+    ],
+    include: [
+      {
+          model: Users,
+          as: "user",
+      }
+  ]
+  });
+  return posts;
+}
+
 async function getcomments(){
   var comments = await Comments.findAll({
     nest: true,
@@ -179,10 +197,11 @@ router.get('/addlikepost/:like/:iduser', async function(req, res, next) {
 router.get('/adddislikepost/:dislike/:iduser', async function(req, res, next) {
   var idpost = req.params.dislike
   var iduser = req.params.iduser
-  var posts = await getposts();
-  var dislike = posts[idpost - 1].dislikes;
-  var userIndex = userbanneddislike.indexOf("1")
-  if(userIndex+1 == iduser){
+  var userdislike = await Posts.findByPk(idpost)
+  var userIndex = userbanneddislike.indexOf("iduser")
+  if(userbannedlike[0] == iduser){
+    console.log("SAPO PEPE Y LA RE OCNCHA DETU MADRE PELOTUDO TE VOY A ENCONTARAR VAS A VER CAGON")
+    userdislike.decrement("dislikes")
     //typediscount(idpost, dislike, Posts)
     /*await Posts.update({ dislikes: dislike - 1 }, {
       where: {
@@ -193,11 +212,12 @@ router.get('/adddislikepost/:dislike/:iduser', async function(req, res, next) {
     res.redirect(req.get('referer'));
   }
   else{
+    userdislike.increment("dislikes")
     userbanneddislike.push(iduser)
     //typeaddcount(idpost, dislike, Posts)
     /*await Posts.update({ dislikes: dislike + 1 }, {
       where: {
-        id: idpost
+        id: idpostf
       }
     });*/
     res.redirect(req.get('referer'))
@@ -244,10 +264,9 @@ router.get('/adddislikecomment/:dislikecomment', async function(req, res, next) 
 
 router.get('/foro/:idPage/:all', async function(req, res, next) {
   var filter = req.params.all
-  console.log("OSO YOHGUI?")
-  console.log(filter)
   const publications = await getposts();
-  res.render('foro', {publications, filter})
+  var recentpublications = await getrecentposts();
+  res.render('foro', {publications, recentpublications, filter})
 });
 
   router.get('/crearpublicacion', async function(req, res, next) {
