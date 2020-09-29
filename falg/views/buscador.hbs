@@ -271,7 +271,44 @@
             '  </div>'
           );
       }
-
+      function filtrarItems(item) {
+        //console.log(item.nombre.toLowerCase());
+        return (item.nombre.toLowerCase() == busqueda);
+      }
+      function mostrarItems(item) {
+        //console.log(item);
+        $("#items").append(
+            '<div class = "cuadro" style="margin: 20px; height: 300px; width: 250px; border: 3px solid transparent;  border-color: rgba(82, 80, 80, 0.658); background-color: rgba(82, 80, 80, 0.658); border-radius: 10px; display: block; margin-top: 50px;">'+
+            '    <div class = "titulocuadro" style="color: yellow; text-align: center; font-size: 20px; padding: 5px;">'+ item.nombre +'</div>'+
+            '    <div class = "imagencuadro" style="color: yellow; text-align: center; width: 150px; height: 100px; margin-left: 45px;"><img src= "' + item.imagen + '" width="100px" height="100px"></div>'+
+            '    <div class = "daño" style="color: yellow; text-align: center; width: 244px; height: 26px;">Daño:  '+ item.daño +'</div>'+
+            '    <div class = "vida" style="color: yellow; text-align: center; width: 244px; height: 26px;">Vida:  '+ item.vida +'</div>'+
+            '    <div class = "resistencia" style="color: yellow; text-align: center; width: 244px; height: 26px;">Resistencia:  '+ item.resistencia +'</div>'+
+            '    <div class = "mana" style="color: yellow; text-align: center; width: 244px; height: 26px;">Mana:  '+ item.mana +'</div>'+
+            '    <div class = "cdr" style="color: yellow; text-align: center; width: 244px; height: 26px;">CDR:  '+ item.cdr +'</div>'+
+            '</div>'
+        );
+      }
+      function filtrarUsers(user) {
+        //console.log(user.name);
+        return (user.name.toLowerCase() == busqueda);
+      }
+      function mostrarUsers(user) {
+        console.log(user);
+        $("#perfiles").append(
+            '<div class = "cuadro" style="display: flex; margin: 20px; height: 300px; width: 500px; border: 3px solid transparent; border-color: rgba(82, 80, 80, 0.658); background-color: rgba(82, 80, 80, 0.658); border-radius: 10px; margin-top: 50px;">'+
+            '  <div class = "imagen" style="color: yellow; text-align: center; width: 200px; height: 200px; margin-left: 15px; margin-top: 40px;"><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTyUboQb1AGwobdaLbmXP6eBjZBNMmGWZETDA&usqp=CAU" width="200px" height="200px"></div> '+
+            '  <div class = "info" style = "display: block; width: 400px; margin-left: 15px;">'+
+            '    <div class = "nombre" style="color: yellow; text-align: center; width: auto; height: 40px; font-size: 30px;">'+ user.name +'</div>'+
+            '    <div class = "email" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 8px;">Email:  '+ user.email +'</div>'+
+            '    <div class = "country" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;">País:  '+ user.country +'</div>'+
+            '    <div class = "sex" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;">Sexo:  '+ user.sex +'</div>'+
+            '   <div class = "age" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;">Edad:  '+ user.age +'</div>'+
+            '    <div class = "description" style="color: yellow; text-align: left; width: auto; height: auto; margin-top: 5px;">Descripción:  '+ user.description +'</div>'+
+            '  </div>'+
+            '</div>'
+        );
+      }
       $.get("http://localhost:3000/buscador/b", function( informacion ){
         console.log(informacion);
         busqueda = informacion.search;
@@ -283,14 +320,25 @@
         console.log(informacion[1]);
         informacion[0].map(partida =>{ 
           if(filtrarPartidas(partida)){
-            mostrarPartidas(partida)
+            mostrarPartidas(partida);
             }
         });
         informacion[1].map(clase => { 
           if(filtrarClases(clase)){
-            mostrarClases(clase)
+            mostrarClases(clase);
             }
         });
+        informacion[2].map(item => { 
+          if(filtrarItems(item)){
+            mostrarItems(item);
+            }
+        });
+        informacion[3].map(user => { 
+          if(filtrarUsers(user)){
+            mostrarUsers(user);
+          }
+        });
       });
+
     });
 </script>

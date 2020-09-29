@@ -48,8 +48,8 @@
       </div>
       <div class="col">
         <div class="row">
-          <div class="col">
-            <a class="btn btn-primary" type="button" href="http://localhost:3000/foro/addlikepost/{{publicacion.id}}" style="margin-left: 100px; width: 70px">
+          <div class="col" style="margin-left: 1360px">
+            <a class="btn btn-primary" type="button" href="http://localhost:3000/foro/addlikepost/{{publicacion.id}}/{{userlogged.id}}" style="width: 70px">
               <div class="row">
                 <div class="col">
                   <h5>{{publicacion.likes}}</h5>
@@ -64,8 +64,8 @@
               </div>
             </a>
           </div>
-          <div class="col">
-            <a class="btn btn-danger" type="button" href="http://localhost:3000/foro/adddislikepost/{{publicacion.id}}" style="margin-left: 600px;margin-bottom: 5px;width: 70px">
+          <div class="col" style="margin-right: 40px;">
+            <a class="btn btn-danger" type="button" href="http://localhost:3000/foro/adddislikepost/{{publicacion.id}}" style="margin-bottom: 5px;width: 70px">
               <div class="row">
                 <div class="col">
                   <h5>{{publicacion.dislikes}}</h5>

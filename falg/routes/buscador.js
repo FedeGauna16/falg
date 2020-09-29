@@ -5,9 +5,11 @@ const { render, response } = require('../app');
 const db = require("../models");
 const InfoPartidas= db.infoPartidas;
 const Clases = db.clases;
+const Items = db.items;
+const Users = db.Users;
 
 router.get('/a',async function(req, res, next) {
-  let resultados = [await InfoPartidas.findAll(), await Clases.findAll()];
+  let resultados = [await InfoPartidas.findAll(), await Clases.findAll(), await Items.findAll(), await Users.findAll()];
   res.send(resultados);
 });
 

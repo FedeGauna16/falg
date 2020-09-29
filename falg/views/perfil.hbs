@@ -136,7 +136,8 @@
         '</div>'
       );
       $("#descripcionnueva").append(
-        '<button id="aceptar" type="submit" class="btn btn-primary" style="margin-top: 280px;">Aceptar</button>'
+        '<button id="aceptar" type="submit" class="btn btn-primary" style="margin-top: 50px;">Aceptar</button>' +
+        '<button id="aceptar" type="submit" class="btn btn-primary" style="margin-top: 50px;margin-left:5px">Cancelar</button>'
       );
       $('#aceptar').click(function () {
         event.preventDefault();
@@ -159,6 +160,9 @@
           }
         });
       });
+      $('#aceptar').click(function () {
+        location.reload();
+      })
     });
   }); 
 </script>

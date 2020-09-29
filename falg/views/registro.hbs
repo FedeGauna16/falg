@@ -52,27 +52,26 @@
         href="http://localhost:3000/users/ingreso" role="Ingresar">Ingresa ahora!</a> </h3>
   </div>
 <script>
-  var cuentas = [];
   $(document).ready(function () {
-    $.get("http://localhost:3000/foro", function (informacion) {
-      var sosa = informacion;
-      console.log(sosa[0].publicaciones);// PARA MATAR
-    });
-    $.get("http://localhost:3000/users", function (informacion) {
-      cuentas = informacion.cuentas;
-    });
+    $.get("http://localhost:3000/users/", function (informacion) {
+      cuentas = informacion.cuentas
+      });
     $('#registro').on('submit', function (event) {
+      var emailuser = cuentas.find((cuenta) => {
+        return cuenta.email == $("#email").val()
+      })
+      var nameuser = cuentas.find((cuenta) => {
+        return cuenta.name == $("#name").val()
+      })
+      if(emailuser || nameuser) {
+        alert("El email o nombre de usuario introducido ya se encuentra registrado");
+        return 0;
+      }
       event.preventDefault();
       if ($("#name").val() == 0 || $("#password").val() == 0 || $("#email").val() == 0 || $("#country").val() == 0 || $("#gender").val() == 0 || $("#age").val() == 0) {
         alert("Uno de los campos esta vacio");
         return 0;
       }
-      cuentas.forEach(function(cuenta){
-        if(cuenta.name == $("#name").val()){
-          alert("El nombre ya esta ocupado");
-          return 0;
-        }
-      });
       $.ajax({
         url: 'http://localhost:3000/users/',//si no interfiere en nada ponerle un /registry y en el users.js
         type: 'POST',
@@ -89,7 +88,6 @@
         },
         success: function (result) {
           alert("Registro correcto");
-          location.reload();
           location.href = "http://localhost:3000/users/ingreso/";
         }
       });

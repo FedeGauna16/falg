@@ -42,7 +42,7 @@ CREATE TABLE `clases` (
 
 LOCK TABLES `clases` WRITE;
 /*!40000 ALTER TABLE `clases` DISABLE KEYS */;
-INSERT INTO `clases` VALUES (1,'nombre',99,1,'C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\rakan.png',NULL,NULL);
+INSERT INTO `clases` VALUES (1,'nombre',99,1,'https://ddragon.leagueoflegends.com/cdn/10.19.1/img/champion/Karma.png',NULL,NULL);
 /*!40000 ALTER TABLE `clases` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,6 +82,50 @@ DROP TABLE IF EXISTS `infopartidas`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `infopartidas` (
   `id` int NOT NULL AUTO_INCREMENT,
+  `nombreUno` varchar(255) DEFAULT NULL,
+  `nombreDos` varchar(255) DEFAULT NULL,
+  `idClaseUno` int DEFAULT NULL,
+  `idClaseDos` int DEFAULT NULL,
+  `iconClaseUno` text,
+  `iconClaseDos` text,
+  `item1Uno` text,
+  `item1Dos` text,
+  `item2Uno` text,
+  `item2Dos` text,
+  `item3Uno` text,
+  `item3Dos` text,
+  `item4Uno` text,
+  `item4Dos` text,
+  `item5Uno` text,
+  `item5Dos` text,
+  `item6Uno` text,
+  `item6Dos` text,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `infopartidas`
+--
+
+LOCK TABLES `infopartidas` WRITE;
+/*!40000 ALTER TABLE `infopartidas` DISABLE KEYS */;
+INSERT INTO `infopartidas` VALUES (1,'manuel','manuel2',1,2,'https://ddragon.leagueoflegends.com/cdn/10.19.1/img/champion/Sett.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/champion/Thresh.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3857.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3857.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3009.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3009.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3742.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3050.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3193.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3193.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3075.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3107.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/2055.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/2055.png',NULL,NULL),(2,'manuel3','manuel4',3,4,'https://ddragon.leagueoflegends.com/cdn/10.19.1/img/champion/Karma.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/champion/Rakan.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3853.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3859.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3158.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3009.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3174.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/2065.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3504.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3050.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3222.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3222.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/2055.png','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/2055.png',NULL,NULL);
+/*!40000 ALTER TABLE `infopartidas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `infopartidasno`
+--
+
+DROP TABLE IF EXISTS `infopartidasno`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `infopartidasno` (
+  `id` int NOT NULL,
+  `idPartida` int DEFAULT NULL,
   `jugador` int DEFAULT NULL,
   `nombre` varchar(255) DEFAULT NULL,
   `idClase` int DEFAULT NULL,
@@ -95,17 +139,50 @@ CREATE TABLE `infopartidas` (
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `infopartidasno`
+--
+
+LOCK TABLES `infopartidasno` WRITE;
+/*!40000 ALTER TABLE `infopartidasno` DISABLE KEYS */;
+INSERT INTO `infopartidasno` VALUES (1,1,1,'manuel',1,'C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\lucas.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg',NULL,NULL),(2,1,2,'manuel2',2,'C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\lucas.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg',NULL,NULL),(3,2,1,'manuel3',3,'C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\lucas.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg',NULL,NULL),(4,2,2,'manuel4',4,'C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\lucas.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg',NULL,NULL);
+/*!40000 ALTER TABLE `infopartidasno` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `items`
+--
+
+DROP TABLE IF EXISTS `items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `items` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) DEFAULT NULL,
+  `imagen` text,
+  `daño` int DEFAULT NULL,
+  `vida` int DEFAULT NULL,
+  `resistencia` int DEFAULT NULL,
+  `mana` int DEFAULT NULL,
+  `cdr` int DEFAULT NULL,
+  `pasiva` text,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `infopartidas`
+-- Dumping data for table `items`
 --
 
-LOCK TABLES `infopartidas` WRITE;
-/*!40000 ALTER TABLE `infopartidas` DISABLE KEYS */;
-INSERT INTO `infopartidas` VALUES (1,1,'manuel',1,'C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\lucas.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg',NULL,NULL),(2,2,'manuel2',2,'C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\lucas.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg',NULL,NULL),(3,1,'manuel3',3,'C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\lucas.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg',NULL,NULL),(4,2,'manuel4',4,'C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\lucas.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg','C:\\Users\\Andrew\\Documents\\GitHub\\falg\\falg\\public\\imagenes\\estadisticas\\cave.jpeg',NULL,NULL);
-/*!40000 ALTER TABLE `infopartidas` ENABLE KEYS */;
+LOCK TABLES `items` WRITE;
+/*!40000 ALTER TABLE `items` DISABLE KEYS */;
+INSERT INTO `items` VALUES (1,'Grial Impio de Athene','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3174.png',30,0,30,150,10,NULL,NULL,NULL),(2,'Pebetero Ardiente','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3504.png',60,0,0,50,10,NULL,NULL,NULL),(3,'Placa del Hombre Muerto','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3742.png',25,450,60,0,0,NULL,NULL,NULL),(4,'Convergencia de Zeke','https://ddragon.leagueoflegends.com/cdn/10.19.1/img/item/3050.png',0,0,90,250,10,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `items` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -166,6 +243,32 @@ INSERT INTO `posts` VALUES (1,'hola','hola',1,1,NULL,NULL);
 UNLOCK TABLES;
 
 --
+-- Table structure for table `reports`
+--
+
+DROP TABLE IF EXISTS `reports`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `reports` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) DEFAULT NULL,
+  `iduser` int DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `reports`
+--
+
+LOCK TABLES `reports` WRITE;
+/*!40000 ALTER TABLE `reports` DISABLE KEYS */;
+/*!40000 ALTER TABLE `reports` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -185,7 +288,7 @@ CREATE TABLE `users` (
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -194,7 +297,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'manuel','123','hola@gmail.com','nigeria','hombre',99,'hola',1,NULL,NULL);
+INSERT INTO `users` VALUES (1,'manuel','123','hola@gmail.com','nigeria','hombre',99,'hola',1,NULL,NULL),(2,'asd','asd','asdasdasd@gmail.com','asd','Hombre',2,'',1,'2020-09-28 01:50:32','2020-09-28 01:50:47');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -223,6 +326,34 @@ LOCK TABLES `userscomments` WRITE;
 INSERT INTO `userscomments` VALUES (NULL,NULL,1,1);
 /*!40000 ALTER TABLE `userscomments` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `usersposts`
+--
+
+DROP TABLE IF EXISTS `usersposts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usersposts` (
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  `userid` int NOT NULL,
+  `postid` int NOT NULL,
+  PRIMARY KEY (`userid`,`postid`),
+  KEY `postid` (`postid`),
+  CONSTRAINT `usersposts_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `usersposts_ibfk_2` FOREIGN KEY (`postid`) REFERENCES `posts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usersposts`
+--
+
+LOCK TABLES `usersposts` WRITE;
+/*!40000 ALTER TABLE `usersposts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usersposts` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -233,4 +364,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-20  1:56:24
+-- Dump completed on 2020-09-28  0:03:12

@@ -161,6 +161,7 @@
           ' margin-top: 10px;' +
           ' margin-bottom: 10px;">' +
 
+          '    <a href="http://localhost:3000/index/items">'+
           '  <div class="columna-1-1" style="' +
           '  display: flex;' +
           '  margin-top: 10px;' +
@@ -191,7 +192,10 @@
           '     <div class="item" style=" ' +
           '     padding: 5px; ' +
           '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item3Uno + '" width="40" height="40"></div>' +
+          '     color: antiquewhite;'+
+          '     data-toggle= "tooltip";'+  
+          '     data-placement="top";'+ 
+          '     title="Tooltip on top";"><img src= "' + partida.item3Uno + '" width="40" height="40"></div>' +
 
           '     <div class="item" style=" ' +
           '     padding: 5px; ' +
@@ -202,7 +206,8 @@
           '     padding: 5px; ' +
           '     width: 60px; ' +
           '     color: antiquewhite;"><img src= "' + partida.item1Uno + '" width="40" height="40"></div>' +
-          '   </div> ' +
+          '  </div> ' +
+          '   </a>'+
 
           '   <div class="columna-2" style=" ' +
           '   margin-right: 10px; ' +

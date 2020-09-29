@@ -1,37 +1,43 @@
----patch notes v3.0---
+---patch notes v10.0---
 
-IMPORTANTE : todo lo que contenga **-, significa que esta casi listo, pero no del todo
+IMPORTANTE 1: VERIFIQUEN SIEMPRE SI HAY ALGUN PULL PENDIENTE TANTO EN GITHUB PROGRAMA COMO EN LA PAGINA, LA OTRA VEZ SE CAGO UN PULL Y FUE RE JODIDO SINCRONIZAR TODO.
 
-IMPORTANTE 2: todos los html los movi a un nuevo motor de vida .hbs, esto significa que cualquier referencia a alguna seccion html ahora se tiene que hacer a partir de por ejemplo: href="http://localhost:3000/index/index". La referencia referencia xd al servidor js en este caso index, y luego a la seccion get de /index, en donde se renderiza el .hbs que contiene la parte html y script de la pagina. se cambio esto para que todas las secciones chupeteen el formato standard del header y footer desde un main.hbs, asi no se tiene que repetir el mismo codigo de la estrctura principal en cada una de las secciones, por lo que ahora cada seccion .hbs solo va a contener un html y script de si mismo. (por si no entendieron) ahora cada seccion esta compuesta tanto del "main.hbs" como de cada seccion aparte, ejemplo la seccion del foro, esta compuesta de "main.hbs" + "foro.hbs".
+IMPORTANTE 2: VERIFIQUEN SIEMPRE SI SE SUBIO DEFINITIVAMENTE SU PUSH DESDE EL GITHUB PROGRAMA HACIA EL REPO, LA OTRA VEZ PASO ALGO SIMILAR Y AMAGARON CON SUBIRLO.
 
-IMPORTANTE 3: VERIFIQUEN SIEMPRE SI HAY ALGUN PULL PENDIENTE TANTO EN GITHUB PROGRAMA COMO EN LA PAGINA, LA OTRA VEZ SE CAGO UN PULL Y FUE RE JODIDO SINCRONIZAR TODO.
+IMPORTANTE 3: VERIFACION DE TODOS LOS DATOS PUESTOS O INGRESADOS
 
-IMPORTANTE 4: VERIFIQUEN SIEMPRE SI SE SUBIO DEFINITIVAMENTE SU PUSH DESDE EL GITHUB PROGRAMA HACIA EL REPO, LA OTRA VEZ PASO ALGO SIMILAR Y AMAGARON CON SUBIRLO.
+IMPORTANTE 4: FAQ Y SOPORTE SE FUSIONARON EN UNO SOLO
 
-IMPORTANTE 5: ahora hay un boton de "live" en el visual para arrancar la moto, usen ese que les permite reinicar automaticamente el sv a partir de que se guarden cambios en algún js.
+ROBBADA
+exports.findAllUserReviews = async (_userId) => {
+    return await Review.findAll({
+        raw: true,
+        nest: true,
+        order: [
+            ['createdAt', 'DESC']
+        ],
+        include: [
+            {
+                model: User,
+                as: "users",
+                where: {
+                    id : _userId
+                }
+            },
+            {
+                model: Games,
+                as: "games",
+                attributes: ['id', 'name', 'image']
+            }
+        ]
+    });
+}
 
-IMPORTANTE 6: se esta agregando la conexion con la bd, por lo que es posible que casi todas las secciones esten rotas en cuanto a los datos que aparecen o se envian. Ademas, no tienen que chupetear la bd desde ningun archivo mysql, siemplemente arrancan la moto desde el visual y se crea automaticamente la bd en su pc. Para esto necesitan primero necesitan tener abierto el laragon + el mysql, conectan los dos y listo.
-
-IMPORTANTE 7: VERIFACION DE TODOS LOS DATOS PUESTOS O INGRESADOS
-
-IMPORTANTE 8: FAQ Y SOPORTE SE FUSIONARON EN UNO SOLO
-
-https://mdbootstrap.com/docs/jquery/navigation/footer/,
-
---general--
--corregir la posicion del boton de ingresar en todas las secciones(esta dejarla para despues)
--agregar el boton ese de fede que esta en el buscador de "tipo" - tambien para despues
---la conexion con la seccion de estadisticas esta rota, arreglenla si pueden
 
 registro
 **-terminado(meter html en la parte de la edad, reemplazar el campo de meter una edad por un bootstrap de elegir la fecha en que naciste a partir de un calendario)
 -(linea 70-79) buscar forma para reducir y unificar el codigo de busqueda, verificacion y aviso de la comparativa entre los campos de registro y la tabla cuentas de la bd.
 -crear script del boton de "no soy un robot", que verifique de alguna manera si sos un puto o no.
-
-login
-**-reemplazar el sistema de correo y contraseña encontrados, en donde si se encuentran se pasan a true y luego a false, hacer simplemente una verificacion entre el campo ingresado y la tabla cuentas en la bd-
--Arreglar sistema de cambio de contraseña, ponerle verificacion de contraseña y envio de nueva contraseña a la bd
--esta medio roto con los elses que meti, el logueo igual anda pero saltan cosas feas
 
 perfil
 -hay que meter todos los datos del perfil en la bd para usarlos al momento de mostrar el perfil como el nivel, las hs y eso
@@ -42,7 +48,6 @@ inicio
 -crear alguna api para el inicio
 
 foro
--corregir el icono del "+", colocarlo a la dercha de la palabra "Crear Publicación"
 -Crear api que muestre en tiempo real cuales son las publicaciones mas valoradas o las mas recientes(filtrar por fecha de creacion de la cuenta, de mas reciente)
 -Crear api para la cambiar de página en el foro (el html ya está creado abajo de todo) (me refiero a la seccion en donde tocas en un numero de pagina y te lleva a esa pagina)
 
@@ -55,15 +60,14 @@ foro - publicacion usuario
 -meter la fecha de creacion del comentario
 
 buscador
--esta roto o no esta hecho, no se
--es de fede pero le dije a masuco que tambien podia ayudar pero lo va a hacer en su pagina de armas pero no lo continua mas asi que no hay  buscador, si alguien lo quiere hacer bueno.
+-ni idea
 
 estadisticas
--esta roto en alguna parte, es de fede
+-ni idea x2
 
 ayuda - soporte - faq
-**-Ponerlo lindo y ordenado x2
-¨Tiene que hacerse* -crear algun boton o algo que referencie a generar un ticket para una pregunta especifica
+**-Ponerlo lindo y ordenado
+
 
 ayuda - generar reporte
 GENERAR REPORTE AHORA ES PARTE DE SOPORTE

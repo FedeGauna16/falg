@@ -1,4 +1,13 @@
-
+<title>Crear Publicación</title>
+{{#unless userlogged}}
+  <h1 style="color: white;text-align: center;margin-top:100px">Debes iniciar sesión para poder crear una publicación</h1>
+  <li id="ingresar" class="nav-item" style="text-align: center;padding-top: 20px;">
+    <a class="btn btn-danger btn-lg" style="color: white; size: 200%" 
+      href="http://localhost:3000/users/ingreso" role="Ingresar">Iniciar Sesión</a>
+  </li>
+  <hr style="height: 8vh">
+{{/unless}}
+{{#if userlogged}}
 <div style="padding-left: 600px;padding-top: 20px;width: 1300px;color: white;">
     <div style="text-align: center;" >
       <h1>Crear publicación</h1>
@@ -45,6 +54,7 @@
       </div>
     </form>
 </div>
+{{/if}}
 <script>
   $(document).ready(function () {
     //var cosa = $('titulo').characterCounter() la funcion esta no anda fijate bien despueshttps://mdbootstrap.com/snippets/jquery/temp/2530264?action=prism_export#js-tab-view

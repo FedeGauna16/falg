@@ -8,6 +8,7 @@ var Comments = tablas.Comments;
 var Userscomments = tablas.Userscomments
 var Usersposts = tablas.Usersposts
 let views = 0;
+var userbannedlike = []
 
 async function getposts(){
   //req.app.locals.posts = 0; como mierda hago la variable global intente aca pero no arranca bien
@@ -124,16 +125,37 @@ router.post('/subircomentario', async function(req, res, next) {
   });
 });
 
-router.get('/addlikepost/:like', async function(req, res, next) {
+router.get('/addlikepost/:like/:iduser', async function(req, res, next) {
   var idpost = req.params.like
+  var iduser = req.params.iduser
   var posts = await getposts();
   var like = posts[idpost - 1].likes;
-  await Posts.update({ likes: like + 1 }, {
-    where: {
-      id: idpost
-    }
-  });
-  res.redirect(req.get('referer'));
+  console.log(iduser)
+  console.log("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdasdasdasdasdasdasd")
+  console.log(userbannedlike)
+  console.log(userbannedlike[0])
+  console.log(like)
+  var userIndex = userbannedlike.indexOf("1")
+  if(userIndex+1 == iduser){
+    console.log("LA RE CONCHA DE TU MADRE PELOTUDO DE MIERDA HIJO DE REMIL PUTA")
+    await Posts.update({ likes: like - 1 }, {
+      where: {
+        id: idpost
+      }
+    });
+    userbannedlike.slice(userIndex,1)
+    //userbannedlike.splice(iduser)
+    res.redirect(req.get('referer'));
+  }
+  else{
+    userbannedlike.push(iduser)
+    await Posts.update({ likes: like + 1 }, {
+      where: {
+        id: idpost
+      }
+    });
+    res.redirect(req.get('referer'));
+  }
 });
 
 router.get('/adddislikepost/:dislike', async function(req, res, next) {

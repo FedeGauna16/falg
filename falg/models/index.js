@@ -42,6 +42,6 @@ db.Posts.belongsToMany(db.Users, {
 db.infoPartidas = require("./infoPartidas")(sequelize, Sequelize);
 db.clases = require("./clases")(sequelize, Sequelize);
 db.jugadores = require("./jugadores")(sequelize, Sequelize);
-
+db.items = require("./items")(sequelize, Sequelize);
 
 module.exports = db;
