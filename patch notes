@@ -8,32 +8,6 @@ IMPORTANTE 3: VERIFACION DE TODOS LOS DATOS PUESTOS O INGRESADOS
 
 IMPORTANTE 4: FAQ Y SOPORTE SE FUSIONARON EN UNO SOLO
 
-ROBBADA
-exports.findAllUserReviews = async (_userId) => {
-    return await Review.findAll({
-        raw: true,
-        nest: true,
-        order: [
-            ['createdAt', 'DESC']
-        ],
-        include: [
-            {
-                model: User,
-                as: "users",
-                where: {
-                    id : _userId
-                }
-            },
-            {
-                model: Games,
-                as: "games",
-                attributes: ['id', 'name', 'image']
-            }
-        ]
-    });
-}
-
-
 registro
 **-terminado(meter html en la parte de la edad, reemplazar el campo de meter una edad por un bootstrap de elegir la fecha en que naciste a partir de un calendario)
 -(linea 70-79) buscar forma para reducir y unificar el codigo de busqueda, verificacion y aviso de la comparativa entre los campos de registro y la tabla cuentas de la bd.
@@ -48,11 +22,13 @@ inicio
 -crear alguna api para el inicio
 
 foro
--Crear api que muestre en tiempo real cuales son las publicaciones mas valoradas o las mas recientes(filtrar por fecha de creacion de la cuenta, de mas reciente)
 -Crear api para la cambiar de página en el foro (el html ya está creado abajo de todo) (me refiero a la seccion en donde tocas en un numero de pagina y te lleva a esa pagina)
+-fijarse que onda con el legthcomments me dio alta pjaa mañana sigo
+-fijarse bien el foro.js en busca de algo mas no se fijate mañan x2
 
 foro - crear publicacion
 -Agregar a la api ya hecha la posibilidad de meter imagenes
+-las imagenes se tienen que agregar por link que sino es re jodido
 
 foro - publicacion usuario
 (no me lo toquen qe lo estoy haciendo yo)
@@ -67,7 +43,6 @@ estadisticas
 
 ayuda - soporte - faq
 **-Ponerlo lindo y ordenado
-
 
 ayuda - generar reporte
 GENERAR REPORTE AHORA ES PARTE DE SOPORTE
