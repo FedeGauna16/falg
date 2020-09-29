@@ -14,7 +14,6 @@ var userbannedlikecomment = []
 var userbanneddislikecomment = []
 
 async function getposts(){
-  //req.app.locals.posts = 0; como mierda hago la variable global intente aca pero no arranca bien
   var posts = await Posts.findAll({
     nest: true,
     raw: true,
@@ -25,7 +24,6 @@ async function getposts(){
       }
   ]
   });
-  //req.app.locals.posts = posts
   return posts;
 }
 
@@ -63,7 +61,6 @@ async function getcomments(){
 
 router.get('/', async function(req, res, next) {
   var posts = await getposts();
-  //console.log(posts);
   res.send({posts});
 });
 
@@ -74,26 +71,21 @@ router.get('/comments', async function(req, res, next) {
 
 router.post('/publicaciones', async function(req, res, next) {
   var newpost = req.body;
-  var posts = await getposts();
   var comments = await getcomments();
   var post = await Posts.create({
     title: newpost.title,
     description: newpost.description,
     iduser: newpost.iduser,
-    filter: newpost.filter
+    filter: newpost.filter,
+    likes: newpost.likes,
+    dislikes: newpost.dislikes
   });
-  var comentario = comments.filter(comentario => {
-    return(comentario.idpost == newpost.id);
-  });
-  var lengthcomments = comentario.length
-  console.log(lengthcomments)
   await Usersposts.create({
     postid: post.id, 
     userid: newpost.iduser
   });
   res.send({
     status : true,
-    response : lengthcomments
   });
 });
 
@@ -112,8 +104,7 @@ router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   var comentario = comments.filter(comentario => {
     return(comentario.idpost == idpublicacion);
   });
-  var lengthcomments = comentario.length
-  res.render('publicacionusuario', {publicacion, comentario, lengthcomments})
+  res.render('publicacionusuario', {publicacion, comentario})
   views++;// Si se entra a una misma publicacion se sigue sumando los views, no quiero hacer que cuando publicacion que se bloquee o algo asi
   //no hay una mejor forma mas linda sin tener qe hacerlo con el ++ y el bloqueo ese?
   //alta paja hacerlo ahora chapotear despues
