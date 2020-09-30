@@ -10,7 +10,17 @@ const Users = db.Users;
 const Publicacion = db.Posts;
 
 router.get('/a',async function(req, res, next) {
-  let resultados = [await InfoPartidas.findAll(), await Clases.findAll(), await Items.findAll(), await Users.findAll(), await Publicacion.findAll()];
+  let resultados = [
+    await InfoPartidas.findAll({
+      include: {
+        model: db.clases,
+        model: db.items
+      }
+    }),
+    await Clases.findAll(),
+    await Items.findAll(),
+    await Users.findAll(),
+    await Publicacion.findAll()];
   res.send(resultados);
 });
 

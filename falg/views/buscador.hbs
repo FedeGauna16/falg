@@ -59,6 +59,39 @@
   var a;
   var busqueda;
   $(document).ready(function () {
+    function devolverItem(items,num) {
+     console.log(items[0]);
+      switch(num){ 
+        case 1:
+          return items[0].imagen;
+        break;
+        case 2:
+          return items[1].imagen;
+        break;
+        case 3:
+          return items[2].imagen;
+        break;
+        case 4:
+          return items[3].imagen;
+        break;
+        case 5:
+          return items[4].imagen;
+        break;
+        case 6:
+          return items[5].imagen;
+        break;
+      }
+    }
+  function devolverClase(clases, num) {
+   /* console.log(clases);
+    switch(num){ 
+    case 1:
+      return clases[0].iconClass;
+    break;
+    case 2:
+      return clases[1].iconClass;
+    }*/
+  }
     function filtrarPartidas(partida) {
       return (partida.nombreUno == busqueda || partida.nombreDos == busqueda);
     }
@@ -91,32 +124,32 @@
         '     <div class="item" style=" ' +
         '     padding: 5px; ' +
         '     width: 60px; ' +
-        '     color: antiquewhite;"><img src= "' + partida.item6Uno + '" width="40" height="40"></div>' +
+        '     color: antiquewhite;"><img src= "' + devolverItem(partida.items,6) + '" width="40" height="40"></div>' +
 
         '     <div class="item" style=" ' +
         '     padding: 5px; ' +
         '     width: 60px; ' +
-        '     color: antiquewhite;"><img src= "' + partida.item5Uno + '" width="40" height="40"></div>' +
+        '     color: antiquewhite;"><img src= "' + devolverItem(partida.items,5)+ '" width="40" height="40"></div>' +
 
         '     <div class="item" style=" ' +
         '     padding: 5px; ' +
         '     width: 60px; ' +
-        '     color: antiquewhite;"><img src= "' + partida.item4Uno + '" width="40" height="40"></div>' +
+        '     color: antiquewhite;"><img src= "' + devolverItem(partida.items,4) + '" width="40" height="40"></div>' +
 
         '     <div class="item" style=" ' +
         '     padding: 5px; ' +
         '     width: 60px; ' +
-        '     color: antiquewhite;"><img src= "' + partida.item3Uno + '" width="40" height="40"></div>' +
+        '     color: antiquewhite;"><img src= "' + devolverItem(partida.items,3) + '" width="40" height="40"></div>' +
 
         '     <div class="item" style=" ' +
         '     padding: 5px; ' +
         '     width: 60px; ' +
-        '     color: antiquewhite;"><img src= "' + partida.item2Uno + '" width="40" height="40"></div>' +
+        '     color: antiquewhite;"><img src= "' + devolverItem(partida.items,2) + '" width="40" height="40"></div>' +
 
         '     <div class="item" style=" ' +
         '     padding: 5px; ' +
         '     width: 60px; ' +
-        '     color: antiquewhite;"><img src= "' + partida.item1Uno + '" width="40" height="40"></div>' +
+        '     color: antiquewhite;"><img src= "' + devolverItem(partida.items,1) + '" width="40" height="40"></div>' +
         '   </div> ' +
 
         '   <div class="columna-2" style=" ' +
@@ -129,7 +162,7 @@
         '   width: 53px; ' +
         '   background-color: rgba(86, 61, 124, .15); ' +
         '   border: 1px solid rgba(86, 61, 124, .2); ' +
-        '   color: antiquewhite;"><img src= "' + partida.iconClaseUno + '" width="40" height="40"></div>' +
+        '   color: antiquewhite;"><img src= "' + devolverClase(partida.clases,1) + '" width="40" height="40"></div>' +
 
         '   <div class="nombre" style=" ' +
         '   margin-top: 10px; ' +
@@ -176,7 +209,7 @@
         '     width: 53px;' +
         '     background-color: rgba(86, 61, 124, .15);' +
         '     border: 1px solid rgba(86, 61, 124, .2);' +
-        '     color: antiquewhite;"><img src= "' + partida.iconClaseDos + '" width="40" height="40"></div>' +
+        '     color: antiquewhite;"><img src= "' + devolverClase(partida.clases,2) + '" width="40" height="40"></div>' +
 
         '   <div class="columna-1-2" style="' +
         '   margin-top: 10px;' +
@@ -193,32 +226,32 @@
         '     <div class="item" style=" ' +
         '     padding: 5px; ' +
         '     width: 60px; ' +
-        '     color: antiquewhite;"><img src= "' + partida.item1Dos + '" width="40" height="40"></div>' +
+        '     color: antiquewhite;"><img src= "' + devolverItem(partida.items,1) + '" width="40" height="40"></div>' +
 
         '     <div class="item" style=" ' +
         '     padding: 5px; ' +
         '     width: 60px; ' +
-        '     color: antiquewhite;"><img src= "' + partida.item2Dos + '" width="40" height="40"></div>' +
+        '     color: antiquewhite;"><img src= "' + devolverItem(partida.items,2) + '" width="40" height="40"></div>' +
 
         '     <div class="item" style=" ' +
         '     padding: 5px; ' +
         '     width: 60px; ' +
-        '     color: antiquewhite;"><img src= "' + partida.item3Dos + '" width="40" height="40"></div>' +
+        '     color: antiquewhite;"><img src= "' + devolverItem(partida.items,3)+ '" width="40" height="40"></div>' +
 
         '     <div class="item" style=" ' +
         '     padding: 5px; ' +
         '     width: 60px; ' +
-        '     color: antiquewhite;"><img src= "' + partida.item4Dos + '" width="40" height="40"></div>' +
+        '     color: antiquewhite;"><img src= "' + devolverItem(partida.items,4) + '" width="40" height="40"></div>' +
 
         '     <div class="item" style=" ' +
         '     padding: 5px; ' +
         '     width: 60px; ' +
-        '     color: antiquewhite;"><img src= "' + partida.item5Dos + '" width="40" height="40"></div>' +
+        '     color: antiquewhite;"><img src= "' + devolverItem(partida.items,5) + '" width="40" height="40"></div>' +
 
         '     <div class="item" style=" ' +
         '     padding: 5px; ' +
         '     width: 60px; ' +
-        '     color: antiquewhite;"><img src= "' + partida.item6Dos + '" width="40" height="40"></div>' +
+        '     color: antiquewhite;"><img src= "' + devolverItem(partida.items,6) + '" width="40" height="40"></div>' +
         '   </div> ' +
         ' </div>'
       );
