@@ -128,355 +128,356 @@
   </div>
 </div>
 
-  <style>
-    .header {
-      text-align: center;
-      background: #0e0c0c;
-      font-size: 30px;
-    }
-    h3,
-    h2 {
-      color: yellow;
-    }
+<style>
+  .header {
+    text-align: center;
+    background: #0e0c0c;
+    font-size: 30px;
+  }
 
-    h1 {
-      color: white;
-    }
-  </style>
+  h3,
+  h2 {
+    color: yellow;
+  }
+
+  h1 {
+    color: white;
+  }
+</style>
 
 <script>
-    var partidas = []
-    var partidasBuscadas = []
+  var partidas = []
+  var partidasBuscadas = []
 
-    function mostrarPartida(partida) {
-      $("#game").append(
-          ' <div class="fila" style="' +
-          ' border-top: 2px solid rgba(7, 7, 7, 0.2);' +
-          ' border-bottom: 2px solid rgba(7, 7, 7, 0.2);' +
-          ' display: flex;' +
-          ' -ms-flex-wrap: wrap;' +
-          ' flex-wrap: wrap;' +
-          ' margin-right: -15px;' +
-          ' margin-left: -15px;' +
-          ' margin-top: 10px;' +
-          ' margin-bottom: 10px;">' +
+  function mostrarPartida(partida) {
+    $("#game").append(
+      ' <div class="fila" style="' +
+      ' border-top: 2px solid rgba(7, 7, 7, 0.2);' +
+      ' border-bottom: 2px solid rgba(7, 7, 7, 0.2);' +
+      ' display: flex;' +
+      ' -ms-flex-wrap: wrap;' +
+      ' flex-wrap: wrap;' +
+      ' margin-right: -15px;' +
+      ' margin-left: -15px;' +
+      ' margin-top: 10px;' +
+      ' margin-bottom: 10px;">' +
 
-          '    <a href="http://localhost:3000/index/items">'+
-          '  <div class="columna-1-1" style="' +
-          '  display: flex;' +
-          '  margin-top: 10px;' +
-          '  margin-bottom: 10px;' +
-          '  padding: 5px;' +
-          '  margin-left: 20px;' +
-          '  width: 350px;' +
-          '  background-color: rgba(86, 61, 124, .15);' +
-          '  border: 1px solid rgba(86, 61, 124, .2);' +
-          '  color: antiquewhite;' +
-          '  text-align: center;"> ' +
+      '    <a href="http://localhost:3000/index/items">' +
+      '  <div class="columna-1-1" style="' +
+      '  display: flex;' +
+      '  margin-top: 10px;' +
+      '  margin-bottom: 10px;' +
+      '  padding: 5px;' +
+      '  margin-left: 20px;' +
+      '  width: 350px;' +
+      '  background-color: rgba(86, 61, 124, .15);' +
+      '  border: 1px solid rgba(86, 61, 124, .2);' +
+      '  color: antiquewhite;' +
+      '  text-align: center;"> ' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item6Uno + '" width="40" height="40"></div>' +
+      '     <div class="item" style=" ' +
+      '     padding: 5px; ' +
+      '     width: 60px; ' +
+      '     color: antiquewhite;"><img src= "' + partida.item6Uno + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item5Uno + '" width="40" height="40"></div>' +
+      '     <div class="item" style=" ' +
+      '     padding: 5px; ' +
+      '     width: 60px; ' +
+      '     color: antiquewhite;"><img src= "' + partida.item5Uno + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item4Uno + '" width="40" height="40"></div>' +
+      '     <div class="item" style=" ' +
+      '     padding: 5px; ' +
+      '     width: 60px; ' +
+      '     color: antiquewhite;"><img src= "' + partida.item4Uno + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;'+
-          '     data-toggle= "tooltip";'+  
-          '     data-placement="top";'+ 
-          '     title="Tooltip on top";"><img src= "' + partida.item3Uno + '" width="40" height="40"></div>' +
+      '     <div class="item" style=" ' +
+      '     padding: 5px; ' +
+      '     width: 60px; ' +
+      '     color: antiquewhite;' +
+      '     data-toggle= "tooltip";' +
+      '     data-placement="top";' +
+      '     title="Tooltip on top";"><img src= "' + partida.item3Uno + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item2Uno + '" width="40" height="40"></div>' +
+      '     <div class="item" style=" ' +
+      '     padding: 5px; ' +
+      '     width: 60px; ' +
+      '     color: antiquewhite;"><img src= "' + partida.item2Uno + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item1Uno + '" width="40" height="40"></div>' +
-          '  </div> ' +
-          '   </a>'+
+      '     <div class="item" style=" ' +
+      '     padding: 5px; ' +
+      '     width: 60px; ' +
+      '     color: antiquewhite;"><img src= "' + partida.item1Uno + '" width="40" height="40"></div>' +
+      '  </div> ' +
+      '   </a>' +
 
-          '   <div class="columna-2" style=" ' +
-          '   margin-right: 10px; ' +
-          '   margin-left: 10px; ' +
-          '   margin-top: 10px; ' +
-          '   margin-bottom: 10px; ' +
-          '   padding: 5px; ' +
-          '   padding-top: 10px; ' +
-          '   width: 53px; ' +
-          '   background-color: rgba(86, 61, 124, .15); ' +
-          '   border: 1px solid rgba(86, 61, 124, .2); ' +
-          '   color: antiquewhite;"><img src= "' + partida.iconClaseUno + '" width="40" height="40"></div>' +
+      '   <div class="columna-2" style=" ' +
+      '   margin-right: 10px; ' +
+      '   margin-left: 10px; ' +
+      '   margin-top: 10px; ' +
+      '   margin-bottom: 10px; ' +
+      '   padding: 5px; ' +
+      '   padding-top: 10px; ' +
+      '   width: 53px; ' +
+      '   background-color: rgba(86, 61, 124, .15); ' +
+      '   border: 1px solid rgba(86, 61, 124, .2); ' +
+      '   color: antiquewhite;"><img src= "' + partida.iconClaseUno + '" width="40" height="40"></div>' +
 
-          '   <div class="nombre" style=" ' +
-          '   margin-top: 10px; ' +
-          '   margin-bottom: 10px; ' +
-          '   padding: 10px; ' +
-          '   font-size: medium; ' +
-          '   width: 100px; ' +
-          '   background-color:  rgb(36, 36, 36); ' +
-          '   color: antiquewhite; ' +
-          '   text-align: center; ' +
-          '   text-justify: auto;">' + partida.nombreUno+ '</div>' +
+      '   <div class="nombre" style=" ' +
+      '   margin-top: 10px; ' +
+      '   margin-bottom: 10px; ' +
+      '   padding: 10px; ' +
+      '   font-size: medium; ' +
+      '   width: 100px; ' +
+      '   background-color:  rgb(36, 36, 36); ' +
+      '   color: antiquewhite; ' +
+      '   text-align: center; ' +
+      '   text-justify: auto;">' + partida.nombreUno + '</div>' +
 
-          '   <div class="vs" style=" ' +
-          '   margin-left: 5px; ' +
-          '   margin-right: 5px; ' +
-          '   margin-top: 10px; ' +
-          '   margin-bottom: 10px; ' +
-          '   padding-top: 10px; ' +
-          '   font-size: x-large; ' +
-          '   margin-left: 10px; ' +
-          '   margin-right: 10px; ' +
-          '   width: 30px; ' +
-          '   background-color:  rgb(36, 36, 36); ' +
-          '   color: antiquewhite; ' +
-          '   text-align: center;">VS</div>' +
+      '   <div class="vs" style=" ' +
+      '   margin-left: 5px; ' +
+      '   margin-right: 5px; ' +
+      '   margin-top: 10px; ' +
+      '   margin-bottom: 10px; ' +
+      '   padding-top: 10px; ' +
+      '   font-size: x-large; ' +
+      '   margin-left: 10px; ' +
+      '   margin-right: 10px; ' +
+      '   width: 30px; ' +
+      '   background-color:  rgb(36, 36, 36); ' +
+      '   color: antiquewhite; ' +
+      '   text-align: center;">VS</div>' +
 
-          '   <div class="nombre-2" style="' +
-          '   margin-top: 10px;' +
-          '   margin-bottom: 10px;' +
-          '   font-size: medium;' +
-          '   padding: 10px;' +
-          '   width: 100px;' +
-          '   background-color:  rgb(36, 36, 36);' +
-          '   color: antiquewhite;' +
-          '   text-align: center;">' + partida.nombreDos + '</div>' +
+      '   <div class="nombre-2" style="' +
+      '   margin-top: 10px;' +
+      '   margin-bottom: 10px;' +
+      '   font-size: medium;' +
+      '   padding: 10px;' +
+      '   width: 100px;' +
+      '   background-color:  rgb(36, 36, 36);' +
+      '   color: antiquewhite;' +
+      '   text-align: center;">' + partida.nombreDos + '</div>' +
 
-          '    <div class="columna-2" style="' +
-          '     margin-right: 10px;' +
-          '     margin-left: 10px;' +
-          '     margin-top: 10px;' +
-          '     margin-bottom: 10px;' +
-          '     padding: 5px;' +
-          '     padding-top: 10px;' +
-          '     width: 53px;' +
-          '     background-color: rgba(86, 61, 124, .15);' +
-          '     border: 1px solid rgba(86, 61, 124, .2);' +
-          '     color: antiquewhite;"><img src= "' + partida.iconClaseDos + '" width="40" height="40"></div>' +
+      '    <div class="columna-2" style="' +
+      '     margin-right: 10px;' +
+      '     margin-left: 10px;' +
+      '     margin-top: 10px;' +
+      '     margin-bottom: 10px;' +
+      '     padding: 5px;' +
+      '     padding-top: 10px;' +
+      '     width: 53px;' +
+      '     background-color: rgba(86, 61, 124, .15);' +
+      '     border: 1px solid rgba(86, 61, 124, .2);' +
+      '     color: antiquewhite;"><img src= "' + partida.iconClaseDos + '" width="40" height="40"></div>' +
 
-          '   <div class="columna-1-2" style="' +
-          '   margin-top: 10px;' +
-          '   margin-bottom: 10px;' +
-          '   display: flex;' +
-          '   padding: 5px;' +
-          '   margin-right: 20px;' +
-          '   width: 350px;' +
-          '   background-color: rgba(86, 61, 124, .15);' +
-          '   border: 1px solid rgba(86, 61, 124, .2);' +
-          '   color: antiquewhite;' +
-          '   text-align: center;"> ' +
+      '   <div class="columna-1-2" style="' +
+      '   margin-top: 10px;' +
+      '   margin-bottom: 10px;' +
+      '   display: flex;' +
+      '   padding: 5px;' +
+      '   margin-right: 20px;' +
+      '   width: 350px;' +
+      '   background-color: rgba(86, 61, 124, .15);' +
+      '   border: 1px solid rgba(86, 61, 124, .2);' +
+      '   color: antiquewhite;' +
+      '   text-align: center;"> ' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item1Dos + '" width="40" height="40"></div>' +
+      '     <div class="item" style=" ' +
+      '     padding: 5px; ' +
+      '     width: 60px; ' +
+      '     color: antiquewhite;"><img src= "' + partida.item1Dos + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item2Dos + '" width="40" height="40"></div>' +
+      '     <div class="item" style=" ' +
+      '     padding: 5px; ' +
+      '     width: 60px; ' +
+      '     color: antiquewhite;"><img src= "' + partida.item2Dos + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item3Dos + '" width="40" height="40"></div>' +
+      '     <div class="item" style=" ' +
+      '     padding: 5px; ' +
+      '     width: 60px; ' +
+      '     color: antiquewhite;"><img src= "' + partida.item3Dos + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item4Dos + '" width="40" height="40"></div>' +
+      '     <div class="item" style=" ' +
+      '     padding: 5px; ' +
+      '     width: 60px; ' +
+      '     color: antiquewhite;"><img src= "' + partida.item4Dos + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item5Dos + '" width="40" height="40"></div>' +
+      '     <div class="item" style=" ' +
+      '     padding: 5px; ' +
+      '     width: 60px; ' +
+      '     color: antiquewhite;"><img src= "' + partida.item5Dos + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item6Dos + '" width="40" height="40"></div>' +
-          '   </div> ' +
-          ' </div>'
-        );
-    }
+      '     <div class="item" style=" ' +
+      '     padding: 5px; ' +
+      '     width: 60px; ' +
+      '     color: antiquewhite;"><img src= "' + partida.item6Dos + '" width="40" height="40"></div>' +
+      '   </div> ' +
+      ' </div>'
+    );
+  }
 
-    function verificarNombre(x) {
+  function verificarNombre(x) {
     //  console.log(x.response);
-      return (x.response.some(_x => _x.nombreUno == $("#buscarjugador").val().toLowerCase() || _x.nombreDos == $("#buscarjugador").val().toLowerCase()));
-    }
+    return (x.response.some(_x => _x.nombreUno == $("#buscarjugador").val().toLowerCase() || _x.nombreDos == $("#buscarjugador").val().toLowerCase()));
+  }
 
-    function filtrar(x) {
-      //console.log(x);
+  function filtrar(x) {
+    //console.log(x);
+    partidasBuscadas = partidas.response.filter(partida =>
+      partida.idClaseUno == x || partida.idClaseDos == x
+    );
+    // console.log(partidasBuscadas);
+    $("#game").html(" ");
+    partidasBuscadas.forEach(function (y) {
+      mostrarPartida(y);
+    });
+  }
+
+  $(document).ready(function () {
+
+    $('#buscadorjugador').on('submit', function (event) {
+      event.preventDefault();
+      // console.log($("#buscar").val().toLowerCase());
       partidasBuscadas = partidas.response.filter(partida =>
-        partida.idClaseUno == x || partida.idClaseDos == x
+        partida.nombreUno == $("#buscarjugador").val().toLowerCase() || partida.nombreDos == $("#buscarjugador").val().toLowerCase()
       );
-     // console.log(partidasBuscadas);
-      $("#game").html(" ");
-      partidasBuscadas.forEach(function (y) {
-        mostrarPartida(y);
-      });
-    }
-
-    $(document).ready(function () {
-
-      $('#buscadorjugador').on('submit', function (event) {
-        event.preventDefault();
-       // console.log($("#buscar").val().toLowerCase());
-        partidasBuscadas = partidas.response.filter(partida =>
-          partida.nombreUno == $("#buscarjugador").val().toLowerCase() || partida.nombreDos == $("#buscarjugador").val().toLowerCase()
+      //console.log(partidasBuscadas);
+      if (verificarNombre(partidas) == false) {
+        $("#valid").html(" ");
+        $('#valid').append(
+          '<h6>Nombre no encontrado</h6>'
         );
-        //console.log(partidasBuscadas);
-        if (verificarNombre(partidas) == false) {
-          $("#valid").html(" ");
-          $('#valid').append(
-            '<h6>Nombre no encontrado</h6>'
-          );
-        }
-        if (partidasBuscadas.length == 0) {
-          $("#game").html(" ");
-          partidas.response.forEach(function (x) {
-            mostrarPartida(x);
-          });
-        } else {
-          $("#valid").html(" ");
-          $("#game").html(" ");
-          partidasBuscadas.forEach(function (x) {
-            mostrarPartida(x);
-          });
-        }
-      });
-
-      $.get("http://localhost:3000/estadisticas/infoPartidas", function (informacion) {
-        partidas = informacion;
-        console.log(partidas);
-        console.log(informacion);
-       /* jugadorUno = informacion.response.filter(partida => partida.jugador == 1);
-        jugadorDos = informacion.response.filter(partida => partida.jugador == 2);
-        console.log(jugadorUno.filter(a => a.idPartida == jugadorDos.forEach(b => b.idPartida)));*/
-        informacion.response.map(partida => mostrarPartida(partida));
-      });
-
-      $.get("http://localhost:3000/estadisticas/clases", function (informacion) {
-        informacion.response.forEach(function (clase) {
-          $("#class").append(
-            '  <div class="cuadro" style="' +
-            '  margin-left: 15px;' +
-            '  margin-top: 15px;' +
-            '  display: flex;' +
-            '  height: 100px;' +
-            '  width: 20%;' +
-            '  background-color: rgba(86, 61, 124, .15);' +
-            '  border: 1px solid rgba(86, 61, 124, .2);">' +
-
-            '   <div class="cuadrochiquitouno" style="' +
-            '   margin-top: 10px;' +
-            '   margin-bottom: 10px;' +
-            '   margin-left: 10px;' +
-            '   height: 80px;' +
-            '   width: 40%;"><img src= "' + clase.iconClass + '" width="90" height="80"></div>' +
-
-            '   <div class="cuadrochiquitodos" style="' +
-            '   margin-left: 10px;' +
-            '   height: 100px;' +
-            '   width: 50%;">' +
-
-            '     <div class="cuadrochiquitochiquitouno" style="' +
-            '     margin-top: 5px;' +
-            '     margin-left: 5px;' +
-            '     height: 25px;' +
-            '     width: 90%;' +
-            '     color: antiquewhite;' +
-            '     text-align: center;' +
-            '     font-size: medium;">' + clase.nombre + '</div>' +
-
-            '     <div class="cuadrochiquitochiquitodos" style="' +
-            '     margin-top: 8px;' +
-            '     margin-left: 5px;' +
-            '     height: 25px;' +
-            '     width: 90%;' +
-            '     color: antiquewhite;' +
-            '     text-align: left;' +
-            '     font-size: medium;">W: ' + clase.winrate + '</div>' +
-
-            '     <div class="cuadrochiquitochiquitotres" style="' +
-            '     margin-top: 8px;' +
-            '     margin-left: 5px;' +
-            '     height: 25px;' +
-            '     width: 90%;' +
-            '     color: antiquewhite;' +
-            '     text-align: left;' +
-            '     font-size: medium;">L: ' + clase.loserate + '</div>' +
-            '   </div>' +
-            '  </div>'
-          );
+      }
+      if (partidasBuscadas.length == 0) {
+        $("#game").html(" ");
+        partidas.response.forEach(function (x) {
+          mostrarPartida(x);
         });
-      });
-
-      $.get("http://localhost:3000/estadisticas/jugadores", function (informacion) {
-        informacion.response.forEach(function (jugador) {
-          $("#player").append(
-            '  <div class="cuadro2" style="' +
-            '  margin-left: 15px;' +
-            '  margin-top: 15px;' +
-            '  height: 160px;' +
-            '  width: 15%;' +
-            '  background-color: rgba(86, 61, 124, .15);' +
-            '  border: 1px solid rgba(86, 61, 124, .2);">' +
-
-            '   <div class="cuadro2chiquitouno" style="' +
-            '   height: 100px;' +
-            '   width: 100%;"><img src= "' + jugador.iconPlayer + '" width="170" height="100"></div>' +
-
-            '   <div class="cuadro2chiquitodos" style="' +
-            '   height: 60px;' +
-            '   width: 100%;">' +
-
-            '     <div class="cuadro2chiquitochiquitouno" style="' +
-            '     height: 30px;' +
-            '     width: 100%;' +
-            '     color: antiquewhite;' +
-            '     text-align: center;' +
-            '     font-size: medium;">' + jugador.nombre + '</div>' +
-
-            '     <div class="cuadro2chiquitochiquitodos" style="' +
-            '     height: 30px;' +
-            '     width: 100%;' +
-            '     color: antiquewhite;' +
-            '     text-align: center;' +
-            '     font-size: medium;">' + jugador.winrate + '</div>' +
-            '   </div>' +
-            '  </div>'
-          );
+      } else {
+        $("#valid").html(" ");
+        $("#game").html(" ");
+        partidasBuscadas.forEach(function (x) {
+          mostrarPartida(x);
         });
+      }
+    });
+
+    $.get("http://localhost:3000/estadisticas/infoPartidas", function (informacion) {
+      partidas = informacion;
+      console.log(partidas);
+      console.log(informacion);
+      /* jugadorUno = informacion.response.filter(partida => partida.jugador == 1);
+       jugadorDos = informacion.response.filter(partida => partida.jugador == 2);
+       console.log(jugadorUno.filter(a => a.idPartida == jugadorDos.forEach(b => b.idPartida)));*/
+      informacion.response.map(partida => mostrarPartida(partida));
+    });
+
+    $.get("http://localhost:3000/estadisticas/clases", function (informacion) {
+      informacion.response.forEach(function (clase) {
+        $("#class").append(
+          '  <div class="cuadro" style="' +
+          '  margin-left: 15px;' +
+          '  margin-top: 15px;' +
+          '  display: flex;' +
+          '  height: 100px;' +
+          '  width: 20%;' +
+          '  background-color: rgba(86, 61, 124, .15);' +
+          '  border: 1px solid rgba(86, 61, 124, .2);">' +
+
+          '   <div class="cuadrochiquitouno" style="' +
+          '   margin-top: 10px;' +
+          '   margin-bottom: 10px;' +
+          '   margin-left: 10px;' +
+          '   height: 80px;' +
+          '   width: 40%;"><img src= "' + clase.iconClass + '" width="90" height="80"></div>' +
+
+          '   <div class="cuadrochiquitodos" style="' +
+          '   margin-left: 10px;' +
+          '   height: 100px;' +
+          '   width: 50%;">' +
+
+          '     <div class="cuadrochiquitochiquitouno" style="' +
+          '     margin-top: 5px;' +
+          '     margin-left: 5px;' +
+          '     height: 25px;' +
+          '     width: 90%;' +
+          '     color: antiquewhite;' +
+          '     text-align: center;' +
+          '     font-size: medium;">' + clase.nombre + '</div>' +
+
+          '     <div class="cuadrochiquitochiquitodos" style="' +
+          '     margin-top: 8px;' +
+          '     margin-left: 5px;' +
+          '     height: 25px;' +
+          '     width: 90%;' +
+          '     color: antiquewhite;' +
+          '     text-align: left;' +
+          '     font-size: medium;">W: ' + clase.winrate + '</div>' +
+
+          '     <div class="cuadrochiquitochiquitotres" style="' +
+          '     margin-top: 8px;' +
+          '     margin-left: 5px;' +
+          '     height: 25px;' +
+          '     width: 90%;' +
+          '     color: antiquewhite;' +
+          '     text-align: left;' +
+          '     font-size: medium;">L: ' + clase.loserate + '</div>' +
+          '   </div>' +
+          '  </div>'
+        );
       });
-      $.get("http://localhost:3000/users/", function (informacion) {
-        cuentas = informacion;
+    });
+
+    $.get("http://localhost:3000/estadisticas/jugadores", function (informacion) {
+      informacion.response.forEach(function (jugador) {
+        $("#player").append(
+          '  <div class="cuadro2" style="' +
+          '  margin-left: 15px;' +
+          '  margin-top: 15px;' +
+          '  height: 160px;' +
+          '  width: 15%;' +
+          '  background-color: rgba(86, 61, 124, .15);' +
+          '  border: 1px solid rgba(86, 61, 124, .2);">' +
+
+          '   <div class="cuadro2chiquitouno" style="' +
+          '   height: 100px;' +
+          '   width: 100%;"><img src= "' + jugador.iconPlayer + '" width="170" height="100"></div>' +
+
+          '   <div class="cuadro2chiquitodos" style="' +
+          '   height: 60px;' +
+          '   width: 100%;">' +
+
+          '     <div class="cuadro2chiquitochiquitouno" style="' +
+          '     height: 30px;' +
+          '     width: 100%;' +
+          '     color: antiquewhite;' +
+          '     text-align: center;' +
+          '     font-size: medium;">' + jugador.nombre + '</div>' +
+
+          '     <div class="cuadro2chiquitochiquitodos" style="' +
+          '     height: 30px;' +
+          '     width: 100%;' +
+          '     color: antiquewhite;' +
+          '     text-align: center;' +
+          '     font-size: medium;">' + jugador.winrate + '</div>' +
+          '   </div>' +
+          '  </div>'
+        );
       });
-      $.get("http://localhost:3000/users/logueado", function (informacion) {
-        var cuentaconectada = informacion.idconectado;
-        if (cuentas.usuarios[cuentaconectada -1].conectado == "true") {
+    });
+    $.get("http://localhost:3000/users/", function (informacion) {
+      cuentas = informacion;
+    });
+    $.get("http://localhost:3000/users/logueado", function (informacion) {
+      var cuentaconectada = informacion.idconectado;
+      if (cuentas.usuarios[cuentaconectada - 1].conectado == "true") {
         $("#ingresar").remove();
         $("#conectado").append(
           '<a class="nav-link" href="./perfil.html" style="color: white;">Perfil</a>'
         );
         $("#navbar").append(
-          '<li class="nav-item" style="padding-left: 420px;padding-top: 2px;">'+
-            '<a id = "cerrarsesion"class="btn btn-secundary" style="background-color: #666666;color: white;""'+
-            'role="Cerrarsesion">Cerrar Sesión</a>'+
+          '<li class="nav-item" style="padding-left: 420px;padding-top: 2px;">' +
+          '<a id = "cerrarsesion"class="btn btn-secundary" style="background-color: #666666;color: white;""' +
+          'role="Cerrarsesion">Cerrar Sesión</a>' +
           '</li>'
         );
         $('#cerrarsesion').click(function () {
@@ -497,6 +498,6 @@
       else {
         $("#cerrarsesion").remove();
       }
-      });
     });
-  </script>
+  });
+</script>

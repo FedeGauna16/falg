@@ -1,63 +1,64 @@
 <title>Formulario</title>
 {{#unless userlogged}}
 <hr style="height: 12vh">
-  <h1 style="padding-left: 600px;width: 1300px;color: white;text-align: center;">Para enviar un formulario debes haber iniciado sesión en tu cuenta</h1>
-  <li id="ingresar" class="nav-item" style="text-align: center;padding-top: 20px;">
-          <a class="btn btn-danger btn-lg" style="color: white; size: 200%" 
-            href="http://localhost:3000/users/ingreso" role="Ingresar">Iniciar Sesión</a>
-        </li>
-  <hr style="height: 8vh">
+<h1 style="padding-left: 600px;width: 1300px;color: white;text-align: center;">Para enviar un formulario debes haber
+  iniciado sesión en tu cuenta</h1>
+<li id="ingresar" class="nav-item" style="text-align: center;padding-top: 20px;">
+  <a class="btn btn-danger btn-lg" style="color: white; size: 200%" href="http://localhost:3000/users/ingreso"
+    role="Ingresar">Iniciar Sesión</a>
+</li>
+<hr style="height: 8vh">
 {{/unless}}
 {{#if userlogged}}
-<p id= "iduser" hidden>{{userlogged.id}}</p>
+<p id="iduser" hidden>{{userlogged.id}}</p>
 <div style="padding-top: 20px;">
   <h1 style="padding-left: 600px;width: 1300px;color: white;text-align: center;">Rellene el formulario</h1>
   <form id="description" style="padding-left: 600px;width: 1300px;color: white;">
-  <div class="form-group">
-    <label for="description">Descripcion</label>
-    <textarea class="form-control is-invalid" id="description_"
-      placeholder="Debe contener entre 10 y 1000 caracteres" style="height: 300px;"></textarea>
-  </div>
-  <div class="row">
-        <div class="col-sm">
-          <div class="mb-3">
-            <h6>Elige el tema</h6>
-            <select class="custom-select">
-              <option value="">Tema...</option>
-              <option value="1">Juego</option>
-              <option value="2">Pagina</option>
-              <option value="3">Cuenta</option>
-            </select>
-            <div class="invalid-feedback">Debe elegir un tema</div>
-          </div>
-        </div>
-        <div class="col-sm">
-          <h6>Escoge una imagen</h6>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFileLang" lang="es">
-            <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
-          </div>
+    <div class="form-group">
+      <label for="description">Descripcion</label>
+      <textarea class="form-control is-invalid" id="description_" placeholder="Debe contener entre 10 y 1000 caracteres"
+        style="height: 300px;"></textarea>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="mb-3">
+          <h6>Elige el tema</h6>
+          <select class="custom-select">
+            <option value="">Tema...</option>
+            <option value="1">Juego</option>
+            <option value="2">Pagina</option>
+            <option value="3">Cuenta</option>
+          </select>
+          <div class="invalid-feedback">Debe elegir un tema</div>
         </div>
       </div>
-  <button type="submit" class="btn btn-primary">Enviar Reporte</button>
+      <div class="col-sm">
+        <h6>Escoge una imagen</h6>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+          <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar Reporte</button>
   </form>
 </div>
 {{/if}}
-  
+
 <script>
-    $('#description').on('submit', function (event) {
-      event.preventDefault();
-      $.ajax({
-        url: 'http://localhost:3000/tickets/createreport',
-        type: 'POST',
-        data: {
-          description: $("#description_").val(),
-          iduser: $("#iduser").text()
-        },
-        success: function (result) {
-          alert("Ticket enviado correctamente")
-          location.reload();
-        }
-      });
+  $('#description').on('submit', function (event) {
+    event.preventDefault();
+    $.ajax({
+      url: 'http://localhost:3000/tickets/createreport',
+      type: 'POST',
+      data: {
+        description: $("#description_").val(),
+        iduser: $("#iduser").text()
+      },
+      success: function (result) {
+        alert("Ticket enviado correctamente")
+        location.reload();
+      }
     });
+  });
 </script>

@@ -1,362 +1,372 @@
 <title>Buscador</title>
-  <div class="container" id="busquedas">
+<div class="container" id="busquedas">
 
-    <div class="titulobuscador">
-      <h2>Resultados</h3>
-    </div>
-
-    <div class="titulopartidas" style="margin-top: 20px;">
-      <h3>Partidas</h2>                    
-    </div>
-    <div class="partidas" id="partidas" style="border: 2px solid transparent; border-color: slategray; border-radius: 10px; display: block; margin-top: 15px;">
-
-    </div>
-
-    <div class="tituloclases" style="margin-top: 20px;">
-      <h3>Clases</h2>                    
-    </div>
-    <div class="clases" id ="clases" style="border: 2px solid transparent; border-color: slategray; border-radius: 10px; display: block; margin-top: 15px;">
-
-    </div>
-
-    <div class="tituloperfiles" style="margin-top: 20px;">
-      <h3>Perfiles</h2>                    
-    </div>
-    <div class="perfiles" id= "perfiles" style="border: 2px solid transparent; border-color: slategray; border-radius: 10px; display: block; margin-top: 15px;">
-
-    </div>
-    
-    <div class="titulopubli" style="margin-top: 20px;">
-      <h3>Publicaciones</h2>                    
-    </div>
-    <div class="publicaciones" id= "publicaciones" style="border: 2px solid transparent; border-color: slategray; border-radius: 10px; display: block; margin-top: 15px;">
-
-    </div>
-    
-    <div class="tituloitems" style="margin-top: 20px;">
-      <h3>Items</h2>                    
-    </div>
-    <div class="items" id="items" style="border: 2px solid transparent; border-color: slategray; border-radius: 10px; display: block; margin-top: 15px;">
-
-    </div>
-    <style>
-        h3 { color: yellow; }
-        h2 { color: yellow  }
-    </style>
+  <div class="titulobuscador">
+    <h2>Resultados</h3>
   </div>
+
+  <div class="titulopartidas" style="margin-top: 20px;">
+    <h3>Partidas</h2>
+  </div>
+  <div class="partidas" id="partidas"
+    style="border: 2px solid transparent; border-color: slategray; border-radius: 10px; display: block; margin-top: 15px;">
+
+  </div>
+
+  <div class="tituloclases" style="margin-top: 20px;">
+    <h3>Clases</h2>
+  </div>
+  <div class="clases" id="clases"
+    style="border: 2px solid transparent; border-color: slategray; border-radius: 10px; display: block; margin-top: 15px;">
+
+  </div>
+
+  <div class="tituloperfiles" style="margin-top: 20px;">
+    <h3>Perfiles</h2>
+  </div>
+  <div class="perfiles" id="perfiles"
+    style="border: 2px solid transparent; border-color: slategray; border-radius: 10px; display: block; margin-top: 15px;">
+
+  </div>
+
+  <div class="titulopubli" style="margin-top: 20px;">
+    <h3>Publicaciones</h2>
+  </div>
+  <div class="publicaciones" id="publicaciones"
+    style="border: 2px solid transparent; border-color: slategray; border-radius: 10px; display: block; margin-top: 15px;">
+
+  </div>
+
+  <div class="tituloitems" style="margin-top: 20px;">
+    <h3>Items</h2>
+  </div>
+  <div class="items" id="items"
+    style="border: 2px solid transparent; border-color: slategray; border-radius: 10px; display: block; margin-top: 15px;">
+
+  </div>
+  <style>
+    h3 {
+      color: yellow;
+    }
+
+    h2 {
+      color: yellow
+    }
+  </style>
+</div>
 
 <script>
   var a;
   var busqueda;
-    $(document).ready(function () {
-      function filtrarPartidas(partida) {
-        return (partida.nombreUno == busqueda || partida.nombreDos == busqueda);
-      }
-      function mostrarPartidas(partida) {
-       //console.log(partida);
-        $("#partidas").append(
-          ' <div class="fila" style="' +
-          ' border-top: 2px solid rgba(7, 7, 7, 0.2);' +
-          ' border-bottom: 2px solid rgba(7, 7, 7, 0.2);' +
-          ' display: flex;' +
-          ' -ms-flex-wrap: wrap;' +
-          ' flex-wrap: wrap;' +
-          ' margin-right: -15px;' +
-          ' margin-left: -15px;' +
-          ' margin-top: 10px;' +
-          ' margin-bottom: 10px;">' +
+  $(document).ready(function () {
+    function filtrarPartidas(partida) {
+      return (partida.nombreUno == busqueda || partida.nombreDos == busqueda);
+    }
+    function mostrarPartidas(partida) {
+      //console.log(partida);
+      $("#partidas").append(
+        ' <div class="fila" style="' +
+        ' border-top: 2px solid rgba(7, 7, 7, 0.2);' +
+        ' border-bottom: 2px solid rgba(7, 7, 7, 0.2);' +
+        ' display: flex;' +
+        ' -ms-flex-wrap: wrap;' +
+        ' flex-wrap: wrap;' +
+        ' margin-right: -15px;' +
+        ' margin-left: -15px;' +
+        ' margin-top: 10px;' +
+        ' margin-bottom: 10px;">' +
 
-          '  <div class="columna-1-1" style="' +
-          '  display: flex;' +
-          '  margin-top: 10px;' +
-          '  margin-bottom: 10px;' +
-          '  padding: 5px;' +
-          '  margin-left: 20px;' +
-          '  width: 350px;' +
-          '  background-color: rgba(86, 61, 124, .15);' +
-          '  border: 1px solid rgba(86, 61, 124, .2);' +
-          '  color: antiquewhite;' +
-          '  text-align: center;"> ' +
+        '  <div class="columna-1-1" style="' +
+        '  display: flex;' +
+        '  margin-top: 10px;' +
+        '  margin-bottom: 10px;' +
+        '  padding: 5px;' +
+        '  margin-left: 20px;' +
+        '  width: 350px;' +
+        '  background-color: rgba(86, 61, 124, .15);' +
+        '  border: 1px solid rgba(86, 61, 124, .2);' +
+        '  color: antiquewhite;' +
+        '  text-align: center;"> ' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item6Uno + '" width="40" height="40"></div>' +
+        '     <div class="item" style=" ' +
+        '     padding: 5px; ' +
+        '     width: 60px; ' +
+        '     color: antiquewhite;"><img src= "' + partida.item6Uno + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item5Uno + '" width="40" height="40"></div>' +
+        '     <div class="item" style=" ' +
+        '     padding: 5px; ' +
+        '     width: 60px; ' +
+        '     color: antiquewhite;"><img src= "' + partida.item5Uno + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item4Uno + '" width="40" height="40"></div>' +
+        '     <div class="item" style=" ' +
+        '     padding: 5px; ' +
+        '     width: 60px; ' +
+        '     color: antiquewhite;"><img src= "' + partida.item4Uno + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item3Uno + '" width="40" height="40"></div>' +
+        '     <div class="item" style=" ' +
+        '     padding: 5px; ' +
+        '     width: 60px; ' +
+        '     color: antiquewhite;"><img src= "' + partida.item3Uno + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item2Uno + '" width="40" height="40"></div>' +
+        '     <div class="item" style=" ' +
+        '     padding: 5px; ' +
+        '     width: 60px; ' +
+        '     color: antiquewhite;"><img src= "' + partida.item2Uno + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item1Uno + '" width="40" height="40"></div>' +
-          '   </div> ' +
+        '     <div class="item" style=" ' +
+        '     padding: 5px; ' +
+        '     width: 60px; ' +
+        '     color: antiquewhite;"><img src= "' + partida.item1Uno + '" width="40" height="40"></div>' +
+        '   </div> ' +
 
-          '   <div class="columna-2" style=" ' +
-          '   margin-right: 10px; ' +
-          '   margin-left: 10px; ' +
-          '   margin-top: 10px; ' +
-          '   margin-bottom: 10px; ' +
-          '   padding: 5px; ' +
-          '   padding-top: 10px; ' +
-          '   width: 53px; ' +
-          '   background-color: rgba(86, 61, 124, .15); ' +
-          '   border: 1px solid rgba(86, 61, 124, .2); ' +
-          '   color: antiquewhite;"><img src= "' + partida.iconClaseUno + '" width="40" height="40"></div>' +
+        '   <div class="columna-2" style=" ' +
+        '   margin-right: 10px; ' +
+        '   margin-left: 10px; ' +
+        '   margin-top: 10px; ' +
+        '   margin-bottom: 10px; ' +
+        '   padding: 5px; ' +
+        '   padding-top: 10px; ' +
+        '   width: 53px; ' +
+        '   background-color: rgba(86, 61, 124, .15); ' +
+        '   border: 1px solid rgba(86, 61, 124, .2); ' +
+        '   color: antiquewhite;"><img src= "' + partida.iconClaseUno + '" width="40" height="40"></div>' +
 
-          '   <div class="nombre" style=" ' +
-          '   margin-top: 10px; ' +
-          '   margin-bottom: 10px; ' +
-          '   padding: 10px; ' +
-          '   font-size: medium; ' +
-          '   width: 100px; ' +
-          '   background-color:  rgb(36, 36, 36); ' +
-          '   color: antiquewhite; ' +
-          '   text-align: center; ' +
-          '   text-justify: auto;">' + partida.nombreUno+ '</div>' +
+        '   <div class="nombre" style=" ' +
+        '   margin-top: 10px; ' +
+        '   margin-bottom: 10px; ' +
+        '   padding: 10px; ' +
+        '   font-size: medium; ' +
+        '   width: 100px; ' +
+        '   background-color:  rgb(36, 36, 36); ' +
+        '   color: antiquewhite; ' +
+        '   text-align: center; ' +
+        '   text-justify: auto;">' + partida.nombreUno + '</div>' +
 
-          '   <div class="vs" style=" ' +
-          '   margin-left: 5px; ' +
-          '   margin-right: 5px; ' +
-          '   margin-top: 10px; ' +
-          '   margin-bottom: 10px; ' +
-          '   padding-top: 10px; ' +
-          '   font-size: x-large; ' +
-          '   margin-left: 10px; ' +
-          '   margin-right: 10px; ' +
-          '   width: 30px; ' +
-          '   background-color:  rgb(36, 36, 36); ' +
-          '   color: antiquewhite; ' +
-          '   text-align: center;">VS</div>' +
+        '   <div class="vs" style=" ' +
+        '   margin-left: 5px; ' +
+        '   margin-right: 5px; ' +
+        '   margin-top: 10px; ' +
+        '   margin-bottom: 10px; ' +
+        '   padding-top: 10px; ' +
+        '   font-size: x-large; ' +
+        '   margin-left: 10px; ' +
+        '   margin-right: 10px; ' +
+        '   width: 30px; ' +
+        '   background-color:  rgb(36, 36, 36); ' +
+        '   color: antiquewhite; ' +
+        '   text-align: center;">VS</div>' +
 
-          '   <div class="nombre-2" style="' +
-          '   margin-top: 10px;' +
-          '   margin-bottom: 10px;' +
-          '   font-size: medium;' +
-          '   padding: 10px;' +
-          '   width: 100px;' +
-          '   background-color:  rgb(36, 36, 36);' +
-          '   color: antiquewhite;' +
-          '   text-align: center;">' + partida.nombreDos + '</div>' +
+        '   <div class="nombre-2" style="' +
+        '   margin-top: 10px;' +
+        '   margin-bottom: 10px;' +
+        '   font-size: medium;' +
+        '   padding: 10px;' +
+        '   width: 100px;' +
+        '   background-color:  rgb(36, 36, 36);' +
+        '   color: antiquewhite;' +
+        '   text-align: center;">' + partida.nombreDos + '</div>' +
 
-          '    <div class="columna-2" style="' +
-          '     margin-right: 10px;' +
-          '     margin-left: 10px;' +
-          '     margin-top: 10px;' +
-          '     margin-bottom: 10px;' +
-          '     padding: 5px;' +
-          '     padding-top: 10px;' +
-          '     width: 53px;' +
-          '     background-color: rgba(86, 61, 124, .15);' +
-          '     border: 1px solid rgba(86, 61, 124, .2);' +
-          '     color: antiquewhite;"><img src= "' + partida.iconClaseDos + '" width="40" height="40"></div>' +
+        '    <div class="columna-2" style="' +
+        '     margin-right: 10px;' +
+        '     margin-left: 10px;' +
+        '     margin-top: 10px;' +
+        '     margin-bottom: 10px;' +
+        '     padding: 5px;' +
+        '     padding-top: 10px;' +
+        '     width: 53px;' +
+        '     background-color: rgba(86, 61, 124, .15);' +
+        '     border: 1px solid rgba(86, 61, 124, .2);' +
+        '     color: antiquewhite;"><img src= "' + partida.iconClaseDos + '" width="40" height="40"></div>' +
 
-          '   <div class="columna-1-2" style="' +
-          '   margin-top: 10px;' +
-          '   margin-bottom: 10px;' +
-          '   display: flex;' +
-          '   padding: 5px;' +
-          '   margin-right: 20px;' +
-          '   width: 350px;' +
-          '   background-color: rgba(86, 61, 124, .15);' +
-          '   border: 1px solid rgba(86, 61, 124, .2);' +
-          '   color: antiquewhite;' +
-          '   text-align: center;"> ' +
+        '   <div class="columna-1-2" style="' +
+        '   margin-top: 10px;' +
+        '   margin-bottom: 10px;' +
+        '   display: flex;' +
+        '   padding: 5px;' +
+        '   margin-right: 20px;' +
+        '   width: 350px;' +
+        '   background-color: rgba(86, 61, 124, .15);' +
+        '   border: 1px solid rgba(86, 61, 124, .2);' +
+        '   color: antiquewhite;' +
+        '   text-align: center;"> ' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item1Dos + '" width="40" height="40"></div>' +
+        '     <div class="item" style=" ' +
+        '     padding: 5px; ' +
+        '     width: 60px; ' +
+        '     color: antiquewhite;"><img src= "' + partida.item1Dos + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item2Dos + '" width="40" height="40"></div>' +
+        '     <div class="item" style=" ' +
+        '     padding: 5px; ' +
+        '     width: 60px; ' +
+        '     color: antiquewhite;"><img src= "' + partida.item2Dos + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item3Dos + '" width="40" height="40"></div>' +
+        '     <div class="item" style=" ' +
+        '     padding: 5px; ' +
+        '     width: 60px; ' +
+        '     color: antiquewhite;"><img src= "' + partida.item3Dos + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item4Dos + '" width="40" height="40"></div>' +
+        '     <div class="item" style=" ' +
+        '     padding: 5px; ' +
+        '     width: 60px; ' +
+        '     color: antiquewhite;"><img src= "' + partida.item4Dos + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item5Dos + '" width="40" height="40"></div>' +
+        '     <div class="item" style=" ' +
+        '     padding: 5px; ' +
+        '     width: 60px; ' +
+        '     color: antiquewhite;"><img src= "' + partida.item5Dos + '" width="40" height="40"></div>' +
 
-          '     <div class="item" style=" ' +
-          '     padding: 5px; ' +
-          '     width: 60px; ' +
-          '     color: antiquewhite;"><img src= "' + partida.item6Dos + '" width="40" height="40"></div>' +
-          '   </div> ' +
-          ' </div>'
-        );
-        }
-      function filtrarClases(clase) {
-        //console.log(clase);
-        return (clase.nombre == busqueda);
-      }
-      function mostrarClases(clase) {
-        //console.log(clase);
-        $("#clases").append(
-            '  <div class="cuadro" style="' +
-            '  margin-left: 15px;' +
-            '  margin-top: 15px;' +
-            '  display: flex;' +
-            '  height: 100px;' +
-            '  width: 20%;' +
-            '  background-color: rgba(86, 61, 124, .15);' +
-            '  border: 1px solid rgba(86, 61, 124, .2);">' +
+        '     <div class="item" style=" ' +
+        '     padding: 5px; ' +
+        '     width: 60px; ' +
+        '     color: antiquewhite;"><img src= "' + partida.item6Dos + '" width="40" height="40"></div>' +
+        '   </div> ' +
+        ' </div>'
+      );
+    }
+    function filtrarClases(clase) {
+      //console.log(clase);
+      return (clase.nombre == busqueda);
+    }
+    function mostrarClases(clase) {
+      //console.log(clase);
+      $("#clases").append(
+        '  <div class="cuadro" style="' +
+        '  margin-left: 15px;' +
+        '  margin-top: 15px;' +
+        '  display: flex;' +
+        '  height: 100px;' +
+        '  width: 20%;' +
+        '  background-color: rgba(86, 61, 124, .15);' +
+        '  border: 1px solid rgba(86, 61, 124, .2);">' +
 
-            '   <div class="cuadrochiquitouno" style="' +
-            '   margin-top: 10px;' +
-            '   margin-bottom: 10px;' +
-            '   margin-left: 10px;' +
-            '   height: 80px;' +
-            '   width: 40%;"><img src= "' + clase.iconClass + '" width="90" height="80"></div>' +
+        '   <div class="cuadrochiquitouno" style="' +
+        '   margin-top: 10px;' +
+        '   margin-bottom: 10px;' +
+        '   margin-left: 10px;' +
+        '   height: 80px;' +
+        '   width: 40%;"><img src= "' + clase.iconClass + '" width="90" height="80"></div>' +
 
-            '   <div class="cuadrochiquitodos" style="' +
-            '   margin-left: 10px;' +
-            '   height: 100px;' +
-            '   width: 50%;">' +
+        '   <div class="cuadrochiquitodos" style="' +
+        '   margin-left: 10px;' +
+        '   height: 100px;' +
+        '   width: 50%;">' +
 
-            '     <div class="cuadrochiquitochiquitouno" style="' +
-            '     margin-top: 5px;' +
-            '     margin-left: 5px;' +
-            '     height: 25px;' +
-            '     width: 90%;' +
-            '     color: antiquewhite;' +
-            '     text-align: center;' +
-            '     font-size: medium;">' + clase.nombre + '</div>' +
+        '     <div class="cuadrochiquitochiquitouno" style="' +
+        '     margin-top: 5px;' +
+        '     margin-left: 5px;' +
+        '     height: 25px;' +
+        '     width: 90%;' +
+        '     color: antiquewhite;' +
+        '     text-align: center;' +
+        '     font-size: medium;">' + clase.nombre + '</div>' +
 
-            '     <div class="cuadrochiquitochiquitodos" style="' +
-            '     margin-top: 8px;' +
-            '     margin-left: 5px;' +
-            '     height: 25px;' +
-            '     width: 90%;' +
-            '     color: antiquewhite;' +
-            '     text-align: left;' +
-            '     font-size: medium;">W: ' + clase.winrate + '</div>' +
+        '     <div class="cuadrochiquitochiquitodos" style="' +
+        '     margin-top: 8px;' +
+        '     margin-left: 5px;' +
+        '     height: 25px;' +
+        '     width: 90%;' +
+        '     color: antiquewhite;' +
+        '     text-align: left;' +
+        '     font-size: medium;">W: ' + clase.winrate + '</div>' +
 
-            '     <div class="cuadrochiquitochiquitotres" style="' +
-            '     margin-top: 8px;' +
-            '     margin-left: 5px;' +
-            '     height: 25px;' +
-            '     width: 90%;' +
-            '     color: antiquewhite;' +
-            '     text-align: left;' +
-            '     font-size: medium;">L: ' + clase.loserate + '</div>' +
-            '   </div>' +
-            '  </div>'
-          );
-      }
-      function filtrarItems(item) {
-        //console.log(item.nombre.toLowerCase());
-        return (item.nombre.toLowerCase() == busqueda);
-      }
-      function mostrarItems(item) {
-        //console.log(item);
-        $("#items").append(
-            '<div class = "cuadro" style="margin: 20px; height: 300px; width: 250px; border: 3px solid transparent;  border-color: rgba(82, 80, 80, 0.658); background-color: rgba(82, 80, 80, 0.658); border-radius: 10px; display: block; margin-top: 50px;">'+
-            '    <div class = "titulocuadro" style="color: yellow; text-align: center; font-size: 20px; padding: 5px;">'+ item.nombre +'</div>'+
-            '    <div class = "imagencuadro" style="color: yellow; text-align: center; width: 150px; height: 100px; margin-left: 45px;"><img src= "' + item.imagen + '" width="100px" height="100px"></div>'+
-            '    <div class = "daño" style="color: yellow; text-align: center; width: 244px; height: 26px;">Daño:  '+ item.daño +'</div>'+
-            '    <div class = "vida" style="color: yellow; text-align: center; width: 244px; height: 26px;">Vida:  '+ item.vida +'</div>'+
-            '    <div class = "resistencia" style="color: yellow; text-align: center; width: 244px; height: 26px;">Resistencia:  '+ item.resistencia +'</div>'+
-            '    <div class = "mana" style="color: yellow; text-align: center; width: 244px; height: 26px;">Mana:  '+ item.mana +'</div>'+
-            '    <div class = "cdr" style="color: yellow; text-align: center; width: 244px; height: 26px;">CDR:  '+ item.cdr +'</div>'+
-            '</div>'
-        );
-      }
-      function filtrarUsers(user) {
-        //console.log(user.name);
-        return (user.name.toLowerCase() == busqueda);
-      }
-      function mostrarUsers(user) {
-        console.log(user);
-        $("#perfiles").append(
-            '<div class = "cuadro" style="display: flex; margin: 20px; height: 300px; width: 500px; border: 3px solid transparent; border-color: rgba(82, 80, 80, 0.658); background-color: rgba(82, 80, 80, 0.658); border-radius: 10px; margin-top: 50px;">'+
-            '  <div class = "imagen" style="color: yellow; text-align: center; width: 200px; height: 200px; margin-left: 15px; margin-top: 40px;"><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTyUboQb1AGwobdaLbmXP6eBjZBNMmGWZETDA&usqp=CAU" width="200px" height="200px"></div> '+
-            '  <div class = "info" style = "display: block; width: 400px; margin-left: 15px;">'+
-            '    <div class = "nombre" style="color: yellow; text-align: center; width: auto; height: 40px; font-size: 30px;">'+ user.name +'</div>'+
-            '    <div class = "email" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 8px;">Email:  '+ user.email +'</div>'+
-            '    <div class = "country" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;">País:  '+ user.country +'</div>'+
-            '    <div class = "sex" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;">Sexo:  '+ user.sex +'</div>'+
-            '   <div class = "age" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;">Edad:  '+ user.age +'</div>'+
-            '    <div class = "description" style="color: yellow; text-align: left; width: auto; height: auto; margin-top: 5px;">Descripción:  '+ user.description +'</div>'+
-            '  </div>'+
-            '</div>'
-        );
-      }
-      function filtrarPosts(post) {
-        console.log(post.title);
-        return (post.title.toLowerCase() == busqueda);
-      }
-      function mostrarPosts(post) {
-        console.log(post);
-        $("#publicaciones").append(
-            '<div class = "cuadro" style="display: block; margin: 20px; height: 200px; width: 600px; border: 3px solid transparent; border-color: rgba(82, 80, 80, 0.658); background-color: rgba(82, 80, 80, 0.658); border-radius: 10px; margin-top: 50px;">'+
-            '  <div class = "titulo" style="color: yellow; text-align: left; width: 590px; height: 40px; margin-top: 10px; margin-left: 10px; font-size: 30px;">'+ post.title +'</div> '+
-            '  <div class = "descripcion" style="color: yellow; text-align: left; width: 590px; height: 130px; margin-top: 10px; margin-left: 10px; font-size: 20px;">'+ post.description +'</div>'+ 
-            '</div>'
-        );
-      }
-      $.get("http://localhost:3000/buscador/b", function( informacion ){
-        console.log(informacion);
-        busqueda = informacion.search;
-        console.log(busqueda);
-      });
-      $.get("http://localhost:3000/buscador/a", function( informacion ){
-        console.log(informacion);
-        var iterator = informacion.keys();
-        console.log(informacion[4]);
-        informacion[0].map(partida =>{ 
-          if(filtrarPartidas(partida)){
-            mostrarPartidas(partida);
-            }
-        });
-        informacion[1].map(clase => { 
-          if(filtrarClases(clase)){
-            mostrarClases(clase);
-            }
-        });
-        informacion[2].map(item => { 
-          if(filtrarItems(item)){
-            mostrarItems(item);
-            }
-        });
-        informacion[3].map(user => { 
-          if(filtrarUsers(user)){
-            mostrarUsers(user);
-          }
-        });
-        informacion[4].map(post => { 
-          if(filtrarPosts(post)){
-            mostrarPosts(post);
-          }
-        });
-      });
-
+        '     <div class="cuadrochiquitochiquitotres" style="' +
+        '     margin-top: 8px;' +
+        '     margin-left: 5px;' +
+        '     height: 25px;' +
+        '     width: 90%;' +
+        '     color: antiquewhite;' +
+        '     text-align: left;' +
+        '     font-size: medium;">L: ' + clase.loserate + '</div>' +
+        '   </div>' +
+        '  </div>'
+      );
+    }
+    function filtrarItems(item) {
+      //console.log(item.nombre.toLowerCase());
+      return (item.nombre.toLowerCase() == busqueda);
+    }
+    function mostrarItems(item) {
+      //console.log(item);
+      $("#items").append(
+        '<div class = "cuadro" style="margin: 20px; height: 300px; width: 250px; border: 3px solid transparent;  border-color: rgba(82, 80, 80, 0.658); background-color: rgba(82, 80, 80, 0.658); border-radius: 10px; display: block; margin-top: 50px;">' +
+        '    <div class = "titulocuadro" style="color: yellow; text-align: center; font-size: 20px; padding: 5px;">' + item.nombre + '</div>' +
+        '    <div class = "imagencuadro" style="color: yellow; text-align: center; width: 150px; height: 100px; margin-left: 45px;"><img src= "' + item.imagen + '" width="100px" height="100px"></div>' +
+        '    <div class = "daño" style="color: yellow; text-align: center; width: 244px; height: 26px;">Daño:  ' + item.daño + '</div>' +
+        '    <div class = "vida" style="color: yellow; text-align: center; width: 244px; height: 26px;">Vida:  ' + item.vida + '</div>' +
+        '    <div class = "resistencia" style="color: yellow; text-align: center; width: 244px; height: 26px;">Resistencia:  ' + item.resistencia + '</div>' +
+        '    <div class = "mana" style="color: yellow; text-align: center; width: 244px; height: 26px;">Mana:  ' + item.mana + '</div>' +
+        '    <div class = "cdr" style="color: yellow; text-align: center; width: 244px; height: 26px;">CDR:  ' + item.cdr + '</div>' +
+        '</div>'
+      );
+    }
+    function filtrarUsers(user) {
+      //console.log(user.name);
+      return (user.name.toLowerCase() == busqueda);
+    }
+    function mostrarUsers(user) {
+      console.log(user);
+      $("#perfiles").append(
+        '<div class = "cuadro" style="display: flex; margin: 20px; height: 300px; width: 500px; border: 3px solid transparent; border-color: rgba(82, 80, 80, 0.658); background-color: rgba(82, 80, 80, 0.658); border-radius: 10px; margin-top: 50px;">' +
+        '  <div class = "imagen" style="color: yellow; text-align: center; width: 200px; height: 200px; margin-left: 15px; margin-top: 40px;"><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTyUboQb1AGwobdaLbmXP6eBjZBNMmGWZETDA&usqp=CAU" width="200px" height="200px"></div> ' +
+        '  <div class = "info" style = "display: block; width: 400px; margin-left: 15px;">' +
+        '    <div class = "nombre" style="color: yellow; text-align: center; width: auto; height: 40px; font-size: 30px;">' + user.name + '</div>' +
+        '    <div class = "email" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 8px;">Email:  ' + user.email + '</div>' +
+        '    <div class = "country" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;">País:  ' + user.country + '</div>' +
+        '    <div class = "sex" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;">Sexo:  ' + user.sex + '</div>' +
+        '   <div class = "age" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 5px;">Edad:  ' + user.age + '</div>' +
+        '    <div class = "description" style="color: yellow; text-align: left; width: auto; height: auto; margin-top: 5px;">Descripción:  ' + user.description + '</div>' +
+        '  </div>' +
+        '</div>'
+      );
+    }
+    function filtrarPosts(post) {
+      console.log(post.title);
+      return (post.title.toLowerCase() == busqueda);
+    }
+    function mostrarPosts(post) {
+      console.log(post);
+      $("#publicaciones").append(
+        '<div class = "cuadro" style="display: block; margin: 20px; height: 200px; width: 600px; border: 3px solid transparent; border-color: rgba(82, 80, 80, 0.658); background-color: rgba(82, 80, 80, 0.658); border-radius: 10px; margin-top: 50px;">' +
+        '  <div class = "titulo" style="color: yellow; text-align: left; width: 590px; height: 40px; margin-top: 10px; margin-left: 10px; font-size: 30px;">' + post.title + '</div> ' +
+        '  <div class = "descripcion" style="color: yellow; text-align: left; width: 590px; height: 130px; margin-top: 10px; margin-left: 10px; font-size: 20px;">' + post.description + '</div>' +
+        '</div>'
+      );
+    }
+    $.get("http://localhost:3000/buscador/b", function (informacion) {
+      console.log(informacion);
+      busqueda = informacion.search;
+      console.log(busqueda);
     });
+    $.get("http://localhost:3000/buscador/a", function (informacion) {
+      console.log(informacion);
+      var iterator = informacion.keys();
+      console.log(informacion[4]);
+      informacion[0].map(partida => {
+        if (filtrarPartidas(partida)) {
+          mostrarPartidas(partida);
+        }
+      });
+      informacion[1].map(clase => {
+        if (filtrarClases(clase)) {
+          mostrarClases(clase);
+        }
+      });
+      informacion[2].map(item => {
+        if (filtrarItems(item)) {
+          mostrarItems(item);
+        }
+      });
+      informacion[3].map(user => {
+        if (filtrarUsers(user)) {
+          mostrarUsers(user);
+        }
+      });
+      informacion[4].map(post => {
+        if (filtrarPosts(post)) {
+          mostrarPosts(post);
+        }
+      });
+    });
+
+  });
 </script>

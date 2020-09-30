@@ -75,7 +75,7 @@
       var iduser = cuentas.find((cuenta) => {
         return cuenta.email == $("#correo").val(), cuenta.password == $("#contraseña").val();
       })
-      if(!iduser) {
+      if (!iduser) {
         alert("El usuario no existe");
         return 0;
       }

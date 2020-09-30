@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/config.css">
-  
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 
@@ -34,14 +34,14 @@
     <div class="collapse navbar-collapse">
       <ul id="navbar" class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="http://localhost:3000/index/index" style="color: white;">Inicio <span{{userlogged.email}}
-              class="sr-only">(current)</span></a>
+          <a class="nav-link" href="http://localhost:3000/index/index" style="color: white;">Inicio
+            <span{{userlogged.email}} class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://localhost:3000/foro/foro/1/Todos" style="color: white;">Foro</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:3000/index/estadisticas"  style="color: white;">Estadísticas</a>
+          <a class="nav-link" href="http://localhost:3000/index/estadisticas" style="color: white;">Estadísticas</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://localhost:3000/index/descarga" style="color: white;">Descarga</a>
@@ -59,25 +59,28 @@
         </li>
         {{#if userlogged}}
         <li class="nav-item" id="conectado">
-          <a class="nav-link" href="http://localhost:3000/users/perfil/{{userlogged.id}}" style="color: white;">Perfil</a>
+          <a class="nav-link" href="http://localhost:3000/users/perfil/{{userlogged.id}}"
+            style="color: white;">Perfil</a>
         </li>
         <li class="nav-item" style="padding-left: 413px;padding-top: 2px;">
-          <a id="cerrarsesion" href="/users/logout" class="btn btn-danger"
-            style="color: white;" role="Cerrarsesion">Cerrar Sesión</a>
+          <a id="cerrarsesion" href="/users/logout" class="btn btn-danger" style="color: white;"
+            role="Cerrarsesion">Cerrar Sesión</a>
         </li>
         {{else}}
         <li id="ingresar" class="nav-item" style="margin-left: 500px; padding-top: 2px;">
-          <a class="btn btn-danger" style="color: white;" 
-            href="http://localhost:3000/users/ingreso" role="Ingresar">Ingresar</a>
+          <a class="btn btn-danger" style="color: white;" href="http://localhost:3000/users/ingreso"
+            role="Ingresar">Ingresar</a>
         </li>
         {{/if}}
       </ul>
       <div class="buscador" id="buscador" style="display: flex;">
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search" id="buscar">
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar jugador/partida" aria-label="Search"
+            id="buscar">
           <div class="filtro" style="width: auto; position: relative">
-            <button class="boton2 boton2-secundario dropdown-toggle" type="button" id="dropdownMenu2" 
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: 1px solid transparent; padding: .375rem .75rem; border-radius: .25rem;color: #fff; background-color: #6c757d; border-color: #6c757d;">Tipo</button>
+            <button class="boton2 boton2-secundario dropdown-toggle" type="button" id="dropdownMenu2"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              style="border: 1px solid transparent; padding: .375rem .75rem; border-radius: .25rem;color: #fff; background-color: #6c757d; border-color: #6c757d;">Tipo</button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="filtro">
               <button class="dropdown-item" onclick="getter('1')">Partidas</button>
               <button class="dropdown-item" onclick="getter('2')">Clases</button>
@@ -111,10 +114,14 @@
           <div style="padding-right: 10px;">All Rights Reserved</div>
         </div>
         <div class="col-4">
-          <a href="https://facebook.com/"><img src="https://www.flaticon.es/svg/static/icons/svg/179/179319.svg" style=" width: 70px;"> </a>
-          <a href="https://twitter.com/"><img src="https://www.flaticon.es/svg/static/icons/svg/145/145812.svg" style=" width: 70px;"> </a>
-          <a href="https://gmail.com/"><img src="https://www.flaticon.es/svg/static/icons/svg/732/732200.svg" style=" width: 70px;"></a>
-          <a href="http://localhost:3000/index/descarga"><img src= "https://i.postimg.cc/YCb1PwwK/sa.pngstyle=" style="width: 70px;"> </a>
+          <a href="https://facebook.com/"><img src="https://www.flaticon.es/svg/static/icons/svg/179/179319.svg"
+              style=" width: 70px;"> </a>
+          <a href="https://twitter.com/"><img src="https://www.flaticon.es/svg/static/icons/svg/145/145812.svg"
+              style=" width: 70px;"> </a>
+          <a href="https://gmail.com/"><img src="https://www.flaticon.es/svg/static/icons/svg/732/732200.svg"
+              style=" width: 70px;"></a>
+          <a href="http://localhost:3000/index/descarga"><img src="https://i.postimg.cc/YCb1PwwK/sa.pngstyle="
+              style="width: 70px;"> </a>
           <div class=row>
             <div class=row>
             </div>
@@ -123,13 +130,14 @@
       </div>
   </footer>
 </body>
+
 </html>
 
 <script>
   function getter(x) {
     a = x;
     console.log(a);
-      return a;
+    return a;
   }
   $(document).ready(function () {
     $('#buscador').on('submit', function (event) {
