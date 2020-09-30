@@ -15,7 +15,6 @@ module.exports = (sequelize, Sequelize) => {
         iconPlayer: {
             type : Sequelize.TEXT
         },
-        users_id: Sequelize.INTEGER,
     });
 
     return jugadores;

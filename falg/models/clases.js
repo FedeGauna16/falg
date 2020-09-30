@@ -18,8 +18,10 @@ module.exports = (sequelize, Sequelize) => {
         },
         iconClass: {
             type : Sequelize.TEXT
+        },
+        id_partida: {
+            type : Sequelize.INTEGER
         }
-        
     });
 
     return clases;

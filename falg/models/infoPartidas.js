@@ -19,12 +19,6 @@ module.exports = (sequelize, Sequelize) => {
         idClaseDos: {
             type : Sequelize.INTEGER
         },
-        iconClaseUno: {
-            type : Sequelize.TEXT
-        },
-        iconClaseDos: {
-            type : Sequelize.TEXT
-        },
         item1Uno: {
             type : Sequelize.TEXT
         },
@@ -60,8 +54,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         item6Dos: {
             type : Sequelize.TEXT
-        },
-        clasesid: Sequelize.INTEGER,
+        }
     });
 
     return infoPartidas;

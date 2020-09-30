@@ -23,7 +23,7 @@ db.infoPartidas = require("./infoPartidas")(sequelize, Sequelize);
 db.clases = require("./clases")(sequelize, Sequelize);
 db.jugadores = require("./jugadores")(sequelize, Sequelize);
 db.items = require("./items")(sequelize, Sequelize);
-
+db.partidasItems = require("./partidasItems")(sequelize, Sequelize);
 db.Users.belongsToMany(db.Comments, {
     through: db.Userscomments,
     as: "comment",
@@ -43,6 +43,26 @@ db.Posts.belongsToMany(db.Users, {
     through: db.Usersposts,
     as: "user",
     foreignKey: "postid", 
+});
+db.jugadores.hasOne(db.Users,{
+    foreignKey : 'id_jugador',
+});
+db.Users.belongsTo(db.jugadores,{
+    foreignKey : 'id',
+});
+db.infoPartidas.hasMany(db.clases,{
+    foreignKey : 'id_partida',
+});
+db.clases.belongsTo(db.infoPartidas,{
+    foreignKey : 'id',
+});
+db.infoPartidas.belongsToMany(db.items, {
+    through: db.partidasItems,
+    foreignKey: "id_partida",
+});
+db.items.belongsToMany(db.infoPartidas, {
+    through: db.partidasItems,
+    foreignKey: "id_item", 
 });
 
 module.exports = db;

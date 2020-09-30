@@ -21,6 +21,9 @@ module.exports = (sequelize, Sequelize) => {
         image: {
             type: Sequelize.STRING,
             defaultValue: "https://muellestock.com/images/usuario-anonimo.png"
+        },
+        id_jugador: {
+            type : Sequelize.INTEGER
         }
     }
     );
