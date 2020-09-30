@@ -8,9 +8,6 @@ IMPORTANTE 3: VERIFACION DE TODOS LOS DATOS PUESTOS O INGRESADOS
 
 IMPORTANTE 4: FAQ Y SOPORTE SE FUSIONARON EN UNO SOLO
 
-general
--meter iconos random
-
 registro
 **-terminado(meter html en la parte de la edad, reemplazar el campo de meter una edad por un bootstrap de elegir la fecha en que naciste a partir de un calendario)
 -(linea 70-79) buscar forma para reducir y unificar el codigo de busqueda, verificacion y aviso de la comparativa entre los campos de registro y la tabla cuentas de la bd.
@@ -21,8 +18,6 @@ perfil
 
 foro
 -Crear api para la cambiar de página en el foro (el html ya está creado abajo de todo) (me refiero a la seccion en donde tocas en un numero de pagina y te lleva a esa pagina)
--arreglar el lengthcomments (estoy esperando a manu), el visitas tmaiben
--crear un lengthposts igual al lenghtcomments, cuando funcione el anterior copiar y pegar.
 -podes ocmentar sin texto osea uy hijo ep uta
 
 foro - crear publicacion
