@@ -60,7 +60,8 @@ module.exports = (sequelize, Sequelize) => {
         },
         item6Dos: {
             type : Sequelize.TEXT
-        }
+        },
+        clasesid: Sequelize.INTEGER,
     });
 
     return infoPartidas;

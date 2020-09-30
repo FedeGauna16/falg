@@ -20,9 +20,9 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="/foro/foro/1/Todos">Todos</a>
-                  <a class="dropdown-item" href="/foro/filter/Lore">Lore</a>
-                  <a class="dropdown-item" href="/foro/filter/Build">Build</a>
-                  <a class="dropdown-item" href="/foro/filter/Guia">Guia</a>
+                  <a class="dropdown-item" href="/foro/foro/1/Lore">Lore</a>
+                  <a class="dropdown-item" href="/foro/foro/1/Build">Build</a>
+                  <a class="dropdown-item" href="/foro/foro/1/Guia">Guia</a>
                 </div>
               </div>
             </div>
@@ -33,7 +33,7 @@
         </div>
         <div id="publicaciones">
           {{#unless publications}}
-          <h1 style="text-align: center; margin-top: 20px">No hay publicaciones disponibles</h1>
+            <h1 style="margin-left:330px; margin-top: 20px">No hay publicaciones disponibles</h1>
           {{/unless}}
           {{#each publications}}
           <a class="btn btn-light" href="/foro/irpublicacion/{{id}}"
@@ -58,7 +58,7 @@
                     </h6>
                   </div>
                   <div class="col-sm">
-                    <h6 style="text-align: right;">Visitas <p>68</p>
+                    <h6 style="text-align: right;">Visitas <p>0</p>
                     </h6>
                   </div>
                 </div>

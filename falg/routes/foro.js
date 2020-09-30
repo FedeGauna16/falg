@@ -111,15 +111,6 @@ router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   //alta paja hacerlo ahora chapotear despues
 });
 
-router.get('/filter/:filter', async function(req, res, next) {
-  var posts = await getposts();
-  var filter = req.params.filter;
-  var publications = posts.filter(publication => {
-    return(publication.filter == filter);
-  });
-  res.render('foro', {publications, filter})
-});
-
 router.post('/subircomentario', async function(req, res, next) {
   var newcomment = req.body;
   var comment = await Comments.create({ 
@@ -217,9 +208,29 @@ router.get('/adddislikecomment/:dislikecomment', async function(req, res, next) 
   }
 });
 
-router.get('/foro/:idPage/:all', async function(req, res, next) {
-  var filter = req.params.all
-  const publications = await getposts();
+router.get('/filter/:filter', async function(req, res, next) {
+  var posts = await getposts();
+  var filter = req.params.filter;
+  console.log(filter)
+  var publications = posts.filter(publication => {
+    return(publication.filter == filter);
+  });
+  console.log(publications)
+  res.render('foro', {publications, filter})
+});
+
+router.get('/foro/:idPage/:filter', async function(req, res, next) {
+  var filter = req.params.filter
+  var posts = await getposts();
+  if(filter == "Todos"){
+    const publications = await getposts();
+    var recentpublications = await getrecentposts();
+    const comments = await getcomments();
+    res.render('foro', {publications, recentpublications, filter, comments})
+  }
+  var publications = posts.filter(publication => {
+    return(publication.filter == filter);
+  });
   const comments = await getcomments();
   var recentpublications = await getrecentposts();
   res.render('foro', {publications, recentpublications, filter, comments})
