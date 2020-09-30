@@ -428,6 +428,7 @@
     });
 
     $.get("http://localhost:3000/estadisticas/jugadores", function (informacion) {
+      console.log(informacion);
       informacion.response.forEach(function (jugador) {
         $("#player").append(
           '  <div class="cuadro2" style="' +
