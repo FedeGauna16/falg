@@ -14,10 +14,12 @@ router.get('/a',async function(req, res, next) {
 
 router.get('/:tipo',async function(req, res, next) {
   let resultados1 = await InfoPartidas.findAll({
-    include: {
-      model: db.clases,
-      model: db.items
-    }
+    include: [
+      {
+        model: db.clases,
+        model: db.items
+      }
+    ] 
   });
   let resultados2 = await Clases.findAll();
   let resultados3 = await Jugadores.findAll({

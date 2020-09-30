@@ -17,7 +17,7 @@ async function getposts(){
   var posts = await Posts.findAll({
     nest: true,
     raw: true,
-    include: [
+    include: [ 
       {
           model: Users,
           as: "user",
