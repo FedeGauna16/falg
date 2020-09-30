@@ -307,7 +307,7 @@
       console.log(user);
       $("#perfiles").append(
         '<div class = "cuadro" style="display: flex; margin: 20px; height: 300px; width: 500px; border: 3px solid transparent; border-color: rgba(82, 80, 80, 0.658); background-color: rgba(82, 80, 80, 0.658); border-radius: 10px; margin-top: 50px;">' +
-        '  <div class = "imagen" style="color: yellow; text-align: center; width: 200px; height: 200px; margin-left: 15px; margin-top: 40px;"><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTyUboQb1AGwobdaLbmXP6eBjZBNMmGWZETDA&usqp=CAU" width="200px" height="200px"></div> ' +
+        '  <div class = "imagen" style="color: yellow; text-align: center; width: 200px; height: 200px; margin-left: 15px; margin-top: 40px;"><img src="'+ user.image +'" height="" class="card-img" alt="wow">' +
         '  <div class = "info" style = "display: block; width: 400px; margin-left: 15px;">' +
         '    <div class = "nombre" style="color: yellow; text-align: center; width: auto; height: 40px; font-size: 30px;">' + user.name + '</div>' +
         '    <div class = "email" style="color: yellow; text-align: left; width: auto; height: 30px; margin-top: 8px;">Email:  ' + user.email + '</div>' +
