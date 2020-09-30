@@ -5,10 +5,7 @@
     <div class="row" style="margin-right: 0px;">
       <div class="col">
         <div>
-          <img class="img-fluid"
-            src="https://i.ytimg.com/vi/l81SfOKkbj4/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBFfzXbATABAjJmF-IdYGQMWZQS5g"
-            alt="Sample image">
-          <a>
+            <img src="{{profile.image}}" height="" class="card-img" alt="wow">
             <div class="mask rgba-white-slight"></div>
           </a>
         </div>
@@ -36,19 +33,19 @@
         </div>
       </div>
       <div id="boton" class="col col-lg-2" style="max-width: 150px, text-aling: left;">
-        <button id="modificar" type="submit" class="btn btn-outline-danger" style="margin-top: 230px;">Modificar
+        <button id="modificar" type="submit" class="btn btn-outline-danger" style="margin-top: 370px;">Modificar
           Perfil</button>
       </div>
       <div class="col">
-        <div class="card bg-light mb-2" style="color: white;text-align: left;">
+        <div class="card bg-light mb-2" style="color: white;text-align: left;height: 270px">
           <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-            <li class="list-group-item" style="background-color: rgb(145, 4, 4)">
-              <p>Level 500 </p>
+            <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+              <p>Level {{profile.level}} </p>
             </li>
-            <li class="list-group-item" style="background-color: rgb(145, 4, 4)">
-              <p>XP 9999999999 </p>
+            <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
+              <p>XP 0 </p>
             </li>
-            <li class="list-group-item" style="background-color: rgb(145, 4, 4)">
+            <li class="list-group-item" style="background-color: rgb(36, 36, 36)">
               <p>Última Conexion: Ayer</p>
             </li>
           </h1>
@@ -85,14 +82,13 @@
 <script>
   $(document).ready(function () {
     $.get("http://localhost:3000/foro", function (informacion) {
-      console.log(informacion.posts);
       informacion.posts.forEach(function (publicacion, numeropublicacion) { // HACER ESTO MISMO PERO EN EL HTML CON FOREACH DE PUBLICACIONES GLOBALES 
         $("#publicaciones").append(
           '<div class="card bg-light mb-3" style="max-width: 1200px;"> ' +
           '    <div class="card-body" style="background-color: rgb(36, 36, 36);">' +
           '      <div class="container">' +
           '        <div class="row" style="background-color: #343a40;">' +
-          '          <div class="col-sm">' +//aca abajo no consigo concatenar la direccion de la publicacion con la iteracion de numeropublicacion
+          '          <div class="col-sm">' +
           '            <a id="publicacion' + numeropublicacion + '" href="/foro/irpublicacion/ + numeropublicacion" class="list-group-item list-group-item-action" style="color: snow;background-color: #343a40;">' + publicacion.title + '<p class="usuario" style="color: rgba(44, 128, 253, 0.815);margin-bottom: initial;">-' + $("#username").text() + '</p></a>' +
           '          </div>' +
           '          <div class="col-sm" style="background-color: #343a40;">' +

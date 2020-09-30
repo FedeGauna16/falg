@@ -14,7 +14,14 @@ module.exports = (sequelize, Sequelize) => {
         age: Sequelize.INTEGER,
         description: Sequelize.STRING,
         connect: Sequelize.BOOLEAN,
-        level: Sequelize.INTEGER
+        level: {
+            type: Sequelize.INTEGER,
+            defaultValue: '0'
+        },
+        image: {
+            type: Sequelize.STRING,
+            defaultValue: "https://muellestock.com/images/usuario-anonimo.png"
+        }
     }
     );
     return Users;

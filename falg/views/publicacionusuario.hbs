@@ -21,7 +21,7 @@
           <div class="row">
             <div class="col">
               <div class="view overlay">
-                <img src="" class="img-fluid">
+                <img src="{{publicacion.user.image}}" height="" class="card-img" alt="wow">
                 <a>
                   <div class="mask rgba-white-slight"></div>
                 </a>
@@ -32,7 +32,7 @@
                 <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>{{publicacion.user.name}}</h6>
               </a>
               <p class="font-weight-normal">Nivel: </p>
-              <p class="font-weight-normal">Publicaciones totales: </p>
+              <p class="font-weight-normal">Publicaciones totales: {{lengthpostsuser publications publicacion.id}}</p>
               <a class="btn btn-success" href="/users/perfil/{{publicacion.user.id}}">Ver perfil</a>
             </div>
           </div>
@@ -43,13 +43,13 @@
 
   <section class="my-5" style="background-color: #343a40; margin-left: 100px;width: 1700px">
     <div class="row">
+      {{#unless userlogged}}
+          <h2 style="margin-left: 460px">Debes iniciar sesión para ver los comentarios y publicar uno.</h2>
+      {{/unless}}
+      {{#if userlogged}}
       <div class="card-header border-0 font-weight-bold" style="padding-left: 25px;">
         {{lengthcomments}} Comentarios | Fecha de creacion de la publicación: {{converter publicacion.createdAt}} 
       </div>
-      {{#unless userlogged}}
-        <h2 style="margin-left: 270px">Debes iniciar sesión para ver los comentarios y publicar uno.</h2>
-      {{/unless}}
-      {{#if userlogged}}
       <div class="col" style="padding-left: 260px;">
         <div class="row">
           <div class="col" style="padding-left: 750px">

@@ -95,6 +95,7 @@ router.get('/goToPage/:idPage', async function(req, res, next) {
   });
 
 router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
+  const publications = await getposts();
   var posts = await getposts();
   var comments = await getcomments();
   var idpublicacion = req.params.idpublicacion;
@@ -104,7 +105,7 @@ router.get('/irpublicacion/:idpublicacion', async function(req, res, next) {
   var comentario = comments.filter(comentario => {
     return(comentario.idpost == idpublicacion);
   });
-  res.render('publicacionusuario', {publicacion, comentario})
+  res.render('publicacionusuario', {publicacion, comentario, publications})
   views++;// Si se entra a una misma publicacion se sigue sumando los views, no quiero hacer que cuando publicacion que se bloquee o algo asi
   //no hay una mejor forma mas linda sin tener qe hacerlo con el ++ y el bloqueo ese?
   //alta paja hacerlo ahora chapotear despues
@@ -176,7 +177,7 @@ router.get('/adddislikepost/:dislike/:iduser', async function(req, res, next) {
 });
 
 router.get('/addlikecomment/:likecomment', async function(req, res, next) {
-  var userid = req.app.locals.userlogged
+  var userid = req.app.locals.userlogged // ES UN OBJETO NO UNA ID
   var idcomment = req.params.likecomment
   var likecomment = await Comments.findByPk(idcomment)
   var userIndex = userbannedlikecomment.indexOf("iduser")
@@ -186,12 +187,14 @@ router.get('/addlikecomment/:likecomment', async function(req, res, next) {
     res.redirect(req.get('referer'));
   }
   else{
+    await Users.increment("level", {
+      by: 10,
+      where: {
+        id: userid.id
+      }
+    })
     userbannedlikecomment.push(userid.id)
     likecomment.increment("likes")
-    console.log("MOMOSAAAAAAAAAAAAAAAAA MAMA CHANGOI")
-   // userid.increment("level")
-    console.log(userid)
-    console.log(userid.level)
     res.redirect(req.get('referer'))
   }
 });
@@ -217,9 +220,11 @@ router.get('/adddislikecomment/:dislikecomment', async function(req, res, next) 
 router.get('/foro/:idPage/:all', async function(req, res, next) {
   var filter = req.params.all
   const publications = await getposts();
+  const comments = await getcomments();
   var recentpublications = await getrecentposts();
-  res.render('foro', {publications, recentpublications, filter})
+  res.render('foro', {publications, recentpublications, filter, comments})
 });
+
   router.get('/crearpublicacion', async function(req, res, next) {
     await countPosts()
   res.render('crearpublicacion')
