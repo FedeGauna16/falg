@@ -16,7 +16,7 @@ router.get('/:tipo',async function(req, res, next) {
   let resultados1 = await InfoPartidas.findAll({
     include: [
       {
-        model: db.clases,
+        model: db.clases, 
         model: db.items
       }
     ] 
@@ -27,6 +27,28 @@ router.get('/:tipo',async function(req, res, next) {
       model: db.Users
     }
   });
+
+  /*
+   include: [
+            {
+                model: db.users,
+                where : queryCustomer,
+                attributes: {
+                    exclude: !req.decoded.admin?excluded:[]
+                },
+            },
+            {
+                model: db.ordersDetails,
+                as : "Items",
+                include : [
+                    {
+                        model : db.ordersDetailsCategories,
+                        as : "Categories"
+                    }
+                ]
+            }
+        ],\
+   */
 
   switch(req.params.tipo){
     case "infoPartidas":

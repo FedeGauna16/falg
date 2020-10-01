@@ -141,8 +141,7 @@
         '<button id="aceptar" type="submit" class="btn btn-primary" style="margin-top: 50px;margin-left:5px">Cancelar</button>'
       );
       $('#aceptar').click(function () {
-        event.preventDefault();
-        console.log($("#description" + "#name").val())
+        console.log("hola")
         $.ajax({
           url: 'http://localhost:3000/users/perfil',
           type: 'PUT',
