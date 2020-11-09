@@ -1,15 +1,15 @@
 module.exports = (sequelize, Sequelize) => {
-    const partidasitems = sequelize.define("partidasitems",{
+    const partidasclases = sequelize.define("partidasclases",{
         id_partida: {
             type: Sequelize.INTEGER,
             primaryKey: true
         },
-        id_item: {
+        id_clase: {
             type: Sequelize.INTEGER,
             primaryKey: true
         }
     });
 
-    return partidasitems;
+    return partidasclases;
 
 };

@@ -16,8 +16,13 @@ router.get('/:tipo',async function(req, res, next) {
   let resultados1 = await InfoPartidas.findAll({
     include: [
       {
-        model: db.clases, 
+        model: db.clases
+      },
+      {
         model: db.items
+      },
+      {
+        model: db.Users
       }
     ] 
   });

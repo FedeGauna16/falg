@@ -232,7 +232,7 @@
       '   background-color:  rgb(36, 36, 36); ' +
       '   color: antiquewhite; ' +
       '   text-align: center; ' +
-      '   text-justify: auto;">' + partida.nombreUno + '</div>' +
+      '   text-justify: auto;">' + devolverUser(partida.users,1) + '</div>' +
 
       '   <div class="vs" style=" ' +
       '   margin-left: 5px; ' +
@@ -256,7 +256,7 @@
       '   width: 100px;' +
       '   background-color:  rgb(36, 36, 36);' +
       '   color: antiquewhite;' +
-      '   text-align: center;">' + partida.nombreDos + '</div>' +
+      '   text-align: center;">' + devolverUser(partida.users,2) + '</div>' +
 
       '    <div class="columna-2" style="' +
       '     margin-right: 10px;' +
@@ -317,7 +317,9 @@
   }
 
   function verificarNombre(x) {
-    //  console.log(x.response);
+      console.log(x.response[0].users.map(a => console.log(a.name)));
+      console.log(x.response[0].users.some(a => );
+
     return (x.response.some(_x => _x.nombreUno == $("#buscarjugador").val().toLowerCase() || _x.nombreDos == $("#buscarjugador").val().toLowerCase()));
   }
 
@@ -334,18 +336,18 @@
   }
 
   function devolverClase(clases, num) {
-   /* console.log(clases);
+  // console.log(clases);
     switch(num){ 
     case 1:
       return clases[0].iconClass;
     break;
     case 2:
       return clases[1].iconClass;
-    }*/
+    }
   }
   
   function devolverItem(items,num) {
-   console.log(items[0]);
+   //console.log(items[0]);
       switch(num){ 
         case 1:
           return items[0].imagen;
@@ -365,6 +367,17 @@
         case 6:
           return items[5].imagen;
         break;
+      }
+  }
+
+  function devolverUser(users,num) {
+  // console.log(users[0]);
+      switch(num){ 
+        case 1:
+          return users[0].name;
+        break;
+        case 2:
+          return users[1].name;
       }
   }
 
