@@ -318,16 +318,14 @@
 
   function verificarNombre(x) {
       console.log(x.response[0].users.map(a => console.log(a.name)));
-      console.log(x.response[0].users.some(a => );
+      console.log(x.response[0].users.some(a => a.name == $("#buscarjugador").val().toLowerCase());
 
-    return (x.response.some(_x => _x.nombreUno == $("#buscarjugador").val().toLowerCase() || _x.nombreDos == $("#buscarjugador").val().toLowerCase()));
+    return (x.response[0].users.some(a => a.name == $("#buscarjugador").val().toLowerCase() || x.response[1].users.some(a => a.name == $("#buscarjugador").val().toLowerCase()));
   }
 
   function filtrar(x) {
     //console.log(x);
-    partidasBuscadas = partidas.response.filter(partida =>
-      partida.idClaseUno == x || partida.idClaseDos == x
-    );
+    partidasBuscadas = partidas.response[0].clases.filter(partida => partida.id == x);
     // console.log(partidasBuscadas);
     $("#game").html(" ");
     partidasBuscadas.forEach(function (y) {
