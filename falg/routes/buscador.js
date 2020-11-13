@@ -12,10 +12,17 @@ const Publicacion = db.Posts;
 router.get('/a',async function(req, res, next) {
   let resultados = [
     await InfoPartidas.findAll({
-      include: {
-        model: db.clases,
-        model: db.items
-      }
+      include: [
+        {
+          model: db.clases
+        },
+        {
+          model: db.items
+        },
+        {
+          model: db.Users
+        }
+      ] 
     }),
     await Clases.findAll(),
     await Items.findAll(),

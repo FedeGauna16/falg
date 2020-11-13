@@ -317,15 +317,17 @@
   }
 
   function verificarNombre(x) {
-      console.log(x.response[0].users.map(a => console.log(a.name)));
-      console.log(x.response[0].users.some(a => a.name == $("#buscarjugador").val().toLowerCase());
+     //console.log(x.response[0].users.map(a => console.log(a.name)));
+     //console.log(x.response[1].users.map(a => console.log(a.name)));
+     //console.log(x.response[1].users.some(a => a.name == $("#buscarjugador").val().toLowerCase()));
 
-    return (x.response[0].users.some(a => a.name == $("#buscarjugador").val().toLowerCase() || x.response[1].users.some(a => a.name == $("#buscarjugador").val().toLowerCase()));
+    return (x.response[0].users.some(a => a.name == $("#buscarjugador").val().toLowerCase()) || x.response[1].users.some(a => a.name == $("#buscarjugador").val().toLowerCase()));
   }
 
   function filtrar(x) {
-    //console.log(x);
-    partidasBuscadas = partidas.response[0].clases.filter(partida => partida.id == x);
+    console.log(x);
+    console.log(partidas.response.filter(a => a.clases.filter(b => b.id == x)));
+    partidasBuscadas = partidas.response.filter(a => a.clases.some(b => b.id == x));
     // console.log(partidasBuscadas);
     $("#game").html(" ");
     partidasBuscadas.forEach(function (y) {
@@ -384,8 +386,9 @@
     $('#buscadorjugador').on('submit', function (event) {
       event.preventDefault();
       // console.log($("#buscar").val().toLowerCase());
+      console.log(partidas.response.some(a => a.users.some(b => b.name == $("#buscarjugador").val().toLowerCase())));
       partidasBuscadas = partidas.response.filter(partida =>
-        partida.nombreUno == $("#buscarjugador").val().toLowerCase() || partida.nombreDos == $("#buscarjugador").val().toLowerCase()
+        partida.users.some(a => a.name == $("#buscarjugador").val().toLowerCase())
       );
       //console.log(partidasBuscadas);
       if (verificarNombre(partidas) == false) {
